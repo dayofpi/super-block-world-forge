@@ -4,6 +4,7 @@ import com.dayofpi.super_block_world.SuperBlockWorld;
 import com.dayofpi.super_block_world.datagen.client.ModBlockStateProvider;
 import com.dayofpi.super_block_world.datagen.client.ModItemModelProvider;
 import com.dayofpi.super_block_world.datagen.server.ModLootTableProvider;
+import com.dayofpi.super_block_world.datagen.server.ModRecipeProvider;
 import com.dayofpi.super_block_world.datagen.server.tag.ModBlockTagsProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
@@ -29,6 +30,7 @@ public class DataGenerators {
         generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
 
         generator.addProvider(event.includeServer(), ModLootTableProvider.create(packOutput));
+        generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput));
         BlockTagsProvider blockTagsProvider = generator.addProvider(event.includeServer(), new ModBlockTagsProvider(packOutput, lookupProvider, existingFileHelper));
     }
 }

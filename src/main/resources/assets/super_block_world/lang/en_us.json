@@ -1,5 +1,9 @@
 {
   "itemGroup.super_block_world": "Super Block World",
   "block.super_block_world.vanillate": "Vanillate",
-  "block.super_block_world.vanillate_crumble": "Vanillate Crumble"
+  "block.super_block_world.vanillate_crumble": "Vanillate Crumble",
+  "item.super_block_world.hammer": "Hammer",
+  "item.super_block_world.super_pickaxe": "Super Pickaxe",
+  "item.super_block_world.bronze_ingot": "Bronze Ingot",
+  "item.super_block_world.power_shard": "Power Shard"
 }

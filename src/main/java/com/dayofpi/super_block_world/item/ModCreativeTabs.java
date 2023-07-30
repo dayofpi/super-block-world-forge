@@ -14,5 +14,9 @@ public class ModCreativeTabs {
     public static final RegistryObject<CreativeModeTab> MAIN = CREATIVE_MODE_TABS.register("main", () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.VANILLATE.get())).title(Component.translatable("itemGroup.super_block_world")).displayItems((itemDisplayParameters, output) -> {
         output.accept(ModItems.VANILLATE.get());
         output.accept(ModItems.VANILLATE_CRUMBLE.get());
+        output.accept(ModItems.HAMMER.get());
+        output.accept(ModItems.SUPER_PICKAXE.get());
+        output.accept(ModItems.BRONZE_INGOT.get());
+        output.accept(ModItems.POWER_SHARD.get());
     }).build());
 }
