@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "super_block_world:subcon_thread"
+    },
+    "P": {
+      "item": "minecraft:painting"
+    }
+  },
+  "pattern": [
+    "###",
+    "#P#",
+    "###"
+  ],
+  "result": {
+    "item": "super_block_world:warp_painting"
+  },
+  "show_notification": true
+}

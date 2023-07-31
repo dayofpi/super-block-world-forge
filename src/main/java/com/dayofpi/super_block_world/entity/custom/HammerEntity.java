@@ -49,7 +49,7 @@ public class HammerEntity extends ThrowableItemProjectile {
         super.onHit(hitResult);
         if (!this.level().isClientSide) {
             this.level().broadcastEntityEvent(this, (byte) 3);
-            this.playSound(ModSoundEvents.HAMMER_BREAK.get(), 0.85F, 1.3F);
+            this.playSound(ModSoundEvents.HAMMER_BREAK.get(), 0.7F, 0.9F);
             this.discard();
         }
     }

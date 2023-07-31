@@ -1,0 +1,73 @@
+{
+  "block.toadstone.break": {
+    "sounds": [
+      "super_block_world:block/toadstone/dig1",
+      "super_block_world:block/toadstone/dig2",
+      "super_block_world:block/toadstone/dig3",
+      "super_block_world:block/toadstone/dig4",
+      "super_block_world:block/toadstone/dig5"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.toadstone.step": {
+    "sounds": [
+      "super_block_world:block/toadstone/step1",
+      "super_block_world:block/toadstone/step2",
+      "super_block_world:block/toadstone/step3",
+      "super_block_world:block/toadstone/step4"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.toadstone.place": {
+    "sounds": [
+      "super_block_world:block/toadstone/dig1",
+      "super_block_world:block/toadstone/dig2",
+      "super_block_world:block/toadstone/dig3",
+      "super_block_world:block/toadstone/dig4",
+      "super_block_world:block/toadstone/dig5"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.toadstone.hit": {
+    "sounds": [
+      "super_block_world:block/toadstone/step1",
+      "super_block_world:block/toadstone/step2",
+      "super_block_world:block/toadstone/step3",
+      "super_block_world:block/toadstone/step4"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.toadstone.fall": {
+    "sounds": [
+      "super_block_world:block/toadstone/step1",
+      "super_block_world:block/toadstone/step2",
+      "super_block_world:block/toadstone/step3",
+      "super_block_world:block/toadstone/step4"
+    ]
+  },
+  "block.power_star.shine": {
+    "subtitle": "subtitles.super_block_world.block.power_star.shine",
+    "sounds": [
+      "super_block_world:block/power_star/shine1",
+      "super_block_world:block/power_star/shine2"
+    ]
+  },
+  "item.hammer.throw": {
+    "subtitle": "subtitles.super_block_world.item.hammer.throw",
+    "sounds": [
+      "super_block_world:item/hammer/throw"
+    ]
+  },
+  "item.hammer.break": {
+    "subtitle": "subtitles.super_block_world.item.hammer.break",
+    "sounds": [
+      "super_block_world:item/hammer/break"
+    ]
+  },
+  "item.star_bit.pickup": {
+    "subtitle": "subtitles.super_block_world.item.star_bit.pickup",
+    "sounds": [
+      "super_block_world:item/star_bit"
+    ]
+  }
+}

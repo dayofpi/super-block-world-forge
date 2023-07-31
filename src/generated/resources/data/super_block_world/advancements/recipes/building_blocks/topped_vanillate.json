@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "super_block_world:topped_vanillate"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_vanillate": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "super_block_world:vanillate"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_vanillate",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "super_block_world:topped_vanillate"
+    ]
+  },
+  "sends_telemetry_event": false
+}

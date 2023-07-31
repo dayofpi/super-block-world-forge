@@ -18,7 +18,9 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
-        tag(BlockTags.MINEABLE_WITH_PICKAXE).add(ModBlocks.VANILLATE.get(), ModBlocks.VANILLATE_CRUMBLE.get());
+        tag(BlockTags.MINEABLE_WITH_PICKAXE).add(ModBlocks.VANILLATE.get(), ModBlocks.TOPPED_VANILLATE.get(), ModBlocks.VANILLATE_CRUMBLE.get(), ModBlocks.VANILLATE_BRICKS.get(), ModBlocks.VANILLATE_TILES.get(), ModBlocks.TOADSTONE.get(), ModBlocks.TOADSTONE_BRICKS.get(), ModBlocks.SMOOTH_TOADSTONE.get(), ModBlocks.HARDSTONE.get(), ModBlocks.HARDSTONE_BRICKS.get(), ModBlocks.SMOOTH_HARDSTONE.get(), ModBlocks.STAR_CLUSTER.get());
+        tag(BlockTags.FLOWERS).add(ModBlocks.WHITE_FLOWERBED.get(), ModBlocks.YELLOW_FLOWERBED.get());
+        tag(BlockTags.INSIDE_STEP_SOUND_BLOCKS).add(ModBlocks.WHITE_FLOWERBED.get(), ModBlocks.YELLOW_FLOWERBED.get());
     }
 
     @Override

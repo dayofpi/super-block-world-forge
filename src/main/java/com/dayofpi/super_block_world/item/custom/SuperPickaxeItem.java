@@ -4,9 +4,8 @@ import com.dayofpi.super_block_world.item.ModToolTiers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.world.item.DiggerItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
@@ -14,9 +13,9 @@ import net.minecraft.world.phys.HitResult;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SuperPickaxeItem extends DiggerItem {
+public class SuperPickaxeItem extends PickaxeItem {
     public SuperPickaxeItem(Properties pProperties) {
-        super(1, -2.8F, ModToolTiers.SUPER, BlockTags.MINEABLE_WITH_PICKAXE, pProperties);
+        super(ModToolTiers.SUPER, 1, -2.8F, pProperties);
     }
 
     @Override

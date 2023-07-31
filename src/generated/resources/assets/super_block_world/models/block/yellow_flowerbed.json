@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/carpet",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "wool": "super_block_world:block/yellow_flowerbed"
+  }
+}

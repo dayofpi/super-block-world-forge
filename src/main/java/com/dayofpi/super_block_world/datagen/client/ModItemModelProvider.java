@@ -16,11 +16,26 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        simpleItem(ModItems.POWER_STAR);
+        simpleBlockItem(ModItems.STAR_CLUSTER);
+        simpleBlockItem(ModItems.WHITE_FLOWERBED);
+        simpleBlockItem(ModItems.YELLOW_FLOWERBED);
+        simpleItem(ModItems.WARP_PAINTING);
+        simpleItem(ModItems.RAW_BRONZE);
         simpleItem(ModItems.BRONZE_INGOT);
         simpleItem(ModItems.POWER_SHARD);
+        simpleItem(ModItems.YELLOW_STAR_BIT);
+        simpleItem(ModItems.GREEN_STAR_BIT);
+        simpleItem(ModItems.BLUE_STAR_BIT);
+        simpleItem(ModItems.PURPLE_STAR_BIT);
+        simpleItem(ModItems.SUBCON_THREAD);
     }
 
     private void simpleItem(RegistryObject<Item> item) {
         withExistingParent(item.getId().getPath(), new ResourceLocation("item/generated")).texture("layer0", new ResourceLocation(SuperBlockWorld.MOD_ID, "item/" + item.getId().getPath()));
+    }
+
+    private void simpleBlockItem(RegistryObject<Item> item) {
+        withExistingParent(item.getId().getPath(), new ResourceLocation("item/generated")).texture("layer0", new ResourceLocation(SuperBlockWorld.MOD_ID, "block/" + item.getId().getPath()));
     }
 }

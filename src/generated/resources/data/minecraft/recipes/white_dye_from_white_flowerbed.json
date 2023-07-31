@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "white_dye",
+  "ingredients": [
+    {
+      "item": "super_block_world:white_flowerbed"
+    }
+  ],
+  "result": {
+    "item": "minecraft:white_dye"
+  }
+}

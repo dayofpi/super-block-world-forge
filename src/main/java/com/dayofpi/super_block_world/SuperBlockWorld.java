@@ -1,21 +1,31 @@
 package com.dayofpi.super_block_world;
 
+import com.dayofpi.super_block_world.block.ModBlockEntityTypes;
 import com.dayofpi.super_block_world.block.ModBlocks;
+import com.dayofpi.super_block_world.block.client.PlacedItemRenderer;
 import com.dayofpi.super_block_world.entity.ModEntityTypes;
 import com.dayofpi.super_block_world.entity.client.HammerRenderer;
+import com.dayofpi.super_block_world.entity.client.WarpPaintingRenderer;
+import com.dayofpi.super_block_world.entity.custom.HammerEntity;
 import com.dayofpi.super_block_world.item.ModCreativeTabs;
 import com.dayofpi.super_block_world.item.ModItems;
 import com.dayofpi.super_block_world.sound.ModSoundEvents;
 import com.mojang.logging.LogUtils;
+import net.minecraft.Util;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.core.Position;
+import net.minecraft.core.dispenser.AbstractProjectileDispenseBehavior;
+import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -33,17 +43,24 @@ public class SuperBlockWorld {
         // Register the Deferred Registers to the mod event bus
         ModItems.ITEMS.register(modEventBus);
         ModBlocks.BLOCKS.register(modEventBus);
+        ModBlockEntityTypes.BLOCK_ENTITY_TYPES.register(modEventBus);
         ModCreativeTabs.CREATIVE_MODE_TABS.register(modEventBus);
         ModEntityTypes.ENTITY_TYPES.register(modEventBus);
         ModSoundEvents.SOUND_EVENTS.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
-        // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
+        event.enqueueWork(() -> {
+            DispenserBlock.registerBehavior(ModItems.HAMMER.get(), new AbstractProjectileDispenseBehavior() {
+                @Override
+                protected Projectile getProjectile(Level pLevel, Position pPosition, ItemStack pStack) {
+                    return Util.make(new HammerEntity(pLevel, pPosition.x(), pPosition.y(), pPosition.z()), hammerEntity -> hammerEntity.setItem(pStack));
+                }
+            });
+        });
     }
 
     @SubscribeEvent
@@ -56,7 +73,13 @@ public class SuperBlockWorld {
         public static void onClientSetup(FMLClientSetupEvent event) {
             event.enqueueWork(() -> {
                 EntityRenderers.register(ModEntityTypes.HAMMER.get(), HammerRenderer::new);
+                EntityRenderers.register(ModEntityTypes.WARP_PAINTING.get(), WarpPaintingRenderer::new);
             });
+        }
+
+        @SubscribeEvent
+        public static void registerBlockEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
+            event.registerBlockEntityRenderer(ModBlockEntityTypes.ITEM_DISPLAY.get(), pContext -> new PlacedItemRenderer());
         }
     }
 }
