@@ -30,6 +30,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.HARDSTONE.get());
         dropSelf(ModBlocks.HARDSTONE_BRICKS.get());
         dropSelf(ModBlocks.SMOOTH_HARDSTONE.get());
+        dropSelf(ModBlocks.PACKED_CLOUD.get());
+        dropSelf(ModBlocks.RAINBOW_TILES.get());
         add(ModBlocks.VANILLATE.get(), createSingleItemTableWithSilkTouch(ModBlocks.VANILLATE.get(), ModBlocks.VANILLATE_CRUMBLE.get()));
         add(ModBlocks.TOPPED_VANILLATE.get(), createSingleItemTableWithSilkTouch(ModBlocks.TOPPED_VANILLATE.get(), ModBlocks.VANILLATE_CRUMBLE.get()));
         add(ModBlocks.STAR_CLUSTER.get(), createSilkTouchOnlyTable(ModBlocks.STAR_CLUSTER.get()).withPool(applyExplosionCondition(ModBlocks.STAR_CLUSTER.get(), LootPool.lootPool().setRolls(ConstantValue.exactly(2.0F)).add(LootItem.lootTableItem(ModItems.YELLOW_STAR_BIT.get()).when(LootItemRandomChanceCondition.randomChance(0.3F))).add(LootItem.lootTableItem(ModItems.GREEN_STAR_BIT.get()).when(LootItemRandomChanceCondition.randomChance(0.3F))).add(LootItem.lootTableItem(ModItems.BLUE_STAR_BIT.get()).when(LootItemRandomChanceCondition.randomChance(0.3F))).add(LootItem.lootTableItem(ModItems.PURPLE_STAR_BIT.get()).when(LootItemRandomChanceCondition.randomChance(0.3F)))).when(HAS_NO_SILK_TOUCH)));

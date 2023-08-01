@@ -3,6 +3,7 @@ package com.dayofpi.super_block_world.datagen;
 import com.dayofpi.super_block_world.SuperBlockWorld;
 import com.dayofpi.super_block_world.datagen.client.ModBlockStateProvider;
 import com.dayofpi.super_block_world.datagen.client.ModItemModelProvider;
+import com.dayofpi.super_block_world.datagen.server.ModEntriesProvider;
 import com.dayofpi.super_block_world.datagen.server.ModLootTableProvider;
 import com.dayofpi.super_block_world.datagen.server.ModRecipeProvider;
 import com.dayofpi.super_block_world.datagen.server.tag.ModBlockTagsProvider;
@@ -34,5 +35,6 @@ public class DataGenerators {
         generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput));
         BlockTagsProvider blockTagsProvider = generator.addProvider(event.includeServer(), new ModBlockTagsProvider(packOutput, lookupProvider, existingFileHelper));
         generator.addProvider(event.includeServer(), new ModItemTagsProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
+        generator.addProvider(event.includeServer(), new ModEntriesProvider(packOutput, lookupProvider));
     }
 }

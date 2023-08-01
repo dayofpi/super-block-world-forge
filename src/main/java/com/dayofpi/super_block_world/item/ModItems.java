@@ -31,6 +31,8 @@ public class ModItems {
     public static final RegistryObject<Item> HARDSTONE = registerBlockItem("hardstone", ModBlocks.HARDSTONE);
     public static final RegistryObject<Item> HARDSTONE_BRICKS = registerBlockItem("hardstone_bricks", ModBlocks.HARDSTONE_BRICKS);
     public static final RegistryObject<Item> SMOOTH_HARDSTONE = registerBlockItem("smooth_hardstone", ModBlocks.SMOOTH_HARDSTONE);
+    public static final RegistryObject<Item> PACKED_CLOUD = registerBlockItem("packed_cloud", ModBlocks.PACKED_CLOUD);
+    public static final RegistryObject<Item> RAINBOW_TILES = registerBlockItem("rainbow_tiles", ModBlocks.RAINBOW_TILES);
     public static final RegistryObject<Item> STAR_CLUSTER = registerBlockItem("star_cluster", ModBlocks.STAR_CLUSTER);
     public static final RegistryObject<Item> WHITE_FLOWERBED = registerBlockItem("white_flowerbed", ModBlocks.WHITE_FLOWERBED);
     public static final RegistryObject<Item> YELLOW_FLOWERBED = registerBlockItem("yellow_flowerbed", ModBlocks.YELLOW_FLOWERBED);

@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "B": {
+      "item": "super_block_world:blue_star_bit"
+    },
+    "G": {
+      "item": "super_block_world:green_star_bit"
+    },
+    "P": {
+      "item": "super_block_world:purple_star_bit"
+    },
+    "Y": {
+      "item": "super_block_world:yellow_star_bit"
+    }
+  },
+  "pattern": [
+    "YG",
+    "BP"
+  ],
+  "result": {
+    "item": "super_block_world:rainbow_tiles"
+  },
+  "show_notification": true
+}

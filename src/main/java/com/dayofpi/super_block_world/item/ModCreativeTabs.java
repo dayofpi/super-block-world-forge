@@ -23,6 +23,8 @@ public class ModCreativeTabs {
         output.accept(ModItems.HARDSTONE.get());
         output.accept(ModItems.HARDSTONE_BRICKS.get());
         output.accept(ModItems.SMOOTH_HARDSTONE.get());
+        output.accept(ModItems.PACKED_CLOUD.get());
+        output.accept(ModItems.RAINBOW_TILES.get());
         output.accept(ModItems.STAR_CLUSTER.get());
         output.accept(ModItems.WHITE_FLOWERBED.get());
         output.accept(ModItems.YELLOW_FLOWERBED.get());

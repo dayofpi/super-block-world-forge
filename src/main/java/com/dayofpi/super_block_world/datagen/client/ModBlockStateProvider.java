@@ -28,6 +28,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockWithItem(ModBlocks.HARDSTONE);
         simpleBlockWithItem(ModBlocks.HARDSTONE_BRICKS);
         simpleBlockWithItem(ModBlocks.SMOOTH_HARDSTONE);
+        simpleBlockWithItem(ModBlocks.PACKED_CLOUD);
+        simpleBlockWithItem(ModBlocks.RAINBOW_TILES);
         simpleBlock(ModBlocks.WHITE_FLOWERBED.get(), models().carpet("white_flowerbed", blockTexture(ModBlocks.WHITE_FLOWERBED.get())).renderType("cutout"));
         simpleBlock(ModBlocks.YELLOW_FLOWERBED.get(), models().carpet("yellow_flowerbed", blockTexture(ModBlocks.YELLOW_FLOWERBED.get())).renderType("cutout"));
     }

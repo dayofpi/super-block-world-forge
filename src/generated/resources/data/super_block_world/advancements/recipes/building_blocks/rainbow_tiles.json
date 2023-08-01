@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_star_bit": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "super_block_world:star_bits"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "super_block_world:rainbow_tiles"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_star_bit",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "super_block_world:rainbow_tiles"
+    ]
+  },
+  "sends_telemetry_event": false
+}

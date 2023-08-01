@@ -1,7 +1,9 @@
-// 1.20.1	2023-07-31T14:51:37.8767903	Loot Tables
+// 1.20.1	2023-07-31T21:49:34.5648583	Loot Tables
 5d4038950a8396b637fe1867ced8f5ba6f2b69ed data/super_block_world/loot_tables/blocks/hardstone.json
 36c68ad552086627137bcd1713ae0bc4a3150545 data/super_block_world/loot_tables/blocks/hardstone_bricks.json
+26f90e3645a02b6ee5df566f0894cc6375238058 data/super_block_world/loot_tables/blocks/packed_cloud.json
 6b2ba11bf6187bf3c209e2086e2b754af2263f56 data/super_block_world/loot_tables/blocks/power_star.json
+6d8017b214e4f8ce008db0bf1eef014c0d119ba7 data/super_block_world/loot_tables/blocks/rainbow_tiles.json
 5cdbc27d3aa75b045633d25dd8b614f16b5c29b3 data/super_block_world/loot_tables/blocks/smooth_hardstone.json
 fc2da510d5326a202caa7c4b77f76491708e523f data/super_block_world/loot_tables/blocks/smooth_toadstone.json
 9f330c0ab9c2fb86376881b4f22b0cc152bb0e20 data/super_block_world/loot_tables/blocks/star_cluster.json

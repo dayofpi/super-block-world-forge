@@ -1,0 +1,11 @@
+{
+  "type": "super_block_world:mushroom_kingdom",
+  "generator": {
+    "type": "minecraft:noise",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "super_block_world:mushroom_grasslands"
+    },
+    "settings": "super_block_world:mushroom_kingdom"
+  }
+}

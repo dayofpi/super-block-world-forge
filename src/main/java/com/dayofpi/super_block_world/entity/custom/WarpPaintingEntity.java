@@ -2,12 +2,17 @@ package com.dayofpi.super_block_world.entity.custom;
 
 import com.dayofpi.super_block_world.entity.ModEntityTypes;
 import com.dayofpi.super_block_world.item.ModItems;
+import com.dayofpi.super_block_world.util.MKTeleporter;
+import com.dayofpi.super_block_world.worldgen.dimension.ModDimensions;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundAddEntityPacket;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
@@ -21,6 +26,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
+
 public class WarpPaintingEntity extends HangingEntity {
     public WarpPaintingEntity(EntityType<? extends HangingEntity> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -29,6 +36,31 @@ public class WarpPaintingEntity extends HangingEntity {
     public WarpPaintingEntity(Level pLevel, BlockPos pPos, Direction pFacingDirection) {
         super(ModEntityTypes.WARP_PAINTING.get(), pLevel, pPos);
         this.setDirection(pFacingDirection);
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+        if (this.isRemoved())
+            return;
+        List<Entity> entityList = level().getEntities(this, this.getBoundingBox());
+        if (!entityList.isEmpty()) {
+            for (Entity entity : entityList) {
+                if (entity.isOnPortalCooldown()) {
+                    entity.setPortalCooldown();
+                } else {
+                    MinecraftServer minecraftServer = entity.level().getServer();
+                    if (minecraftServer != null) {
+                        ResourceKey<Level> mushroomKingdomDestination = entity.level().dimension() == ModDimensions.MUSHROOM_KINGDOM_LEVEL ? Level.OVERWORLD : ModDimensions.MUSHROOM_KINGDOM_LEVEL;
+                        ServerLevel destinationWorld = minecraftServer.getLevel(mushroomKingdomDestination);
+                        if (destinationWorld != null && !entity.isPassenger()) {
+                            entity.setPortalCooldown();
+                            entity.changeDimension(destinationWorld, new MKTeleporter(destinationWorld));
+                        }
+                    }
+                }
+            }
+        }
     }
 
     @Override
