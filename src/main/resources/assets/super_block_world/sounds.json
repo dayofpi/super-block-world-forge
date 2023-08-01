@@ -70,6 +70,12 @@
       "super_block_world:item/star_bit"
     ]
   },
+  "entity.warp_painting.power": {
+    "subtitle": "subtitles.super_block_world.entity.warp_painting.power",
+    "sounds": [
+      "super_block_world:entity/warp_painting/power"
+    ]
+  },
   "entity.warp_painting.travel": {
     "sounds": [
       "super_block_world:entity/warp_painting/travel"

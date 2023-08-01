@@ -35,5 +35,6 @@
   "subtitles.super_block_world.block.power_star.shine": "Power Star shines",
   "subtitles.super_block_world.item.hammer.throw": "Hammer flies",
   "subtitles.super_block_world.item.hammer.break": "Hammer breaks",
-  "subtitles.super_block_world.item.star_bit.pickup": "Star Bit shines"
+  "subtitles.super_block_world.item.star_bit.pickup": "Star Bit shines",
+  "subtitles.super_block_world.entity.warp_painting.power": "Warp Painting is powered"
 }

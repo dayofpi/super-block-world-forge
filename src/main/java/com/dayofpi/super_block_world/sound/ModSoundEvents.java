@@ -19,6 +19,7 @@ public class ModSoundEvents {
     public static final RegistryObject<SoundEvent> HAMMER_THROW = registerSoundEvent("item.hammer.throw");
     public static final RegistryObject<SoundEvent> HAMMER_BREAK = registerSoundEvent("item.hammer.break");
     public static final RegistryObject<SoundEvent> STAR_BIT_PICKUP = registerSoundEvent("item.star_bit.pickup");
+    public static final RegistryObject<SoundEvent> WARP_PAINTING_POWER = registerSoundEvent("entity.warp_painting.power");
     public static final RegistryObject<SoundEvent> WARP_PAINTING_TRAVEL = registerSoundEvent("entity.warp_painting.travel");
 
     private static RegistryObject<SoundEvent> registerSoundEvent(String name) {

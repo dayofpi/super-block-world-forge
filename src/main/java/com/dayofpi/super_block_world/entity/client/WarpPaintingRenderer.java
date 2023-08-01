@@ -18,6 +18,7 @@ import net.minecraft.world.phys.Vec3;
 public class WarpPaintingRenderer extends EntityRenderer<WarpPaintingEntity> {
     private final EntityModel<WarpPaintingEntity> model;
 
+    private static final ResourceLocation LOCKED = new ResourceLocation(SuperBlockWorld.MOD_ID, "textures/entity/warp_painting/locked.png");
     private static final ResourceLocation MUSHROOM_KINGDOM = new ResourceLocation(SuperBlockWorld.MOD_ID, "textures/entity/warp_painting/mushroom_kingdom.png");
     private static final ResourceLocation OVERWORLD = new ResourceLocation(SuperBlockWorld.MOD_ID, "textures/entity/warp_painting/overworld.png");
 
@@ -51,6 +52,9 @@ public class WarpPaintingRenderer extends EntityRenderer<WarpPaintingEntity> {
 
     @Override
     public ResourceLocation getTextureLocation(WarpPaintingEntity pEntity) {
+        if (pEntity.getVariant() == WarpPaintingEntity.WarpPaintingVariant.LOCKED) {
+            return LOCKED;
+        }
         return pEntity.level().dimension() == Level.OVERWORLD ? MUSHROOM_KINGDOM : OVERWORLD;
     }
 }
