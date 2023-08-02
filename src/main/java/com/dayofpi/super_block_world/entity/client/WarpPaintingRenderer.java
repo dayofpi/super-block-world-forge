@@ -7,6 +7,7 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
@@ -45,6 +46,9 @@ public class WarpPaintingRenderer extends EntityRenderer<WarpPaintingEntity> {
             pPoseStack.translate(0.0F, 0.5F, 1.0F);
             VertexConsumer vertexconsumer = pBuffer.getBuffer(this.model.renderType(this.getTextureLocation(pEntity)));
             this.model.renderToBuffer(pPoseStack, vertexconsumer, pPackedLight, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+            if (pEntity.getVariant() != WarpPaintingEntity.WarpPaintingVariant.LOCKED) {
+                this.model.renderToBuffer(pPoseStack, pBuffer.getBuffer(RenderType.entityGlint()), pPackedLight, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+            }
             pPoseStack.popPose();
         }
         pPoseStack.popPose();

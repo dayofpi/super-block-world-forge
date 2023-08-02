@@ -1,6 +1,7 @@
 package com.dayofpi.super_block_world.worldgen.biome;
 
 import com.dayofpi.super_block_world.SuperBlockWorld;
+import com.dayofpi.super_block_world.sound.ModSoundEvents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
@@ -11,6 +12,11 @@ import net.minecraft.world.level.biome.*;
 
 public class ModBiomes {
     public static final ResourceKey<Biome> MUSHROOM_GRASSLANDS = register("mushroom_grasslands");
+    public static final int GRASSLANDS_WATER_COLOR = 4046591;
+    public static final int GRASSLANDS_SKY_COLOR = 11134462;
+    public static final int GRASSLANDS_FOG_COLOR = 14005247;
+    public static final int GRASSLANDS_GRASS_COLOR = 6879535;
+    public static final int GRASSLANDS_FOLIAGE_COLOR = 6408218;
 
     public static void bootstrap(BootstapContext<Biome> context) {
         context.register(MUSHROOM_GRASSLANDS, mushroomGrasslands(context));
@@ -24,9 +30,9 @@ public class ModBiomes {
 
         BiomeGenerationSettings.Builder generationBuilder = new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
         ModBiomeFeatures.globalMushroomKingdomGeneration(generationBuilder);
+        ModBiomeFeatures.addMushroomGrasslandsVegetation(generationBuilder);
 
-        return new Biome.BiomeBuilder().hasPrecipitation(true).downfall(0.4f).temperature(0.8f).generationSettings(generationBuilder.build()).mobSpawnSettings(spawnBuilder.build()).specialEffects(new BiomeSpecialEffects.Builder().waterColor(4046591).waterFogColor(4046591).skyColor(11134462).fogColor(14005247).grassColorOverride(6879535).foliageColorOverride(6408218).ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS).build()
-        ).build();
+        return new Biome.BiomeBuilder().hasPrecipitation(true).downfall(0.4f).temperature(0.8f).generationSettings(generationBuilder.build()).mobSpawnSettings(spawnBuilder.build()).specialEffects(new BiomeSpecialEffects.Builder().waterColor(GRASSLANDS_WATER_COLOR).waterFogColor(GRASSLANDS_WATER_COLOR).skyColor(GRASSLANDS_SKY_COLOR).fogColor(GRASSLANDS_FOG_COLOR).grassColorOverride(GRASSLANDS_GRASS_COLOR).foliageColorOverride(GRASSLANDS_FOLIAGE_COLOR).ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS).backgroundMusic(ModBiomeFeatures.createBiomeMusic(ModSoundEvents.MUSIC_GRASSLANDS)).build()).build();
     }
 
     private static ResourceKey<Biome> register(String name) {

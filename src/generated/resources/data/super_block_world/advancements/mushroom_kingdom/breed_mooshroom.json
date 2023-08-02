@@ -1,0 +1,43 @@
+{
+  "parent": "super_block_world:mushroom_kingdom/enter_dimension",
+  "criteria": {
+    "breed_mooshroom": {
+      "conditions": {
+        "child": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:mooshroom",
+              "location": {
+                "dimension": "super_block_world:mushroom_kingdom"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:bred_animals"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.mushroom_kingdom.breed_mooshroom.description"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:red_mushroom_block"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.mushroom_kingdom.breed_mooshroom.title"
+    }
+  },
+  "requirements": [
+    [
+      "breed_mooshroom"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

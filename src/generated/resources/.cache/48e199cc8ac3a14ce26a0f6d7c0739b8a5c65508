@@ -1,5 +1,11 @@
-// 1.20.1	2023-07-31T14:51:37.8857901	Item Tags
+// 1.20.1	2023-08-01T23:59:45.4702587	Item Tags
+bc01d95a5ecfd00f7b4759e4e727ab51f04ae85d data/minecraft/tags/items/boats.json
+7dcd229b2b658533059258b2064f1c9fc5a3691c data/minecraft/tags/items/chest_boats.json
 aee889f579b7e285552cf2acea0771f076d0df88 data/minecraft/tags/items/flowers.json
+707a11fc7fa33acbb091be2c8afbb5622c2ca9b2 data/minecraft/tags/items/leaves.json
+74b7c86c356d4341d88954b5248bf3b2f29416d2 data/minecraft/tags/items/logs_that_burn.json
+3bff48922e5303b2b5fc855952af2703dd7f881b data/minecraft/tags/items/planks.json
 42f8748c03f8801ee77f34cf2ed3c415fe18df33 data/minecraft/tags/items/stone_crafting_materials.json
 42f8748c03f8801ee77f34cf2ed3c415fe18df33 data/minecraft/tags/items/stone_tool_materials.json
+c1d821ed8ba1c5690d735f64601e65b9c758c5e9 data/super_block_world/tags/items/amanita_logs.json
 7af3850d9b14bbc10c09730bf5cbe8598393f8e3 data/super_block_world/tags/items/star_bits.json

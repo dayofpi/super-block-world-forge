@@ -6,7 +6,6 @@ import com.dayofpi.super_block_world.worldgen.biome.ModBiomes;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
-import net.minecraft.data.worldgen.SurfaceRuleData;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
@@ -47,6 +46,6 @@ public class ModDimensions {
     }
 
     public static void noiseBootstrap(BootstapContext<NoiseGeneratorSettings> context) {
-        context.register(MUSHROOM_KINGDOM_NOISE, new NoiseGeneratorSettings(NoiseSettings.create(-32, 352, 1, 2), ModBlocks.VANILLATE.get().defaultBlockState(), Blocks.WATER.defaultBlockState(), NoiseRouterData.overworld(context.lookup(Registries.DENSITY_FUNCTION), context.lookup(Registries.NOISE), false, false), SurfaceRuleData.overworld(), new OverworldBiomeBuilder().spawnTarget(), 63, false, true, false, false));
+        context.register(MUSHROOM_KINGDOM_NOISE, new NoiseGeneratorSettings(NoiseSettings.create(-32, 352, 1, 2), ModBlocks.VANILLATE.get().defaultBlockState(), Blocks.WATER.defaultBlockState(), NoiseRouterData.overworld(context.lookup(Registries.DENSITY_FUNCTION), context.lookup(Registries.NOISE), false, false), ModSurfaceRules.mushroomKingdom(), new OverworldBiomeBuilder().spawnTarget(), 63, false, true, false, false));
     }
 }

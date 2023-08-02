@@ -1,0 +1,45 @@
+{
+  "criteria": {
+    "entered_mushroom_kingdom": {
+      "conditions": {
+        "to": "super_block_world:mushroom_kingdom"
+      },
+      "trigger": "minecraft:changed_dimension"
+    },
+    "has_power_star": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "super_block_world:power_star"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "super_block_world:textures/block/toadstone_bricks.png",
+    "description": {
+      "translate": "advancements.mushroom_kingdom.root.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "super_block_world:warp_painting"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancements.mushroom_kingdom.root.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_power_star",
+      "entered_mushroom_kingdom"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

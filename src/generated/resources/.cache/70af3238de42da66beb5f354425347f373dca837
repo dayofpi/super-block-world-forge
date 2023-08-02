@@ -1,4 +1,13 @@
-// 1.20.1	2023-07-31T14:51:37.8697887	Block Tags
+// 1.20.1	2023-08-01T23:56:25.6448063	Block Tags
+11ca5c3e3cfdc1eef12778fc90833d4c0e3a970b data/minecraft/tags/blocks/dirt.json
 aee889f579b7e285552cf2acea0771f076d0df88 data/minecraft/tags/blocks/flowers.json
 aee889f579b7e285552cf2acea0771f076d0df88 data/minecraft/tags/blocks/inside_step_sound_blocks.json
-bfe0713f4be498351a797949aad4ab1256cde813 data/minecraft/tags/blocks/mineable/pickaxe.json
+707a11fc7fa33acbb091be2c8afbb5622c2ca9b2 data/minecraft/tags/blocks/leaves.json
+74b7c86c356d4341d88954b5248bf3b2f29416d2 data/minecraft/tags/blocks/logs_that_burn.json
+8cd0f03d9e2f4d795c2c303b4b9f2b37453813a8 data/minecraft/tags/blocks/mineable/pickaxe.json
+17adabfc25a135f67ec529477b2e0293f480c933 data/minecraft/tags/blocks/mineable/shovel.json
+11ca5c3e3cfdc1eef12778fc90833d4c0e3a970b data/minecraft/tags/blocks/mushroom_grow_block.json
+128f2fe8c20dabab6b587d25d1cd7324a211889f data/minecraft/tags/blocks/overworld_carver_replaceables.json
+3bff48922e5303b2b5fc855952af2703dd7f881b data/minecraft/tags/blocks/planks.json
+d5282e1ffbd1c6f1fbcfdeefd75774cbdf3a943d data/minecraft/tags/blocks/walls.json
+c1d821ed8ba1c5690d735f64601e65b9c758c5e9 data/super_block_world/tags/blocks/amanita_logs.json

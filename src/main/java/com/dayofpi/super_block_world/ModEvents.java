@@ -1,12 +1,15 @@
 package com.dayofpi.super_block_world;
 
 import com.dayofpi.super_block_world.block.ModBlocks;
+import com.dayofpi.super_block_world.entity.client.ModBoatRenderer;
 import com.dayofpi.super_block_world.entity.client.WarpPaintingModel;
 import com.dayofpi.super_block_world.item.ModItems;
 import com.dayofpi.super_block_world.item.custom.SuperPickaxeItem;
 import com.dayofpi.super_block_world.sound.ModSoundEvents;
 import com.dayofpi.super_block_world.util.ModTags;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.model.BoatModel;
+import net.minecraft.client.model.ChestBoatModel;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
@@ -30,6 +33,8 @@ public class ModEvents {
         @SubscribeEvent
         public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
             event.registerLayerDefinition(WarpPaintingModel.LAYER_LOCATION, WarpPaintingModel::createBodyLayer);
+            event.registerLayerDefinition(ModBoatRenderer.AMANITA_BOAT, BoatModel::createBodyModel);
+            event.registerLayerDefinition(ModBoatRenderer.AMANITA_CHEST_BOAT, ChestBoatModel::createBodyModel);
         }
     }
 
@@ -67,6 +72,9 @@ public class ModEvents {
             event.getAllMappings(ForgeRegistries.Keys.BLOCKS).forEach(blockMapping -> {
                 switch (blockMapping.getKey().toString()) {
                     case "super_block_world:polished_hardstone" -> blockMapping.remap(ModBlocks.SMOOTH_HARDSTONE.get());
+                    case "super_block_world:polished_hardstone_stairs" -> blockMapping.remap(ModBlocks.SMOOTH_HARDSTONE_STAIRS.get());
+                    case "super_block_world:polished_hardstone_slab" -> blockMapping.remap(ModBlocks.SMOOTH_HARDSTONE_SLAB.get());
+                    //case "super_block_world:polished_hardstone_wall" -> blockMapping.remap(ModBlocks.HARDSTONE_WALL.get());
                 }
             });
             event.getAllMappings(ForgeRegistries.Keys.ITEMS).forEach(blockMapping -> {

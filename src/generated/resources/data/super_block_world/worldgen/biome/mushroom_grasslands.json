@@ -17,15 +17,36 @@
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000
     },
+    "music": {
+      "max_delay": 20000,
+      "min_delay": 9000,
+      "replace_current_music": false,
+      "sound": "super_block_world:music.grasslands"
+    },
     "sky_color": 11134462,
     "water_color": 4046591,
     "water_fog_color": 4046591
   },
   "features": [
     [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
     [
-      "minecraft:lake_lava_underground",
-      "minecraft:lake_lava_surface"
+      "super_block_world:spring_water"
+    ],
+    [
+      "super_block_world:flowerbed_white",
+      "super_block_world:flowerbed_yellow",
+      "super_block_world:trees_mushroom_grasslands",
+      "minecraft:patch_tall_grass_2",
+      "minecraft:patch_grass_plain",
+      "minecraft:brown_mushroom_taiga",
+      "minecraft:red_mushroom_swamp"
     ]
   ],
   "has_precipitation": true,

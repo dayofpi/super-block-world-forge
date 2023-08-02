@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:vanillate_tile_slab_from_vanillate_bricks_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_vanillate_bricks": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "super_block_world:vanillate_bricks"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_vanillate_bricks",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:vanillate_tile_slab_from_vanillate_bricks_stonecutting"
+    ]
+  },
+  "sends_telemetry_event": false
+}

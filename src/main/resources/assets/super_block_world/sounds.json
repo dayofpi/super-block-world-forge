@@ -1,4 +1,41 @@
 {
+  "music.caves": {
+    "sounds": [
+      {
+        "name": "super_block_world:music/spelunkin",
+        "stream": true
+      },
+      {
+        "name": "super_block_world:music/fridge_meat",
+        "stream": true
+      }
+    ]
+  },
+  "music.night": {
+    "sounds": [
+      {
+        "name": "super_block_world:music/evening_nap",
+        "stream": true
+      },
+      {
+        "name": "super_block_world:music/starscape",
+        "stream": true
+      }
+    ]
+  },
+  "music.grasslands": {
+    "sounds": [
+      {
+        "name": "super_block_world:music/aether",
+        "stream": true,
+        "volume": 0.75
+      },
+      {
+        "name": "super_block_world:music/cascading",
+        "stream": true
+      }
+    ]
+  },
   "block.toadstone.break": {
     "sounds": [
       "super_block_world:block/toadstone/dig1",

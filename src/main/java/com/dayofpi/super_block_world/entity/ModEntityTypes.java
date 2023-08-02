@@ -2,6 +2,8 @@ package com.dayofpi.super_block_world.entity;
 
 import com.dayofpi.super_block_world.SuperBlockWorld;
 import com.dayofpi.super_block_world.entity.custom.HammerEntity;
+import com.dayofpi.super_block_world.entity.custom.ModBoatEntity;
+import com.dayofpi.super_block_world.entity.custom.ModChestBoatEntity;
 import com.dayofpi.super_block_world.entity.custom.WarpPaintingEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
@@ -16,6 +18,8 @@ public class ModEntityTypes {
 
     public static final RegistryObject<EntityType<HammerEntity>> HAMMER = registerEntity("hammer", EntityType.Builder.<HammerEntity>of(HammerEntity::new, MobCategory.MISC).sized(0.45F, 0.45F).clientTrackingRange(4).updateInterval(10));
     public static final RegistryObject<EntityType<WarpPaintingEntity>> WARP_PAINTING = registerEntity("warp_painting", EntityType.Builder.<WarpPaintingEntity>of(WarpPaintingEntity::new, MobCategory.MISC).sized(0.5F, 0.5F).clientTrackingRange(10).updateInterval(Integer.MAX_VALUE));
+    public static final RegistryObject<EntityType<ModBoatEntity>> BOAT = registerEntity("boat", EntityType.Builder.<ModBoatEntity>of(ModBoatEntity::new, MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10));
+    public static final RegistryObject<EntityType<ModChestBoatEntity>> CHEST_BOAT = registerEntity("chest_boat", EntityType.Builder.<ModChestBoatEntity>of(ModChestBoatEntity::new, MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10));
 
     private static <T extends Entity> RegistryObject<EntityType<T>> registerEntity(String name, EntityType.Builder<T> builder) {
         return ENTITY_TYPES.register(name, () -> builder.build(new ResourceLocation(SuperBlockWorld.MOD_ID, name).toString()));

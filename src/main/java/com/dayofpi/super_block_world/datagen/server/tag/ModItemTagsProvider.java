@@ -22,6 +22,12 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
         tag(ModTags.Items.STAR_BITS).add(ModItems.YELLOW_STAR_BIT.get(), ModItems.GREEN_STAR_BIT.get(), ModItems.BLUE_STAR_BIT.get(), ModItems.PURPLE_STAR_BIT.get());
+        copy(ModTags.Blocks.AMANITA_LOGS, ModTags.Items.AMANITA_LOGS);
+        tag(ItemTags.LOGS_THAT_BURN).addTag(ModTags.Items.AMANITA_LOGS);
+        tag(ItemTags.PLANKS).add(ModItems.AMANITA_PLANKS.get());
+        tag(ItemTags.BOATS).add(ModItems.AMANITA_BOAT.get());
+        tag(ItemTags.CHEST_BOATS).add(ModItems.AMANITA_CHEST_BOAT.get());
+        tag(ItemTags.LEAVES).add(ModItems.AMANITA_LEAVES.get(), ModItems.FRUITING_AMANITA_LEAVES.get());
         tag(ItemTags.STONE_TOOL_MATERIALS).add(ModItems.VANILLATE_CRUMBLE.get());
         tag(ItemTags.STONE_CRAFTING_MATERIALS).add(ModItems.VANILLATE_CRUMBLE.get());
         tag(ItemTags.FLOWERS).add(ModItems.WHITE_FLOWERBED.get(), ModItems.YELLOW_FLOWERBED.get());

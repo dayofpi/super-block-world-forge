@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "super_block_world:vanillate_tiles"
+  },
+  "result": "super_block_world:vanillate_tile_stairs"
+}

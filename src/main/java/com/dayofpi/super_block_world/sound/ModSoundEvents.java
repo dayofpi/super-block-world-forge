@@ -10,6 +10,9 @@ import net.minecraftforge.registries.RegistryObject;
 public class ModSoundEvents {
     public static final DeferredRegister<SoundEvent> SOUND_EVENTS = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, SuperBlockWorld.MOD_ID);
 
+    public static final RegistryObject<SoundEvent> MUSIC_CAVES = registerSoundEvent("music.caves");
+    public static final RegistryObject<SoundEvent> MUSIC_NIGHT = registerSoundEvent("music.night");
+    public static final RegistryObject<SoundEvent> MUSIC_GRASSLANDS = registerSoundEvent("music.grasslands");
     public static final RegistryObject<SoundEvent> TOADSTONE_BREAK = registerSoundEvent("block.toadstone.break");
     public static final RegistryObject<SoundEvent> TOADSTONE_STEP = registerSoundEvent("block.toadstone.step");
     public static final RegistryObject<SoundEvent> TOADSTONE_PLACE = registerSoundEvent("block.toadstone.place");
