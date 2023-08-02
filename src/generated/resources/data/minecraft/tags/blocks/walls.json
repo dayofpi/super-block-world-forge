@@ -3,6 +3,7 @@
     "super_block_world:vanillate_wall",
     "super_block_world:vanillate_brick_wall",
     "super_block_world:vanillate_tile_wall",
+    "super_block_world:hardstone_wall",
     "super_block_world:rainbow_tile_wall"
   ]
 }

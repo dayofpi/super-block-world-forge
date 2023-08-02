@@ -18,6 +18,8 @@ public class ModTags {
     }
 
     public static class Blocks {
+        public static final TagKey<Block> WARP_PIPES = tag("warp_pipes");
+        public static final TagKey<Block> PIPE_BODIES = tag("pipe_bodies");
         public static final TagKey<Block> AMANITA_LOGS = tag("amanita_logs");
 
         private static TagKey<Block> tag(String name) {

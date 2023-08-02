@@ -74,7 +74,7 @@ public class ModEvents {
                     case "super_block_world:polished_hardstone" -> blockMapping.remap(ModBlocks.SMOOTH_HARDSTONE.get());
                     case "super_block_world:polished_hardstone_stairs" -> blockMapping.remap(ModBlocks.SMOOTH_HARDSTONE_STAIRS.get());
                     case "super_block_world:polished_hardstone_slab" -> blockMapping.remap(ModBlocks.SMOOTH_HARDSTONE_SLAB.get());
-                    //case "super_block_world:polished_hardstone_wall" -> blockMapping.remap(ModBlocks.HARDSTONE_WALL.get());
+                    case "super_block_world:polished_hardstone_wall" -> blockMapping.remap(ModBlocks.HARDSTONE_WALL.get());
                 }
             });
             event.getAllMappings(ForgeRegistries.Keys.ITEMS).forEach(blockMapping -> {

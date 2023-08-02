@@ -20,7 +20,6 @@ import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.dimension.LevelStem;
 import net.minecraft.world.level.levelgen.NoiseBasedChunkGenerator;
 import net.minecraft.world.level.levelgen.NoiseGeneratorSettings;
-import net.minecraft.world.level.levelgen.NoiseRouterData;
 import net.minecraft.world.level.levelgen.NoiseSettings;
 
 import java.util.OptionalLong;
@@ -46,6 +45,6 @@ public class ModDimensions {
     }
 
     public static void noiseBootstrap(BootstapContext<NoiseGeneratorSettings> context) {
-        context.register(MUSHROOM_KINGDOM_NOISE, new NoiseGeneratorSettings(NoiseSettings.create(-32, 352, 1, 2), ModBlocks.VANILLATE.get().defaultBlockState(), Blocks.WATER.defaultBlockState(), NoiseRouterData.overworld(context.lookup(Registries.DENSITY_FUNCTION), context.lookup(Registries.NOISE), false, false), ModSurfaceRules.mushroomKingdom(), new OverworldBiomeBuilder().spawnTarget(), 63, false, true, false, false));
+        context.register(MUSHROOM_KINGDOM_NOISE, new NoiseGeneratorSettings(NoiseSettings.create(-32, 352, 1, 2), ModBlocks.VANILLATE.get().defaultBlockState(), Blocks.WATER.defaultBlockState(), ModNoiseRouterData.mushroomKingdom(context.lookup(Registries.DENSITY_FUNCTION), context.lookup(Registries.NOISE)), ModSurfaceRules.mushroomKingdom(), new OverworldBiomeBuilder().spawnTarget(), 63, false, true, false, false));
     }
 }

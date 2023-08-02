@@ -10,21 +10,22 @@ import com.dayofpi.super_block_world.entity.client.WarpPaintingRenderer;
 import com.dayofpi.super_block_world.entity.custom.HammerEntity;
 import com.dayofpi.super_block_world.item.ModCreativeTabs;
 import com.dayofpi.super_block_world.item.ModItems;
+import com.dayofpi.super_block_world.item.custom.WarpLinkItem;
 import com.dayofpi.super_block_world.sound.ModSoundEvents;
 import com.dayofpi.super_block_world.worldgen.biome.ModBiomes;
+import com.dayofpi.super_block_world.worldgen.feature.ModFeatures;
 import com.mojang.logging.LogUtils;
 import net.minecraft.Util;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.core.Position;
 import net.minecraft.core.dispenser.AbstractProjectileDispenseBehavior;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.ComposterBlock;
-import net.minecraft.world.level.block.DispenserBlock;
-import net.minecraft.world.level.block.FireBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
@@ -54,6 +55,7 @@ public class SuperBlockWorld {
         ModCreativeTabs.CREATIVE_MODE_TABS.register(modEventBus);
         ModEntityTypes.ENTITY_TYPES.register(modEventBus);
         ModSoundEvents.SOUND_EVENTS.register(modEventBus);
+        ModFeatures.FEATURES.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -61,10 +63,15 @@ public class SuperBlockWorld {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
+            registerPottables();
             registerFlammables();
             registerCompostables();
             registerDispenserBehaviors();
         });
+    }
+
+    private static void registerPottables() {
+        ((FlowerPotBlock)Blocks.FLOWER_POT).addPlant(ModBlocks.AMANITA_SAPLING.getId(), ModBlocks.POTTED_AMANITA_SAPLING);
     }
 
     private static void registerFlammables() {
@@ -105,6 +112,7 @@ public class SuperBlockWorld {
                 EntityRenderers.register(ModEntityTypes.WARP_PAINTING.get(), WarpPaintingRenderer::new);
                 EntityRenderers.register(ModEntityTypes.BOAT.get(), pContext -> new ModBoatRenderer(pContext, false));
                 EntityRenderers.register(ModEntityTypes.CHEST_BOAT.get(), pContext -> new ModBoatRenderer(pContext, true));
+                ItemProperties.register(ModItems.WARP_LINK.get(), new ResourceLocation("linked"), (pStack, pLevel, pEntity, pSeed) -> WarpLinkItem.isLinked(pStack) ? 1.0F : 0.0F);
             });
         }
 

@@ -28,6 +28,38 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     @Override
     protected void generate() {
         dropSelf(ModBlocks.POWER_STAR.get());
+        dropSelf(ModBlocks.WHITE_WARP_PIPE.get());
+        dropSelf(ModBlocks.LIGHT_GRAY_WARP_PIPE.get());
+        dropSelf(ModBlocks.GRAY_WARP_PIPE.get());
+        dropSelf(ModBlocks.BLACK_WARP_PIPE.get());
+        dropSelf(ModBlocks.BROWN_WARP_PIPE.get());
+        dropSelf(ModBlocks.RED_WARP_PIPE.get());
+        dropSelf(ModBlocks.ORANGE_WARP_PIPE.get());
+        dropSelf(ModBlocks.YELLOW_WARP_PIPE.get());
+        dropSelf(ModBlocks.LIME_WARP_PIPE.get());
+        dropSelf(ModBlocks.GREEN_WARP_PIPE.get());
+        dropSelf(ModBlocks.CYAN_WARP_PIPE.get());
+        dropSelf(ModBlocks.LIGHT_BLUE_WARP_PIPE.get());
+        dropSelf(ModBlocks.BLUE_WARP_PIPE.get());
+        dropSelf(ModBlocks.PURPLE_WARP_PIPE.get());
+        dropSelf(ModBlocks.MAGENTA_WARP_PIPE.get());
+        dropSelf(ModBlocks.PINK_WARP_PIPE.get());
+        dropSelf(ModBlocks.WHITE_PIPE_BODY.get());
+        dropSelf(ModBlocks.LIGHT_GRAY_PIPE_BODY.get());
+        dropSelf(ModBlocks.GRAY_PIPE_BODY.get());
+        dropSelf(ModBlocks.BLACK_PIPE_BODY.get());
+        dropSelf(ModBlocks.BROWN_PIPE_BODY.get());
+        dropSelf(ModBlocks.RED_PIPE_BODY.get());
+        dropSelf(ModBlocks.ORANGE_PIPE_BODY.get());
+        dropSelf(ModBlocks.YELLOW_PIPE_BODY.get());
+        dropSelf(ModBlocks.LIME_PIPE_BODY.get());
+        dropSelf(ModBlocks.GREEN_PIPE_BODY.get());
+        dropSelf(ModBlocks.CYAN_PIPE_BODY.get());
+        dropSelf(ModBlocks.LIGHT_BLUE_PIPE_BODY.get());
+        dropSelf(ModBlocks.BLUE_PIPE_BODY.get());
+        dropSelf(ModBlocks.PURPLE_PIPE_BODY.get());
+        dropSelf(ModBlocks.MAGENTA_PIPE_BODY.get());
+        dropSelf(ModBlocks.PINK_PIPE_BODY.get());
         dropSelf(ModBlocks.TOADSTOOL_SOIL.get());
         dropSelf(ModBlocks.COARSE_TOADSTOOL_SOIL.get());
         dropOther(ModBlocks.TOADSTOOL_PATH.get(), ModItems.TOADSTOOL_SOIL.get());
@@ -49,6 +81,9 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.SMOOTH_TOADSTONE_STAIRS.get());
         slab(ModBlocks.SMOOTH_TOADSTONE_SLAB);
         dropSelf(ModBlocks.HARDSTONE.get());
+        dropSelf(ModBlocks.HARDSTONE_STAIRS.get());
+        slab(ModBlocks.HARDSTONE_SLAB);
+        dropSelf(ModBlocks.HARDSTONE_WALL.get());
         dropSelf(ModBlocks.HARDSTONE_BRICKS.get());
         dropSelf(ModBlocks.SMOOTH_HARDSTONE.get());
         dropSelf(ModBlocks.SMOOTH_HARDSTONE_STAIRS.get());
@@ -71,6 +106,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         add(ModBlocks.STAR_CLUSTER.get(), createSilkTouchOnlyTable(ModBlocks.STAR_CLUSTER.get()).withPool(applyExplosionCondition(ModItems.STAR_CLUSTER.get(), LootPool.lootPool().setRolls(ConstantValue.exactly(2.0F)).add(LootItem.lootTableItem(ModItems.YELLOW_STAR_BIT.get()).when(LootItemRandomChanceCondition.randomChance(0.3F))).add(LootItem.lootTableItem(ModItems.GREEN_STAR_BIT.get()).when(LootItemRandomChanceCondition.randomChance(0.3F))).add(LootItem.lootTableItem(ModItems.BLUE_STAR_BIT.get()).when(LootItemRandomChanceCondition.randomChance(0.3F))).add(LootItem.lootTableItem(ModItems.PURPLE_STAR_BIT.get()).when(LootItemRandomChanceCondition.randomChance(0.3F)))).when(HAS_NO_SILK_TOUCH)));
         add(ModBlocks.WHITE_FLOWERBED.get(), BlockLootSubProvider::createShearsOnlyDrop);
         add(ModBlocks.YELLOW_FLOWERBED.get(), BlockLootSubProvider::createShearsOnlyDrop);
+        add(ModBlocks.POTTED_AMANITA_SAPLING.get(), createPotFlowerItemTable(ModItems.AMANITA_SAPLING.get()));
     }
 
     protected LootTable.Builder createFruitingLeavesDrops(Block leavesBlock, Block saplingBlock, float... chances) {

@@ -1,5 +1,7 @@
 {
   "values": [
+    "#super_block_world:warp_pipes",
+    "#super_block_world:pipe_bodies",
     "super_block_world:vanillate",
     "super_block_world:vanillate_stairs",
     "super_block_world:vanillate_slab",
@@ -20,6 +22,9 @@
     "super_block_world:smooth_toadstone_stairs",
     "super_block_world:smooth_toadstone_slab",
     "super_block_world:hardstone",
+    "super_block_world:hardstone_stairs",
+    "super_block_world:hardstone_slab",
+    "super_block_world:hardstone_wall",
     "super_block_world:hardstone_bricks",
     "super_block_world:smooth_hardstone",
     "super_block_world:smooth_hardstone_stairs",

@@ -11,12 +11,8 @@
         }
       },
       {
-        "chance": 0.05,
+        "chance": 0.1,
         "feature": "super_block_world:fruiting_amanita_checked"
-      },
-      {
-        "chance": 0.01,
-        "feature": "super_block_world:mega_amanita_checked"
       }
     ]
   }

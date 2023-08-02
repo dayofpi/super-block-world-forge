@@ -82,11 +82,41 @@
       "super_block_world:block/toadstone/step4"
     ]
   },
+  "block.warp_pipe.teleport": {
+    "subtitle": "subtitles.super_block_world.block.warp_pipe.teleport",
+    "sounds": [
+      "super_block_world:block/warp_pipe"
+    ]
+  },
   "block.power_star.shine": {
     "subtitle": "subtitles.super_block_world.block.power_star.shine",
     "sounds": [
       "super_block_world:block/power_star/shine1",
       "super_block_world:block/power_star/shine2"
+    ]
+  },
+  "item.warp_link.break": {
+    "subtitle": "subtitles.super_block_world.item.warp_link.break",
+    "sounds": [
+      "super_block_world:item/warp_link/break"
+    ]
+  },
+  "item.warp_link.end": {
+    "subtitle": "subtitles.super_block_world.item.warp_link.end",
+    "sounds": [
+      "super_block_world:item/warp_link/end"
+    ]
+  },
+  "item.warp_link.reset": {
+    "subtitle": "subtitles.super_block_world.item.warp_link.reset",
+    "sounds": [
+      "super_block_world:item/warp_link/reset"
+    ]
+  },
+  "item.warp_link.start": {
+    "subtitle": "subtitles.super_block_world.item.warp_link.start",
+    "sounds": [
+      "super_block_world:item/warp_link/start"
     ]
   },
   "item.hammer.throw": {

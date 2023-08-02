@@ -34,8 +34,14 @@
     [],
     [],
     [],
-    [],
-    [],
+    [
+      "super_block_world:ore_crumble",
+      "super_block_world:ore_toadstone",
+      "super_block_world:ore_hardstone"
+    ],
+    [
+      "super_block_world:underwater_pipe"
+    ],
     [
       "super_block_world:spring_water"
     ],

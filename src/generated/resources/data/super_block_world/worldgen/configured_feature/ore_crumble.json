@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:ore",
+  "config": {
+    "discard_chance_on_air_exposure": 0.0,
+    "size": 16,
+    "targets": [
+      {
+        "state": {
+          "Name": "super_block_world:coarse_toadstool_soil"
+        },
+        "target": {
+          "block": "super_block_world:toadstool_soil",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "super_block_world:vanillate_crumble"
+        },
+        "target": {
+          "block": "super_block_world:vanillate",
+          "predicate_type": "minecraft:block_match"
+        }
+      }
+    ]
+  }
+}

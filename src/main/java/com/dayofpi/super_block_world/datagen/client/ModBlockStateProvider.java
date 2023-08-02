@@ -43,6 +43,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         stairsBlock((StairBlock) ModBlocks.VANILLATE_BRICK_STAIRS.get(), blockTexture(ModBlocks.VANILLATE_BRICKS.get()));
         stairsBlock((StairBlock) ModBlocks.VANILLATE_TILE_STAIRS.get(), blockTexture(ModBlocks.VANILLATE_TILES.get()));
         stairsBlock((StairBlock) ModBlocks.SMOOTH_TOADSTONE_STAIRS.get(), blockTexture(ModBlocks.SMOOTH_TOADSTONE.get()));
+        stairsBlock((StairBlock) ModBlocks.HARDSTONE_STAIRS.get(), blockTexture(ModBlocks.HARDSTONE.get()));
         stairsBlock((StairBlock) ModBlocks.SMOOTH_HARDSTONE_STAIRS.get(), blockTexture(ModBlocks.SMOOTH_HARDSTONE.get()));
         stairsBlock((StairBlock) ModBlocks.CLOUD_STAIRS.get(), blockTexture(ModBlocks.PACKED_CLOUD.get()));
         stairsBlock((StairBlock) ModBlocks.RAINBOW_TILE_STAIRS.get(), blockTexture(ModBlocks.RAINBOW_TILES.get()));
@@ -51,6 +52,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         slabBlock((SlabBlock) ModBlocks.VANILLATE_BRICK_SLAB.get(), blockTexture(ModBlocks.VANILLATE_BRICKS.get()), blockTexture(ModBlocks.VANILLATE_BRICKS.get()));
         slabBlock((SlabBlock) ModBlocks.VANILLATE_TILE_SLAB.get(), blockTexture(ModBlocks.VANILLATE_TILES.get()), blockTexture(ModBlocks.VANILLATE_TILES.get()));
         slabBlock((SlabBlock) ModBlocks.SMOOTH_TOADSTONE_SLAB.get(), blockTexture(ModBlocks.SMOOTH_TOADSTONE.get()), blockTexture(ModBlocks.SMOOTH_TOADSTONE.get()));
+        slabBlock((SlabBlock) ModBlocks.HARDSTONE_SLAB.get(), blockTexture(ModBlocks.HARDSTONE.get()), blockTexture(ModBlocks.HARDSTONE.get()));
         slabBlock((SlabBlock) ModBlocks.SMOOTH_HARDSTONE_SLAB.get(), blockTexture(ModBlocks.SMOOTH_HARDSTONE.get()), blockTexture(ModBlocks.SMOOTH_HARDSTONE.get()));
         slabBlock((SlabBlock) ModBlocks.CLOUD_SLAB.get(), blockTexture(ModBlocks.PACKED_CLOUD.get()), blockTexture(ModBlocks.PACKED_CLOUD.get()));
         slabBlock((SlabBlock) ModBlocks.RAINBOW_TILE_SLAB.get(), blockTexture(ModBlocks.RAINBOW_TILES.get()), blockTexture(ModBlocks.RAINBOW_TILES.get()));
@@ -58,6 +60,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         wallBlock((WallBlock) ModBlocks.VANILLATE_WALL.get(), blockTexture(ModBlocks.VANILLATE.get()));
         wallBlock((WallBlock) ModBlocks.VANILLATE_BRICK_WALL.get(), blockTexture(ModBlocks.VANILLATE_BRICKS.get()));
         wallBlock((WallBlock) ModBlocks.VANILLATE_TILE_WALL.get(), blockTexture(ModBlocks.VANILLATE_TILES.get()));
+        wallBlock((WallBlock) ModBlocks.HARDSTONE_WALL.get(), blockTexture(ModBlocks.HARDSTONE.get()));
         wallBlock((WallBlock) ModBlocks.RAINBOW_TILE_WALL.get(), blockTexture(ModBlocks.RAINBOW_TILES.get()));
     }
 

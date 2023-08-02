@@ -19,6 +19,38 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        blockItem(ModBlocks.WHITE_WARP_PIPE);
+        blockItem(ModBlocks.LIGHT_GRAY_WARP_PIPE);
+        blockItem(ModBlocks.GRAY_WARP_PIPE);
+        blockItem(ModBlocks.BLACK_WARP_PIPE);
+        blockItem(ModBlocks.BROWN_WARP_PIPE);
+        blockItem(ModBlocks.RED_WARP_PIPE);
+        blockItem(ModBlocks.ORANGE_WARP_PIPE);
+        blockItem(ModBlocks.YELLOW_WARP_PIPE);
+        blockItem(ModBlocks.LIME_WARP_PIPE);
+        blockItem(ModBlocks.GREEN_WARP_PIPE);
+        blockItem(ModBlocks.CYAN_WARP_PIPE);
+        blockItem(ModBlocks.LIGHT_BLUE_WARP_PIPE);
+        blockItem(ModBlocks.BLUE_WARP_PIPE);
+        blockItem(ModBlocks.PURPLE_WARP_PIPE);
+        blockItem(ModBlocks.MAGENTA_WARP_PIPE);
+        blockItem(ModBlocks.PINK_WARP_PIPE);
+        blockItem(ModBlocks.WHITE_PIPE_BODY);
+        blockItem(ModBlocks.LIGHT_GRAY_PIPE_BODY);
+        blockItem(ModBlocks.GRAY_PIPE_BODY);
+        blockItem(ModBlocks.BLACK_PIPE_BODY);
+        blockItem(ModBlocks.BROWN_PIPE_BODY);
+        blockItem(ModBlocks.RED_PIPE_BODY);
+        blockItem(ModBlocks.ORANGE_PIPE_BODY);
+        blockItem(ModBlocks.YELLOW_PIPE_BODY);
+        blockItem(ModBlocks.LIME_PIPE_BODY);
+        blockItem(ModBlocks.GREEN_PIPE_BODY);
+        blockItem(ModBlocks.CYAN_PIPE_BODY);
+        blockItem(ModBlocks.LIGHT_BLUE_PIPE_BODY);
+        blockItem(ModBlocks.BLUE_PIPE_BODY);
+        blockItem(ModBlocks.PURPLE_PIPE_BODY);
+        blockItem(ModBlocks.MAGENTA_PIPE_BODY);
+        blockItem(ModBlocks.PINK_PIPE_BODY);
         blockItem(ModBlocks.TOADSTOOL_GRASS);
         blockItem(ModBlocks.TOADSTOOL_PATH);
         blockItem(ModBlocks.VANILLATE_STAIRS);
@@ -32,6 +64,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         wallItem(ModBlocks.VANILLATE_TILE_WALL, ModBlocks.VANILLATE_TILES);
         blockItem(ModBlocks.SMOOTH_TOADSTONE_STAIRS);
         blockItem(ModBlocks.SMOOTH_TOADSTONE_SLAB);
+        blockItem(ModBlocks.HARDSTONE_STAIRS);
+        blockItem(ModBlocks.HARDSTONE_SLAB);
+        wallItem(ModBlocks.HARDSTONE_WALL, ModBlocks.HARDSTONE);
         blockItem(ModBlocks.SMOOTH_HARDSTONE_STAIRS);
         blockItem(ModBlocks.SMOOTH_HARDSTONE_SLAB);
         blockItem(ModBlocks.CLOUD_STAIRS);

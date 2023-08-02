@@ -29,6 +29,7 @@ import net.minecraft.world.level.levelgen.feature.treedecorators.AlterGroundDeco
 import net.minecraft.world.level.levelgen.feature.trunkplacers.DarkOakTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraft.world.level.material.Fluids;
 
 import java.util.List;
@@ -42,6 +43,10 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> FLOWERBED_YELLOW = registerKey("flowerbed_yellow");
     public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_MUSHROOM_GRASSLANDS = registerKey("trees_mushroom_grasslands");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SPRING_WATER = registerKey("spring_water");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_CRUMBLE = registerKey("ore_crumble");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_TOADSTONE = registerKey("ore_toadstone");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_HARDSTONE = registerKey("ore_hardstone");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> UNDERWATER_PIPE = registerKey("underwater_pipe");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -53,6 +58,12 @@ public class ModConfiguredFeatures {
         register(context, FLOWERBED_YELLOW, Feature.RANDOM_PATCH, new RandomPatchConfiguration(320, 7, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.YELLOW_FLOWERBED.get())))));
         register(context, TREES_MUSHROOM_GRASSLANDS, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(PlacementUtils.inlinePlaced(configuredFeatures.getOrThrow(TreeFeatures.HUGE_RED_MUSHROOM)), 0.2f), new WeightedPlacedFeature(placedFeatures.getOrThrow(ModPlacedFeatures.FRUITING_AMANITA_CHECKED), 0.1F)), placedFeatures.getOrThrow(ModPlacedFeatures.AMANITA_CHECKED)));
         register(context, SPRING_WATER, Feature.SPRING, new SpringConfiguration(Fluids.WATER.defaultFluidState(), true, 4, 1, HolderSet.direct(Block::builtInRegistryHolder, ModBlocks.VANILLATE.get(), ModBlocks.TOADSTOOL_SOIL.get())));
+        BlockMatchTest isVanillate = new BlockMatchTest(ModBlocks.VANILLATE.get());
+        List<OreConfiguration.TargetBlockState> crumbleTargets = List.of(OreConfiguration.target(new BlockMatchTest(ModBlocks.TOADSTOOL_SOIL.get()), ModBlocks.COARSE_TOADSTOOL_SOIL.get().defaultBlockState()), OreConfiguration.target(isVanillate, ModBlocks.VANILLATE_CRUMBLE.get().defaultBlockState()));
+        register(context, ORE_CRUMBLE, Feature.ORE, new OreConfiguration(crumbleTargets, 16));
+        register(context, ORE_TOADSTONE, Feature.ORE, new OreConfiguration(isVanillate, ModBlocks.TOADSTONE.get().defaultBlockState(), 64));
+        register(context, ORE_HARDSTONE, Feature.ORE, new OreConfiguration(isVanillate, ModBlocks.HARDSTONE.get().defaultBlockState(), 64));
+        register(context, UNDERWATER_PIPE, ModFeatures.UNDERWATER_PIPE.get(), new NoneFeatureConfiguration());
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {

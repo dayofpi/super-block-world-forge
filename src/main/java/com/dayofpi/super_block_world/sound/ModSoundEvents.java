@@ -18,7 +18,12 @@ public class ModSoundEvents {
     public static final RegistryObject<SoundEvent> TOADSTONE_PLACE = registerSoundEvent("block.toadstone.place");
     public static final RegistryObject<SoundEvent> TOADSTONE_HIT = registerSoundEvent("block.toadstone.hit");
     public static final RegistryObject<SoundEvent> TOADSTONE_FALL = registerSoundEvent("block.toadstone.fall");
+    public static final RegistryObject<SoundEvent> WARP_PIPE_TELEPORT = registerSoundEvent("block.warp_pipe.teleport");
     public static final RegistryObject<SoundEvent> POWER_STAR_SHINE = registerSoundEvent("block.power_star.shine");
+    public static final RegistryObject<SoundEvent> WARP_LINK_BREAK = registerSoundEvent("item.warp_link.break");
+    public static final RegistryObject<SoundEvent> WARP_LINK_END = registerSoundEvent("item.warp_link.end");
+    public static final RegistryObject<SoundEvent> WARP_LINK_RESET = registerSoundEvent("item.warp_link.reset");
+    public static final RegistryObject<SoundEvent> WARP_LINK_START = registerSoundEvent("item.warp_link.start");
     public static final RegistryObject<SoundEvent> HAMMER_THROW = registerSoundEvent("item.hammer.throw");
     public static final RegistryObject<SoundEvent> HAMMER_BREAK = registerSoundEvent("item.hammer.break");
     public static final RegistryObject<SoundEvent> STAR_BIT_PICKUP = registerSoundEvent("item.star_bit.pickup");
