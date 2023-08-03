@@ -6,6 +6,7 @@ import com.dayofpi.super_block_world.block.client.PlacedItemRenderer;
 import com.dayofpi.super_block_world.entity.ModEntityTypes;
 import com.dayofpi.super_block_world.entity.client.HammerRenderer;
 import com.dayofpi.super_block_world.entity.client.ModBoatRenderer;
+import com.dayofpi.super_block_world.entity.client.ShyGuyRenderer;
 import com.dayofpi.super_block_world.entity.client.WarpPaintingRenderer;
 import com.dayofpi.super_block_world.entity.custom.HammerEntity;
 import com.dayofpi.super_block_world.item.ModCreativeTabs;
@@ -108,6 +109,7 @@ public class SuperBlockWorld {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             event.enqueueWork(() -> {
+                EntityRenderers.register(ModEntityTypes.SHY_GUY.get(), ShyGuyRenderer::new);
                 EntityRenderers.register(ModEntityTypes.HAMMER.get(), HammerRenderer::new);
                 EntityRenderers.register(ModEntityTypes.WARP_PAINTING.get(), WarpPaintingRenderer::new);
                 EntityRenderers.register(ModEntityTypes.BOAT.get(), pContext -> new ModBoatRenderer(pContext, false));

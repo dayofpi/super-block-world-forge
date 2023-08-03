@@ -95,6 +95,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.BLUE_STAR_BIT);
         simpleItem(ModItems.PURPLE_STAR_BIT);
         simpleItem(ModItems.SUBCON_THREAD);
+        withExistingParent(ModItems.SHY_GUY_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
     }
 
     private void simpleItem(RegistryObject<Item> item) {

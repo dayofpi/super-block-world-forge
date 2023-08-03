@@ -46,6 +46,7 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_CRUMBLE = registerKey("ore_crumble");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_TOADSTONE = registerKey("ore_toadstone");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_HARDSTONE = registerKey("ore_hardstone");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> WARP_PIPE = registerKey("warp_pipe");
     public static final ResourceKey<ConfiguredFeature<?, ?>> UNDERWATER_PIPE = registerKey("underwater_pipe");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
@@ -63,6 +64,7 @@ public class ModConfiguredFeatures {
         register(context, ORE_CRUMBLE, Feature.ORE, new OreConfiguration(crumbleTargets, 16));
         register(context, ORE_TOADSTONE, Feature.ORE, new OreConfiguration(isVanillate, ModBlocks.TOADSTONE.get().defaultBlockState(), 64));
         register(context, ORE_HARDSTONE, Feature.ORE, new OreConfiguration(isVanillate, ModBlocks.HARDSTONE.get().defaultBlockState(), 64));
+        register(context, WARP_PIPE, ModFeatures.WARP_PIPE.get(), new NoneFeatureConfiguration());
         register(context, UNDERWATER_PIPE, ModFeatures.UNDERWATER_PIPE.get(), new NoneFeatureConfiguration());
     }
 

@@ -94,6 +94,7 @@ public class ModCreativeTabs {
         output.accept(ModItems.WARP_LINK.get());
         output.accept(ModItems.AMANITA_BOAT.get());
         output.accept(ModItems.AMANITA_CHEST_BOAT.get());
+        output.accept(ModItems.SHY_GUY_MASK.get());
         output.accept(ModItems.HAMMER.get());
         output.accept(ModItems.SUPER_PICKAXE.get());
         output.accept(ModItems.YOSHI_FRUIT.get());
@@ -107,5 +108,6 @@ public class ModCreativeTabs {
         output.accept(ModItems.BLUE_STAR_BIT.get());
         output.accept(ModItems.PURPLE_STAR_BIT.get());
         output.accept(ModItems.SUBCON_THREAD.get());
+        output.accept(ModItems.SHY_GUY_SPAWN_EGG.get());
     }).build());
 }

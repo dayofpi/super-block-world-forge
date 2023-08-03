@@ -2,6 +2,7 @@ package com.dayofpi.super_block_world.item;
 
 import com.dayofpi.super_block_world.SuperBlockWorld;
 import com.dayofpi.super_block_world.block.ModBlocks;
+import com.dayofpi.super_block_world.entity.ModEntityTypes;
 import com.dayofpi.super_block_world.entity.custom.ModBoatEntity;
 import com.dayofpi.super_block_world.item.custom.*;
 import net.minecraft.world.food.FoodProperties;
@@ -9,6 +10,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -101,6 +103,7 @@ public class ModItems {
     public static final RegistryObject<Item> WARP_LINK = ITEMS.register("warp_link", () -> new WarpLinkItem(new Item.Properties()));
     public static final RegistryObject<Item> AMANITA_BOAT = ITEMS.register("amanita_boat", () -> new ModBoatItem(false, ModBoatEntity.Type.AMANITA, new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> AMANITA_CHEST_BOAT = ITEMS.register("amanita_chest_boat", () -> new ModBoatItem(true, ModBoatEntity.Type.AMANITA, new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> SHY_GUY_MASK = ITEMS.register("shy_guy_mask", () -> new ShyGuyMaskItem(new Item.Properties()));
     public static final RegistryObject<Item> HAMMER = ITEMS.register("hammer", () -> new HammerItem(new Item.Properties().durability(131)));
     public static final RegistryObject<Item> SUPER_PICKAXE = ITEMS.register("super_pickaxe", () -> new SuperPickaxeItem(new Item.Properties().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> YOSHI_FRUIT = ITEMS.register("yoshi_fruit", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.3F).build())));
@@ -113,6 +116,7 @@ public class ModItems {
     public static final RegistryObject<Item> BLUE_STAR_BIT = ITEMS.register("blue_star_bit", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> PURPLE_STAR_BIT = ITEMS.register("purple_star_bit", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SUBCON_THREAD = ITEMS.register("subcon_thread", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SHY_GUY_SPAWN_EGG = ITEMS.register("shy_guy_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.SHY_GUY, 0xff2e2e, 0x3e4eb8, new Item.Properties()));
 
     private static RegistryObject<Item> registerBlockItem(String name, Supplier<Block> blockSupplier) {
         return ITEMS.register(name, () -> new BlockItem(blockSupplier.get(), new Item.Properties()));

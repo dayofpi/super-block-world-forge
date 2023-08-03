@@ -18,7 +18,7 @@ import net.minecraft.world.level.block.Block;
 import java.util.function.IntFunction;
 
 public class ModBoatEntity extends Boat {
-    private static final EntityDataAccessor<Integer> TYPE = SynchedEntityData.defineId(ModBoatEntity.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Integer> DATA_TYPE = SynchedEntityData.defineId(ModBoatEntity.class, EntityDataSerializers.INT);
 
     public ModBoatEntity(EntityType<? extends Boat> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -43,16 +43,16 @@ public class ModBoatEntity extends Boat {
     }
 
     public void setVariant(ModBoatEntity.Type pVariant) {
-        this.entityData.set(TYPE, pVariant.ordinal());
+        this.entityData.set(DATA_TYPE, pVariant.ordinal());
     }
 
     public ModBoatEntity.Type getModVariant() {
-        return ModBoatEntity.Type.byId(this.entityData.get(TYPE));
+        return ModBoatEntity.Type.byId(this.entityData.get(DATA_TYPE));
     }
 
     protected void defineSynchedData() {
         super.defineSynchedData();
-        this.entityData.define(TYPE, Type.AMANITA.ordinal());
+        this.entityData.define(DATA_TYPE, Type.AMANITA.ordinal());
     }
 
     protected void addAdditionalSaveData(CompoundTag pCompound) {

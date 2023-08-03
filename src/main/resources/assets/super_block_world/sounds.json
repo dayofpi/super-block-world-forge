@@ -137,6 +137,30 @@
       "super_block_world:item/star_bit"
     ]
   },
+  "entity.shy_guy.ambient": {
+    "subtitle": "subtitles.super_block_world.entity.shy_guy.ambient",
+    "sounds": [
+      "super_block_world:entity/shy_guy/ambient1",
+      "super_block_world:entity/shy_guy/ambient2",
+      "super_block_world:entity/shy_guy/ambient3"
+    ]
+  },
+  "entity.shy_guy.hurt": {
+    "subtitle": "subtitles.super_block_world.entity.shy_guy.hurt",
+    "sounds": [
+      "super_block_world:entity/shy_guy/hurt1",
+      "super_block_world:entity/shy_guy/hurt2",
+      "super_block_world:entity/shy_guy/hurt3"
+    ]
+  },
+  "entity.shy_guy.death": {
+    "subtitle": "subtitles.super_block_world.entity.shy_guy.death",
+    "sounds": [
+      "super_block_world:entity/shy_guy/death1",
+      "super_block_world:entity/shy_guy/death2",
+      "super_block_world:entity/shy_guy/death3"
+    ]
+  },
   "entity.warp_painting.power": {
     "subtitle": "subtitles.super_block_world.entity.warp_painting.power",
     "sounds": [

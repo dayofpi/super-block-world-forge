@@ -1,10 +1,7 @@
 package com.dayofpi.super_block_world.entity;
 
 import com.dayofpi.super_block_world.SuperBlockWorld;
-import com.dayofpi.super_block_world.entity.custom.HammerEntity;
-import com.dayofpi.super_block_world.entity.custom.ModBoatEntity;
-import com.dayofpi.super_block_world.entity.custom.ModChestBoatEntity;
-import com.dayofpi.super_block_world.entity.custom.WarpPaintingEntity;
+import com.dayofpi.super_block_world.entity.custom.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -16,6 +13,7 @@ import net.minecraftforge.registries.RegistryObject;
 public class ModEntityTypes {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, SuperBlockWorld.MOD_ID);
 
+    public static final RegistryObject<EntityType<ShyGuyEntity>> SHY_GUY = registerEntity("shy_guy", EntityType.Builder.of(ShyGuyEntity::new, MobCategory.MONSTER).sized(0.8F, 0.8F));
     public static final RegistryObject<EntityType<HammerEntity>> HAMMER = registerEntity("hammer", EntityType.Builder.<HammerEntity>of(HammerEntity::new, MobCategory.MISC).sized(0.45F, 0.45F).clientTrackingRange(4).updateInterval(10));
     public static final RegistryObject<EntityType<WarpPaintingEntity>> WARP_PAINTING = registerEntity("warp_painting", EntityType.Builder.<WarpPaintingEntity>of(WarpPaintingEntity::new, MobCategory.MISC).sized(0.5F, 0.5F).clientTrackingRange(10).updateInterval(Integer.MAX_VALUE));
     public static final RegistryObject<EntityType<ModBoatEntity>> BOAT = registerEntity("boat", EntityType.Builder.<ModBoatEntity>of(ModBoatEntity::new, MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10));

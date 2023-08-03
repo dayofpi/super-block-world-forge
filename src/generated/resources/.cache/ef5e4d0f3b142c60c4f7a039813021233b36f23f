@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-02T19:49:43.0786046	Item Models: super_block_world
+// 1.20.1	2023-08-02T21:50:13.965493	Item Models: super_block_world
 951ff713e9d356e2a576a4195e0a93515a78324a assets/super_block_world/models/item/amanita_boat.json
 56ae6bddf746f5829283cec82e727e9f5a4aa929 assets/super_block_world/models/item/amanita_chest_boat.json
 1d58881f7150e11f9446b5766fb7e398ca12184f assets/super_block_world/models/item/amanita_leaves.json
@@ -48,6 +48,7 @@ fa55150c547bd88ae17120582580b6e977f95ad5 assets/super_block_world/models/item/pu
 e4af5da2886976fe3480174af4c6acaf8590bf77 assets/super_block_world/models/item/raw_bronze.json
 970e8b8f5b5f8add1ffea67ec8ca82bec5a78b7b assets/super_block_world/models/item/red_pipe_body.json
 38b0604ff0f50a61497f470995f9cb629bb6f67b assets/super_block_world/models/item/red_warp_pipe.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/super_block_world/models/item/shy_guy_spawn_egg.json
 8a7d922ba08ece82dc2b144b4467fd9ef9f09997 assets/super_block_world/models/item/smooth_hardstone_slab.json
 f1b9edc30fcdc4f44eb5ceba0067c262dc53564c assets/super_block_world/models/item/smooth_hardstone_stairs.json
 19ac3bc01b5ef82e7d1b6e091f81556a987d853e assets/super_block_world/models/item/smooth_toadstone_slab.json

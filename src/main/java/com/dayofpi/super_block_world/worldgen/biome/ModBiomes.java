@@ -1,6 +1,7 @@
 package com.dayofpi.super_block_world.worldgen.biome;
 
 import com.dayofpi.super_block_world.SuperBlockWorld;
+import com.dayofpi.super_block_world.entity.ModEntityTypes;
 import com.dayofpi.super_block_world.sound.ModSoundEvents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
@@ -26,7 +27,9 @@ public class ModBiomes {
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
 
         spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.RABBIT, 10, 4, 4));
+
         spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.ENDERMAN, 1, 1, 2));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntityTypes.SHY_GUY.get(), 100, 4, 4));
 
         BiomeGenerationSettings.Builder generationBuilder = new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
         ModBiomeFeatures.globalMushroomKingdomGeneration(generationBuilder);

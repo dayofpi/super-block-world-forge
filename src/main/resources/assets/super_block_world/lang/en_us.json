@@ -90,6 +90,7 @@
   "item.super_block_world.warp_link": "Warp Link",
   "item.super_block_world.amanita_boat": "Amanita Boat",
   "item.super_block_world.amanita_chest_boat": "Amanita Boat with Chest",
+  "item.super_block_world.shy_guy_mask": "Shy Guy Mask",
   "item.super_block_world.hammer": "Hammer",
   "item.super_block_world.super_pickaxe": "Super Pickaxe",
   "item.super_block_world.yoshi_fruit": "Yoshi Fruit",
@@ -102,6 +103,8 @@
   "item.super_block_world.blue_star_bit": "Blue Star Bit",
   "item.super_block_world.purple_star_bit": "Purple Star Bit",
   "item.super_block_world.subcon_thread": "Subcon Thread",
+  "item.super_block_world.shy_guy_spawn_egg": "Shy Guy Spawn Egg",
+  "entity.super_block_world.shy_guy": "Shy Guy",
   "entity.super_block_world.hammer": "Hammer",
   "entity.super_block_world.warp_painting": "Warp Painting",
   "entity.super_block_world.boat": "Boat",
@@ -115,5 +118,8 @@
   "subtitles.super_block_world.item.hammer.throw": "Hammer flies",
   "subtitles.super_block_world.item.hammer.break": "Hammer breaks",
   "subtitles.super_block_world.item.star_bit.pickup": "Star Bit shines",
+  "subtitles.super_block_world.entity.shy_guy.ambient": "Shy Guy honks",
+  "subtitles.super_block_world.entity.shy_guy.hurt": "Shy Guy hurts",
+  "subtitles.super_block_world.entity.shy_guy.death": "Shy Guy dies",
   "subtitles.super_block_world.entity.warp_painting.power": "Warp Painting is powered"
 }

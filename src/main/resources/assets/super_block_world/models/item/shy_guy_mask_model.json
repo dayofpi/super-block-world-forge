@@ -1,0 +1,26 @@
+{
+	"texture_size": [32, 32],
+	"textures": {
+		"mask": "super_block_world:item/shy_guy_mask_model"
+	},
+	"elements": [
+		{
+			"from": [4, 0, 0],
+			"to": [12, 8, 1],
+			"faces": {
+				"north": {"uv": [0, 0, 4, 4], "texture": "#mask"},
+				"east": {"uv": [4, 0, 4.5, 4], "texture": "#mask"},
+				"south": {"uv": [0, 4, 4, 8], "texture": "#mask"},
+				"west": {"uv": [4, 4, 4.5, 8], "texture": "#mask"},
+				"up": {"uv": [8.5, 0.5, 4.5, 0], "texture": "#mask"},
+				"down": {"uv": [8.5, 0.5, 4.5, 1], "texture": "#mask"}
+			}
+		}
+	],
+	"display": {
+		"head": {
+			"translation": [0, 6.4, 4.8],
+			"scale": [1.6, 1.6, 1.6]
+		}
+	}
+}

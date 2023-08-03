@@ -1,8 +1,11 @@
 package com.dayofpi.super_block_world;
 
 import com.dayofpi.super_block_world.block.ModBlocks;
+import com.dayofpi.super_block_world.entity.ModEntityTypes;
 import com.dayofpi.super_block_world.entity.client.ModBoatRenderer;
+import com.dayofpi.super_block_world.entity.client.ShyGuyModel;
 import com.dayofpi.super_block_world.entity.client.WarpPaintingModel;
+import com.dayofpi.super_block_world.entity.custom.ShyGuyEntity;
 import com.dayofpi.super_block_world.item.ModItems;
 import com.dayofpi.super_block_world.item.custom.SuperPickaxeItem;
 import com.dayofpi.super_block_world.sound.ModSoundEvents;
@@ -14,9 +17,13 @@ import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
+import net.minecraftforge.event.entity.SpawnPlacementRegisterEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -32,9 +39,20 @@ public class ModEvents {
     public static class ModEventBusEvents {
         @SubscribeEvent
         public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+            event.registerLayerDefinition(ShyGuyModel.LAYER_LOCATION, ShyGuyModel::createBodyLayer);
             event.registerLayerDefinition(WarpPaintingModel.LAYER_LOCATION, WarpPaintingModel::createBodyLayer);
             event.registerLayerDefinition(ModBoatRenderer.AMANITA_BOAT, BoatModel::createBodyModel);
             event.registerLayerDefinition(ModBoatRenderer.AMANITA_CHEST_BOAT, ChestBoatModel::createBodyModel);
+        }
+
+        @SubscribeEvent
+        public static void registerAttributes(EntityAttributeCreationEvent event) {
+            event.put(ModEntityTypes.SHY_GUY.get(), ShyGuyEntity.createAttributes().build());
+        }
+
+        @SubscribeEvent
+        public static void registerSpawnPlacements(SpawnPlacementRegisterEvent event) {
+            event.register(ModEntityTypes.SHY_GUY.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ShyGuyEntity::checkShyGuySpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
         }
     }
 

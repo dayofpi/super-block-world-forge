@@ -38,7 +38,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class WarpPaintingEntity extends HangingEntity implements VariantHolder<WarpPaintingEntity.WarpPaintingVariant> {
-    private static final EntityDataAccessor<String> VARIANT = SynchedEntityData.defineId(WarpPaintingEntity.class, EntityDataSerializers.STRING);
+    private static final EntityDataAccessor<String> DATA_VARIANT = SynchedEntityData.defineId(WarpPaintingEntity.class, EntityDataSerializers.STRING);
 
     public WarpPaintingEntity(EntityType<? extends HangingEntity> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -101,7 +101,7 @@ public class WarpPaintingEntity extends HangingEntity implements VariantHolder<W
     @Override
     protected void defineSynchedData() {
         super.defineSynchedData();
-        this.entityData.define(VARIANT, WarpPaintingVariant.LOCKED.name);
+        this.entityData.define(DATA_VARIANT, WarpPaintingVariant.LOCKED.name);
     }
 
     @Override
@@ -183,12 +183,12 @@ public class WarpPaintingEntity extends HangingEntity implements VariantHolder<W
 
     @Override
     public void setVariant(WarpPaintingVariant pVariant) {
-        this.entityData.set(VARIANT, pVariant.name);
+        this.entityData.set(DATA_VARIANT, pVariant.name);
     }
 
     @Override
     public WarpPaintingVariant getVariant() {
-        return WarpPaintingVariant.byName(this.entityData.get(VARIANT));
+        return WarpPaintingVariant.byName(this.entityData.get(DATA_VARIANT));
     }
 
     public enum WarpPaintingVariant implements StringRepresentable {

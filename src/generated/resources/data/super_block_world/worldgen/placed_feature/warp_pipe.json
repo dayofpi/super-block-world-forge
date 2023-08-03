@@ -1,5 +1,5 @@
 {
-  "feature": "super_block_world:underwater_pipe",
+  "feature": "super_block_world:warp_pipe",
   "placement": [
     {
       "type": "minecraft:count",
@@ -13,10 +13,10 @@
       "height": {
         "type": "minecraft:uniform",
         "max_inclusive": {
-          "absolute": 70
+          "absolute": 200
         },
         "min_inclusive": {
-          "absolute": -16
+          "absolute": -8
         }
       }
     },

@@ -40,6 +40,7 @@
       "super_block_world:ore_hardstone"
     ],
     [
+      "super_block_world:warp_pipe",
       "super_block_world:underwater_pipe"
     ],
     [
@@ -75,6 +76,12 @@
         "maxCount": 2,
         "minCount": 1,
         "weight": 1
+      },
+      {
+        "type": "super_block_world:shy_guy",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 100
       }
     ],
     "underground_water_creature": [],

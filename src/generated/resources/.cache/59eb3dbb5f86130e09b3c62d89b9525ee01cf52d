@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-02T19:49:43.0916087	Loot Tables
+// 1.20.1	2023-08-03T01:27:54.5250238	Loot Tables
 2c4f2e1e8d4e5bafba6550cd0b3948001b765315 data/super_block_world/loot_tables/blocks/amanita_leaves.json
 803bf5db75be28f53118e4e9ecc9577de50980d4 data/super_block_world/loot_tables/blocks/amanita_log.json
 b7c929d8aeca3bf90930b5406667aabd4cc423ad data/super_block_world/loot_tables/blocks/amanita_planks.json
@@ -79,3 +79,4 @@ f7d0c3fc618c610bdae91b4c4b13125641f63acf data/super_block_world/loot_tables/bloc
 f6de085fe0a9263d3722f721e009c3cc4e43bae9 data/super_block_world/loot_tables/blocks/yellow_flowerbed.json
 580657b0c738f4ad57725f0b82037b192d77be06 data/super_block_world/loot_tables/blocks/yellow_pipe_body.json
 25adf8b408f2f2052d9a16b1768f4cc2a3673dc6 data/super_block_world/loot_tables/blocks/yellow_warp_pipe.json
+b1030ecef919f234c2780b8cede8174541a0329b data/super_block_world/loot_tables/entities/shy_guy.json
