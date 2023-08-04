@@ -13,9 +13,9 @@ import net.minecraft.world.level.biome.*;
 
 public class ModBiomes {
     public static final ResourceKey<Biome> MUSHROOM_GRASSLANDS = register("mushroom_grasslands");
-    public static final int GRASSLANDS_WATER_COLOR = 4046591;
-    public static final int GRASSLANDS_SKY_COLOR = 11134462;
-    public static final int GRASSLANDS_FOG_COLOR = 14005247;
+    private static final int GRASSLANDS_WATER_COLOR = 4046591;
+    private static final int GRASSLANDS_SKY_COLOR = 11134462;
+    private static final int GRASSLANDS_FOG_COLOR = 14005247;
     public static final int GRASSLANDS_GRASS_COLOR = 6879535;
     public static final int GRASSLANDS_FOLIAGE_COLOR = 6408218;
 

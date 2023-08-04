@@ -1,0 +1,8 @@
+{
+  "feature": "super_block_world:pipe",
+  "placement": [
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

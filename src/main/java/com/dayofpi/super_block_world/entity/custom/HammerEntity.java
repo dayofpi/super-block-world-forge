@@ -3,9 +3,6 @@ package com.dayofpi.super_block_world.entity.custom;
 import com.dayofpi.super_block_world.entity.ModEntityTypes;
 import com.dayofpi.super_block_world.item.ModItems;
 import com.dayofpi.super_block_world.sound.ModSoundEvents;
-import net.minecraft.core.particles.ItemParticleOption;
-import net.minecraft.core.particles.ParticleOptions;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -18,7 +15,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 
-public class HammerEntity extends ThrowableItemProjectile {
+public class HammerEntity extends ModThrownItemEntity {
     public HammerEntity(EntityType<? extends ThrowableItemProjectile> entityType, Level level) {
         super(entityType, level);
     }
@@ -29,20 +26,6 @@ public class HammerEntity extends ThrowableItemProjectile {
 
     public HammerEntity(Level level, double x, double y, double z) {
         super(ModEntityTypes.HAMMER.get(), x, y, z, level);
-    }
-
-    private ParticleOptions getParticleParameters() {
-        return new ItemParticleOption(ParticleTypes.ITEM, this.getItem());
-    }
-
-    public void handleEntityEvent(byte status) {
-        super.handleEntityEvent(status);
-        if (status != 3)
-            return;
-        ParticleOptions particleOptions = this.getParticleParameters();
-        for (int i = 0; i < 8; ++i) {
-            this.level().addParticle(particleOptions, this.getX(), this.getY(), this.getZ(), 0.0D, 0.0D, 0.0D);
-        }
     }
 
     protected void onHit(HitResult hitResult) {

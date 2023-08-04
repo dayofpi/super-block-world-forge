@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "painted_bronze",
+  "key": {
+    "#": {
+      "item": "super_block_world:bronze_block"
+    },
+    "X": {
+      "item": "minecraft:blue_dye"
+    }
+  },
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "result": {
+    "count": 8,
+    "item": "super_block_world:blue_bronze"
+  },
+  "show_notification": true
+}

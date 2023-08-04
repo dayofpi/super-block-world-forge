@@ -35,10 +35,10 @@ public class HammerItem extends Item implements ThrowableItem {
         this.playSound(level, player.position(), ModSoundEvents.HAMMER_THROW.get(), 0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F));
         player.getCooldowns().addCooldown(this, 5);
         if (!level.isClientSide) {
-            HammerEntity hammerEntity = new HammerEntity(level, player);
-            hammerEntity.setItem(itemStack);
-            hammerEntity.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.5F, 1.0F);
-            level.addFreshEntity(hammerEntity);
+            HammerEntity hammer = new HammerEntity(level, player);
+            hammer.setItem(itemStack);
+            hammer.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.5F, 1.0F);
+            level.addFreshEntity(hammer);
         }
 
         this.useStack(player, this, itemStack);

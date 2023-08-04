@@ -5,6 +5,9 @@ import com.dayofpi.super_block_world.worldgen.biome.ModBiomes;
 import com.dayofpi.super_block_world.worldgen.dimension.ModDimensions;
 import com.dayofpi.super_block_world.worldgen.feature.ModConfiguredFeatures;
 import com.dayofpi.super_block_world.worldgen.feature.ModPlacedFeatures;
+import com.dayofpi.super_block_world.worldgen.structure.ModStructureSets;
+import com.dayofpi.super_block_world.worldgen.structure.ModStructures;
+import com.dayofpi.super_block_world.worldgen.structure.ModTemplatePools;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
@@ -18,6 +21,9 @@ public class ModEntriesProvider extends DatapackBuiltinEntriesProvider {
     public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
             .add(Registries.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap)
             .add(Registries.PLACED_FEATURE, ModPlacedFeatures::bootstrap)
+            .add(Registries.TEMPLATE_POOL, ModTemplatePools::bootstrap)
+            .add(Registries.STRUCTURE, ModStructures::bootstrap)
+            .add(Registries.STRUCTURE_SET, ModStructureSets::bootstrap)
             .add(Registries.BIOME, ModBiomes::bootstrap)
             .add(Registries.NOISE_SETTINGS, ModDimensions::noiseBootstrap)
             .add(Registries.LEVEL_STEM, ModDimensions::stemBootstrap)

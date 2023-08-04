@@ -1,6 +1,7 @@
 package com.dayofpi.super_block_world;
 
 import com.dayofpi.super_block_world.block.ModBlocks;
+import com.dayofpi.super_block_world.block.client.FlagRenderer;
 import com.dayofpi.super_block_world.entity.ModEntityTypes;
 import com.dayofpi.super_block_world.entity.client.ModBoatRenderer;
 import com.dayofpi.super_block_world.entity.client.ShyGuyModel;
@@ -39,6 +40,7 @@ public class ModEvents {
     public static class ModEventBusEvents {
         @SubscribeEvent
         public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+            event.registerLayerDefinition(FlagRenderer.LAYER_LOCATION, FlagRenderer::createBodyLayer);
             event.registerLayerDefinition(ShyGuyModel.LAYER_LOCATION, ShyGuyModel::createBodyLayer);
             event.registerLayerDefinition(WarpPaintingModel.LAYER_LOCATION, WarpPaintingModel::createBodyLayer);
             event.registerLayerDefinition(ModBoatRenderer.AMANITA_BOAT, BoatModel::createBodyModel);

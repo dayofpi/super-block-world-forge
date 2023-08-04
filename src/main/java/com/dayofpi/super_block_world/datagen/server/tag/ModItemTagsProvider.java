@@ -25,6 +25,10 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         copy(ModTags.Blocks.AMANITA_LOGS, ModTags.Items.AMANITA_LOGS);
         tag(ItemTags.LOGS_THAT_BURN).addTag(ModTags.Items.AMANITA_LOGS);
         tag(ItemTags.PLANKS).add(ModItems.AMANITA_PLANKS.get());
+        tag(ItemTags.WOODEN_STAIRS).add(ModItems.AMANITA_STAIRS.get());
+        tag(ItemTags.WOODEN_SLABS).add(ModItems.AMANITA_SLAB.get());
+        tag(ItemTags.SIGNS).add(ModItems.AMANITA_SIGN.get());
+        tag(ItemTags.HANGING_SIGNS).add(ModItems.AMANITA_HANGING_SIGN.get());
         tag(ItemTags.BOATS).add(ModItems.AMANITA_BOAT.get());
         tag(ItemTags.CHEST_BOATS).add(ModItems.AMANITA_CHEST_BOAT.get());
         tag(ItemTags.LEAVES).add(ModItems.AMANITA_LEAVES.get(), ModItems.FRUITING_AMANITA_LEAVES.get());

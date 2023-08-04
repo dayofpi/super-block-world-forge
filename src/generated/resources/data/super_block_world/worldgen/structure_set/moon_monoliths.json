@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 1666030804,
+    "separation": 16,
+    "spacing": 64
+  },
+  "structures": [
+    {
+      "structure": "super_block_world:moon_monolith",
+      "weight": 1
+    }
+  ]
+}

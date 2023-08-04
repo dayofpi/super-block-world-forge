@@ -1,0 +1,89 @@
+{
+  "type": "minecraft:random_patch",
+  "config": {
+    "feature": {
+      "feature": {
+        "type": "minecraft:simple_block",
+        "config": {
+          "to_place": {
+            "type": "minecraft:weighted_state_provider",
+            "entries": [
+              {
+                "data": {
+                  "Name": "super_block_world:star_cluster",
+                  "Properties": {
+                    "facing": "up",
+                    "waterlogged": "false"
+                  }
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "super_block_world:star_cluster",
+                  "Properties": {
+                    "facing": "down",
+                    "waterlogged": "false"
+                  }
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "super_block_world:star_cluster",
+                  "Properties": {
+                    "facing": "north",
+                    "waterlogged": "false"
+                  }
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "super_block_world:star_cluster",
+                  "Properties": {
+                    "facing": "south",
+                    "waterlogged": "false"
+                  }
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "super_block_world:star_cluster",
+                  "Properties": {
+                    "facing": "east",
+                    "waterlogged": "false"
+                  }
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "super_block_world:star_cluster",
+                  "Properties": {
+                    "facing": "west",
+                    "waterlogged": "false"
+                  }
+                },
+                "weight": 1
+              }
+            ]
+          }
+        }
+      },
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:matching_blocks",
+            "blocks": "minecraft:air"
+          }
+        }
+      ]
+    },
+    "tries": 32,
+    "xz_spread": 7,
+    "y_spread": 3
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:toadstone_brick_wall_from_toadstone_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_toadstone": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "super_block_world:toadstone"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_toadstone",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:toadstone_brick_wall_from_toadstone_stonecutting"
+    ]
+  },
+  "sends_telemetry_event": false
+}

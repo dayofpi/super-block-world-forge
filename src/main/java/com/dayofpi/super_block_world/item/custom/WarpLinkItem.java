@@ -80,8 +80,8 @@ public class WarpLinkItem extends Item {
     private void link(BlockPos blockPos, Level level, CompoundTag compoundTag, WarpPipeBlockEntity warpPipeBE, WarpPipeBlockEntity warpPipeBE1) {
         this.spawnParticles(level, blockPos);
         this.playSound(level, blockPos, ModSoundEvents.WARP_LINK_END.get());
-        warpPipeBE.setDestinationPos(warpPipeBE1.getBlockPos());
-        warpPipeBE1.setDestinationPos(blockPos);
+        warpPipeBE.setDestinationPos(warpPipeBE1.getBlockPos(), level);
+        warpPipeBE1.setDestinationPos(blockPos, level);
         compoundTag.remove(WARP_PIPE_POS_KEY);
         compoundTag.remove(WARP_PIPE_DIMENSION_KEY);
     }

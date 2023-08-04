@@ -15,9 +15,13 @@ public class ModBiomeFeatures {
         builder.addCarver(GenerationStep.Carving.AIR, Carvers.CAVE_EXTRA_UNDERGROUND);
         builder.addCarver(GenerationStep.Carving.AIR, Carvers.CANYON);
         builder.addFeature(GenerationStep.Decoration.FLUID_SPRINGS, ModPlacedFeatures.SPRING_WATER);
+        builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.DISK_SAND);
+        builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.ORE_BRONZE);
         builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.ORE_CRUMBLE);
         builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.ORE_TOADSTONE);
         builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.ORE_HARDSTONE);
+        builder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, ModPlacedFeatures.STAR_CLUSTER);
+        builder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, ModPlacedFeatures.PIPE);
         builder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, ModPlacedFeatures.WARP_PIPE);
         builder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, ModPlacedFeatures.UNDERWATER_PIPE);
     }

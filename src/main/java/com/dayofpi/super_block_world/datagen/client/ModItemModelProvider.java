@@ -19,6 +19,24 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        blockItem(ModBlocks.FLAGPOLE);
+        simpleItem(ModItems.WHITE_FLAG);
+        simpleItem(ModItems.LIGHT_GRAY_FLAG);
+        simpleItem(ModItems.GRAY_FLAG);
+        simpleItem(ModItems.BLACK_FLAG);
+        simpleItem(ModItems.BROWN_FLAG);
+        simpleItem(ModItems.RED_FLAG);
+        simpleItem(ModItems.ORANGE_FLAG);
+        simpleItem(ModItems.YELLOW_FLAG);
+        simpleItem(ModItems.LIME_FLAG);
+        simpleItem(ModItems.GREEN_FLAG);
+        simpleItem(ModItems.CYAN_FLAG);
+        simpleItem(ModItems.LIGHT_BLUE_FLAG);
+        simpleItem(ModItems.BLUE_FLAG);
+        simpleItem(ModItems.PURPLE_FLAG);
+        simpleItem(ModItems.MAGENTA_FLAG);
+        simpleItem(ModItems.PINK_FLAG);
+        simpleItem(ModItems.RAINBOW_FLAG);
         blockItem(ModBlocks.WHITE_WARP_PIPE);
         blockItem(ModBlocks.LIGHT_GRAY_WARP_PIPE);
         blockItem(ModBlocks.GRAY_WARP_PIPE);
@@ -53,6 +71,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         blockItem(ModBlocks.PINK_PIPE_BODY);
         blockItem(ModBlocks.TOADSTOOL_GRASS);
         blockItem(ModBlocks.TOADSTOOL_PATH);
+        blockItem(ModBlocks.BRONZE_STAIRS);
+        blockItem(ModBlocks.BRONZE_SLAB);
         blockItem(ModBlocks.VANILLATE_STAIRS);
         blockItem(ModBlocks.VANILLATE_SLAB);
         wallItem(ModBlocks.VANILLATE_WALL, ModBlocks.VANILLATE);
@@ -62,11 +82,20 @@ public class ModItemModelProvider extends ItemModelProvider {
         blockItem(ModBlocks.VANILLATE_TILE_STAIRS);
         blockItem(ModBlocks.VANILLATE_TILE_SLAB);
         wallItem(ModBlocks.VANILLATE_TILE_WALL, ModBlocks.VANILLATE_TILES);
+        blockItem(ModBlocks.TOADSTONE_STAIRS);
+        blockItem(ModBlocks.TOADSTONE_SLAB);
+        wallItem(ModBlocks.TOADSTONE_WALL, ModBlocks.TOADSTONE);
+        blockItem(ModBlocks.TOADSTONE_BRICK_STAIRS);
+        blockItem(ModBlocks.TOADSTONE_BRICK_SLAB);
+        wallItem(ModBlocks.TOADSTONE_BRICK_WALL, ModBlocks.TOADSTONE_BRICKS);
         blockItem(ModBlocks.SMOOTH_TOADSTONE_STAIRS);
         blockItem(ModBlocks.SMOOTH_TOADSTONE_SLAB);
         blockItem(ModBlocks.HARDSTONE_STAIRS);
         blockItem(ModBlocks.HARDSTONE_SLAB);
         wallItem(ModBlocks.HARDSTONE_WALL, ModBlocks.HARDSTONE);
+        blockItem(ModBlocks.HARDSTONE_BRICK_STAIRS);
+        blockItem(ModBlocks.HARDSTONE_BRICK_SLAB);
+        wallItem(ModBlocks.HARDSTONE_BRICK_WALL, ModBlocks.HARDSTONE_BRICKS);
         blockItem(ModBlocks.SMOOTH_HARDSTONE_STAIRS);
         blockItem(ModBlocks.SMOOTH_HARDSTONE_SLAB);
         blockItem(ModBlocks.CLOUD_STAIRS);
@@ -77,6 +106,13 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.POWER_STAR);
         simpleBlockItem(ModItems.STAR_CLUSTER);
         blockItem(ModBlocks.AMANITA_LOG);
+        blockItem(ModBlocks.AMANITA_WOOD);
+        blockItem(ModBlocks.STRIPPED_AMANITA_LOG);
+        blockItem(ModBlocks.STRIPPED_AMANITA_WOOD);
+        blockItem(ModBlocks.AMANITA_STAIRS);
+        blockItem(ModBlocks.AMANITA_SLAB);
+        simpleItem(ModItems.AMANITA_SIGN);
+        simpleItem(ModItems.AMANITA_HANGING_SIGN);
         blockItem(ModBlocks.AMANITA_LEAVES);
         blockItem(ModBlocks.FRUITING_AMANITA_LEAVES);
         simpleBlockItem(ModItems.AMANITA_SAPLING);

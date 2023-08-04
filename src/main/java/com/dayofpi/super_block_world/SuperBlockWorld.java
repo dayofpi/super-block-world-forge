@@ -2,6 +2,7 @@ package com.dayofpi.super_block_world;
 
 import com.dayofpi.super_block_world.block.ModBlockEntityTypes;
 import com.dayofpi.super_block_world.block.ModBlocks;
+import com.dayofpi.super_block_world.block.client.FlagRenderer;
 import com.dayofpi.super_block_world.block.client.PlacedItemRenderer;
 import com.dayofpi.super_block_world.entity.ModEntityTypes;
 import com.dayofpi.super_block_world.entity.client.HammerRenderer;
@@ -9,16 +10,22 @@ import com.dayofpi.super_block_world.entity.client.ModBoatRenderer;
 import com.dayofpi.super_block_world.entity.client.ShyGuyRenderer;
 import com.dayofpi.super_block_world.entity.client.WarpPaintingRenderer;
 import com.dayofpi.super_block_world.entity.custom.HammerEntity;
+import com.dayofpi.super_block_world.entity.custom.StarBitEntity;
 import com.dayofpi.super_block_world.item.ModCreativeTabs;
 import com.dayofpi.super_block_world.item.ModItems;
 import com.dayofpi.super_block_world.item.custom.WarpLinkItem;
 import com.dayofpi.super_block_world.sound.ModSoundEvents;
+import com.dayofpi.super_block_world.util.ModWoodTypes;
 import com.dayofpi.super_block_world.worldgen.biome.ModBiomes;
 import com.dayofpi.super_block_world.worldgen.feature.ModFeatures;
 import com.mojang.logging.LogUtils;
 import net.minecraft.Util;
 import net.minecraft.client.renderer.BiomeColors;
+import net.minecraft.client.renderer.Sheets;
+import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
+import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.core.Position;
 import net.minecraft.core.dispenser.AbstractProjectileDispenseBehavior;
@@ -78,6 +85,12 @@ public class SuperBlockWorld {
     private static void registerFlammables() {
         FireBlock fireBlock = (FireBlock) Blocks.FIRE;
         fireBlock.setFlammable(ModBlocks.AMANITA_LOG.get(), 5, 5);
+        fireBlock.setFlammable(ModBlocks.AMANITA_WOOD.get(), 5, 5);
+        fireBlock.setFlammable(ModBlocks.STRIPPED_AMANITA_LOG.get(), 5, 5);
+        fireBlock.setFlammable(ModBlocks.STRIPPED_AMANITA_WOOD.get(), 5, 5);
+        fireBlock.setFlammable(ModBlocks.AMANITA_PLANKS.get(), 5, 20);
+        fireBlock.setFlammable(ModBlocks.AMANITA_STAIRS.get(), 5, 20);
+        fireBlock.setFlammable(ModBlocks.AMANITA_SLAB.get(), 5, 20);
         fireBlock.setFlammable(ModBlocks.AMANITA_LEAVES.get(), 30, 60);
         fireBlock.setFlammable(ModBlocks.FRUITING_AMANITA_LEAVES.get(), 30, 60);
         fireBlock.setFlammable(ModBlocks.WHITE_FLOWERBED.get(), 60, 100);
@@ -85,17 +98,41 @@ public class SuperBlockWorld {
     }
 
     private static void registerCompostables() {
-        ComposterBlock.COMPOSTABLES.put(ModItems.YOSHI_FRUIT.get(), 0.3F);
         ComposterBlock.COMPOSTABLES.put(ModItems.AMANITA_LEAVES.get(), 0.3F);
         ComposterBlock.COMPOSTABLES.put(ModItems.FRUITING_AMANITA_LEAVES.get(), 0.3F);
         ComposterBlock.COMPOSTABLES.put(ModBlocks.AMANITA_SAPLING.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ModItems.YOSHI_FRUIT.get(), 0.3F);
     }
 
     private static void registerDispenserBehaviors() {
         DispenserBlock.registerBehavior(ModItems.HAMMER.get(), new AbstractProjectileDispenseBehavior() {
             @Override
             protected Projectile getProjectile(Level pLevel, Position pPosition, ItemStack pStack) {
-                return Util.make(new HammerEntity(pLevel, pPosition.x(), pPosition.y(), pPosition.z()), hammerEntity -> hammerEntity.setItem(pStack));
+                return Util.make(new HammerEntity(pLevel, pPosition.x(), pPosition.y(), pPosition.z()), hammer -> hammer.setItem(pStack));
+            }
+        });
+        DispenserBlock.registerBehavior(ModItems.YELLOW_STAR_BIT.get(), new AbstractProjectileDispenseBehavior() {
+            @Override
+            protected Projectile getProjectile(Level pLevel, Position pPosition, ItemStack pStack) {
+                return Util.make(new StarBitEntity(pLevel, pPosition.x(), pPosition.y(), pPosition.z()), starBit -> starBit.setItem(pStack));
+            }
+        });
+        DispenserBlock.registerBehavior(ModItems.GREEN_STAR_BIT.get(), new AbstractProjectileDispenseBehavior() {
+            @Override
+            protected Projectile getProjectile(Level pLevel, Position pPosition, ItemStack pStack) {
+                return Util.make(new StarBitEntity(pLevel, pPosition.x(), pPosition.y(), pPosition.z()), starBit -> starBit.setItem(pStack));
+            }
+        });
+        DispenserBlock.registerBehavior(ModItems.BLUE_STAR_BIT.get(), new AbstractProjectileDispenseBehavior() {
+            @Override
+            protected Projectile getProjectile(Level pLevel, Position pPosition, ItemStack pStack) {
+                return Util.make(new StarBitEntity(pLevel, pPosition.x(), pPosition.y(), pPosition.z()), starBit -> starBit.setItem(pStack));
+            }
+        });
+        DispenserBlock.registerBehavior(ModItems.PURPLE_STAR_BIT.get(), new AbstractProjectileDispenseBehavior() {
+            @Override
+            protected Projectile getProjectile(Level pLevel, Position pPosition, ItemStack pStack) {
+                return Util.make(new StarBitEntity(pLevel, pPosition.x(), pPosition.y(), pPosition.z()), starBit -> starBit.setItem(pStack));
             }
         });
     }
@@ -109,8 +146,10 @@ public class SuperBlockWorld {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             event.enqueueWork(() -> {
+                Sheets.addWoodType(ModWoodTypes.AMANITA);
                 EntityRenderers.register(ModEntityTypes.SHY_GUY.get(), ShyGuyRenderer::new);
                 EntityRenderers.register(ModEntityTypes.HAMMER.get(), HammerRenderer::new);
+                EntityRenderers.register(ModEntityTypes.STAR_BIT.get(), ThrownItemRenderer::new);
                 EntityRenderers.register(ModEntityTypes.WARP_PAINTING.get(), WarpPaintingRenderer::new);
                 EntityRenderers.register(ModEntityTypes.BOAT.get(), pContext -> new ModBoatRenderer(pContext, false));
                 EntityRenderers.register(ModEntityTypes.CHEST_BOAT.get(), pContext -> new ModBoatRenderer(pContext, true));
@@ -133,6 +172,9 @@ public class SuperBlockWorld {
         @SubscribeEvent
         public static void registerBlockEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
             event.registerBlockEntityRenderer(ModBlockEntityTypes.ITEM_DISPLAY.get(), pContext -> new PlacedItemRenderer());
+            event.registerBlockEntityRenderer(ModBlockEntityTypes.FLAG.get(), FlagRenderer::new);
+            event.registerBlockEntityRenderer(ModBlockEntityTypes.SIGN.get(), SignRenderer::new);
+            event.registerBlockEntityRenderer(ModBlockEntityTypes.HANGING_SIGN.get(), HangingSignRenderer::new);
         }
     }
 }

@@ -2,6 +2,7 @@ package com.dayofpi.super_block_world.entity.custom;
 
 import com.dayofpi.super_block_world.item.ModItems;
 import com.dayofpi.super_block_world.sound.ModSoundEvents;
+import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -10,11 +11,9 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.StringRepresentable;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.MobSpawnType;
-import net.minecraft.world.entity.VariantHolder;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
@@ -22,11 +21,10 @@ import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.LightLayer;
+import net.minecraft.world.level.*;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Arrays;
 
 public class ShyGuyEntity extends Monster implements VariantHolder<ShyGuyEntity.Type> {
     private static final EntityDataAccessor<String> DATA_TYPE = SynchedEntityData.defineId(ShyGuyEntity.class, EntityDataSerializers.STRING);
@@ -74,6 +72,13 @@ public class ShyGuyEntity extends Monster implements VariantHolder<ShyGuyEntity.
     @Override
     protected SoundEvent getDeathSound() {
         return ModSoundEvents.SHY_GUY_DEATH.get();
+    }
+
+    @Nullable
+    @Override
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData, @Nullable CompoundTag pDataTag) {
+        this.setVariant(Util.getRandomSafe(Arrays.stream(Type.values()).toList(), pLevel.getRandom()).orElse(Type.RED));
+        return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);
     }
 
     @Override

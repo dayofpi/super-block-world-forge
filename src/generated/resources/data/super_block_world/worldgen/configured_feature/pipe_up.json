@@ -1,0 +1,52 @@
+{
+  "type": "minecraft:block_column",
+  "config": {
+    "allowed_placement": {
+      "type": "minecraft:matching_blocks",
+      "blocks": "minecraft:air"
+    },
+    "direction": "up",
+    "layers": [
+      {
+        "height": {
+          "type": "minecraft:uniform",
+          "value": {
+            "max_inclusive": 5,
+            "min_inclusive": 0
+          }
+        },
+        "provider": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "super_block_world:green_pipe_body",
+            "Properties": {
+              "down": "false",
+              "east": "false",
+              "facing": "up",
+              "north": "false",
+              "south": "false",
+              "up": "false",
+              "waterlogged": "false",
+              "west": "false"
+            }
+          }
+        }
+      },
+      {
+        "height": 1,
+        "provider": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "super_block_world:green_warp_pipe",
+            "Properties": {
+              "facing": "up",
+              "linked": "false",
+              "waterlogged": "false"
+            }
+          }
+        }
+      }
+    ],
+    "prioritize_tip": true
+  }
+}

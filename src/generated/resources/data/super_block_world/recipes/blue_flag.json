@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "flag",
+  "key": {
+    "#": {
+      "item": "super_block_world:bronze_ingot"
+    },
+    "W": {
+      "item": "minecraft:blue_wool"
+    }
+  },
+  "pattern": [
+    "W",
+    "#",
+    "#"
+  ],
+  "result": {
+    "item": "super_block_world:blue_flag"
+  },
+  "show_notification": true
+}

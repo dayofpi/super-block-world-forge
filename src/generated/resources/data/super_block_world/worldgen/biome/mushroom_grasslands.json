@@ -35,11 +35,15 @@
     [],
     [],
     [
+      "super_block_world:disk_sand",
+      "super_block_world:ore_bronze",
       "super_block_world:ore_crumble",
       "super_block_world:ore_toadstone",
       "super_block_world:ore_hardstone"
     ],
     [
+      "super_block_world:star_cluster",
+      "super_block_world:pipe",
       "super_block_world:warp_pipe",
       "super_block_world:underwater_pipe"
     ],

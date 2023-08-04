@@ -1,15 +1,26 @@
-// 1.20.1	2023-08-02T19:49:43.0896082	Block Tags
+// 1.20.1	2023-08-04T11:22:07.4335043	Block Tags
+5c29b20160d3e68e3a3f953892d95355f26bc8f1 data/forge/tags/blocks/ores.json
+0d3361dabc253d5ca272c292be7efe2d6e68846d data/minecraft/tags/blocks/ceiling_hanging_signs.json
 11ca5c3e3cfdc1eef12778fc90833d4c0e3a970b data/minecraft/tags/blocks/dirt.json
 aee889f579b7e285552cf2acea0771f076d0df88 data/minecraft/tags/blocks/flowers.json
 aee889f579b7e285552cf2acea0771f076d0df88 data/minecraft/tags/blocks/inside_step_sound_blocks.json
 707a11fc7fa33acbb091be2c8afbb5622c2ca9b2 data/minecraft/tags/blocks/leaves.json
 74b7c86c356d4341d88954b5248bf3b2f29416d2 data/minecraft/tags/blocks/logs_that_burn.json
-f6d9aabfad0df4f25265028da5926aaaa3b69292 data/minecraft/tags/blocks/mineable/pickaxe.json
+412bc218ecac032c56cfaff03aecd8a02b4e3f27 data/minecraft/tags/blocks/mineable/pickaxe.json
 17adabfc25a135f67ec529477b2e0293f480c933 data/minecraft/tags/blocks/mineable/shovel.json
 11ca5c3e3cfdc1eef12778fc90833d4c0e3a970b data/minecraft/tags/blocks/mushroom_grow_block.json
+5c3a30613eb771d10777e64803a3a719cd68fb65 data/minecraft/tags/blocks/needs_iron_tool.json
+3dc9b1a04172fceac2476774039d55ebd9aac165 data/minecraft/tags/blocks/needs_stone_tool.json
 128f2fe8c20dabab6b587d25d1cd7324a211889f data/minecraft/tags/blocks/overworld_carver_replaceables.json
 3bff48922e5303b2b5fc855952af2703dd7f881b data/minecraft/tags/blocks/planks.json
-57338360aa43be74dbe5219c579ce194d9e36ba4 data/minecraft/tags/blocks/walls.json
-c1d821ed8ba1c5690d735f64601e65b9c758c5e9 data/super_block_world/tags/blocks/amanita_logs.json
+16e06a9b46423933522d0fc1441ab9dc701b9cb8 data/minecraft/tags/blocks/standing_signs.json
+b46f621b75a7e4347f01ad96ddc0d643c735663c data/minecraft/tags/blocks/walls.json
+b26ae8b69f3e41dabbc27bb79014e9fd330ef713 data/minecraft/tags/blocks/wall_hanging_signs.json
+3c5524de66abce1cd9aed35345d434a76d54b3ba data/minecraft/tags/blocks/wall_signs.json
+0c68f4c4096c1fed5b956f65192ab981889c4723 data/minecraft/tags/blocks/wooden_slabs.json
+d4328ffd09f25a976a03cc1eb0b931e6919a29ac data/minecraft/tags/blocks/wooden_stairs.json
+9ba0f51636a4bdbf0e6879a8e094c553251ba409 data/super_block_world/tags/blocks/amanita_logs.json
+69d5568bae0d628a22128f91e650d0be8123c22f data/super_block_world/tags/blocks/bronze_blocks.json
+85ad8a3d7d0760c96d621217c6bdb4f576a145ba data/super_block_world/tags/blocks/flags.json
 a3cef7099a432feaf00f93e01212ad1ef2b170ea data/super_block_world/tags/blocks/pipe_bodies.json
 9f18e3817d2878826751bb980b3364d828f06809 data/super_block_world/tags/blocks/warp_pipes.json

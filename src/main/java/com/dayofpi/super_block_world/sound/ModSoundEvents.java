@@ -27,6 +27,8 @@ public class ModSoundEvents {
     public static final RegistryObject<SoundEvent> HAMMER_THROW = registerSoundEvent("item.hammer.throw");
     public static final RegistryObject<SoundEvent> HAMMER_BREAK = registerSoundEvent("item.hammer.break");
     public static final RegistryObject<SoundEvent> STAR_BIT_PICKUP = registerSoundEvent("item.star_bit.pickup");
+    public static final RegistryObject<SoundEvent> STAR_BIT_SHOOT = registerSoundEvent("item.star_bit.shoot");
+    public static final RegistryObject<SoundEvent> STAR_BIT_BREAK = registerSoundEvent("item.star_bit.break");
     public static final RegistryObject<SoundEvent> SHY_GUY_AMBIENT = registerSoundEvent("entity.shy_guy.ambient");
     public static final RegistryObject<SoundEvent> SHY_GUY_HURT = registerSoundEvent("entity.shy_guy.hurt");
     public static final RegistryObject<SoundEvent> SHY_GUY_DEATH = registerSoundEvent("entity.shy_guy.death");

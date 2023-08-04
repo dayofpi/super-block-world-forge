@@ -134,7 +134,22 @@
   "item.star_bit.pickup": {
     "subtitle": "subtitles.super_block_world.item.star_bit.pickup",
     "sounds": [
-      "super_block_world:item/star_bit"
+      "super_block_world:item/star_bit/pickup"
+    ]
+  },
+  "item.star_bit.shoot": {
+    "subtitle": "subtitles.super_block_world.item.star_bit.shoot",
+    "sounds": [
+      "super_block_world:item/star_bit/shoot"
+    ]
+  },
+  "item.star_bit.break": {
+    "subtitle": "subtitles.super_block_world.item.star_bit.break",
+    "sounds": [
+      "block/amethyst_cluster/break1",
+      "block/amethyst_cluster/break2",
+      "block/amethyst_cluster/break3",
+      "block/amethyst_cluster/break4"
     ]
   },
   "entity.shy_guy.ambient": {
