@@ -176,6 +176,48 @@
       "super_block_world:entity/shy_guy/death3"
     ]
   },
+  "entity.boom_boom.ambient": {
+    "subtitle": "subtitles.super_block_world.entity.boom_boom.ambient",
+    "sounds": [
+      "super_block_world:entity/boom_boom/ambient1",
+      "super_block_world:entity/boom_boom/ambient2",
+      "super_block_world:entity/boom_boom/ambient3"
+    ]
+  },
+  "entity.boom_boom.spin": {
+    "subtitle": "subtitles.super_block_world.entity.boom_boom.spin",
+    "sounds": [
+      "super_block_world:entity/boom_boom/spin1",
+      "super_block_world:entity/boom_boom/spin2"
+    ]
+  },
+  "entity.boom_boom.dizzy": {
+    "subtitle": "subtitles.super_block_world.entity.boom_boom.dizzy",
+    "sounds": [
+      "super_block_world:entity/boom_boom/dizzy"
+    ]
+  },
+  "entity.boom_boom.ready": {
+    "subtitle": "subtitles.super_block_world.entity.boom_boom.ready",
+    "sounds": [
+      "super_block_world:entity/boom_boom/ready"
+    ]
+  },
+  "entity.boom_boom.hurt": {
+    "subtitle": "subtitles.super_block_world.entity.boom_boom.hurt",
+    "sounds": [
+      "super_block_world:entity/boom_boom/hurt1",
+      "super_block_world:entity/boom_boom/hurt2",
+      "super_block_world:entity/boom_boom/hurt3"
+    ]
+  },
+  "entity.boom_boom.death": {
+    "subtitle": "subtitles.super_block_world.entity.boom_boom.death",
+    "sounds": [
+      "super_block_world:entity/boom_boom/death1",
+      "super_block_world:entity/boom_boom/death2"
+    ]
+  },
   "entity.warp_painting.power": {
     "subtitle": "subtitles.super_block_world.entity.warp_painting.power",
     "sounds": [

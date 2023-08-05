@@ -57,18 +57,22 @@ public class WarpPaintingEntity extends HangingEntity implements VariantHolder<W
         List<Entity> entityList = level().getEntities(this, this.getBoundingBox());
         if (!entityList.isEmpty()) {
             for (Entity entity : entityList) {
-                if (entity.isOnPortalCooldown()) {
+                this.warpEntity(entity);
+            }
+        }
+    }
+
+    private void warpEntity(Entity entity) {
+        if (entity.isOnPortalCooldown()) {
+            entity.setPortalCooldown();
+        } else {
+            MinecraftServer minecraftServer = entity.level().getServer();
+            if (minecraftServer != null) {
+                ResourceKey<Level> mushroomKingdomDestination = entity.level().dimension() == ModDimensions.MUSHROOM_KINGDOM_LEVEL ? Level.OVERWORLD : ModDimensions.MUSHROOM_KINGDOM_LEVEL;
+                ServerLevel destinationWorld = minecraftServer.getLevel(mushroomKingdomDestination);
+                if (destinationWorld != null && !entity.isPassenger()) {
                     entity.setPortalCooldown();
-                } else {
-                    MinecraftServer minecraftServer = entity.level().getServer();
-                    if (minecraftServer != null) {
-                        ResourceKey<Level> mushroomKingdomDestination = entity.level().dimension() == ModDimensions.MUSHROOM_KINGDOM_LEVEL ? Level.OVERWORLD : ModDimensions.MUSHROOM_KINGDOM_LEVEL;
-                        ServerLevel destinationWorld = minecraftServer.getLevel(mushroomKingdomDestination);
-                        if (destinationWorld != null && !entity.isPassenger()) {
-                            entity.setPortalCooldown();
-                            entity.changeDimension(destinationWorld, new MKTeleporter(destinationWorld));
-                        }
-                    }
+                    entity.changeDimension(destinationWorld, new MKTeleporter(destinationWorld));
                 }
             }
         }
@@ -175,7 +179,7 @@ public class WarpPaintingEntity extends HangingEntity implements VariantHolder<W
 
     @Override
     public boolean hurt(DamageSource pSource, float pAmount) {
-        if (pSource.is(DamageTypeTags.IS_EXPLOSION)) {
+        if (pSource.is(DamageTypeTags.IS_EXPLOSION) || pSource.is(DamageTypeTags.IS_PROJECTILE)) {
             return false;
         }
         return super.hurt(pSource, pAmount);

@@ -21,6 +21,8 @@ import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.*;
 import org.jetbrains.annotations.Nullable;
 
@@ -78,7 +80,15 @@ public class ShyGuyEntity extends Monster implements VariantHolder<ShyGuyEntity.
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData, @Nullable CompoundTag pDataTag) {
         this.setVariant(Util.getRandomSafe(Arrays.stream(Type.values()).toList(), pLevel.getRandom()).orElse(Type.RED));
+        this.populateDefaultEquipmentSlots(pLevel.getRandom(), pDifficulty);
         return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);
+    }
+
+    @Override
+    protected void populateDefaultEquipmentSlots(RandomSource pRandom, DifficultyInstance pDifficulty) {
+        if (pRandom.nextInt(5) == 0 && !this.level().canSeeSky(this.blockPosition())) {
+            this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.STONE_PICKAXE));
+        }
     }
 
     @Override

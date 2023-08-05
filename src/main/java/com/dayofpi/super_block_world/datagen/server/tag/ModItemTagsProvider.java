@@ -27,6 +27,12 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(ItemTags.PLANKS).add(ModItems.AMANITA_PLANKS.get());
         tag(ItemTags.WOODEN_STAIRS).add(ModItems.AMANITA_STAIRS.get());
         tag(ItemTags.WOODEN_SLABS).add(ModItems.AMANITA_SLAB.get());
+        tag(ItemTags.WOODEN_FENCES).add(ModItems.AMANITA_FENCE.get());
+        tag(ItemTags.FENCE_GATES).add(ModItems.AMANITA_FENCE_GATE.get());
+        tag(ItemTags.WOODEN_DOORS).add(ModItems.AMANITA_DOOR.get());
+        tag(ItemTags.WOODEN_TRAPDOORS).add(ModItems.AMANITA_TRAPDOOR.get());
+        tag(ItemTags.WOODEN_PRESSURE_PLATES).add(ModItems.AMANITA_PRESSURE_PLATE.get());
+        tag(ItemTags.WOODEN_BUTTONS).add(ModItems.AMANITA_BUTTON.get());
         tag(ItemTags.SIGNS).add(ModItems.AMANITA_SIGN.get());
         tag(ItemTags.HANGING_SIGNS).add(ModItems.AMANITA_HANGING_SIGN.get());
         tag(ItemTags.BOATS).add(ModItems.AMANITA_BOAT.get());

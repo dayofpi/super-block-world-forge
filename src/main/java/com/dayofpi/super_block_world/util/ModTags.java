@@ -24,6 +24,7 @@ public class ModTags {
         public static final TagKey<Block> PIPE_BODIES = tag("pipe_bodies");
         public static final TagKey<Block> BRONZE_BLOCKS = tag("bronze_blocks");
         public static final TagKey<Block> AMANITA_LOGS = tag("amanita_logs");
+        public static final TagKey<Block> VANILLATE_TOPPING_REPLACEABLE = tag("vanillate_topping_replaceable");
 
         private static TagKey<Block> tag(String name) {
             return TagKey.create(Registries.BLOCK, new ResourceLocation(SuperBlockWorld.MOD_ID, name));
@@ -32,6 +33,7 @@ public class ModTags {
 
     public static class Biomes {
         public static final TagKey<Biome> IS_MUSHROOM_KINGDOM = tag("is_mushroom_kingdom");
+        public static final TagKey<Biome> HAS_BRICK_FORTRESS = tag("has_structure/brick_fortress");
 
         private static TagKey<Biome> tag(String name) {
             return TagKey.create(Registries.BIOME, new ResourceLocation(SuperBlockWorld.MOD_ID, name));

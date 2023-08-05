@@ -4,7 +4,7 @@
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
         "location": "super_block_world:moon_monolith",
-        "processors": "minecraft:fossil_rot",
+        "processors": "super_block_world:moon_monolith_decay",
         "projection": "rigid"
       },
       "weight": 1

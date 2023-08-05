@@ -1,0 +1,20 @@
+{
+  "processors": [
+    {
+      "blocks": [
+        {
+          "Name": "minecraft:air"
+        }
+      ],
+      "processor_type": "minecraft:block_ignore"
+    },
+    {
+      "integrity": 0.9,
+      "processor_type": "minecraft:block_rot"
+    },
+    {
+      "processor_type": "minecraft:protected_blocks",
+      "value": "#minecraft:features_cannot_replace"
+    }
+  ]
+}

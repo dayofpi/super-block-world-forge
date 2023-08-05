@@ -128,6 +128,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.HARDSTONE_STAIRS.get());
         slab(ModBlocks.HARDSTONE_SLAB);
         dropSelf(ModBlocks.HARDSTONE_WALL.get());
+        dropSelf(ModBlocks.CHISELED_HARDSTONE.get());
         dropSelf(ModBlocks.HARDSTONE_BRICKS.get());
         dropSelf(ModBlocks.CRACKED_HARDSTONE_BRICKS.get());
         dropSelf(ModBlocks.HARDSTONE_BRICK_STAIRS.get());
@@ -151,6 +152,12 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.AMANITA_PLANKS.get());
         dropSelf(ModBlocks.AMANITA_STAIRS.get());
         slab(ModBlocks.AMANITA_SLAB);
+        dropSelf(ModBlocks.AMANITA_FENCE.get());
+        dropSelf(ModBlocks.AMANITA_FENCE_GATE.get());
+        add(ModBlocks.AMANITA_DOOR.get(), this::createDoorTable);
+        dropSelf(ModBlocks.AMANITA_TRAPDOOR.get());
+        dropSelf(ModBlocks.AMANITA_PRESSURE_PLATE.get());
+        dropSelf(ModBlocks.AMANITA_BUTTON.get());
         dropSelf(ModBlocks.AMANITA_SIGN.get());
         dropSelf(ModBlocks.AMANITA_HANGING_SIGN.get());
         add(ModBlocks.AMANITA_LEAVES.get(), block -> createLeavesDrops(block, ModBlocks.AMANITA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));

@@ -50,6 +50,7 @@ public class ModCreativeTabs {
         output.accept(ModItems.HARDSTONE_STAIRS.get());
         output.accept(ModItems.HARDSTONE_SLAB.get());
         output.accept(ModItems.HARDSTONE_WALL.get());
+        output.accept(ModItems.CHISELED_HARDSTONE.get());
         output.accept(ModItems.HARDSTONE_BRICKS.get());
         output.accept(ModItems.CRACKED_HARDSTONE_BRICKS.get());
         output.accept(ModItems.HARDSTONE_BRICK_STAIRS.get());
@@ -74,6 +75,12 @@ public class ModCreativeTabs {
         output.accept(ModItems.AMANITA_PLANKS.get());
         output.accept(ModItems.AMANITA_STAIRS.get());
         output.accept(ModItems.AMANITA_SLAB.get());
+        output.accept(ModItems.AMANITA_FENCE.get());
+        output.accept(ModItems.AMANITA_FENCE_GATE.get());
+        output.accept(ModItems.AMANITA_DOOR.get());
+        output.accept(ModItems.AMANITA_TRAPDOOR.get());
+        output.accept(ModItems.AMANITA_PRESSURE_PLATE.get());
+        output.accept(ModItems.AMANITA_BUTTON.get());
         output.accept(ModItems.AMANITA_SIGN.get());
         output.accept(ModItems.AMANITA_HANGING_SIGN.get());
         output.accept(ModItems.AMANITA_LEAVES.get());
@@ -166,5 +173,6 @@ public class ModCreativeTabs {
         output.accept(ModItems.PURPLE_STAR_BIT.get());
         output.accept(ModItems.SUBCON_THREAD.get());
         output.accept(ModItems.SHY_GUY_SPAWN_EGG.get());
+        output.accept(ModItems.BOOM_BOOM_SPAWN_EGG.get());
     }).build());
 }

@@ -30,7 +30,9 @@
   "features": [
     [],
     [],
-    [],
+    [
+      "super_block_world:vanillate_topping"
+    ],
     [],
     [],
     [],
@@ -43,8 +45,8 @@
     ],
     [
       "super_block_world:star_cluster",
-      "super_block_world:pipe",
       "super_block_world:warp_pipe",
+      "super_block_world:linked_warp_pipe",
       "super_block_world:underwater_pipe"
     ],
     [

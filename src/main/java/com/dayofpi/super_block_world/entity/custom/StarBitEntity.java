@@ -44,6 +44,7 @@ public class StarBitEntity extends ModThrownItemEntity {
 
     @Override
     protected void onHitEntity(EntityHitResult entityHitResult) {
+        super.onHitEntity(entityHitResult);
         Entity entity = entityHitResult.getEntity();
         entity.hurt(this.damageSources().thrown(this, this.getOwner()), 2);
     }

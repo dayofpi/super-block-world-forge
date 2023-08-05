@@ -48,6 +48,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockWithItem(ModBlocks.TOADSTONE_BRICKS);
         simpleBlockWithItem(ModBlocks.SMOOTH_TOADSTONE);
         simpleBlockWithItem(ModBlocks.HARDSTONE);
+        simpleBlockWithItem(ModBlocks.CHISELED_HARDSTONE);
         simpleBlockWithItem(ModBlocks.HARDSTONE_BRICKS);
         simpleBlockWithItem(ModBlocks.CRACKED_HARDSTONE_BRICKS);
         simpleBlockWithItem(ModBlocks.SMOOTH_HARDSTONE);
@@ -98,6 +99,18 @@ public class ModBlockStateProvider extends BlockStateProvider {
         wallBlock((WallBlock) ModBlocks.HARDSTONE_WALL.get(), blockTexture(ModBlocks.HARDSTONE.get()));
         wallBlock((WallBlock) ModBlocks.HARDSTONE_BRICK_WALL.get(), blockTexture(ModBlocks.HARDSTONE_BRICKS.get()));
         wallBlock((WallBlock) ModBlocks.RAINBOW_TILE_WALL.get(), blockTexture(ModBlocks.RAINBOW_TILES.get()));
+
+        fenceBlock((FenceBlock) ModBlocks.AMANITA_FENCE.get(), blockTexture(ModBlocks.AMANITA_PLANKS.get()));
+
+        fenceGateBlock((FenceGateBlock) ModBlocks.AMANITA_FENCE_GATE.get(), blockTexture(ModBlocks.AMANITA_PLANKS.get()));
+
+        doorBlockWithRenderType((DoorBlock) ModBlocks.AMANITA_DOOR.get(), modLoc("block/amanita_door_bottom"), modLoc("block/amanita_door_top"), "cutout");
+
+        trapdoorBlockWithRenderType((TrapDoorBlock) ModBlocks.AMANITA_TRAPDOOR.get(), modLoc("block/amanita_trapdoor"), true, "cutout");
+
+        pressurePlateBlock((PressurePlateBlock) ModBlocks.AMANITA_PRESSURE_PLATE.get(), blockTexture(ModBlocks.AMANITA_PLANKS.get()));
+
+        buttonBlock((ButtonBlock) ModBlocks.AMANITA_BUTTON.get(), blockTexture(ModBlocks.AMANITA_PLANKS.get()));
 
         modSignBlock(ModBlocks.AMANITA_SIGN.get(), ModBlocks.AMANITA_WALL_SIGN.get(), blockTexture(ModBlocks.AMANITA_PLANKS.get()));
         modSignBlock(ModBlocks.AMANITA_HANGING_SIGN.get(), ModBlocks.AMANITA_WALL_HANGING_SIGN.get(), blockTexture(ModBlocks.STRIPPED_AMANITA_LOG.get()));

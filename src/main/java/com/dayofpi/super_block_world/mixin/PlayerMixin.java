@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.Unique;
 @Mixin(Player.class)
 public abstract class PlayerMixin extends LivingEntity {
     @Unique
-    private int super_block_world$pipeCooldown;
+    private int pipeCooldown;
 
     protected PlayerMixin(EntityType<? extends LivingEntity> entityType, Level level) {
         super(entityType, level);
@@ -28,6 +28,7 @@ public abstract class PlayerMixin extends LivingEntity {
         super.setShiftKeyDown(bl);
     }
 
+    @Unique
     private void warpToPipe() {
         if (this.getPipeCooldown() != 0)
             return;
@@ -42,6 +43,7 @@ public abstract class PlayerMixin extends LivingEntity {
         }
     }
 
+    @Unique
     private void warpToPipe(BlockPos originPos) {
         BlockPos destinPos = null;
         BlockEntity blockEntity = level().getBlockEntity(originPos);
@@ -53,12 +55,14 @@ public abstract class PlayerMixin extends LivingEntity {
         this.setPipeCooldown(20);
     }
 
+    @Unique
     public int getPipeCooldown() {
-        return super_block_world$pipeCooldown;
+        return pipeCooldown;
     }
 
+    @Unique
     public void setPipeCooldown(int cooldown) {
-        this.super_block_world$pipeCooldown = cooldown;
+        this.pipeCooldown = cooldown;
     }
 
     @Override
@@ -66,7 +70,7 @@ public abstract class PlayerMixin extends LivingEntity {
         super.baseTick();
         if (this.isAlive()) {
             if (this.getPipeCooldown() > 0) {
-                --this.super_block_world$pipeCooldown;
+                --this.pipeCooldown;
             }
         }
     }

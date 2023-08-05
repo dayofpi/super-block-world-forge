@@ -4,11 +4,13 @@ import com.dayofpi.super_block_world.SuperBlockWorld;
 import com.dayofpi.super_block_world.entity.custom.ShyGuyEntity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
+import net.minecraft.client.renderer.entity.layers.ItemInHandLayer;
 import net.minecraft.resources.ResourceLocation;
 
 public class ShyGuyRenderer extends MobRenderer<ShyGuyEntity, ShyGuyModel<ShyGuyEntity>> {
     public ShyGuyRenderer(EntityRendererProvider.Context pContext) {
         super(pContext, new ShyGuyModel<>(pContext.bakeLayer(ShyGuyModel.LAYER_LOCATION)), 0.4F);
+        this.addLayer(new ItemInHandLayer<>(this, pContext.getItemInHandRenderer()));
     }
 
     @Override

@@ -2,11 +2,12 @@ package com.dayofpi.super_block_world.worldgen.feature;
 
 import com.dayofpi.super_block_world.SuperBlockWorld;
 import com.dayofpi.super_block_world.block.ModBlocks;
+import com.dayofpi.super_block_world.util.ModTags;
+import com.dayofpi.super_block_world.worldgen.feature.custom.ToppingFeatureConfiguration;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderSet;
-import net.minecraft.core.Vec3i;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.features.TreeFeatures;
@@ -20,7 +21,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -36,7 +36,9 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStatePr
 import net.minecraft.world.level.levelgen.feature.treedecorators.AlterGroundDecorator;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.DarkOakTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
-import net.minecraft.world.level.levelgen.placement.*;
+import net.minecraft.world.level.levelgen.placement.BlockPredicateFilter;
+import net.minecraft.world.level.levelgen.placement.CaveSurface;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraft.world.level.material.Fluids;
 
@@ -50,6 +52,7 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> FLOWERBED_WHITE = registerKey("flowerbed_white");
     public static final ResourceKey<ConfiguredFeature<?, ?>> FLOWERBED_YELLOW = registerKey("flowerbed_yellow");
     public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_MUSHROOM_GRASSLANDS = registerKey("trees_mushroom_grasslands");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> VANILLATE_TOPPING = registerKey("vanillate_topping");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SPRING_WATER = registerKey("spring_water");
     public static final ResourceKey<ConfiguredFeature<?, ?>> DISK_SAND = registerKey("disk_sand");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_BRONZE = registerKey("ore_bronze");
@@ -57,10 +60,8 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_TOADSTONE = registerKey("ore_toadstone");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_HARDSTONE = registerKey("ore_hardstone");
     public static final ResourceKey<ConfiguredFeature<?, ?>> STAR_CLUSTER = registerKey("star_cluster");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> PIPE_UP = registerKey("pipe_up");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> PIPE_DOWN = registerKey("pipe_down");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> PIPE = registerKey("pipe");
     public static final ResourceKey<ConfiguredFeature<?, ?>> WARP_PIPE = registerKey("warp_pipe");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> LINKED_WARP_PIPE = registerKey("linked_warp_pipe");
     public static final ResourceKey<ConfiguredFeature<?, ?>> UNDERWATER_PIPE = registerKey("underwater_pipe");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
@@ -72,6 +73,7 @@ public class ModConfiguredFeatures {
         register(context, FLOWERBED_WHITE, Feature.RANDOM_PATCH, new RandomPatchConfiguration(320, 7, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.WHITE_FLOWERBED.get())))));
         register(context, FLOWERBED_YELLOW, Feature.RANDOM_PATCH, new RandomPatchConfiguration(320, 7, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.YELLOW_FLOWERBED.get())))));
         register(context, TREES_MUSHROOM_GRASSLANDS, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(PlacementUtils.inlinePlaced(configuredFeatures.getOrThrow(TreeFeatures.HUGE_RED_MUSHROOM)), 0.2f), new WeightedPlacedFeature(placedFeatures.getOrThrow(ModPlacedFeatures.FRUITING_AMANITA_CHECKED), 0.1F)), placedFeatures.getOrThrow(ModPlacedFeatures.AMANITA_CHECKED)));
+        register(context, VANILLATE_TOPPING, ModFeatures.TOPPING.get(), new ToppingFeatureConfiguration(ModTags.Blocks.VANILLATE_TOPPING_REPLACEABLE, BlockStateProvider.simple(ModBlocks.TOPPED_VANILLATE.get()), CaveSurface.FLOOR, ConstantInt.of(1), 0.0f, 1, ConstantInt.of(7), 0.3f));
         register(context, SPRING_WATER, Feature.SPRING, new SpringConfiguration(Fluids.WATER.defaultFluidState(), true, 4, 1, HolderSet.direct(Block::builtInRegistryHolder, ModBlocks.VANILLATE.get(), ModBlocks.TOADSTOOL_SOIL.get())));
         register(context, DISK_SAND, Feature.DISK, new DiskConfiguration(new RuleBasedBlockStateProvider(BlockStateProvider.simple(Blocks.SAND), List.of(new RuleBasedBlockStateProvider.Rule(BlockPredicate.matchesBlocks(Direction.DOWN.getNormal(), Blocks.AIR), BlockStateProvider.simple(Blocks.SANDSTONE)))), BlockPredicate.matchesBlocks(List.of(ModBlocks.TOADSTOOL_SOIL.get(), ModBlocks.TOADSTOOL_GRASS.get())), UniformInt.of(2, 6), 2));
         BlockMatchTest isVanillate = new BlockMatchTest(ModBlocks.VANILLATE.get());
@@ -81,10 +83,8 @@ public class ModConfiguredFeatures {
         register(context, ORE_TOADSTONE, Feature.ORE, new OreConfiguration(isVanillate, ModBlocks.TOADSTONE.get().defaultBlockState(), 64));
         register(context, ORE_HARDSTONE, Feature.ORE, new OreConfiguration(isVanillate, ModBlocks.HARDSTONE.get().defaultBlockState(), 64));
         register(context, STAR_CLUSTER, Feature.RANDOM_PATCH, new RandomPatchConfiguration(32, 7, 3, PlacementUtils.inlinePlaced(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(ModBlocks.STAR_CLUSTER.get().defaultBlockState(), 2).add(ModBlocks.STAR_CLUSTER.get().defaultBlockState().setValue(BlockStateProperties.FACING, Direction.DOWN), 1).add(ModBlocks.STAR_CLUSTER.get().defaultBlockState().setValue(BlockStateProperties.FACING, Direction.NORTH), 1).add(ModBlocks.STAR_CLUSTER.get().defaultBlockState().setValue(BlockStateProperties.FACING, Direction.SOUTH), 1).add(ModBlocks.STAR_CLUSTER.get().defaultBlockState().setValue(BlockStateProperties.FACING, Direction.EAST), 1).add(ModBlocks.STAR_CLUSTER.get().defaultBlockState().setValue(BlockStateProperties.FACING, Direction.WEST), 1).build())), BlockPredicateFilter.forPredicate(BlockPredicate.ONLY_IN_AIR_PREDICATE))));
-        register(context, PIPE_UP, Feature.BLOCK_COLUMN, new BlockColumnConfiguration(List.of(BlockColumnConfiguration.layer(UniformInt.of(0, 5), BlockStateProvider.simple(ModBlocks.GREEN_PIPE_BODY.get().defaultBlockState().setValue(BlockStateProperties.FACING, Direction.UP))), BlockColumnConfiguration.layer(ConstantInt.of(1), BlockStateProvider.simple(ModBlocks.GREEN_WARP_PIPE.get().defaultBlockState().setValue(BlockStateProperties.FACING, Direction.UP)))), Direction.UP, BlockPredicate.ONLY_IN_AIR_PREDICATE, true));
-        register(context, PIPE_DOWN, Feature.BLOCK_COLUMN, new BlockColumnConfiguration(List.of(BlockColumnConfiguration.layer(UniformInt.of(0, 5), BlockStateProvider.simple(ModBlocks.GREEN_PIPE_BODY.get().defaultBlockState().setValue(BlockStateProperties.FACING, Direction.DOWN))), BlockColumnConfiguration.layer(ConstantInt.of(1), BlockStateProvider.simple(ModBlocks.GREEN_WARP_PIPE.get().defaultBlockState().setValue(BlockStateProperties.FACING, Direction.DOWN)))), Direction.DOWN, BlockPredicate.ONLY_IN_AIR_PREDICATE, true));
-        register(context, PIPE, Feature.RANDOM_BOOLEAN_SELECTOR, new RandomBooleanFeatureConfiguration(PlacementUtils.inlinePlaced(configuredFeatures.getOrThrow(PIPE_UP), CountPlacement.of(8), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(-24), VerticalAnchor.absolute(128)), BlockPredicateFilter.forPredicate(BlockPredicate.hasSturdyFace(new Vec3i(0, -1, 0), Direction.UP))), PlacementUtils.inlinePlaced(configuredFeatures.getOrThrow(PIPE_DOWN), CountPlacement.of(8), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(-24), VerticalAnchor.absolute(128)), BlockPredicateFilter.forPredicate(BlockPredicate.hasSturdyFace(new Vec3i(0, 1, 0), Direction.DOWN)))));
         register(context, WARP_PIPE, ModFeatures.WARP_PIPE.get(), new NoneFeatureConfiguration());
+        register(context, LINKED_WARP_PIPE, ModFeatures.LINKED_WARP_PIPE.get(), new NoneFeatureConfiguration());
         register(context, UNDERWATER_PIPE, ModFeatures.UNDERWATER_PIPE.get(), new NoneFeatureConfiguration());
     }
 

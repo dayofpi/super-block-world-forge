@@ -2,6 +2,8 @@ package com.dayofpi.super_block_world.entity.client;
 
 import com.dayofpi.super_block_world.SuperBlockWorld;
 import com.dayofpi.super_block_world.entity.custom.ShyGuyEntity;
+import com.mojang.blaze3d.vertex.PoseStack;
+import net.minecraft.client.model.ArmedModel;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
@@ -9,8 +11,9 @@ import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
+import net.minecraft.world.entity.HumanoidArm;
 
-public class ShyGuyModel<T extends ShyGuyEntity> extends HierarchicalModel<T> {
+public class ShyGuyModel<T extends ShyGuyEntity> extends HierarchicalModel<T> implements ArmedModel {
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(SuperBlockWorld.MOD_ID, "shy_guy"), "main");
 	private final ModelPart root;
 	private final ModelPart leftFoot;
@@ -50,28 +53,47 @@ public class ShyGuyModel<T extends ShyGuyEntity> extends HierarchicalModel<T> {
 	}
 
 	@Override
-	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-		this.body.zRot = Mth.cos(limbSwing * 0.6662F) * 0.5F * limbSwingAmount;
+	public ModelPart root() {
+		return this.root;
+	}
 
-		this.rightFoot.xRot = Mth.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount;
-		this.leftFoot.xRot = Mth.cos(limbSwing * 0.6662F + 3.1415927F) * 1.4F * limbSwingAmount;
+	@Override
+	public void setupAnim(T pEntity, float pLimbSwing, float pLimbSwingAmount, float pAgeInTicks, float pNetHeadYaw, float pHeadPitch) {
+		this.body.zRot = Mth.clamp(Mth.cos(pLimbSwing * 0.6662F) * 0.5F * pLimbSwingAmount, -0.6F, 0.6F);
 
-		if (!entity.isAggressive() && !entity.isOnFire() && !entity.isFreezing()) {
+		this.rightFoot.xRot = Mth.cos(pLimbSwing * 0.6662F) * 1.4F * pLimbSwingAmount;
+		this.leftFoot.xRot = Mth.cos(pLimbSwing * 0.6662F + 3.1415927F) * 1.4F * pLimbSwingAmount;
+
+		if (!pEntity.isAggressive() && !pEntity.isOnFire() && !pEntity.isFreezing()) {
 			this.rightArm.zRot = 0F;
 			this.leftArm.zRot = 0F;
 		}
-		else {
+		else if (pEntity.getMainHandItem().isEmpty()) {
 			this.rightArm.zRot = 1.5F;
 			this.leftArm.zRot = -1.5F;
 			return;
 		}
 
-		this.rightArm.xRot = Mth.cos(limbSwing * 0.6662F + 3.1415927F) * 1.4F * limbSwingAmount;
-		this.leftArm.xRot = Mth.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount;
+		this.rightArm.xRot = Mth.cos(pLimbSwing * 0.6662F + 3.1415927F) * 1.4F * pLimbSwingAmount;
+		this.leftArm.xRot = Mth.cos(pLimbSwing * 0.6662F) * 1.4F * pLimbSwingAmount;
 	}
 
 	@Override
-	public ModelPart root() {
-		return this.root;
+	public void translateToHand(HumanoidArm pSide, PoseStack pPoseStack) {
+		boolean flag = pSide == HumanoidArm.RIGHT;
+		ModelPart modelpart = flag ? this.rightArm : this.leftArm;
+		this.root.translateAndRotate(pPoseStack);
+		this.body.translateAndRotate(pPoseStack);
+		modelpart.translateAndRotate(pPoseStack);
+		pPoseStack.scale(0.7F, 0.7F, 0.7F);
+		this.offsetStackPosition(pPoseStack, flag);
+	}
+
+	private void offsetStackPosition(PoseStack poseStack, boolean isRightArm) {
+		if (isRightArm) {
+			poseStack.translate(0.046875D, -0.295D, 0.078125D);
+		} else {
+			poseStack.translate(-0.046875D, -0.295D, 0.078125D);
+		}
 	}
 }

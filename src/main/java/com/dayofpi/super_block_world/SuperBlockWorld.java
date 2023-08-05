@@ -5,10 +5,7 @@ import com.dayofpi.super_block_world.block.ModBlocks;
 import com.dayofpi.super_block_world.block.client.FlagRenderer;
 import com.dayofpi.super_block_world.block.client.PlacedItemRenderer;
 import com.dayofpi.super_block_world.entity.ModEntityTypes;
-import com.dayofpi.super_block_world.entity.client.HammerRenderer;
-import com.dayofpi.super_block_world.entity.client.ModBoatRenderer;
-import com.dayofpi.super_block_world.entity.client.ShyGuyRenderer;
-import com.dayofpi.super_block_world.entity.client.WarpPaintingRenderer;
+import com.dayofpi.super_block_world.entity.client.*;
 import com.dayofpi.super_block_world.entity.custom.HammerEntity;
 import com.dayofpi.super_block_world.entity.custom.StarBitEntity;
 import com.dayofpi.super_block_world.item.ModCreativeTabs;
@@ -148,6 +145,7 @@ public class SuperBlockWorld {
             event.enqueueWork(() -> {
                 Sheets.addWoodType(ModWoodTypes.AMANITA);
                 EntityRenderers.register(ModEntityTypes.SHY_GUY.get(), ShyGuyRenderer::new);
+                EntityRenderers.register(ModEntityTypes.BOOM_BOOM.get(), BoomBoomRenderer::new);
                 EntityRenderers.register(ModEntityTypes.HAMMER.get(), HammerRenderer::new);
                 EntityRenderers.register(ModEntityTypes.STAR_BIT.get(), ThrownItemRenderer::new);
                 EntityRenderers.register(ModEntityTypes.WARP_PAINTING.get(), WarpPaintingRenderer::new);

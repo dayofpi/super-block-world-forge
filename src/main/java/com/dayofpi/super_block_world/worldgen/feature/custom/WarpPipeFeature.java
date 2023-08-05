@@ -1,20 +1,16 @@
 package com.dayofpi.super_block_world.worldgen.feature.custom;
 
 import com.dayofpi.super_block_world.block.ModBlocks;
-import com.dayofpi.super_block_world.block.block_entities.WarpPipeBlockEntity;
+import com.dayofpi.super_block_world.util.ModTags;
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
-import net.minecraftforge.registries.RegistryObject;
 
 public class WarpPipeFeature extends Feature<NoneFeatureConfiguration> {
     public WarpPipeFeature(Codec<NoneFeatureConfiguration> pCodec) {
@@ -23,63 +19,96 @@ public class WarpPipeFeature extends Feature<NoneFeatureConfiguration> {
 
     @Override
     public boolean place(FeaturePlaceContext<NoneFeatureConfiguration> pContext) {
-        BlockPos caveWarpPipePos = pContext.origin();
-        BlockPos caveFloorPos = caveWarpPipePos.below();
-
+        int i = 0;
         WorldGenLevel level = pContext.level();
-        BlockPos surfaceWarpPipePos = level.getHeightmapPos(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, caveWarpPipePos);
-        BlockPos surfaceFloorPos = surfaceWarpPipePos.below();
+        BlockPos blockPos = pContext.origin();
 
-        boolean canPlaceCavePipe = caveWarpPipePos != surfaceWarpPipePos && level.getBlockState(caveWarpPipePos).isAir() && level.getBlockState(caveWarpPipePos.above()).isAir() && level.getBlockState(caveFloorPos).isSolidRender(level, caveFloorPos);
-        boolean canPlaceSurfacePipe = level.getBlockState(surfaceWarpPipePos).isAir() && level.getBlockState(surfaceWarpPipePos.above()).isAir() && level.getBlockState(surfaceFloorPos).isSolidRender(level, surfaceFloorPos);
-        if (canPlaceCavePipe && canPlaceSurfacePipe) {
+        i = pContext.random().nextBoolean() ? generateCeilingPipe(pContext, i, level, blockPos) : generateFloorPipe(pContext, i, level, blockPos);
+
+        return i > 0;
+    }
+
+    private static int generateFloorPipe(FeaturePlaceContext<NoneFeatureConfiguration> pContext, int i, WorldGenLevel level, BlockPos blockPos) {
+        BlockPos floor = blockPos.below();
+        if (level.getBlockState(blockPos).isAir() && level.getBlockState(floor).isSolidRender(level, floor)) {
+            BlockState warpPipeState = LinkedWarpPipeFeature.createPipeState(ModBlocks.GREEN_WARP_PIPE, Direction.UP, false);
+            BlockState pipeBodyState = LinkedWarpPipeFeature.createPipeState(ModBlocks.GREEN_PIPE_BODY, Direction.UP, false);
             RandomSource random = pContext.random();
-            BlockState warpPipeState = getWarpPipeState(random);
-            BlockState pipeBodyState = getMatchingPipeBody(warpPipeState);
-            if (random.nextBoolean() && level.getBlockState(caveWarpPipePos.above(2)).isAir()) {
-                level.setBlock(caveWarpPipePos, pipeBodyState, 2);
-                caveWarpPipePos = caveWarpPipePos.above();
-            }
-            level.setBlock(caveWarpPipePos, warpPipeState, 2);
 
-            if (random.nextBoolean() && level.getBlockState(surfaceWarpPipePos.above(2)).isAir()) {
-                level.setBlock(surfaceWarpPipePos, pipeBodyState, 2);
-                surfaceWarpPipePos = surfaceWarpPipePos.above();
+            if (random.nextInt(4) == 0) {
+                warpPipeState = LinkedWarpPipeFeature.createPipeState(ModBlocks.RED_WARP_PIPE, Direction.UP, false);
+                pipeBodyState = LinkedWarpPipeFeature.createPipeState(ModBlocks.RED_PIPE_BODY, Direction.UP, false);
+            } else if (random.nextInt(4) == 0) {
+                warpPipeState = LinkedWarpPipeFeature.createPipeState(ModBlocks.YELLOW_WARP_PIPE, Direction.UP, false);
+                pipeBodyState = LinkedWarpPipeFeature.createPipeState(ModBlocks.YELLOW_PIPE_BODY, Direction.UP, false);
+            } else if (random.nextInt(4) == 0) {
+                warpPipeState = LinkedWarpPipeFeature.createPipeState(ModBlocks.BLUE_WARP_PIPE, Direction.UP, false);
+                pipeBodyState = LinkedWarpPipeFeature.createPipeState(ModBlocks.BLUE_PIPE_BODY, Direction.UP, false);
             }
-            level.setBlock(surfaceWarpPipePos, warpPipeState, 2);
-            if (level.getBlockEntity(caveWarpPipePos) instanceof WarpPipeBlockEntity caveWarpPipeBE && level.getBlockEntity(surfaceWarpPipePos) instanceof WarpPipeBlockEntity surfaceWarpPipeBE) {
-                caveWarpPipeBE.setDestinationPos(surfaceWarpPipePos, level);
-                surfaceWarpPipeBE.setDestinationPos(caveWarpPipePos, level);
+
+            int height = 1 + random.nextInt(6);
+            for (int l = 0; l <= height; ++l) {
+                if (level.getBlockState(blockPos).isAir() && level.getBlockState(blockPos.above()).isAir()) {
+                    if (l == height) {
+                        level.setBlock(blockPos, warpPipeState, 2);
+                        ++i;
+                    } else {
+                        level.setBlock(blockPos, pipeBodyState, 2);
+                    }
+                } else if (l > 0) {
+                    BlockPos blockPos3 = blockPos.below();
+                    if (!level.getBlockState(blockPos3.below()).is(ModTags.Blocks.WARP_PIPES)) {
+                        level.setBlock(blockPos3, warpPipeState, 2);
+                        ++i;
+                    }
+                    break;
+                }
+
+                blockPos = blockPos.above();
             }
-            return true;
         }
-
-        return false;
+        return i;
     }
 
-    public static BlockState createPipeState(RegistryObject<Block> block, boolean waterlogged) {
-        return block.get().defaultBlockState().setValue(BlockStateProperties.FACING, Direction.UP).setValue(BlockStateProperties.WATERLOGGED, waterlogged);
-    }
+    private static int generateCeilingPipe(FeaturePlaceContext<NoneFeatureConfiguration> pContext, int i, WorldGenLevel level, BlockPos blockPos) {
+        BlockPos ceiling = blockPos.above();
+        if (level.getBlockState(blockPos).isAir() && level.getBlockState(ceiling).isSolidRender(level, ceiling)) {
+            BlockState warpPipeState = LinkedWarpPipeFeature.createPipeState(ModBlocks.GREEN_WARP_PIPE, Direction.DOWN, false);
+            BlockState pipeBodyState = LinkedWarpPipeFeature.createPipeState(ModBlocks.GREEN_PIPE_BODY, Direction.DOWN, false);
+            RandomSource random = pContext.random();
 
-    private BlockState getWarpPipeState(RandomSource randomSource) {
-        if (randomSource.nextInt(4) == 0) {
-           return WarpPipeFeature.createPipeState(ModBlocks.RED_WARP_PIPE, false);
-        } else if (randomSource.nextInt(4) == 0) {
-           return WarpPipeFeature.createPipeState(ModBlocks.YELLOW_WARP_PIPE, false);
-        } else if (randomSource.nextInt(4) == 0) {
-           return WarpPipeFeature.createPipeState(ModBlocks.BLUE_WARP_PIPE, false);
+            if (random.nextInt(4) == 0) {
+                warpPipeState = LinkedWarpPipeFeature.createPipeState(ModBlocks.RED_WARP_PIPE, Direction.DOWN, false);
+                pipeBodyState = LinkedWarpPipeFeature.createPipeState(ModBlocks.RED_PIPE_BODY, Direction.DOWN, false);
+            } else if (random.nextInt(4) == 0) {
+                warpPipeState = LinkedWarpPipeFeature.createPipeState(ModBlocks.YELLOW_WARP_PIPE, Direction.DOWN, false);
+                pipeBodyState = LinkedWarpPipeFeature.createPipeState(ModBlocks.YELLOW_PIPE_BODY, Direction.DOWN, false);
+            } else if (random.nextInt(4) == 0) {
+                warpPipeState = LinkedWarpPipeFeature.createPipeState(ModBlocks.BLUE_WARP_PIPE, Direction.DOWN, false);
+                pipeBodyState = LinkedWarpPipeFeature.createPipeState(ModBlocks.BLUE_PIPE_BODY, Direction.DOWN, false);
+            }
+
+            int height = 1 + random.nextInt(6);
+            for (int l = 0; l <= height; ++l) {
+                if (level.getBlockState(blockPos).isAir() && level.getBlockState(blockPos.below()).isAir()) {
+                    if (l == height) {
+                        level.setBlock(blockPos, warpPipeState, 2);
+                        ++i;
+                    } else {
+                        level.setBlock(blockPos, pipeBodyState, 2);
+                    }
+                } else if (l > 0) {
+                    BlockPos blockPos3 = blockPos.above();
+                    if (!level.getBlockState(blockPos3.above()).is(ModTags.Blocks.WARP_PIPES)) {
+                        level.setBlock(blockPos3, warpPipeState, 2);
+                        ++i;
+                    }
+                    break;
+                }
+
+                blockPos = blockPos.below();
+            }
         }
-        return WarpPipeFeature.createPipeState(ModBlocks.GREEN_WARP_PIPE, false);
-    }
-
-    private BlockState getMatchingPipeBody(BlockState blockState) {
-        Block block = ModBlocks.GREEN_PIPE_BODY.get();
-        if (blockState.is(ModBlocks.RED_WARP_PIPE.get()))
-            block = ModBlocks.RED_PIPE_BODY.get();
-        else if (blockState.is(ModBlocks.YELLOW_WARP_PIPE.get()))
-            block = ModBlocks.YELLOW_PIPE_BODY.get();
-        else if (blockState.is(ModBlocks.BLUE_WARP_PIPE.get()))
-            block = ModBlocks.BLUE_PIPE_BODY.get();
-        return block.defaultBlockState().setValue(BlockStateProperties.FACING, Direction.UP);
+        return i;
     }
 }

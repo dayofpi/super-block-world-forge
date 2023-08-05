@@ -2,6 +2,11 @@
   "required": true,
   "minVersion": "0.8",
   "package": "com.dayofpi.super_block_world.mixin",
+  "mixins": [
+    "AbstractArrowMixin",
+    "BubbleColumnBlockMixin",
+    "PlayerMixin"
+  ],
   "client": [
     "MinecraftMixin",
     "RabbitRendererMixin"
@@ -10,9 +15,5 @@
   "refmap": "mixins.super_block_world.refmap.json",
   "injectors": {
     "defaultRequire": 1
-  },
-  "mixins": [
-    "BubbleColumnBlockMixin",
-    "PlayerMixin"
-  ]
+  }
 }

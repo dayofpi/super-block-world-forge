@@ -30,6 +30,7 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> FLOWERBED_WHITE = registerKey("flowerbed_white");
     public static final ResourceKey<PlacedFeature> FLOWERBED_YELLOW = registerKey("flowerbed_yellow");
     public static final ResourceKey<PlacedFeature> TREES_MUSHROOM_GRASSLANDS = registerKey("trees_mushroom_grasslands");
+    public static final ResourceKey<PlacedFeature> VANILLATE_TOPPING = registerKey("vanillate_topping");
     public static final ResourceKey<PlacedFeature> SPRING_WATER = registerKey("spring_water");
     public static final ResourceKey<PlacedFeature> DISK_SAND = registerKey("disk_sand");
     public static final ResourceKey<PlacedFeature> ORE_BRONZE = registerKey("ore_bronze");
@@ -37,8 +38,8 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> ORE_TOADSTONE = registerKey("ore_toadstone");
     public static final ResourceKey<PlacedFeature> ORE_HARDSTONE = registerKey("ore_hardstone");
     public static final ResourceKey<PlacedFeature> STAR_CLUSTER = registerKey("star_cluster");
-    public static final ResourceKey<PlacedFeature> PIPE = registerKey("pipe");
     public static final ResourceKey<PlacedFeature> WARP_PIPE = registerKey("warp_pipe");
+    public static final ResourceKey<PlacedFeature> LINKED_WARP_PIPE = registerKey("linked_warp_pipe");
     public static final ResourceKey<PlacedFeature> UNDERWATER_PIPE = registerKey("underwater_pipe");
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
@@ -50,15 +51,16 @@ public class ModPlacedFeatures {
         register(context, FLOWERBED_WHITE, configuredFeatures.getOrThrow(ModConfiguredFeatures.FLOWERBED_WHITE), ImmutableList.of(RarityFilter.onAverageOnceEvery(18), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
         register(context, FLOWERBED_YELLOW, configuredFeatures.getOrThrow(ModConfiguredFeatures.FLOWERBED_YELLOW), ImmutableList.of(RarityFilter.onAverageOnceEvery(18), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
         register(context, TREES_MUSHROOM_GRASSLANDS, configuredFeatures.getOrThrow(ModConfiguredFeatures.TREES_MUSHROOM_GRASSLANDS), VegetationPlacements.treePlacement(CountPlacement.of(new WeightedListInt(SimpleWeightedRandomList.<IntProvider>builder().add(ConstantInt.of(0), 4).add(ConstantInt.of(4), 1).build())), ModBlocks.AMANITA_SAPLING.get()));
+        register(context, VANILLATE_TOPPING, configuredFeatures.getOrThrow(ModConfiguredFeatures.VANILLATE_TOPPING), ImmutableList.of(CountPlacement.of(50), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(-24), VerticalAnchor.absolute(190)), BiomeFilter.biome()));
         register(context, SPRING_WATER, configuredFeatures.getOrThrow(ModConfiguredFeatures.SPRING_WATER), ImmutableList.of(CountPlacement.of(25), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.absolute(192)), BiomeFilter.biome()));
         register(context, DISK_SAND, configuredFeatures.getOrThrow(ModConfiguredFeatures.DISK_SAND), ImmutableList.of(CountPlacement.of(3), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_TOP_SOLID, BlockPredicateFilter.forPredicate(BlockPredicate.matchesFluids(Fluids.WATER)), BiomeFilter.biome()));
         register(context, ORE_BRONZE, configuredFeatures.getOrThrow(ModConfiguredFeatures.ORE_BRONZE), ImmutableList.of(CountPlacement.of(14), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(-24), VerticalAnchor.absolute(128)), BiomeFilter.biome()));
-        register(context, ORE_CRUMBLE, configuredFeatures.getOrThrow(ModConfiguredFeatures.ORE_CRUMBLE), ImmutableList.of(CountPlacement.of(32), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(0), VerticalAnchor.TOP), BiomeFilter.biome()));
+        register(context, ORE_CRUMBLE, configuredFeatures.getOrThrow(ModConfiguredFeatures.ORE_CRUMBLE), ImmutableList.of(CountPlacement.of(32), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.BOTTOM, VerticalAnchor.absolute(100)), BiomeFilter.biome()));
         register(context, ORE_TOADSTONE, configuredFeatures.getOrThrow(ModConfiguredFeatures.ORE_TOADSTONE), ImmutableList.of(CountPlacement.of(3), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(16), VerticalAnchor.absolute(190)), BiomeFilter.biome()));
         register(context, ORE_HARDSTONE, configuredFeatures.getOrThrow(ModConfiguredFeatures.ORE_HARDSTONE), ImmutableList.of(CountPlacement.of(2), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(-32), VerticalAnchor.absolute(190)), BiomeFilter.biome()));
         register(context, STAR_CLUSTER, configuredFeatures.getOrThrow(ModConfiguredFeatures.STAR_CLUSTER), ImmutableList.of(RarityFilter.onAverageOnceEvery(2), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(-16), VerticalAnchor.absolute(63)), BiomeFilter.biome()));
-        register(context, PIPE, configuredFeatures.getOrThrow(ModConfiguredFeatures.PIPE), ImmutableList.of(BiomeFilter.biome()));
-        register(context, WARP_PIPE, configuredFeatures.getOrThrow(ModConfiguredFeatures.WARP_PIPE), ImmutableList.of(CountPlacement.of(4), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(-16), VerticalAnchor.absolute(42)), BiomeFilter.biome()));
+        register(context, WARP_PIPE, configuredFeatures.getOrThrow(ModConfiguredFeatures.WARP_PIPE), ImmutableList.of(CountPlacement.of(14), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(-24), VerticalAnchor.absolute(128)), BiomeFilter.biome()));
+        register(context, LINKED_WARP_PIPE, configuredFeatures.getOrThrow(ModConfiguredFeatures.LINKED_WARP_PIPE), ImmutableList.of(CountPlacement.of(3), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(-16), VerticalAnchor.absolute(42)), BiomeFilter.biome()));
         register(context, UNDERWATER_PIPE, configuredFeatures.getOrThrow(ModConfiguredFeatures.UNDERWATER_PIPE), ImmutableList.of(CountPlacement.of(15), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(-16), VerticalAnchor.absolute(70)), BiomeFilter.biome()));
     }
 

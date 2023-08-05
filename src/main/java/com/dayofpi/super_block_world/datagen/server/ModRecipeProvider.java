@@ -1,6 +1,5 @@
 package com.dayofpi.super_block_world.datagen.server;
 
-import com.dayofpi.super_block_world.block.ModBlocks;
 import com.dayofpi.super_block_world.item.ModItems;
 import com.dayofpi.super_block_world.util.ModTags;
 import com.google.common.collect.ImmutableList;
@@ -38,12 +37,6 @@ public class ModRecipeProvider  extends RecipeProvider implements IConditionBuil
         woodFromLogs(pWriter, ModItems.STRIPPED_AMANITA_WOOD.get(), ModItems.STRIPPED_AMANITA_LOG.get());
 
         planksFromLogs(pWriter, ModItems.AMANITA_PLANKS.get(), ModTags.Items.AMANITA_LOGS, 4);
-
-        signBuilder(ModItems.AMANITA_SIGN.get(), Ingredient.of(ModBlocks.AMANITA_PLANKS.get())).unlockedBy("has_amanita_planks", has(ModBlocks.AMANITA_PLANKS.get())).save(pWriter);
-        hangingSign(pWriter, ModItems.AMANITA_HANGING_SIGN.get(), ModBlocks.STRIPPED_AMANITA_LOG.get());
-
-        woodenBoat(pWriter, ModItems.AMANITA_BOAT.get(), ModItems.AMANITA_PLANKS.get());
-        chestBoat(pWriter, ModItems.AMANITA_CHEST_BOAT.get(), ModItems.AMANITA_PLANKS.get());
 
         oneToOneConversionRecipe(pWriter, Items.WHITE_DYE, ModItems.WHITE_FLOWERBED.get(), "white_dye");
         oneToOneConversionRecipe(pWriter, Items.YELLOW_DYE, ModItems.YELLOW_FLOWERBED.get(), "yellow_dye");
@@ -157,6 +150,7 @@ public class ModRecipeProvider  extends RecipeProvider implements IConditionBuil
         stonecutterResultFromBase(pWriter, RecipeCategory.BUILDING_BLOCKS, ModItems.SMOOTH_TOADSTONE_SLAB.get(), ModItems.SMOOTH_TOADSTONE.get(), 2);
 
         stonecutterResultFromBase(pWriter, RecipeCategory.BUILDING_BLOCKS, ModItems.HARDSTONE_BRICKS.get(), ModItems.HARDSTONE.get());
+        stonecutterResultFromBase(pWriter, RecipeCategory.BUILDING_BLOCKS, ModItems.CHISELED_HARDSTONE.get(), ModItems.HARDSTONE.get());
         stonecutterResultFromBase(pWriter, RecipeCategory.BUILDING_BLOCKS, ModItems.HARDSTONE_STAIRS.get(), ModItems.HARDSTONE.get());
         stonecutterResultFromBase(pWriter, RecipeCategory.BUILDING_BLOCKS, ModItems.HARDSTONE_SLAB.get(), ModItems.HARDSTONE.get(), 2);
         stonecutterResultFromBase(pWriter, RecipeCategory.BUILDING_BLOCKS, ModItems.HARDSTONE_WALL.get(), ModItems.HARDSTONE.get());
@@ -212,6 +206,24 @@ public class ModRecipeProvider  extends RecipeProvider implements IConditionBuil
         wall(pWriter, ModItems.HARDSTONE_BRICK_WALL.get(), ModItems.HARDSTONE_BRICKS.get());
         wall(pWriter, ModItems.RAINBOW_TILE_WALL.get(), ModItems.RAINBOW_TILES.get());
 
+        fenceBuilder(ModItems.AMANITA_FENCE.get(), Ingredient.of(ModItems.AMANITA_PLANKS.get())).unlockedBy("has_amanita_planks", has(ModItems.AMANITA_PLANKS.get())).save(pWriter);
+
+        fenceGateBuilder(ModItems.AMANITA_FENCE_GATE.get(), Ingredient.of(ModItems.AMANITA_PLANKS.get())).unlockedBy("has_amanita_planks", has(ModItems.AMANITA_PLANKS.get())).save(pWriter);
+
+        doorBuilder(ModItems.AMANITA_DOOR.get(), Ingredient.of(ModItems.AMANITA_PLANKS.get())).unlockedBy("has_amanita_planks", has(ModItems.AMANITA_PLANKS.get())).save(pWriter);
+
+        trapdoorBuilder(ModItems.AMANITA_TRAPDOOR.get(), Ingredient.of(ModItems.AMANITA_PLANKS.get())).unlockedBy("has_amanita_planks", has(ModItems.AMANITA_PLANKS.get())).save(pWriter);
+
+        pressurePlate(pWriter, ModItems.AMANITA_PRESSURE_PLATE.get(), ModItems.AMANITA_PLANKS.get());
+
+        buttonBuilder(ModItems.AMANITA_BUTTON.get(), Ingredient.of(ModItems.AMANITA_PLANKS.get())).unlockedBy("has_amanita_planks", has(ModItems.AMANITA_PLANKS.get())).save(pWriter);
+
+        signBuilder(ModItems.AMANITA_SIGN.get(), Ingredient.of(ModItems.AMANITA_PLANKS.get())).unlockedBy("has_amanita_planks", has(ModItems.AMANITA_PLANKS.get())).save(pWriter);
+        hangingSign(pWriter, ModItems.AMANITA_HANGING_SIGN.get(), ModItems.STRIPPED_AMANITA_LOG.get());
+
+        woodenBoat(pWriter, ModItems.AMANITA_BOAT.get(), ModItems.AMANITA_PLANKS.get());
+        chestBoat(pWriter, ModItems.AMANITA_CHEST_BOAT.get(), ModItems.AMANITA_PLANKS.get());
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.POWER_SHARD.get(), 5).requires(ModItems.POWER_STAR.get()).unlockedBy("has_power_star", has(ModItems.POWER_STAR.get())).save(pWriter);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.FLAGPOLE.get(), 2).pattern("#").pattern("#").pattern("#").define('#', ModItems.BRONZE_INGOT.get()).unlockedBy("has_bronze_ingot", has(ModItems.BRONZE_INGOT.get())).save(pWriter);
@@ -219,6 +231,7 @@ public class ModRecipeProvider  extends RecipeProvider implements IConditionBuil
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.VANILLATE_BRICKS.get(), 4).pattern("##").pattern("##").define('#', ModItems.VANILLATE.get()).unlockedBy("has_material", has(ModItems.VANILLATE.get())).save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.VANILLATE_TILES.get(), 4).pattern("##").pattern("##").define('#', ModItems.VANILLATE_BRICKS.get()).unlockedBy("has_material", has(ModItems.VANILLATE_BRICKS.get())).save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.TOADSTONE_BRICKS.get(), 4).pattern("##").pattern("##").define('#', ModItems.TOADSTONE.get()).unlockedBy("has_material", has(ModItems.TOADSTONE.get())).save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.CHISELED_HARDSTONE.get()).pattern("#").pattern("#").define('#', ModItems.HARDSTONE.get()).unlockedBy("has_material", has(ModItems.HARDSTONE_SLAB.get())).save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.HARDSTONE_BRICKS.get(), 4).pattern("##").pattern("##").define('#', ModItems.HARDSTONE.get()).unlockedBy("has_material", has(ModItems.HARDSTONE.get())).save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.RAINBOW_TILES.get()).pattern("YG").pattern("BP").define('Y', ModItems.YELLOW_STAR_BIT.get()).define('G', ModItems.GREEN_STAR_BIT.get()).define('B', ModItems.BLUE_STAR_BIT.get()).define('P', ModItems.PURPLE_STAR_BIT.get()).unlockedBy("has_star_bit", has(ModTags.Items.STAR_BITS)).save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.WARP_PAINTING.get()).pattern("###").pattern("#P#").pattern("###").define('#', ModItems.SUBCON_THREAD.get()).define('P', Items.PAINTING).unlockedBy("has_subcon_thread", has(ModItems.SUBCON_THREAD.get())).save(pWriter);
@@ -229,7 +242,7 @@ public class ModRecipeProvider  extends RecipeProvider implements IConditionBuil
     }
 
     private static void paintedBronzeBlock(Consumer<FinishedRecipe> finishedRecipeConsumer, ItemLike bronzeBlock, ItemLike dye) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, bronzeBlock, 8).define('#', ModBlocks.BRONZE_BLOCK.get()).define('X', dye).pattern("###").pattern("#X#").pattern("###").group("painted_bronze").unlockedBy("has_bronze_block", has(ModBlocks.BRONZE_BLOCK.get())).save(finishedRecipeConsumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, bronzeBlock, 8).define('#', ModItems.BRONZE_BLOCK.get()).define('X', dye).pattern("###").pattern("#X#").pattern("###").group("painted_bronze").unlockedBy("has_bronze_block", has(ModItems.BRONZE_BLOCK.get())).save(finishedRecipeConsumer);
     }
 
     private static void flag(Consumer<FinishedRecipe> finishedRecipeConsumer, ItemLike flag, ItemLike wool) {

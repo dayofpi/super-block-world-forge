@@ -32,6 +32,12 @@ public class ModSoundEvents {
     public static final RegistryObject<SoundEvent> SHY_GUY_AMBIENT = registerSoundEvent("entity.shy_guy.ambient");
     public static final RegistryObject<SoundEvent> SHY_GUY_HURT = registerSoundEvent("entity.shy_guy.hurt");
     public static final RegistryObject<SoundEvent> SHY_GUY_DEATH = registerSoundEvent("entity.shy_guy.death");
+    public static final RegistryObject<SoundEvent> BOOM_BOOM_AMBIENT = registerSoundEvent("entity.boom_boom.ambient");
+    public static final RegistryObject<SoundEvent> BOOM_BOOM_SPIN = registerSoundEvent("entity.boom_boom.spin");
+    public static final RegistryObject<SoundEvent> BOOM_BOOM_DIZZY = registerSoundEvent("entity.boom_boom.dizzy");
+    public static final RegistryObject<SoundEvent> BOOM_BOOM_READY = registerSoundEvent("entity.boom_boom.ready");
+    public static final RegistryObject<SoundEvent> BOOM_BOOM_HURT = registerSoundEvent("entity.boom_boom.hurt");
+    public static final RegistryObject<SoundEvent> BOOM_BOOM_DEATH = registerSoundEvent("entity.boom_boom.death");
     public static final RegistryObject<SoundEvent> WARP_PAINTING_POWER = registerSoundEvent("entity.warp_painting.power");
     public static final RegistryObject<SoundEvent> WARP_PAINTING_TRAVEL = registerSoundEvent("entity.warp_painting.travel");
 

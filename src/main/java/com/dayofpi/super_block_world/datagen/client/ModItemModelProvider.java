@@ -111,6 +111,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         blockItem(ModBlocks.STRIPPED_AMANITA_WOOD);
         blockItem(ModBlocks.AMANITA_STAIRS);
         blockItem(ModBlocks.AMANITA_SLAB);
+        fenceItem(ModBlocks.AMANITA_FENCE, ModBlocks.AMANITA_PLANKS);
+        blockItem(ModBlocks.AMANITA_FENCE_GATE);
+        blockItem(ModBlocks.AMANITA_TRAPDOOR, "_bottom");
+        blockItem(ModBlocks.AMANITA_PRESSURE_PLATE);
+        buttonItem(ModBlocks.AMANITA_BUTTON, ModBlocks.AMANITA_PLANKS);
+        simpleItem(ModItems.AMANITA_DOOR);
         simpleItem(ModItems.AMANITA_SIGN);
         simpleItem(ModItems.AMANITA_HANGING_SIGN);
         blockItem(ModBlocks.AMANITA_LEAVES);
@@ -131,7 +137,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.BLUE_STAR_BIT);
         simpleItem(ModItems.PURPLE_STAR_BIT);
         simpleItem(ModItems.SUBCON_THREAD);
-        withExistingParent(ModItems.SHY_GUY_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        spawnEggItem(ModItems.SHY_GUY_SPAWN_EGG);
+        spawnEggItem(ModItems.BOOM_BOOM_SPAWN_EGG);
     }
 
     private void simpleItem(RegistryObject<Item> item) {
@@ -146,7 +153,23 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), new ResourceLocation(SuperBlockWorld.MOD_ID, "block/" + ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath()));
     }
 
+    private void blockItem(RegistryObject<Block> blockRegistryObject, String suffix) {
+        withExistingParent(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), new ResourceLocation(SuperBlockWorld.MOD_ID, "block/" + ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath() + suffix));
+    }
+
     public void wallItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {
-        this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/wall_inventory")).texture("wall",  new ResourceLocation(SuperBlockWorld.MOD_ID, "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
+        withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/wall_inventory")).texture("wall",  new ResourceLocation(SuperBlockWorld.MOD_ID, "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
+    }
+
+    public void fenceItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {
+        withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/fence_inventory")).texture("texture",  new ResourceLocation(SuperBlockWorld.MOD_ID, "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
+    }
+
+    public void buttonItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {
+        withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/button_inventory")).texture("texture",  new ResourceLocation(SuperBlockWorld.MOD_ID, "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
+    }
+
+    public void spawnEggItem(RegistryObject<Item> item) {
+        withExistingParent(item.getId().getPath(), mcLoc("item/template_spawn_egg"));
     }
 }

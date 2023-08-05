@@ -123,6 +123,7 @@ public class ModItems {
     public static final RegistryObject<Item> HARDSTONE_STAIRS = registerBlockItem("hardstone_stairs", ModBlocks.HARDSTONE_STAIRS);
     public static final RegistryObject<Item> HARDSTONE_SLAB = registerBlockItem("hardstone_slab", ModBlocks.HARDSTONE_SLAB);
     public static final RegistryObject<Item> HARDSTONE_WALL = registerBlockItem("hardstone_wall", ModBlocks.HARDSTONE_WALL);
+    public static final RegistryObject<Item> CHISELED_HARDSTONE = registerBlockItem("chiseled_hardstone", ModBlocks.CHISELED_HARDSTONE);
     public static final RegistryObject<Item> HARDSTONE_BRICKS = registerBlockItem("hardstone_bricks", ModBlocks.HARDSTONE_BRICKS);
     public static final RegistryObject<Item> CRACKED_HARDSTONE_BRICKS = registerBlockItem("cracked_hardstone_bricks", ModBlocks.CRACKED_HARDSTONE_BRICKS);
     public static final RegistryObject<Item> HARDSTONE_BRICK_STAIRS = registerBlockItem("hardstone_brick_stairs", ModBlocks.HARDSTONE_BRICK_STAIRS);
@@ -147,6 +148,12 @@ public class ModItems {
     public static final RegistryObject<Item> AMANITA_PLANKS = registerBlockItem("amanita_planks", ModBlocks.AMANITA_PLANKS);
     public static final RegistryObject<Item> AMANITA_STAIRS = registerBlockItem("amanita_stairs", ModBlocks.AMANITA_STAIRS);
     public static final RegistryObject<Item> AMANITA_SLAB = registerBlockItem("amanita_slab", ModBlocks.AMANITA_SLAB);
+    public static final RegistryObject<Item> AMANITA_FENCE = registerBlockItem("amanita_fence", ModBlocks.AMANITA_FENCE);
+    public static final RegistryObject<Item> AMANITA_FENCE_GATE = registerBlockItem("amanita_fence_gate", ModBlocks.AMANITA_FENCE_GATE);
+    public static final RegistryObject<Item> AMANITA_DOOR = registerBlockItem("amanita_door", ModBlocks.AMANITA_DOOR);
+    public static final RegistryObject<Item> AMANITA_TRAPDOOR = registerBlockItem("amanita_trapdoor", ModBlocks.AMANITA_TRAPDOOR);
+    public static final RegistryObject<Item> AMANITA_PRESSURE_PLATE = registerBlockItem("amanita_pressure_plate", ModBlocks.AMANITA_PRESSURE_PLATE);
+    public static final RegistryObject<Item> AMANITA_BUTTON = registerBlockItem("amanita_button", ModBlocks.AMANITA_BUTTON);
     public static final RegistryObject<Item> AMANITA_SIGN = ITEMS.register("amanita_sign", () -> new SignItem(new Item.Properties().stacksTo(16), ModBlocks.AMANITA_SIGN.get(), ModBlocks.AMANITA_WALL_SIGN.get()));
     public static final RegistryObject<Item> AMANITA_HANGING_SIGN = ITEMS.register("amanita_hanging_sign", () -> new HangingSignItem(ModBlocks.AMANITA_HANGING_SIGN.get(), ModBlocks.AMANITA_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
     public static final RegistryObject<Item> AMANITA_LEAVES = registerBlockItem("amanita_leaves", ModBlocks.AMANITA_LEAVES);
@@ -172,6 +179,7 @@ public class ModItems {
     public static final RegistryObject<Item> PURPLE_STAR_BIT = ITEMS.register("purple_star_bit", () -> new StarBitItem(new Item.Properties()));
     public static final RegistryObject<Item> SUBCON_THREAD = ITEMS.register("subcon_thread", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SHY_GUY_SPAWN_EGG = ITEMS.register("shy_guy_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.SHY_GUY, 0xff2e2e, 0x3e4eb8, new Item.Properties()));
+    public static final RegistryObject<Item> BOOM_BOOM_SPAWN_EGG = ITEMS.register("boom_boom_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.BOOM_BOOM, 0xcc7402, 0xffd22c, new Item.Properties()));
 
     private static RegistryObject<Item> registerBlockItem(String name, Supplier<Block> blockSupplier) {
         return ITEMS.register(name, () -> new BlockItem(blockSupplier.get(), new Item.Properties()));

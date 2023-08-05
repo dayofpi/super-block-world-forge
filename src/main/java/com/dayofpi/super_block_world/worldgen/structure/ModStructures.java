@@ -21,11 +21,13 @@ import java.util.Map;
 
 public class ModStructures {
     public static final ResourceKey<Structure> MOON_MONOLITH = register("moon_monolith");
+    public static final ResourceKey<Structure> BRICK_FORTRESS = register("brick_fortress");
 
     public static void bootstrap(BootstapContext<Structure> context) {
         HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
         HolderGetter<StructureTemplatePool> templatePools = context.lookup(Registries.TEMPLATE_POOL);
         context.register(MOON_MONOLITH, new JigsawStructure(new Structure.StructureSettings(biomes.getOrThrow(ModTags.Biomes.IS_MUSHROOM_KINGDOM), Map.of(), GenerationStep.Decoration.SURFACE_STRUCTURES, TerrainAdjustment.BEARD_THIN), templatePools.getOrThrow(ModTemplatePools.MOON_MONOLITH), 7, ConstantHeight.of(VerticalAnchor.absolute(0)), false, Heightmap.Types.WORLD_SURFACE_WG));
+        context.register(BRICK_FORTRESS, new JigsawStructure(new Structure.StructureSettings(biomes.getOrThrow(ModTags.Biomes.HAS_BRICK_FORTRESS), Map.of(), GenerationStep.Decoration.SURFACE_STRUCTURES, TerrainAdjustment.BEARD_BOX), templatePools.getOrThrow(ModTemplatePools.MOON_MONOLITH), 7, ConstantHeight.of(VerticalAnchor.absolute(0)), false, Heightmap.Types.WORLD_SURFACE_WG));
     }
 
     private static ResourceKey<Structure> register(String name) {

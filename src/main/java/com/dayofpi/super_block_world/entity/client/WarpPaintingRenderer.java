@@ -2,6 +2,7 @@ package com.dayofpi.super_block_world.entity.client;
 
 import com.dayofpi.super_block_world.SuperBlockWorld;
 import com.dayofpi.super_block_world.entity.custom.WarpPaintingEntity;
+import com.dayofpi.super_block_world.worldgen.dimension.ModDimensions;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
@@ -13,7 +14,6 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 
 public class WarpPaintingRenderer extends EntityRenderer<WarpPaintingEntity> {
@@ -59,6 +59,6 @@ public class WarpPaintingRenderer extends EntityRenderer<WarpPaintingEntity> {
         if (pEntity.getVariant() == WarpPaintingEntity.WarpPaintingVariant.LOCKED) {
             return LOCKED;
         }
-        return pEntity.level().dimension() == Level.OVERWORLD ? MUSHROOM_KINGDOM : OVERWORLD;
+        return pEntity.level().dimension() == ModDimensions.MUSHROOM_KINGDOM_LEVEL ? OVERWORLD : MUSHROOM_KINGDOM;
     }
 }
