@@ -178,7 +178,7 @@ public class ModItems {
     public static final RegistryObject<Item> BLUE_STAR_BIT = ITEMS.register("blue_star_bit", () -> new StarBitItem(new Item.Properties()));
     public static final RegistryObject<Item> PURPLE_STAR_BIT = ITEMS.register("purple_star_bit", () -> new StarBitItem(new Item.Properties()));
     public static final RegistryObject<Item> SUBCON_THREAD = ITEMS.register("subcon_thread", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> SHY_GUY_SPAWN_EGG = ITEMS.register("shy_guy_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.SHY_GUY, 0xff2e2e, 0x3e4eb8, new Item.Properties()));
+    public static final RegistryObject<Item> SHY_GUY_SPAWN_EGG = ITEMS.register("shy_guy_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.SHY_GUY, 0xed4125, 0x3785db, new Item.Properties()));
     public static final RegistryObject<Item> BOOM_BOOM_SPAWN_EGG = ITEMS.register("boom_boom_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.BOOM_BOOM, 0xcc7402, 0xffd22c, new Item.Properties()));
 
     private static RegistryObject<Item> registerBlockItem(String name, Supplier<Block> blockSupplier) {

@@ -135,7 +135,6 @@ public class BoomBoomEntity extends Monster {
             this.idleAnimationState.animateWhen(!this.walkAnimation.isMoving() && this.getBoomBoomState() == State.NORMAL, this.tickCount);
             this.spinAnimationState.animateWhen(this.isSpinningState(), this.tickCount);
         }
-
         super.tick();
     }
 

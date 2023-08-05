@@ -172,8 +172,7 @@
     "subtitle": "subtitles.super_block_world.entity.shy_guy.death",
     "sounds": [
       "super_block_world:entity/shy_guy/death1",
-      "super_block_world:entity/shy_guy/death2",
-      "super_block_world:entity/shy_guy/death3"
+      "super_block_world:entity/shy_guy/death2"
     ]
   },
   "entity.boom_boom.ambient": {

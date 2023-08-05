@@ -30,6 +30,7 @@ import java.util.Arrays;
 
 public class ShyGuyEntity extends Monster implements VariantHolder<ShyGuyEntity.Type> {
     private static final EntityDataAccessor<String> DATA_TYPE = SynchedEntityData.defineId(ShyGuyEntity.class, EntityDataSerializers.STRING);
+    public final AnimationState idleAnimationState = new AnimationState();
 
     public ShyGuyEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -40,7 +41,7 @@ public class ShyGuyEntity extends Monster implements VariantHolder<ShyGuyEntity.
         this.goalSelector.addGoal(1, new FloatGoal(this));
         this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.1, false));
         this.goalSelector.addGoal(3, new PanicGoal(this, 1.5));
-        this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 0.8D));
+        this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 1.0D));
         this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, Player.class, 8.0F));
         this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
         this.targetSelector.addGoal(1, new HurtByTargetGoal(this).setAlertOthers());
@@ -74,6 +75,14 @@ public class ShyGuyEntity extends Monster implements VariantHolder<ShyGuyEntity.
     @Override
     protected SoundEvent getDeathSound() {
         return ModSoundEvents.SHY_GUY_DEATH.get();
+    }
+
+    @Override
+    public void tick() {
+        if (this.level().isClientSide()) {
+            this.idleAnimationState.animateWhen(!this.walkAnimation.isMoving(), this.tickCount);
+        }
+        super.tick();
     }
 
     @Nullable

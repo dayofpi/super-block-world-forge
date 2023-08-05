@@ -9,7 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 
 public class ShyGuyRenderer extends MobRenderer<ShyGuyEntity, ShyGuyModel<ShyGuyEntity>> {
     public ShyGuyRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext, new ShyGuyModel<>(pContext.bakeLayer(ShyGuyModel.LAYER_LOCATION)), 0.4F);
+        super(pContext, new ShyGuyModel<>(pContext.bakeLayer(ShyGuyModel.LAYER_LOCATION)), 0.5F);
         this.addLayer(new ItemInHandLayer<>(this, pContext.getItemInHandRenderer()));
     }
 
