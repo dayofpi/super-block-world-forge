@@ -46,7 +46,6 @@ public class ModTags {
 
     public static class Biomes {
         public static final TagKey<Biome> IS_MUSHROOM_KINGDOM = tag("is_mushroom_kingdom");
-        public static final TagKey<Biome> HAS_BRICK_FORTRESS = tag("has_structure/brick_fortress");
 
         private static TagKey<Biome> tag(String name) {
             return TagKey.create(Registries.BIOME, new ResourceLocation(SuperBlockWorld.MOD_ID, name));

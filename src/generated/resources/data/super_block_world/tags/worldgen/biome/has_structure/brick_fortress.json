@@ -1,9 +1,0 @@
-{
-  "values": [
-    "#minecraft:has_structure/mineshaft",
-    {
-      "id": "#super_block_world:is_mushroom_kingdom",
-      "required": false
-    }
-  ]
-}

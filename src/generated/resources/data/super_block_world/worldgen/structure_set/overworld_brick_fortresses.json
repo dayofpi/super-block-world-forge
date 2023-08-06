@@ -7,7 +7,7 @@
   },
   "structures": [
     {
-      "structure": "super_block_world:brick_fortress",
+      "structure": "super_block_world:brick_fortress_overworld",
       "weight": 1
     }
   ]

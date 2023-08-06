@@ -1,6 +1,6 @@
 {
   "type": "minecraft:jigsaw",
-  "biomes": "#super_block_world:has_structure/brick_fortress",
+  "biomes": "#super_block_world:is_mushroom_kingdom",
   "max_distance_from_center": 80,
   "project_start_to_heightmap": "WORLD_SURFACE_WG",
   "size": 7,

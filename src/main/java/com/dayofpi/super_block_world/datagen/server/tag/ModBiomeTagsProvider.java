@@ -6,7 +6,6 @@ import com.dayofpi.super_block_world.worldgen.biome.ModBiomes;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.BiomeTagsProvider;
-import net.minecraft.tags.BiomeTags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
@@ -20,7 +19,6 @@ public class ModBiomeTagsProvider extends BiomeTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
         tag(ModTags.Biomes.IS_MUSHROOM_KINGDOM).addOptional(ModBiomes.MUSHROOM_GRASSLANDS.location());
-        tag(ModTags.Biomes.HAS_BRICK_FORTRESS).addTag(BiomeTags.HAS_MINESHAFT).addOptionalTag(ModTags.Biomes.IS_MUSHROOM_KINGDOM.location());
     }
 
     @Override

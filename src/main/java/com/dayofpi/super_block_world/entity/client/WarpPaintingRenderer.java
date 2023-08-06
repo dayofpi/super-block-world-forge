@@ -43,7 +43,7 @@ public class WarpPaintingRenderer extends EntityRenderer<WarpPaintingEntity> {
         if (!flag) {
             pPoseStack.pushPose();
             pPoseStack.scale(-1.0F, -1.0F, 1.0F);
-            pPoseStack.translate(0.0F, 0.5F, 1.0F);
+            pPoseStack.translate(0.0F, 0.0F, 1.0F);
             VertexConsumer vertexconsumer = pBuffer.getBuffer(this.model.renderType(this.getTextureLocation(pEntity)));
             this.model.renderToBuffer(pPoseStack, vertexconsumer, pPackedLight, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
             if (pEntity.getVariant() != WarpPaintingEntity.WarpPaintingVariant.LOCKED) {

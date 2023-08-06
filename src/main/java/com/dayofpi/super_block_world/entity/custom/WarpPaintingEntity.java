@@ -94,12 +94,12 @@ public class WarpPaintingEntity extends HangingEntity implements VariantHolder<W
 
     @Override
     public int getWidth() {
-        return 64;
+        return 48;
     }
 
     @Override
     public int getHeight() {
-        return 64;
+        return 48;
     }
 
     @Override
