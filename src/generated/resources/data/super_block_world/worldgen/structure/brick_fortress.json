@@ -8,8 +8,8 @@
   "start_height": {
     "absolute": 0
   },
-  "start_pool": "super_block_world:moon_monolith",
+  "start_pool": "super_block_world:brick_fortress",
   "step": "surface_structures",
   "terrain_adaptation": "beard_box",
-  "use_expansion_hack": false
+  "use_expansion_hack": true
 }

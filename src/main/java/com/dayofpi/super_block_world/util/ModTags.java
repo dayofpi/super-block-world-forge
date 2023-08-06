@@ -12,9 +12,16 @@ public class ModTags {
     public static class Items {
         public static final TagKey<Item> STAR_BITS = tag("star_bits");
         public static final TagKey<Item> AMANITA_LOGS = tag("amanita_logs");
+        public static final TagKey<Item> FORGE_INGOTS_BRONZE = forgeTag("ingots/bronze");
+        public static final TagKey<Item> FORGE_BLOCKS_BRONZE = forgeTag("blocks/bronze");
+        public static final TagKey<Item> FORGE_ORES_BRONZE = forgeTag("ores/bronze");
 
         private static TagKey<Item> tag(String name) {
             return TagKey.create(Registries.ITEM, new ResourceLocation(SuperBlockWorld.MOD_ID, name));
+        }
+
+        private static TagKey<Item> forgeTag(String name) {
+            return TagKey.create(Registries.ITEM, new ResourceLocation("forge", name));
         }
     }
 
@@ -25,9 +32,15 @@ public class ModTags {
         public static final TagKey<Block> BRONZE_BLOCKS = tag("bronze_blocks");
         public static final TagKey<Block> AMANITA_LOGS = tag("amanita_logs");
         public static final TagKey<Block> VANILLATE_TOPPING_REPLACEABLE = tag("vanillate_topping_replaceable");
+        public static final TagKey<Block> FORGE_BLOCKS_BRONZE = forgeTag("blocks/bronze");
+        public static final TagKey<Block> FORGE_ORES_BRONZE = forgeTag("ores/bronze");
 
         private static TagKey<Block> tag(String name) {
             return TagKey.create(Registries.BLOCK, new ResourceLocation(SuperBlockWorld.MOD_ID, name));
+        }
+
+        private static TagKey<Block> forgeTag(String name) {
+            return TagKey.create(Registries.BLOCK, new ResourceLocation("forge", name));
         }
     }
 

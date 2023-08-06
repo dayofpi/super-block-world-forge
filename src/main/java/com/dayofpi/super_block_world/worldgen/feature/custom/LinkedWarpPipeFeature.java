@@ -36,6 +36,15 @@ public class LinkedWarpPipeFeature extends Feature<NoneFeatureConfiguration> {
             RandomSource random = pContext.random();
             BlockState warpPipeState = getWarpPipeState(random);
             BlockState pipeBodyState = getMatchingPipeBody(warpPipeState);
+            /*
+            *             int cavePipeHeight = 1 + random.nextInt(6);
+            for (int i = 0; i < cavePipeHeight; ++i) {
+                if (level.getBlockState(caveWarpPipePos.above(cavePipeHeight + 1)).isAir()) {
+                    level.setBlock(caveWarpPipePos.above(i), pipeBodyState, 2);
+                    caveWarpPipePos = caveWarpPipePos.above(cavePipeHeight);
+                }
+            }
+            * */
             if (random.nextBoolean() && level.getBlockState(caveWarpPipePos.above(2)).isAir()) {
                 level.setBlock(caveWarpPipePos, pipeBodyState, 2);
                 caveWarpPipePos = caveWarpPipePos.above();

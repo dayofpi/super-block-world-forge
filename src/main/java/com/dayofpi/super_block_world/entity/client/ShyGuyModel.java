@@ -57,7 +57,7 @@ public class ShyGuyModel<T extends ShyGuyEntity> extends HierarchicalModel<T> im
 	@Override
 	public void setupAnim(T pEntity, float pLimbSwing, float pLimbSwingAmount, float pAgeInTicks, float pNetHeadYaw, float pHeadPitch) {
 		this.root().getAllParts().forEach(ModelPart::resetPose);
-		this.animateWalk(ModAnimations.SHY_GUY_WALK, pLimbSwing, pLimbSwingAmount, 2.0F, 80.0F);
+		this.animateWalk(ModAnimations.SHY_GUY_WALK, pLimbSwing, pLimbSwingAmount, 2.0F, 100.0F);
 		this.animate(pEntity.idleAnimationState, ModAnimations.SHY_GUY_IDLE, pAgeInTicks);
 	}
 

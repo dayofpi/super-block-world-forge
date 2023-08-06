@@ -9,6 +9,7 @@ import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
@@ -21,8 +22,20 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
-        tag(ModTags.Items.STAR_BITS).add(ModItems.YELLOW_STAR_BIT.get(), ModItems.GREEN_STAR_BIT.get(), ModItems.BLUE_STAR_BIT.get(), ModItems.PURPLE_STAR_BIT.get());
+        // Forge Tags
+        tag(Tags.Items.ORES).add(ModItems.BRONZE_ORE.get());
+        tag(Tags.Items.RAW_MATERIALS).add(ModItems.RAW_BRONZE.get());
+        tag(Tags.Items.INGOTS).add(ModItems.BRONZE_INGOT.get());
+
+        // Mod Tags
         copy(ModTags.Blocks.AMANITA_LOGS, ModTags.Items.AMANITA_LOGS);
+
+        tag(ModTags.Items.STAR_BITS).add(ModItems.YELLOW_STAR_BIT.get(), ModItems.GREEN_STAR_BIT.get(), ModItems.BLUE_STAR_BIT.get(), ModItems.PURPLE_STAR_BIT.get());
+        tag(ModTags.Items.FORGE_INGOTS_BRONZE).add(ModItems.BRONZE_INGOT.get());
+        tag(ModTags.Items.FORGE_BLOCKS_BRONZE).add(ModItems.BRONZE_BLOCK.get());
+        tag(ModTags.Items.FORGE_ORES_BRONZE).add(ModItems.BRONZE_ORE.get());
+
+        // Vanilla Tags
         tag(ItemTags.LOGS_THAT_BURN).addTag(ModTags.Items.AMANITA_LOGS);
         tag(ItemTags.PLANKS).add(ModItems.AMANITA_PLANKS.get());
         tag(ItemTags.WOODEN_STAIRS).add(ModItems.AMANITA_STAIRS.get());
@@ -40,6 +53,8 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(ItemTags.LEAVES).add(ModItems.AMANITA_LEAVES.get(), ModItems.FRUITING_AMANITA_LEAVES.get());
         tag(ItemTags.STONE_TOOL_MATERIALS).add(ModItems.VANILLATE_CRUMBLE.get());
         tag(ItemTags.STONE_CRAFTING_MATERIALS).add(ModItems.VANILLATE_CRUMBLE.get());
+        tag(ItemTags.TOOLS).add(ModItems.HAMMER.get());
+        tag(ItemTags.PICKAXES).add(ModItems.SUPER_PICKAXE.get());
         tag(ItemTags.FLOWERS).add(ModItems.WHITE_FLOWERBED.get(), ModItems.YELLOW_FLOWERBED.get());
     }
 

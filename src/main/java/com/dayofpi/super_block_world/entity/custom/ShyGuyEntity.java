@@ -96,7 +96,7 @@ public class ShyGuyEntity extends Monster implements VariantHolder<ShyGuyEntity.
     @Override
     protected void populateDefaultEquipmentSlots(RandomSource pRandom, DifficultyInstance pDifficulty) {
         if (pRandom.nextInt(5) == 0 && !this.level().canSeeSky(this.blockPosition())) {
-            this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.STONE_PICKAXE));
+            this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_PICKAXE));
         }
     }
 

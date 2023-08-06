@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 8,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "weight": 20,
+          "name": "super_block_world:toadstone_bricks"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 16,
+          "name": "super_block_world:yoshi_fruit"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 6,
+          "name": "minecraft:wooden_pickaxe"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 6,
+          "name": "minecraft:wooden_axe"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "super_block_world:yoshi_cookie"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 2,
+          "name": "super_block_world:hammer"
+        }
+      ]
+    }
+  ]
+}

@@ -79,7 +79,7 @@ public class BoomBoomEntity extends Monster {
     }
 
     public static AttributeSupplier.Builder createAttributes() {
-        return Monster.createMonsterAttributes().add(Attributes.FOLLOW_RANGE, 10.0).add(Attributes.MAX_HEALTH, 150.0).add(Attributes.MOVEMENT_SPEED, 0.2).add(Attributes.FLYING_SPEED, 2.0).add(Attributes.ATTACK_DAMAGE, 6.0);
+        return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 150.0).add(Attributes.MOVEMENT_SPEED, 0.2).add(Attributes.FLYING_SPEED, 2.0).add(Attributes.ATTACK_DAMAGE, 6.0);
     }
 
     @Override
@@ -207,6 +207,11 @@ public class BoomBoomEntity extends Monster {
     }
 
     @Override
+    protected float getWaterSlowDown() {
+        return this.isSpinningState() ? 0.96F : super.getWaterSlowDown();
+    }
+
+    @Override
     protected void dropCustomDeathLoot(DamageSource pSource, int pLooting, boolean pRecentlyHit) {
         super.dropCustomDeathLoot(pSource, pLooting, pRecentlyHit);
         ItemEntity itementity = this.spawnAtLocation(ModItems.POWER_STAR.get());
@@ -220,11 +225,12 @@ public class BoomBoomEntity extends Monster {
         if (pSource.is(DamageTypeTags.IS_PROJECTILE) && this.isSpinningState()) {
             return false;
         }
-        if (pSource.getEntity() instanceof IronGolem && this.getBoomBoomState() == State.NORMAL) {
+        boolean hurt = super.hurt(pSource, pAmount);
+        if (hurt && pSource.getEntity() instanceof IronGolem && this.getBoomBoomState() == State.NORMAL) {
             this.playSound(ModSoundEvents.BOOM_BOOM_READY.get());
             this.setTimeUntilNextState(TICKS_PRE_SPIN);
         }
-        return super.hurt(pSource, pAmount);
+        return hurt;
     }
 
     @Override

@@ -12,5 +12,5 @@ import net.minecraftforge.common.TierSortingRegistry;
 import java.util.List;
 
 public class ModToolTiers {
-    public static final Tier SUPER = TierSortingRegistry.registerTier(new ForgeTier(3, 500, 12.0F, 8.0F, 10, BlockTags.NEEDS_DIAMOND_TOOL, () -> Ingredient.EMPTY), new ResourceLocation(SuperBlockWorld.MOD_ID, "super"), List.of(Tiers.DIAMOND), List.of(Tiers.NETHERITE));
+    public static final Tier SUPER = TierSortingRegistry.registerTier(new ForgeTier(3, 500, 12.0F, 8.0F, 0, BlockTags.NEEDS_DIAMOND_TOOL, () -> Ingredient.EMPTY), new ResourceLocation(SuperBlockWorld.MOD_ID, "super"), List.of(Tiers.DIAMOND), List.of(Tiers.NETHERITE));
 }
