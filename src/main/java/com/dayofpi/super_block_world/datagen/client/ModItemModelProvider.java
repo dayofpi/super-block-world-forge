@@ -20,23 +20,23 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         blockItem(ModBlocks.FLAGPOLE);
-        simpleItem(ModItems.WHITE_FLAG);
-        simpleItem(ModItems.LIGHT_GRAY_FLAG);
-        simpleItem(ModItems.GRAY_FLAG);
-        simpleItem(ModItems.BLACK_FLAG);
-        simpleItem(ModItems.BROWN_FLAG);
-        simpleItem(ModItems.RED_FLAG);
-        simpleItem(ModItems.ORANGE_FLAG);
-        simpleItem(ModItems.YELLOW_FLAG);
-        simpleItem(ModItems.LIME_FLAG);
-        simpleItem(ModItems.GREEN_FLAG);
-        simpleItem(ModItems.CYAN_FLAG);
-        simpleItem(ModItems.LIGHT_BLUE_FLAG);
-        simpleItem(ModItems.BLUE_FLAG);
-        simpleItem(ModItems.PURPLE_FLAG);
-        simpleItem(ModItems.MAGENTA_FLAG);
-        simpleItem(ModItems.PINK_FLAG);
-        simpleItem(ModItems.RAINBOW_FLAG);
+        flagItem(ModItems.WHITE_FLAG);
+        flagItem(ModItems.LIGHT_GRAY_FLAG);
+        flagItem(ModItems.GRAY_FLAG);
+        flagItem(ModItems.BLACK_FLAG);
+        flagItem(ModItems.BROWN_FLAG);
+        flagItem(ModItems.RED_FLAG);
+        flagItem(ModItems.ORANGE_FLAG);
+        flagItem(ModItems.YELLOW_FLAG);
+        flagItem(ModItems.LIME_FLAG);
+        flagItem(ModItems.GREEN_FLAG);
+        flagItem(ModItems.CYAN_FLAG);
+        flagItem(ModItems.LIGHT_BLUE_FLAG);
+        flagItem(ModItems.BLUE_FLAG);
+        flagItem(ModItems.PURPLE_FLAG);
+        flagItem(ModItems.MAGENTA_FLAG);
+        flagItem(ModItems.PINK_FLAG);
+        flagItem(ModItems.RAINBOW_FLAG);
         blockItem(ModBlocks.WHITE_WARP_PIPE);
         blockItem(ModBlocks.LIGHT_GRAY_WARP_PIPE);
         blockItem(ModBlocks.GRAY_WARP_PIPE);
@@ -167,6 +167,10 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     public void buttonItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {
         withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/button_inventory")).texture("texture",  new ResourceLocation(SuperBlockWorld.MOD_ID, "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
+    }
+
+    public void flagItem(RegistryObject<Item> item) {
+        withExistingParent(item.getId().getPath(), new ResourceLocation(SuperBlockWorld.MOD_ID, "item/template_flag"));
     }
 
     public void spawnEggItem(RegistryObject<Item> item) {

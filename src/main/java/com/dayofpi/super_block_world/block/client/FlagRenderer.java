@@ -39,25 +39,25 @@ public class FlagRenderer implements BlockEntityRenderer<FlagBlockEntity> {
     public static final Material BI_FLAG = new Material(TextureAtlas.LOCATION_BLOCKS, new ResourceLocation(SuperBlockWorld.MOD_ID, "entity/flag/bi"));
     public static final Material LESBIAN_FLAG = new Material(TextureAtlas.LOCATION_BLOCKS, new ResourceLocation(SuperBlockWorld.MOD_ID, "entity/flag/lesbian"));
 
-    public static final String ROOT = "root";
-    public static final String FLAG = "flag";
-    public static final String POLE = "pole";
     private final ModelPart flag;
+    private final ModelPart top;
     private final ModelPart pole;
 
     public FlagRenderer(BlockEntityRendererProvider.Context context) {
         ModelPart modelPart = context.bakeLayer(LAYER_LOCATION);
-        ModelPart root = modelPart.getChild(ROOT);
-        this.flag = root.getChild(FLAG);
-        this.pole = root.getChild(POLE);
+        ModelPart root = modelPart.getChild("root");
+        this.flag = root.getChild("flag");
+        this.top = root.getChild("top");
+        this.pole = root.getChild("pole");
     }
 
     public static LayerDefinition createBodyLayer() {
         MeshDefinition meshDefinition = new MeshDefinition();
         PartDefinition partDefinition = meshDefinition.getRoot();
-        PartDefinition root = partDefinition.addOrReplaceChild(ROOT, CubeListBuilder.create(), PartPose.offset(0.0F, 24.0F, 0.0F));
-        root.addOrReplaceChild(FLAG, CubeListBuilder.create().texOffs(8, 8).addBox(-12.0F, -6.0F, 0.0F, 12.0F, 12.0F, 0.0F), PartPose.offsetAndRotation(0.0F, -6.0F, 0.0F, 0.0F, -1.5708F, 0.0F));
-        root.addOrReplaceChild(POLE, CubeListBuilder.create().texOffs(0, 0).addBox(-10.0F, -16.0F, 6.0F, 4.0F, 4.0F, 4.0F), PartPose.offset(8.0F, 0.0F, -8.0F));
+        PartDefinition root = partDefinition.addOrReplaceChild("root", CubeListBuilder.create(), PartPose.offset(0.0F, 24.0F, 0.0F));
+        root.addOrReplaceChild("flag", CubeListBuilder.create().texOffs(8, 8).addBox(-12.0F, -6.0F, 0.0F, 12.0F, 12.0F, 0.0F), PartPose.offsetAndRotation(0.0F, -6.0F, 0.0F, 0.0F, -1.5708F, 0.0F));
+        root.addOrReplaceChild("top", CubeListBuilder.create().texOffs(0, 0).addBox(-10.0F, -16.0F, 6.0F, 4.0F, 4.0F, 4.0F), PartPose.offset(8.0F, 0.0F, -8.0F));
+        root.addOrReplaceChild("pole", CubeListBuilder.create().texOffs(0, 8).addBox(-9.0F, -12.0F, 7.0F, 2.0F, 12.0F, 2.0F), PartPose.offset(8.0F, 0.0F, -8.0F));
         return LayerDefinition.create(meshDefinition, 32, 32);
     }
 
@@ -84,17 +84,17 @@ public class FlagRenderer implements BlockEntityRenderer<FlagBlockEntity> {
     public void render(FlagBlockEntity entity, float tickDelta, PoseStack poseStack, MultiBufferSource multiBufferSource, int light, int overlay) {
         Level level = entity.getLevel();
         BlockPos blockPos = entity.getBlockPos();
-        if (level != null) {
-            poseStack.pushPose();
-            poseStack.scale(1.0F, -1.0F, -1.0F);
-            poseStack.translate(0.5, 0.0, -0.5);
-            poseStack.pushPose();
-            VertexConsumer consumer = POLE_TEXTURE.buffer(multiBufferSource, RenderType::entitySolid);
+        poseStack.pushPose();
+        poseStack.scale(1.0F, -1.0F, -1.0F);
+        poseStack.translate(0.5, 0.0, -0.5);
+        poseStack.pushPose();
+        VertexConsumer consumer = POLE_TEXTURE.buffer(multiBufferSource, RenderType::entitySolid);
+        this.top.render(poseStack, consumer, light, overlay);
+        if (level == null)
             this.pole.render(poseStack, consumer, light, overlay);
-            poseStack.popPose();
-            renderFlag(poseStack, level, blockPos, entity, multiBufferSource, light, overlay);
-            poseStack.popPose();
-        }
+        poseStack.popPose();
+        renderFlag(poseStack, level, blockPos, entity, multiBufferSource, light, overlay);
+        poseStack.popPose();
     }
 
     private void renderFlag(PoseStack poseStack, Level world, BlockPos blockPos, FlagBlockEntity entity, MultiBufferSource provider, int light, int overlay) {
@@ -102,11 +102,13 @@ public class FlagRenderer implements BlockEntityRenderer<FlagBlockEntity> {
         Material id = COLOR_TEXTURES[entity.getColor().getId()];
         if (entity.isRainbow()) id = this.getSpecialFlag(entity);
 
-        int rotation = 0;
-        if (world.getBlockState(blockPos).is(ModTags.Blocks.FLAGS))
+        float wave = 0.0f;
+        if (world != null && world.getBlockState(blockPos).is(ModTags.Blocks.FLAGS)) {
+            int rotation = 0;
             rotation = world.getBlockState(blockPos).getValue(FlagBlock.ROTATION);
-        float angle = (rotation * 22.5F) % 360;
-        float wave = Mth.cos(world.getGameTime()) + angle;
+            float angle = (rotation * 22.5F) % 360;
+            wave = Mth.cos(world.getGameTime()) + angle;
+        }
 
         poseStack.mulPose(Axis.YP.rotationDegrees(wave));
         this.flag.render(poseStack, id.buffer(provider, RenderType::entityCutout), light, overlay);

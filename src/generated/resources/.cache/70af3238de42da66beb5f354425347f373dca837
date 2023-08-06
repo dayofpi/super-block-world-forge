@@ -1,8 +1,9 @@
-// 1.20.1	2023-08-05T18:14:07.4466799	Block Tags
+// 1.20.1	2023-08-06T06:13:15.304089	Block Tags
 d5a725534da480dd5b557963a6c5ab8ffff6f933 data/forge/tags/blocks/blocks/bronze.json
 5c29b20160d3e68e3a3f953892d95355f26bc8f1 data/forge/tags/blocks/ores.json
 5c29b20160d3e68e3a3f953892d95355f26bc8f1 data/forge/tags/blocks/ores/bronze.json
 0d3361dabc253d5ca272c292be7efe2d6e68846d data/minecraft/tags/blocks/ceiling_hanging_signs.json
+846ef871c03cdbf15e843211a0cc6fa114d2ad14 data/minecraft/tags/blocks/climbable.json
 11ca5c3e3cfdc1eef12778fc90833d4c0e3a970b data/minecraft/tags/blocks/dirt.json
 008e059678113b81356f099e8970402f3c3c0bc0 data/minecraft/tags/blocks/fence_gates.json
 aee889f579b7e285552cf2acea0771f076d0df88 data/minecraft/tags/blocks/flowers.json

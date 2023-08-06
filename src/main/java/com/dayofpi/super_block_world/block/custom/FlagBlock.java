@@ -71,6 +71,11 @@ public class FlagBlock extends FlagpoleBlock implements EntityBlock {
     }
 
     @Override
+    public VoxelShape getCollisionShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
+        return POLE_SHAPE;
+    }
+
+    @Override
     public InteractionResult use(BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand interactionHand, BlockHitResult blockHitResult) {
         if (level.isClientSide) {
             return InteractionResult.SUCCESS;

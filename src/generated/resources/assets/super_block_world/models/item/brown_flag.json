@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "super_block_world:item/brown_flag"
-  }
+  "parent": "super_block_world:item/template_flag"
 }

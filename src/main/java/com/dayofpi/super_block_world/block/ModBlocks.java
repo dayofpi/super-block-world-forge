@@ -146,7 +146,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> CLOUD_STAIRS = BLOCKS.register("cloud_stairs", () -> new ModStairBlock(PACKED_CLOUD));
     public static final RegistryObject<Block> CLOUD_SLAB = BLOCKS.register("cloud_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(PACKED_CLOUD.get())));
     public static final RegistryObject<Block> MOON_ROCK = BLOCKS.register("moon_rock", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).sound(SoundType.METAL).instrument(NoteBlockInstrument.CHIME).requiresCorrectToolForDrops().strength(50.0F, 1200.0F).pushReaction(PushReaction.BLOCK)));
-    public static final RegistryObject<Block> RAINBOW_TILES = BLOCKS.register("rainbow_tiles", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.SNOW).strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> RAINBOW_TILES = BLOCKS.register("rainbow_tiles", () -> new Block(BlockBehaviour.Properties.of().lightLevel(value -> 8).mapColor(MapColor.SNOW).strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> RAINBOW_TILE_STAIRS = BLOCKS.register("rainbow_tile_stairs", () -> new ModStairBlock(RAINBOW_TILES));
     public static final RegistryObject<Block> RAINBOW_TILE_SLAB = BLOCKS.register("rainbow_tile_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(RAINBOW_TILES.get())));
     public static final RegistryObject<Block> RAINBOW_TILE_WALL = BLOCKS.register("rainbow_tile_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(RAINBOW_TILES.get())));

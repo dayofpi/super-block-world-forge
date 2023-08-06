@@ -88,6 +88,8 @@ public class SuperBlockWorld {
         fireBlock.setFlammable(ModBlocks.AMANITA_PLANKS.get(), 5, 20);
         fireBlock.setFlammable(ModBlocks.AMANITA_STAIRS.get(), 5, 20);
         fireBlock.setFlammable(ModBlocks.AMANITA_SLAB.get(), 5, 20);
+        fireBlock.setFlammable(ModBlocks.AMANITA_FENCE.get(), 5, 20);
+        fireBlock.setFlammable(ModBlocks.AMANITA_FENCE_GATE.get(), 5, 20);
         fireBlock.setFlammable(ModBlocks.AMANITA_LEAVES.get(), 30, 60);
         fireBlock.setFlammable(ModBlocks.FRUITING_AMANITA_LEAVES.get(), 30, 60);
         fireBlock.setFlammable(ModBlocks.WHITE_FLOWERBED.get(), 60, 100);
@@ -98,6 +100,8 @@ public class SuperBlockWorld {
         ComposterBlock.COMPOSTABLES.put(ModItems.AMANITA_LEAVES.get(), 0.3F);
         ComposterBlock.COMPOSTABLES.put(ModItems.FRUITING_AMANITA_LEAVES.get(), 0.3F);
         ComposterBlock.COMPOSTABLES.put(ModBlocks.AMANITA_SAPLING.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ModBlocks.WHITE_FLOWERBED.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ModBlocks.YELLOW_FLOWERBED.get(), 0.3F);
         ComposterBlock.COMPOSTABLES.put(ModItems.YOSHI_FRUIT.get(), 0.3F);
     }
 

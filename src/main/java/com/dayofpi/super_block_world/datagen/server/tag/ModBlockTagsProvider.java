@@ -40,6 +40,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.MOON_ROCK.get());
         tag(BlockTags.MUSHROOM_GROW_BLOCK).add(ModBlocks.TOADSTOOL_GRASS.get(), ModBlocks.TOADSTOOL_SOIL.get(), ModBlocks.COARSE_TOADSTOOL_SOIL.get());
         tag(BlockTags.SNIFFER_DIGGABLE_BLOCK).add(ModBlocks.TOADSTOOL_GRASS.get(), ModBlocks.TOADSTOOL_SOIL.get(), ModBlocks.COARSE_TOADSTOOL_SOIL.get());
+        tag(BlockTags.CLIMBABLE).addTag(ModTags.Blocks.FLAGS).add(ModBlocks.FLAGPOLE.get());
         tag(BlockTags.LOGS_THAT_BURN).addTag(ModTags.Blocks.AMANITA_LOGS);
         tag(BlockTags.PLANKS).add(ModBlocks.AMANITA_PLANKS.get());
         tag(BlockTags.WOODEN_STAIRS).add(ModBlocks.AMANITA_STAIRS.get());

@@ -36,23 +36,23 @@ public class ModItems {
     public static final RegistryObject<Item> MAGENTA_BRONZE = registerBlockItem("magenta_bronze", ModBlocks.MAGENTA_BRONZE);
     public static final RegistryObject<Item> PINK_BRONZE = registerBlockItem("pink_bronze", ModBlocks.PINK_BRONZE);
     public static final RegistryObject<Item> FLAGPOLE = registerBlockItem("flagpole", ModBlocks.FLAGPOLE);
-    public static final RegistryObject<Item> WHITE_FLAG = registerBlockItem("white_flag", ModBlocks.WHITE_FLAG);
-    public static final RegistryObject<Item> LIGHT_GRAY_FLAG = registerBlockItem("light_gray_flag", ModBlocks.LIGHT_GRAY_FLAG);
-    public static final RegistryObject<Item> GRAY_FLAG = registerBlockItem("gray_flag", ModBlocks.GRAY_FLAG);
-    public static final RegistryObject<Item> BLACK_FLAG = registerBlockItem("black_flag", ModBlocks.BLACK_FLAG);
-    public static final RegistryObject<Item> BROWN_FLAG = registerBlockItem("brown_flag", ModBlocks.BROWN_FLAG);
-    public static final RegistryObject<Item> RED_FLAG = registerBlockItem("red_flag", ModBlocks.RED_FLAG);
-    public static final RegistryObject<Item> ORANGE_FLAG = registerBlockItem("orange_flag", ModBlocks.ORANGE_FLAG);
-    public static final RegistryObject<Item> YELLOW_FLAG = registerBlockItem("yellow_flag", ModBlocks.YELLOW_FLAG);
-    public static final RegistryObject<Item> LIME_FLAG = registerBlockItem("lime_flag", ModBlocks.LIME_FLAG);
-    public static final RegistryObject<Item> GREEN_FLAG = registerBlockItem("green_flag", ModBlocks.GREEN_FLAG);
-    public static final RegistryObject<Item> CYAN_FLAG = registerBlockItem("cyan_flag", ModBlocks.CYAN_FLAG);
-    public static final RegistryObject<Item> LIGHT_BLUE_FLAG = registerBlockItem("light_blue_flag", ModBlocks.LIGHT_BLUE_FLAG);
-    public static final RegistryObject<Item> BLUE_FLAG = registerBlockItem("blue_flag", ModBlocks.BLUE_FLAG);
-    public static final RegistryObject<Item> PURPLE_FLAG = registerBlockItem("purple_flag", ModBlocks.PURPLE_FLAG);
-    public static final RegistryObject<Item> MAGENTA_FLAG = registerBlockItem("magenta_flag", ModBlocks.MAGENTA_FLAG);
-    public static final RegistryObject<Item> PINK_FLAG = registerBlockItem("pink_flag", ModBlocks.PINK_FLAG);
-    public static final RegistryObject<Item> RAINBOW_FLAG = ITEMS.register("rainbow_flag", () -> new BlockItem(ModBlocks.RAINBOW_FLAG.get(), new Item.Properties().rarity(Rarity.UNCOMMON)));
+    public static final RegistryObject<Item> WHITE_FLAG = registerCustomRendererItem("white_flag", ModBlocks.WHITE_FLAG);
+    public static final RegistryObject<Item> LIGHT_GRAY_FLAG = registerCustomRendererItem("light_gray_flag", ModBlocks.LIGHT_GRAY_FLAG);
+    public static final RegistryObject<Item> GRAY_FLAG = registerCustomRendererItem("gray_flag", ModBlocks.GRAY_FLAG);
+    public static final RegistryObject<Item> BLACK_FLAG = registerCustomRendererItem("black_flag", ModBlocks.BLACK_FLAG);
+    public static final RegistryObject<Item> BROWN_FLAG = registerCustomRendererItem("brown_flag", ModBlocks.BROWN_FLAG);
+    public static final RegistryObject<Item> RED_FLAG = registerCustomRendererItem("red_flag", ModBlocks.RED_FLAG);
+    public static final RegistryObject<Item> ORANGE_FLAG = registerCustomRendererItem("orange_flag", ModBlocks.ORANGE_FLAG);
+    public static final RegistryObject<Item> YELLOW_FLAG = registerCustomRendererItem("yellow_flag", ModBlocks.YELLOW_FLAG);
+    public static final RegistryObject<Item> LIME_FLAG = registerCustomRendererItem("lime_flag", ModBlocks.LIME_FLAG);
+    public static final RegistryObject<Item> GREEN_FLAG = registerCustomRendererItem("green_flag", ModBlocks.GREEN_FLAG);
+    public static final RegistryObject<Item> CYAN_FLAG = registerCustomRendererItem("cyan_flag", ModBlocks.CYAN_FLAG);
+    public static final RegistryObject<Item> LIGHT_BLUE_FLAG = registerCustomRendererItem("light_blue_flag", ModBlocks.LIGHT_BLUE_FLAG);
+    public static final RegistryObject<Item> BLUE_FLAG = registerCustomRendererItem("blue_flag", ModBlocks.BLUE_FLAG);
+    public static final RegistryObject<Item> PURPLE_FLAG = registerCustomRendererItem("purple_flag", ModBlocks.PURPLE_FLAG);
+    public static final RegistryObject<Item> MAGENTA_FLAG = registerCustomRendererItem("magenta_flag", ModBlocks.MAGENTA_FLAG);
+    public static final RegistryObject<Item> PINK_FLAG = registerCustomRendererItem("pink_flag", ModBlocks.PINK_FLAG);
+    public static final RegistryObject<Item> RAINBOW_FLAG = ITEMS.register("rainbow_flag", () -> new CustomRendererItem(ModBlocks.RAINBOW_FLAG.get(), new Item.Properties().rarity(Rarity.UNCOMMON)));
     public static final RegistryObject<Item> WHITE_WARP_PIPE = registerBlockItem("white_warp_pipe", ModBlocks.WHITE_WARP_PIPE);
     public static final RegistryObject<Item> LIGHT_GRAY_WARP_PIPE = registerBlockItem("light_gray_warp_pipe", ModBlocks.LIGHT_GRAY_WARP_PIPE);
     public static final RegistryObject<Item> GRAY_WARP_PIPE = registerBlockItem("gray_warp_pipe", ModBlocks.GRAY_WARP_PIPE);
@@ -183,5 +183,9 @@ public class ModItems {
 
     private static RegistryObject<Item> registerBlockItem(String name, Supplier<Block> blockSupplier) {
         return ITEMS.register(name, () -> new BlockItem(blockSupplier.get(), new Item.Properties()));
+    }
+
+    private static RegistryObject<Item> registerCustomRendererItem(String name, Supplier<Block> blockSupplier) {
+        return ITEMS.register(name, () -> new CustomRendererItem(blockSupplier.get(), new Item.Properties()));
     }
 }
