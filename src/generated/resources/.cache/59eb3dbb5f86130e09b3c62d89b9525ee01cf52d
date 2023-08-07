@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-04T18:57:00.2093357	Loot Tables
+// 1.20.1	2023-08-06T20:27:56.9639865	Loot Tables
 5d1f93b453c24e13702ccb3268b191dd56971fdf data/super_block_world/loot_tables/blocks/amanita_button.json
 73b7b2317810e869c9cfc80a1a76ab0c43f37f94 data/super_block_world/loot_tables/blocks/amanita_door.json
 2135acf3507d2c98b6fc8da109d6d5f23f118525 data/super_block_world/loot_tables/blocks/amanita_fence.json
@@ -105,7 +105,7 @@ ee6a9e34e80a5c5fd3ff576bc83eb5cf5b9dfc0d data/super_block_world/loot_tables/bloc
 fc2da510d5326a202caa7c4b77f76491708e523f data/super_block_world/loot_tables/blocks/smooth_toadstone.json
 c494351b2bd5fb4d42410a1a4778776b17923e74 data/super_block_world/loot_tables/blocks/smooth_toadstone_slab.json
 730931381dae47a6b3af165e7deeecdc51ff65f1 data/super_block_world/loot_tables/blocks/smooth_toadstone_stairs.json
-9f330c0ab9c2fb86376881b4f22b0cc152bb0e20 data/super_block_world/loot_tables/blocks/star_cluster.json
+7a2a592598c668b09e753f9e714dd57222ac5e5d data/super_block_world/loot_tables/blocks/star_cluster.json
 70911529cef74d4c04595f416b82008e2d2c9aab data/super_block_world/loot_tables/blocks/stripped_amanita_log.json
 a9fe4461840e91072f71f02ab9f3ee61d106f577 data/super_block_world/loot_tables/blocks/stripped_amanita_wood.json
 f6fdc5454b15fc9b5102a710d3951d787a42b843 data/super_block_world/loot_tables/blocks/toadstone.json

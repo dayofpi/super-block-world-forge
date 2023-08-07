@@ -50,7 +50,7 @@ public abstract class PlayerMixin extends LivingEntity {
         if (blockEntity instanceof WarpPipeBlockEntity warpPipeBE) {
             destinPos = warpPipeBE.destinPos;
         }
-        if (destinPos == null) return;
+        if (destinPos == null || !(level().getBlockEntity(destinPos) instanceof WarpPipeBlockEntity)) return;
         WarpPipeBlock.warp((Player) (Object) this, destinPos, level());
         this.setPipeCooldown(20);
     }

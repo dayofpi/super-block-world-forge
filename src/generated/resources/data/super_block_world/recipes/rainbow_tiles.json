@@ -5,18 +5,18 @@
     "B": {
       "item": "super_block_world:blue_star_bit"
     },
-    "G": {
-      "item": "super_block_world:green_star_bit"
-    },
     "P": {
       "item": "super_block_world:purple_star_bit"
+    },
+    "R": {
+      "item": "super_block_world:red_star_bit"
     },
     "Y": {
       "item": "super_block_world:yellow_star_bit"
     }
   },
   "pattern": [
-    "YG",
+    "RY",
     "BP"
   ],
   "result": {

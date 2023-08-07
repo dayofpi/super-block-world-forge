@@ -167,8 +167,8 @@ public class ModCreativeTabs {
         output.accept(ModItems.BRONZE_INGOT.get());
         output.accept(ModItems.POWER_STAR.get());
         output.accept(ModItems.POWER_SHARD.get());
+        output.accept(ModItems.RED_STAR_BIT.get());
         output.accept(ModItems.YELLOW_STAR_BIT.get());
-        output.accept(ModItems.GREEN_STAR_BIT.get());
         output.accept(ModItems.BLUE_STAR_BIT.get());
         output.accept(ModItems.PURPLE_STAR_BIT.get());
         output.accept(ModItems.SUBCON_THREAD.get());

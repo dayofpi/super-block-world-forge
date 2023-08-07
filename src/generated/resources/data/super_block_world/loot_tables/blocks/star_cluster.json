@@ -68,7 +68,7 @@
               "condition": "minecraft:random_chance"
             }
           ],
-          "name": "super_block_world:green_star_bit"
+          "name": "super_block_world:red_star_bit"
         },
         {
           "type": "minecraft:item",

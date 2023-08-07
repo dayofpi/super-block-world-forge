@@ -21,9 +21,8 @@ public class ModNoiseRouterData {
         DensityFunction densityFunction12 = DensityFunctions.min(densityFunction11, DensityFunctions.mul(DensityFunctions.constant(5.0D), NoiseRouterData.getFunction(pDensityFunctions, NoiseRouterData.ENTRANCES)));
         DensityFunction densityFunction13 = DensityFunctions.rangeChoice(densityFunction11, -1000000.0D, 1.5625D, densityFunction12, NoiseRouterData.underground(pDensityFunctions, pNoiseParameters, densityFunction11));
         DensityFunction densityFunction14 = DensityFunctions.min(NoiseRouterData.postProcess(slideMushroomKingdom(densityFunction13)), NoiseRouterData.getFunction(pDensityFunctions, NoiseRouterData.NOODLE));
-        DensityFunction densityFunction15 = DensityFunctions.noise(pNoiseParameters.getOrThrow(Noises.ORE_GAP));
 
-        return new NoiseRouter(densityFunction, densityFunction1, densityFunction2, densityFunction3, densityFunction6, densityFunction7, NoiseRouterData.getFunction(pDensityFunctions, NoiseRouterData.CONTINENTS), NoiseRouterData.getFunction(pDensityFunctions, NoiseRouterData.EROSION), densityFunction9,NoiseRouterData. getFunction(pDensityFunctions, NoiseRouterData.RIDGES), slideMushroomKingdom(DensityFunctions.add(densityFunction10, DensityFunctions.constant(-0.703125D)).clamp(-64.0D, 64.0D)), densityFunction14, DensityFunctions.zero(), DensityFunctions.zero(), densityFunction15);
+        return new NoiseRouter(densityFunction, densityFunction1, densityFunction2, densityFunction3, densityFunction6, densityFunction7, NoiseRouterData.getFunction(pDensityFunctions, NoiseRouterData.CONTINENTS), NoiseRouterData.getFunction(pDensityFunctions, NoiseRouterData.EROSION), densityFunction9,NoiseRouterData. getFunction(pDensityFunctions, NoiseRouterData.RIDGES), slideMushroomKingdom(DensityFunctions.add(densityFunction10, DensityFunctions.constant(-0.703125D)).clamp(-64.0D, 64.0D)), densityFunction14, DensityFunctions.zero(), DensityFunctions.zero(), DensityFunctions.zero());
     }
 
     private static DensityFunction slideMushroomKingdom(DensityFunction densityFunction) {

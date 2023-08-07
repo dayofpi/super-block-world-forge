@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-06T18:29:09.5568986	Item Models: super_block_world
+// 1.20.1	2023-08-06T20:27:56.9555408	Item Models: super_block_world
 951ff713e9d356e2a576a4195e0a93515a78324a assets/super_block_world/models/item/amanita_boat.json
 89afde42fed3f7666a6dd0a05024406515ca15f1 assets/super_block_world/models/item/amanita_button.json
 56ae6bddf746f5829283cec82e727e9f5a4aa929 assets/super_block_world/models/item/amanita_chest_boat.json
@@ -41,7 +41,6 @@ aeda176bb4e4130bb04d78318a7d99e3b481d0cb assets/super_block_world/models/item/gr
 75838076356f58c800ea149d94ea2f654cebc399 assets/super_block_world/models/item/gray_warp_pipe.json
 16ef9dd1e7a9efa1ca6889c22a0509e95290d0d5 assets/super_block_world/models/item/green_flag.json
 d047bd1cc401d0ab75fb2a03cbd491b17531d361 assets/super_block_world/models/item/green_pipe_body.json
-e726a387b6b837afb2813dbd74ec3ebf5e9287d8 assets/super_block_world/models/item/green_star_bit.json
 da651a71da1ab1ba896c95037135e26865059666 assets/super_block_world/models/item/green_warp_pipe.json
 c05546b0ae5eed27ecc1b072b54d0ec02d5294a7 assets/super_block_world/models/item/hardstone_brick_slab.json
 0f9cb676249097fd41283820fd5c4c6cdf89825a assets/super_block_world/models/item/hardstone_brick_stairs.json
@@ -80,6 +79,7 @@ fa55150c547bd88ae17120582580b6e977f95ad5 assets/super_block_world/models/item/pu
 e4af5da2886976fe3480174af4c6acaf8590bf77 assets/super_block_world/models/item/raw_bronze.json
 16ef9dd1e7a9efa1ca6889c22a0509e95290d0d5 assets/super_block_world/models/item/red_flag.json
 970e8b8f5b5f8add1ffea67ec8ca82bec5a78b7b assets/super_block_world/models/item/red_pipe_body.json
+296d177a676c538b2e34a9ba50886b00007f08b2 assets/super_block_world/models/item/red_star_bit.json
 38b0604ff0f50a61497f470995f9cb629bb6f67b assets/super_block_world/models/item/red_warp_pipe.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/super_block_world/models/item/shy_guy_spawn_egg.json
 8a7d922ba08ece82dc2b144b4467fd9ef9f09997 assets/super_block_world/models/item/smooth_hardstone_slab.json

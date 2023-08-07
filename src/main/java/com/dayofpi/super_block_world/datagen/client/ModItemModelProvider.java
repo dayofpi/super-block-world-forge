@@ -133,7 +133,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.BRONZE_INGOT);
         simpleItem(ModItems.POWER_SHARD);
         simpleItem(ModItems.YELLOW_STAR_BIT);
-        simpleItem(ModItems.GREEN_STAR_BIT);
+        simpleItem(ModItems.RED_STAR_BIT);
         simpleItem(ModItems.BLUE_STAR_BIT);
         simpleItem(ModItems.PURPLE_STAR_BIT);
         simpleItem(ModItems.SUBCON_THREAD);

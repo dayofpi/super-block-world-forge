@@ -118,7 +118,7 @@ public class SuperBlockWorld {
                 return Util.make(new StarBitEntity(pLevel, pPosition.x(), pPosition.y(), pPosition.z()), starBit -> starBit.setItem(pStack));
             }
         });
-        DispenserBlock.registerBehavior(ModItems.GREEN_STAR_BIT.get(), new AbstractProjectileDispenseBehavior() {
+        DispenserBlock.registerBehavior(ModItems.RED_STAR_BIT.get(), new AbstractProjectileDispenseBehavior() {
             @Override
             protected Projectile getProjectile(Level pLevel, Position pPosition, ItemStack pStack) {
                 return Util.make(new StarBitEntity(pLevel, pPosition.x(), pPosition.y(), pPosition.z()), starBit -> starBit.setItem(pStack));

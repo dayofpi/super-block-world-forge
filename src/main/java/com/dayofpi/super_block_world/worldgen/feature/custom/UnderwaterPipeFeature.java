@@ -27,19 +27,19 @@ public class UnderwaterPipeFeature extends Feature<NoneFeatureConfiguration> {
         BlockPos floor = pContext.origin().below();
 
         if (level.getBlockState(blockPos).is(Blocks.WATER) && level.getBlockState(floor).isSolidRender(level, floor)) {
-            BlockState warpPipeState = LinkedWarpPipeFeature.createPipeState(ModBlocks.GREEN_WARP_PIPE, Direction.UP, true);
-            BlockState pipeBodyState = LinkedWarpPipeFeature.createPipeState(ModBlocks.GREEN_PIPE_BODY, Direction.UP, true);
+            BlockState warpPipeState = WarpPipeFeature.createPipeState(ModBlocks.GREEN_WARP_PIPE, Direction.UP, true);
+            BlockState pipeBodyState = WarpPipeFeature.createPipeState(ModBlocks.GREEN_PIPE_BODY, Direction.UP, true);
             RandomSource random = pContext.random();
 
             if (random.nextInt(4) == 0) {
-                warpPipeState = LinkedWarpPipeFeature.createPipeState(ModBlocks.RED_WARP_PIPE, Direction.UP, true);
-                pipeBodyState = LinkedWarpPipeFeature.createPipeState(ModBlocks.RED_PIPE_BODY, Direction.UP, true);
+                warpPipeState = WarpPipeFeature.createPipeState(ModBlocks.RED_WARP_PIPE, Direction.UP, true);
+                pipeBodyState = WarpPipeFeature.createPipeState(ModBlocks.RED_PIPE_BODY, Direction.UP, true);
             } else if (random.nextInt(4) == 0) {
-                warpPipeState = LinkedWarpPipeFeature.createPipeState(ModBlocks.YELLOW_WARP_PIPE, Direction.UP, true);
-                pipeBodyState = LinkedWarpPipeFeature.createPipeState(ModBlocks.YELLOW_PIPE_BODY, Direction.UP, true);
+                warpPipeState = WarpPipeFeature.createPipeState(ModBlocks.YELLOW_WARP_PIPE, Direction.UP, true);
+                pipeBodyState = WarpPipeFeature.createPipeState(ModBlocks.YELLOW_PIPE_BODY, Direction.UP, true);
             } else if (random.nextInt(4) == 0) {
-                warpPipeState = LinkedWarpPipeFeature.createPipeState(ModBlocks.BLUE_WARP_PIPE, Direction.UP, true);
-                pipeBodyState = LinkedWarpPipeFeature.createPipeState(ModBlocks.BLUE_PIPE_BODY, Direction.UP, true);
+                warpPipeState = WarpPipeFeature.createPipeState(ModBlocks.BLUE_WARP_PIPE, Direction.UP, true);
+                pipeBodyState = WarpPipeFeature.createPipeState(ModBlocks.BLUE_PIPE_BODY, Direction.UP, true);
             }
 
             int height = 1 + random.nextInt(6);

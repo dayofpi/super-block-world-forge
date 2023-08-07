@@ -104,6 +104,7 @@ public class ModEvents {
             event.getAllMappings(ForgeRegistries.Keys.ITEMS).forEach(blockMapping -> {
                 switch (blockMapping.getKey().toString()) {
                     case "super_block_world:super_pickax" -> blockMapping.remap(ModItems.SUPER_PICKAXE.get());
+                    case "super_block_world:green_star_bit" -> blockMapping.remap(ModItems.YELLOW_STAR_BIT.get());
                 }
             });
         }

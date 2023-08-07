@@ -5,6 +5,7 @@
   "mixins": [
     "AbstractArrowMixin",
     "BubbleColumnBlockMixin",
+    "MushroomBlockMixin",
     "PlayerMixin"
   ],
   "client": [

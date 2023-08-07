@@ -173,8 +173,8 @@ public class ModItems {
     public static final RegistryObject<Item> RAW_BRONZE = ITEMS.register("raw_bronze", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> BRONZE_INGOT = ITEMS.register("bronze_ingot", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> POWER_SHARD = ITEMS.register("power_shard", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RED_STAR_BIT = ITEMS.register("red_star_bit", () -> new StarBitItem(new Item.Properties()));
     public static final RegistryObject<Item> YELLOW_STAR_BIT = ITEMS.register("yellow_star_bit", () -> new StarBitItem(new Item.Properties()));
-    public static final RegistryObject<Item> GREEN_STAR_BIT = ITEMS.register("green_star_bit", () -> new StarBitItem(new Item.Properties()));
     public static final RegistryObject<Item> BLUE_STAR_BIT = ITEMS.register("blue_star_bit", () -> new StarBitItem(new Item.Properties()));
     public static final RegistryObject<Item> PURPLE_STAR_BIT = ITEMS.register("purple_star_bit", () -> new StarBitItem(new Item.Properties()));
     public static final RegistryObject<Item> SUBCON_THREAD = ITEMS.register("subcon_thread", () -> new Item(new Item.Properties()));
