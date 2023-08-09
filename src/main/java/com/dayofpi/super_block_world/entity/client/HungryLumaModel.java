@@ -37,7 +37,7 @@ public class HungryLumaModel<T extends HungryLumaEntity> extends HierarchicalMod
 
 		PartDefinition root = partdefinition.addOrReplaceChild("root", CubeListBuilder.create(), PartPose.offset(0.0F, 14.0F, 0.0F));
 
-		PartDefinition face = root.addOrReplaceChild("face", CubeListBuilder.create().texOffs(0, 49).addBox(-5.5F, -4.0F, -5.3F, 11.0F, 10.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
+		PartDefinition face = root.addOrReplaceChild("face", CubeListBuilder.create().texOffs(0, 34).addBox(-5.5F, -4.0F, -5.3F, 11.0F, 10.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
 
 		PartDefinition body = root.addOrReplaceChild("body", CubeListBuilder.create().texOffs(0, 0).addBox(-7.0F, -6.0F, -5.0F, 14.0F, 13.0F, 11.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
 
@@ -47,17 +47,19 @@ public class HungryLumaModel<T extends HungryLumaEntity> extends HierarchicalMod
 
 		PartDefinition cube_r2 = top.addOrReplaceChild("cube_r2", CubeListBuilder.create().texOffs(44, 24).addBox(-4.0F, -7.0F, 1.0F, 6.0F, 6.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -8.0F, 0.0F, 0.0F, -0.5236F, 0.0F));
 
-		PartDefinition rightarm = root.addOrReplaceChild("rightarm", CubeListBuilder.create().texOffs(0, 34).addBox(-4.0F, -2.5F, -2.0F, 5.0F, 5.0F, 5.0F, new CubeDeformation(0.0F)), PartPose.offset(-7.0F, -0.5F, 0.0F));
+		PartDefinition rightarm = root.addOrReplaceChild("rightarm", CubeListBuilder.create().texOffs(29, 29).addBox(-4.0F, -2.5F, -2.0F, 5.0F, 5.0F, 5.0F, new CubeDeformation(0.0F)), PartPose.offset(-7.0F, -0.5F, 0.0F));
 
-		PartDefinition rightstick = rightarm.addOrReplaceChild("rightstick", CubeListBuilder.create().texOffs(32, 49).addBox(-1.0F, -8.0F, 0.0F, 1.0F, 9.0F, 1.0F, new CubeDeformation(0.0F))
-				.texOffs(52, 58).addBox(-2.0F, -9.0F, -1.0F, 3.0F, 3.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offset(-2.0F, -2.5F, 0.0F));
+		PartDefinition rightstick = rightarm.addOrReplaceChild("rightstick", CubeListBuilder.create().texOffs(50, 14).addBox(-1.0F, -8.0F, 0.0F, 1.0F, 9.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(52, 36).addBox(-2.0F, -9.0F, -1.0F, 3.0F, 3.0F, 3.0F, new CubeDeformation(0.0F))
+				.texOffs(52, 30).addBox(-2.0F, -9.0F, -1.0F, 3.0F, 3.0F, 3.0F, new CubeDeformation(0.2F)), PartPose.offset(-2.0F, -2.5F, 0.0F));
 
 		PartDefinition leftarm = root.addOrReplaceChild("leftarm", CubeListBuilder.create().texOffs(29, 29).addBox(-1.0F, -2.5F, -2.0F, 5.0F, 5.0F, 5.0F, new CubeDeformation(0.0F)), PartPose.offset(7.0F, -0.5F, 0.0F));
 
-		PartDefinition leftstick = leftarm.addOrReplaceChild("leftstick", CubeListBuilder.create().texOffs(32, 49).addBox(0.0F, -8.0F, 0.0F, 1.0F, 9.0F, 1.0F, new CubeDeformation(0.0F))
-				.texOffs(52, 58).addBox(-1.0F, -9.0F, -1.0F, 3.0F, 3.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offset(2.0F, -2.5F, 0.0F));
+		PartDefinition leftstick = leftarm.addOrReplaceChild("leftstick", CubeListBuilder.create().texOffs(50, 14).addBox(0.0F, -8.0F, 0.0F, 1.0F, 9.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(52, 36).addBox(-1.0F, -9.0F, -1.0F, 3.0F, 3.0F, 3.0F, new CubeDeformation(0.0F))
+				.texOffs(52, 30).addBox(-1.0F, -9.0F, -1.0F, 3.0F, 3.0F, 3.0F, new CubeDeformation(0.2F)), PartPose.offset(2.0F, -2.5F, 0.0F));
 
-		PartDefinition rightleg = root.addOrReplaceChild("rightleg", CubeListBuilder.create().texOffs(15, 39).addBox(-2.5F, -2.0F, -2.0F, 5.0F, 5.0F, 5.0F, new CubeDeformation(0.0F)), PartPose.offset(-3.5F, 7.0F, 0.0F));
+		PartDefinition rightleg = root.addOrReplaceChild("rightleg", CubeListBuilder.create().texOffs(39, 0).addBox(-2.5F, -2.0F, -2.0F, 5.0F, 5.0F, 5.0F, new CubeDeformation(0.0F)), PartPose.offset(-3.5F, 7.0F, 0.0F));
 
 		PartDefinition leftleg = root.addOrReplaceChild("leftleg", CubeListBuilder.create().texOffs(39, 0).addBox(-2.5F, -2.0F, -2.0F, 5.0F, 5.0F, 5.0F, new CubeDeformation(0.0F)), PartPose.offset(3.5F, 7.0F, 0.0F));
 
@@ -73,6 +75,7 @@ public class HungryLumaModel<T extends HungryLumaEntity> extends HierarchicalMod
 	public void setupAnim(T pEntity, float pLimbSwing, float pLimbSwingAmount, float pAgeInTicks, float pNetHeadYaw, float pHeadPitch) {
 		this.root().getAllParts().forEach(ModelPart::resetPose);
 		this.animate(pEntity.idleAnimationState, ModAnimations.HUNGRY_LUMA_IDLE, pAgeInTicks, 3.0F);
+		this.animate(pEntity.transformAnimationState, ModAnimations.HUNGRY_LUMA_TRANSFORM, pAgeInTicks);
 		this.root.zRot = pHeadPitch * ((float)Math.PI / 180F) * 0.5F;
 		this.body.offsetScale(new Vector3f(pEntity.getReceivedStarBits() * 0.01f));
 		this.face.z -= pEntity.getReceivedStarBits() * 0.05f;

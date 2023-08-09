@@ -30,7 +30,8 @@ public class HungryLumaEntity extends PathfinderMob implements SpaceCreature {
     private static final EntityDataAccessor<Integer> DATA_STAR_BITS_RECEIVED = SynchedEntityData.defineId(HungryLumaEntity.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Integer> DATA_STAR_BITS_WANTED = SynchedEntityData.defineId(HungryLumaEntity.class, EntityDataSerializers.INT);
     public final AnimationState idleAnimationState = new AnimationState();
-    private int transformTime = 100;
+    public final AnimationState transformAnimationState = new AnimationState();
+    private int transformTime = 30;
 
     public HungryLumaEntity(EntityType<? extends PathfinderMob> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -103,8 +104,18 @@ public class HungryLumaEntity extends PathfinderMob implements SpaceCreature {
         if (this.isFull()) {
             --this.transformTime;
         }
+        if (this.transformTime == 15) {
+            this.playSound(ModSoundEvents.HUNGRY_LUMA_TRANSFORM.get(), 5.0F, this.getVoicePitch());
+            if (this.level().isClientSide()) {
+                this.transformAnimationState.start(this.tickCount);
+                for (int i = 0; i < 5; ++i) {
+                    this.level().addParticle(ParticleTypes.WAX_OFF, this.getRandomX(0.5D), this.getRandomY(), this.getRandomZ(0.5D), (this.random.nextDouble() - 0.5D) * 2.0D, -this.random.nextDouble(), (this.random.nextDouble() - 0.5D) * 2.0D);
+                }
+            }
+        }
         if (this.transformTime == 0) {
             this.transform();
+            this.playSound(ModSoundEvents.HUNGRY_LUMA_POOF.get());
             if (this.level().isClientSide()) {
                 for (int i = 0; i < 5; ++i) {
                     this.level().addParticle(ParticleTypes.POOF, this.getRandomX(0.5D), this.getRandomY(), this.getRandomZ(0.5D), (this.random.nextDouble() - 0.5D) * 2.0D, -this.random.nextDouble(), (this.random.nextDouble() - 0.5D) * 2.0D);
@@ -121,12 +132,12 @@ public class HungryLumaEntity extends PathfinderMob implements SpaceCreature {
 
     private void transform() {
         this.spawnAtLocation(ModItems.LAUNCH_STAR.get());
-        this.playSound(ModSoundEvents.HUNGRY_LUMA_TRANSFORM.get(), 5.0F, this.getVoicePitch());
     }
 
     @Override
     public boolean hurt(DamageSource pSource, float pAmount) {
         if (pSource.getDirectEntity() instanceof StarBitEntity && this.getReceivedStarBits() < this.getWantedStarBits()) {
+            this.playSound(ModSoundEvents.HUNGRY_LUMA_EAT.get());
             this.setReceivedStarBits(this.getReceivedStarBits() + 1);
             return false;
         }

@@ -37,8 +37,10 @@ public class ModSoundEvents {
     public static final RegistryObject<SoundEvent> LUMA_HURT = registerSoundEvent("entity.luma.hurt");
     public static final RegistryObject<SoundEvent> LUMA_DEATH = registerSoundEvent("entity.luma.death");
     public static final RegistryObject<SoundEvent> HUNGRY_LUMA_AMBIENT = registerSoundEvent("entity.hungry_luma.ambient");
-    public static final RegistryObject<SoundEvent> HUNGRY_LUMA_HURT = registerSoundEvent("entity.hungry_luma.hurt");
+    public static final RegistryObject<SoundEvent> HUNGRY_LUMA_EAT = registerSoundEvent("entity.hungry_luma.eat");
     public static final RegistryObject<SoundEvent> HUNGRY_LUMA_TRANSFORM = registerSoundEvent("entity.hungry_luma.transform");
+    public static final RegistryObject<SoundEvent> HUNGRY_LUMA_POOF = registerSoundEvent("entity.hungry_luma.poof");
+    public static final RegistryObject<SoundEvent> HUNGRY_LUMA_HURT = registerSoundEvent("entity.hungry_luma.hurt");
     public static final RegistryObject<SoundEvent> HUNGRY_LUMA_DEATH = registerSoundEvent("entity.hungry_luma.death");
     public static final RegistryObject<SoundEvent> BOOM_BOOM_AMBIENT = registerSoundEvent("entity.boom_boom.ambient");
     public static final RegistryObject<SoundEvent> BOOM_BOOM_SPIN = registerSoundEvent("entity.boom_boom.spin");

@@ -208,18 +208,33 @@
       "super_block_world:entity/hungry_luma/ambient3"
     ]
   },
-  "entity.hungry_luma.hurt": {
-    "subtitle": "subtitles.super_block_world.entity.hungry_luma.hurt",
+  "entity.hungry_luma.eat": {
+    "subtitle": "subtitles.super_block_world.entity.hungry_luma.eat",
     "sounds": [
-      "super_block_world:entity/hungry_luma/hurt1",
-      "super_block_world:entity/hungry_luma/hurt2",
-      "super_block_world:entity/hungry_luma/hurt3"
+      {
+        "name": "super_block_world:entity/yoshi/swallow",
+        "volume": 0.4
+      }
     ]
   },
   "entity.hungry_luma.transform": {
     "subtitle": "subtitles.super_block_world.entity.hungry_luma.transform",
     "sounds": [
       "super_block_world:entity/hungry_luma/transform"
+    ]
+  },
+  "entity.hungry_luma.poof": {
+    "subtitle": "subtitles.super_block_world.entity.hungry_luma.poof",
+    "sounds": [
+      "super_block_world:entity/hungry_luma/poof"
+    ]
+  },
+  "entity.hungry_luma.hurt": {
+    "subtitle": "subtitles.super_block_world.entity.hungry_luma.hurt",
+    "sounds": [
+      "super_block_world:entity/hungry_luma/hurt1",
+      "super_block_world:entity/hungry_luma/hurt2",
+      "super_block_world:entity/hungry_luma/hurt3"
     ]
   },
   "entity.hungry_luma.death": {

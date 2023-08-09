@@ -1,7 +1,6 @@
 package com.dayofpi.super_block_world.util;
 
-import com.dayofpi.super_block_world.networking.ModMessages;
-import com.dayofpi.super_block_world.networking.packet.ModTeleportSoundPacket;
+import com.dayofpi.super_block_world.sound.ModSoundEvents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -53,7 +52,7 @@ public class MKTeleporter implements ITeleporter {
 
     @Override
     public boolean playTeleportSound(ServerPlayer player, ServerLevel sourceWorld, ServerLevel destWorld) {
-        ModMessages.sendToPlayer(new ModTeleportSoundPacket(), player);
+        player.playSound(ModSoundEvents.WARP_PAINTING_TRAVEL.get());
         return false;
     }
 }
