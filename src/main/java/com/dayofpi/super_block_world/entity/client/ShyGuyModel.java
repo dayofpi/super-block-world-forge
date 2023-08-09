@@ -16,13 +16,11 @@ import net.minecraft.world.entity.HumanoidArm;
 public class ShyGuyModel<T extends ShyGuyEntity> extends HierarchicalModel<T> implements ArmedModel {
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(SuperBlockWorld.MOD_ID, "shy_guy"), "main");
 	private final ModelPart root;
-	private final ModelPart body;
 	private final ModelPart rightArm;
 	private final ModelPart leftArm;
 
 	public ShyGuyModel(ModelPart root) {
 		this.root = root.getChild("root");
-		this.body = this.root.getChild("body");
 		this.leftArm = this.root.getChild("leftarm");
 		this.rightArm = this.root.getChild("rightarm");
 	}

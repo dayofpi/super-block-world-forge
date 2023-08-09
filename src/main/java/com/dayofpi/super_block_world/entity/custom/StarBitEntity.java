@@ -36,8 +36,10 @@ public class StarBitEntity extends ModThrownItemEntity {
     protected void onHit(HitResult hitResult) {
         super.onHit(hitResult);
         if (!this.level().isClientSide) {
-            this.level().broadcastEntityEvent(this, (byte) 3);
-            this.playSound(ModSoundEvents.STAR_BIT_BREAK.get(), 0.7F, 1.2F);
+            if (!(hitResult instanceof EntityHitResult && ((EntityHitResult) hitResult).getEntity() instanceof HungryLumaEntity)) {
+                this.level().broadcastEntityEvent(this, (byte) 3);
+                this.playSound(ModSoundEvents.STAR_BIT_BREAK.get(), 0.7F, 1.2F);
+            }
             this.discard();
         }
     }
@@ -51,7 +53,7 @@ public class StarBitEntity extends ModThrownItemEntity {
 
     @Override
     protected Item getDefaultItem() {
-        return ModItems.YELLOW_STAR_BIT.get();
+        return ModItems.RAINBOW_STAR_BIT.get();
     }
 
     @Override

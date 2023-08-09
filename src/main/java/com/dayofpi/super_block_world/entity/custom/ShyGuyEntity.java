@@ -1,5 +1,6 @@
 package com.dayofpi.super_block_world.entity.custom;
 
+import com.dayofpi.super_block_world.block.ModBlocks;
 import com.dayofpi.super_block_world.item.ModItems;
 import com.dayofpi.super_block_world.sound.ModSoundEvents;
 import net.minecraft.Util;
@@ -24,6 +25,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.*;
+import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Arrays;
@@ -95,9 +97,13 @@ public class ShyGuyEntity extends Monster implements VariantHolder<ShyGuyEntity.
 
     @Override
     protected void populateDefaultEquipmentSlots(RandomSource pRandom, DifficultyInstance pDifficulty) {
-        if (pRandom.nextInt(5) == 0 && !this.level().canSeeSky(this.blockPosition())) {
+        if (pRandom.nextInt(5) == 0 && this.shouldSpawnMinerShyGuy(level().getBlockState(this.blockPosition().below()))) {
             this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_PICKAXE));
         }
+    }
+
+    private boolean shouldSpawnMinerShyGuy(BlockState blockState) {
+        return blockState.is(ModBlocks.VANILLATE.get()) || blockState.is(ModBlocks.TOPPED_VANILLATE.get());
     }
 
     @Override

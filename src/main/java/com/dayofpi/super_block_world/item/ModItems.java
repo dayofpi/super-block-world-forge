@@ -19,6 +19,7 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, SuperBlockWorld.MOD_ID);
 
     public static final RegistryObject<Item> POWER_STAR = ITEMS.register("power_star", () -> new PowerStarItem(ModBlocks.POWER_STAR.get(), new Item.Properties().rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> PULL_BLOCK = registerBlockItem("pull_block", ModBlocks.PULL_BLOCK);
     public static final RegistryObject<Item> WHITE_BRONZE = registerBlockItem("white_bronze", ModBlocks.WHITE_BRONZE);
     public static final RegistryObject<Item> LIGHT_GRAY_BRONZE = registerBlockItem("light_gray_bronze", ModBlocks.LIGHT_GRAY_BRONZE);
     public static final RegistryObject<Item> GRAY_BRONZE = registerBlockItem("gray_bronze", ModBlocks.GRAY_BRONZE);
@@ -113,6 +114,7 @@ public class ModItems {
     public static final RegistryObject<Item> TOADSTONE_SLAB = registerBlockItem("toadstone_slab", ModBlocks.TOADSTONE_SLAB);
     public static final RegistryObject<Item> TOADSTONE_WALL = registerBlockItem("toadstone_wall", ModBlocks.TOADSTONE_WALL);
     public static final RegistryObject<Item> TOADSTONE_BRICKS = registerBlockItem("toadstone_bricks", ModBlocks.TOADSTONE_BRICKS);
+    public static final RegistryObject<Item> CHISELED_TOADSTONE_BRICKS = registerBlockItem("chiseled_toadstone_bricks", ModBlocks.CHISELED_TOADSTONE_BRICKS);
     public static final RegistryObject<Item> TOADSTONE_BRICK_STAIRS = registerBlockItem("toadstone_brick_stairs", ModBlocks.TOADSTONE_BRICK_STAIRS);
     public static final RegistryObject<Item> TOADSTONE_BRICK_SLAB = registerBlockItem("toadstone_brick_slab", ModBlocks.TOADSTONE_BRICK_SLAB);
     public static final RegistryObject<Item> TOADSTONE_BRICK_WALL = registerBlockItem("toadstone_brick_wall", ModBlocks.TOADSTONE_BRICK_WALL);
@@ -126,9 +128,11 @@ public class ModItems {
     public static final RegistryObject<Item> CHISELED_HARDSTONE = registerBlockItem("chiseled_hardstone", ModBlocks.CHISELED_HARDSTONE);
     public static final RegistryObject<Item> HARDSTONE_BRICKS = registerBlockItem("hardstone_bricks", ModBlocks.HARDSTONE_BRICKS);
     public static final RegistryObject<Item> CRACKED_HARDSTONE_BRICKS = registerBlockItem("cracked_hardstone_bricks", ModBlocks.CRACKED_HARDSTONE_BRICKS);
+    public static final RegistryObject<Item> CHISELED_HARDSTONE_BRICKS = registerBlockItem("chiseled_hardstone_bricks", ModBlocks.CHISELED_HARDSTONE_BRICKS);
     public static final RegistryObject<Item> HARDSTONE_BRICK_STAIRS = registerBlockItem("hardstone_brick_stairs", ModBlocks.HARDSTONE_BRICK_STAIRS);
     public static final RegistryObject<Item> HARDSTONE_BRICK_SLAB = registerBlockItem("hardstone_brick_slab", ModBlocks.HARDSTONE_BRICK_SLAB);
     public static final RegistryObject<Item> HARDSTONE_BRICK_WALL = registerBlockItem("hardstone_brick_wall", ModBlocks.HARDSTONE_BRICK_WALL);
+    public static final RegistryObject<Item> HARDSTONE_PILLAR = registerBlockItem("hardstone_pillar", ModBlocks.HARDSTONE_PILLAR);
     public static final RegistryObject<Item> SMOOTH_HARDSTONE = registerBlockItem("smooth_hardstone", ModBlocks.SMOOTH_HARDSTONE);
     public static final RegistryObject<Item> SMOOTH_HARDSTONE_STAIRS = registerBlockItem("smooth_hardstone_stairs", ModBlocks.SMOOTH_HARDSTONE_STAIRS);
     public static final RegistryObject<Item> SMOOTH_HARDSTONE_SLAB = registerBlockItem("smooth_hardstone_slab", ModBlocks.SMOOTH_HARDSTONE_SLAB);
@@ -163,6 +167,7 @@ public class ModItems {
     public static final RegistryObject<Item> YELLOW_FLOWERBED = registerBlockItem("yellow_flowerbed", ModBlocks.YELLOW_FLOWERBED);
     public static final RegistryObject<Item> WARP_PAINTING = ITEMS.register("warp_painting", () -> new WarpPaintingItem(new Item.Properties()));
     public static final RegistryObject<Item> WARP_LINK = ITEMS.register("warp_link", () -> new WarpLinkItem(new Item.Properties()));
+    public static final RegistryObject<Item> LAUNCH_STAR = ITEMS.register("launch_star", () -> new LaunchStarItem(new Item.Properties()));
     public static final RegistryObject<Item> AMANITA_BOAT = ITEMS.register("amanita_boat", () -> new ModBoatItem(false, ModBoatEntity.Type.AMANITA, new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> AMANITA_CHEST_BOAT = ITEMS.register("amanita_chest_boat", () -> new ModBoatItem(true, ModBoatEntity.Type.AMANITA, new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> SHY_GUY_MASK = ITEMS.register("shy_guy_mask", () -> new ShyGuyMaskItem(new Item.Properties()));
@@ -177,8 +182,11 @@ public class ModItems {
     public static final RegistryObject<Item> YELLOW_STAR_BIT = ITEMS.register("yellow_star_bit", () -> new StarBitItem(new Item.Properties()));
     public static final RegistryObject<Item> BLUE_STAR_BIT = ITEMS.register("blue_star_bit", () -> new StarBitItem(new Item.Properties()));
     public static final RegistryObject<Item> PURPLE_STAR_BIT = ITEMS.register("purple_star_bit", () -> new StarBitItem(new Item.Properties()));
+    public static final RegistryObject<Item> RAINBOW_STAR_BIT = ITEMS.register("rainbow_star_bit", () -> new StarBitItem(new Item.Properties()));
     public static final RegistryObject<Item> SUBCON_THREAD = ITEMS.register("subcon_thread", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SHY_GUY_SPAWN_EGG = ITEMS.register("shy_guy_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.SHY_GUY, 0xed4125, 0x3785db, new Item.Properties()));
+    public static final RegistryObject<Item> LUMA_SPAWN_EGG = ITEMS.register("luma_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.LUMA, 0xffe243, 0xffe243, new Item.Properties()));
+    public static final RegistryObject<Item> HUNGRY_LUMA_SPAWN_EGG = ITEMS.register("hungry_luma_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.HUNGRY_LUMA, 0xffdea3, 0xff696c, new Item.Properties()));
     public static final RegistryObject<Item> BOOM_BOOM_SPAWN_EGG = ITEMS.register("boom_boom_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.BOOM_BOOM, 0xcc7402, 0xffd22c, new Item.Properties()));
 
     private static RegistryObject<Item> registerBlockItem(String name, Supplier<Block> blockSupplier) {

@@ -28,7 +28,7 @@ public class ModBlocks {
     public static final MapColor AMANITA_WOOD_COLOR = MapColor.PODZOL;
 
     public static final RegistryObject<Block> POWER_STAR = BLOCKS.register("power_star", () -> new PowerStarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.GOLD).sound(SoundType.SMALL_AMETHYST_BUD).lightLevel(value -> 5).instabreak().noCollission().noOcclusion()));
-
+    public static final RegistryObject<Block> PULL_BLOCK = BLOCKS.register("pull_block", () -> new PullBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).mapColor(MapColor.COLOR_LIGHT_BLUE).strength(5.0F, 6.0F).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> WHITE_BRONZE = BLOCKS.register("white_bronze", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).mapColor(MapColor.SNOW)));
     public static final RegistryObject<Block> LIGHT_GRAY_BRONZE = BLOCKS.register("light_gray_bronze", () -> new Block(BlockBehaviour.Properties.copy(WHITE_BRONZE.get()).mapColor(MapColor.COLOR_LIGHT_GRAY)));
     public static final RegistryObject<Block> GRAY_BRONZE = BLOCKS.register("gray_bronze", () -> new Block(BlockBehaviour.Properties.copy(WHITE_BRONZE.get()).mapColor(MapColor.COLOR_GRAY)));
@@ -123,6 +123,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> TOADSTONE_SLAB = BLOCKS.register("toadstone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(TOADSTONE.get())));
     public static final RegistryObject<Block> TOADSTONE_WALL = BLOCKS.register("toadstone_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(TOADSTONE.get())));
     public static final RegistryObject<Block> TOADSTONE_BRICKS = BLOCKS.register("toadstone_bricks", () -> new Block(BlockBehaviour.Properties.copy(TOADSTONE.get())));
+    public static final RegistryObject<Block> CHISELED_TOADSTONE_BRICKS = BLOCKS.register("chiseled_toadstone_bricks", () -> new Block(BlockBehaviour.Properties.copy(TOADSTONE_BRICKS.get())));
     public static final RegistryObject<Block> TOADSTONE_BRICK_STAIRS = BLOCKS.register("toadstone_brick_stairs", () -> new ModStairBlock(TOADSTONE_BRICKS));
     public static final RegistryObject<Block> TOADSTONE_BRICK_SLAB = BLOCKS.register("toadstone_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(TOADSTONE_BRICKS.get())));
     public static final RegistryObject<Block> TOADSTONE_BRICK_WALL = BLOCKS.register("toadstone_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(TOADSTONE_BRICKS.get())));
@@ -136,9 +137,11 @@ public class ModBlocks {
     public static final RegistryObject<Block> CHISELED_HARDSTONE = BLOCKS.register("chiseled_hardstone", () -> new Block(BlockBehaviour.Properties.copy(HARDSTONE.get())));
     public static final RegistryObject<Block> HARDSTONE_BRICKS = BLOCKS.register("hardstone_bricks", () -> new Block(BlockBehaviour.Properties.copy(HARDSTONE.get())));
     public static final RegistryObject<Block> CRACKED_HARDSTONE_BRICKS = BLOCKS.register("cracked_hardstone_bricks", () -> new Block(BlockBehaviour.Properties.copy(HARDSTONE_BRICKS.get())));
+    public static final RegistryObject<Block> CHISELED_HARDSTONE_BRICKS = BLOCKS.register("chiseled_hardstone_bricks", () -> new Block(BlockBehaviour.Properties.copy(HARDSTONE_BRICKS.get())));
     public static final RegistryObject<Block> HARDSTONE_BRICK_STAIRS = BLOCKS.register("hardstone_brick_stairs", () -> new ModStairBlock(HARDSTONE_BRICKS));
     public static final RegistryObject<Block> HARDSTONE_BRICK_SLAB = BLOCKS.register("hardstone_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(HARDSTONE_BRICKS.get())));
     public static final RegistryObject<Block> HARDSTONE_BRICK_WALL = BLOCKS.register("hardstone_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(HARDSTONE_BRICKS.get())));
+    public static final RegistryObject<Block> HARDSTONE_PILLAR = BLOCKS.register("hardstone_pillar", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(HARDSTONE.get())));
     public static final RegistryObject<Block> SMOOTH_HARDSTONE = BLOCKS.register("smooth_hardstone", () -> new Block(BlockBehaviour.Properties.copy(HARDSTONE.get())));
     public static final RegistryObject<Block> SMOOTH_HARDSTONE_STAIRS = BLOCKS.register("smooth_hardstone_stairs", () -> new ModStairBlock(SMOOTH_HARDSTONE));
     public static final RegistryObject<Block> SMOOTH_HARDSTONE_SLAB = BLOCKS.register("smooth_hardstone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(SMOOTH_HARDSTONE.get())));

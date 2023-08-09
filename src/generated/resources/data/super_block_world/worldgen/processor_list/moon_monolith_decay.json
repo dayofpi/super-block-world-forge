@@ -1,15 +1,7 @@
 {
   "processors": [
     {
-      "blocks": [
-        {
-          "Name": "minecraft:air"
-        }
-      ],
-      "processor_type": "minecraft:block_ignore"
-    },
-    {
-      "integrity": 0.9,
+      "integrity": 0.87,
       "processor_type": "minecraft:block_rot"
     },
     {

@@ -11,7 +11,6 @@ import net.minecraft.world.level.block.HugeMushroomBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Unique;
 
 @Mixin(HugeMushroomBlock.class)
 public class MushroomBlockMixin extends Block {
@@ -28,13 +27,13 @@ public class MushroomBlockMixin extends Block {
         }
     }
 
+    @Override
     public void updateEntityAfterFallOn(BlockGetter pLevel, Entity pEntity) {
         if (this.isBouncy(pEntity.getBlockStateOn()) && !pEntity.isSuppressingBounce()) {
             this.bounceUp(pEntity);
         } else super.updateEntityAfterFallOn(pLevel, pEntity);
     }
 
-    @Unique
     private void bounceUp(Entity pEntity) {
         Vec3 vec3 = pEntity.getDeltaMovement();
         if (vec3.y < 0.0D) {
@@ -43,7 +42,6 @@ public class MushroomBlockMixin extends Block {
         }
     }
 
-    @Unique
     private boolean isBouncy(BlockState blockState) {
         return blockState.is(Blocks.RED_MUSHROOM_BLOCK);
     }

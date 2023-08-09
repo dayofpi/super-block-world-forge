@@ -3,11 +3,11 @@ package com.dayofpi.super_block_world;
 import com.dayofpi.super_block_world.block.ModBlocks;
 import com.dayofpi.super_block_world.block.client.FlagRenderer;
 import com.dayofpi.super_block_world.entity.ModEntityTypes;
-import com.dayofpi.super_block_world.entity.client.BoomBoomModel;
-import com.dayofpi.super_block_world.entity.client.ModBoatRenderer;
-import com.dayofpi.super_block_world.entity.client.ShyGuyModel;
-import com.dayofpi.super_block_world.entity.client.WarpPaintingModel;
+import com.dayofpi.super_block_world.entity.SpaceCreature;
+import com.dayofpi.super_block_world.entity.client.*;
 import com.dayofpi.super_block_world.entity.custom.BoomBoomEntity;
+import com.dayofpi.super_block_world.entity.custom.HungryLumaEntity;
+import com.dayofpi.super_block_world.entity.custom.LumaEntity;
 import com.dayofpi.super_block_world.entity.custom.ShyGuyEntity;
 import com.dayofpi.super_block_world.item.ModItems;
 import com.dayofpi.super_block_world.item.custom.SuperPickaxeItem;
@@ -44,8 +44,11 @@ public class ModEvents {
         public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
             event.registerLayerDefinition(FlagRenderer.LAYER_LOCATION, FlagRenderer::createBodyLayer);
             event.registerLayerDefinition(ShyGuyModel.LAYER_LOCATION, ShyGuyModel::createBodyLayer);
+            event.registerLayerDefinition(LumaModel.LAYER_LOCATION, LumaModel::createBodyLayer);
+            event.registerLayerDefinition(HungryLumaModel.LAYER_LOCATION, HungryLumaModel::createBodyLayer);
             event.registerLayerDefinition(BoomBoomModel.LAYER_LOCATION, BoomBoomModel::createBodyLayer);
             event.registerLayerDefinition(WarpPaintingModel.LAYER_LOCATION, WarpPaintingModel::createBodyLayer);
+            event.registerLayerDefinition(LaunchStarModel.LAYER_LOCATION, LaunchStarModel::createBodyLayer);
             event.registerLayerDefinition(ModBoatRenderer.AMANITA_BOAT, BoatModel::createBodyModel);
             event.registerLayerDefinition(ModBoatRenderer.AMANITA_CHEST_BOAT, ChestBoatModel::createBodyModel);
         }
@@ -53,12 +56,16 @@ public class ModEvents {
         @SubscribeEvent
         public static void registerAttributes(EntityAttributeCreationEvent event) {
             event.put(ModEntityTypes.SHY_GUY.get(), ShyGuyEntity.createAttributes().build());
+            event.put(ModEntityTypes.LUMA.get(), LumaEntity.createAttributes().build());
+            event.put(ModEntityTypes.HUNGRY_LUMA.get(), HungryLumaEntity.createAttributes().build());
             event.put(ModEntityTypes.BOOM_BOOM.get(), BoomBoomEntity.createAttributes().build());
         }
 
         @SubscribeEvent
         public static void registerSpawnPlacements(SpawnPlacementRegisterEvent event) {
             event.register(ModEntityTypes.SHY_GUY.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ShyGuyEntity::checkShyGuySpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
+            event.register(ModEntityTypes.LUMA.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SpaceCreature::checkSpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
+            event.register(ModEntityTypes.HUNGRY_LUMA.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SpaceCreature::checkSpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
         }
     }
 

@@ -28,6 +28,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     @Override
     protected void generate() {
         dropSelf(ModBlocks.POWER_STAR.get());
+        dropSelf(ModBlocks.PULL_BLOCK.get());
         dropSelf(ModBlocks.WHITE_BRONZE.get());
         dropSelf(ModBlocks.LIGHT_GRAY_BRONZE.get());
         dropSelf(ModBlocks.GRAY_BRONZE.get());
@@ -118,6 +119,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         slab(ModBlocks.TOADSTONE_SLAB);
         dropSelf(ModBlocks.TOADSTONE_WALL.get());
         dropSelf(ModBlocks.TOADSTONE_BRICKS.get());
+        dropSelf(ModBlocks.CHISELED_TOADSTONE_BRICKS.get());
         dropSelf(ModBlocks.TOADSTONE_BRICK_STAIRS.get());
         slab(ModBlocks.TOADSTONE_BRICK_SLAB);
         dropSelf(ModBlocks.TOADSTONE_BRICK_WALL.get());
@@ -131,9 +133,11 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.CHISELED_HARDSTONE.get());
         dropSelf(ModBlocks.HARDSTONE_BRICKS.get());
         dropSelf(ModBlocks.CRACKED_HARDSTONE_BRICKS.get());
+        dropSelf(ModBlocks.CHISELED_HARDSTONE_BRICKS.get());
         dropSelf(ModBlocks.HARDSTONE_BRICK_STAIRS.get());
         slab(ModBlocks.HARDSTONE_BRICK_SLAB);
         dropSelf(ModBlocks.HARDSTONE_BRICK_WALL.get());
+        dropSelf(ModBlocks.HARDSTONE_PILLAR.get());
         dropSelf(ModBlocks.SMOOTH_HARDSTONE.get());
         dropSelf(ModBlocks.SMOOTH_HARDSTONE_STAIRS.get());
         slab(ModBlocks.SMOOTH_HARDSTONE_SLAB);

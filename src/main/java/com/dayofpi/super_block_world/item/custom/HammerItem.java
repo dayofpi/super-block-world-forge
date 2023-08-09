@@ -30,6 +30,7 @@ public class HammerItem extends Item implements ThrowableItem {
         this.defaultModifiers = builder.build();
     }
 
+    @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand interactionHand) {
         ItemStack itemStack = player.getItemInHand(interactionHand);
         this.playSound(level, player.position(), ModSoundEvents.HAMMER_THROW.get(), 0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F));
@@ -45,10 +46,12 @@ public class HammerItem extends Item implements ThrowableItem {
         return InteractionResultHolder.sidedSuccess(itemStack, level.isClientSide());
     }
 
+    @Override
     public boolean canAttackBlock(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer) {
         return !pPlayer.isCreative();
     }
 
+    @Override
     public boolean hurtEnemy(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
         pStack.hurtAndBreak(1, pAttacker, (p_43296_) -> {
             p_43296_.broadcastBreakEvent(EquipmentSlot.MAINHAND);
@@ -56,6 +59,7 @@ public class HammerItem extends Item implements ThrowableItem {
         return true;
     }
 
+    @Override
     public boolean mineBlock(ItemStack pStack, Level pLevel, BlockState pState, BlockPos pPos, LivingEntity pEntityLiving) {
         if (pState.getDestroySpeed(pLevel, pPos) != 0.0F) {
             pStack.hurtAndBreak(2, pEntityLiving, (p_43276_) -> {

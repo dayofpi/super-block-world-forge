@@ -46,11 +46,13 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockWithItem(ModBlocks.VANILLATE_TILES);
         simpleBlockWithItem(ModBlocks.TOADSTONE);
         simpleBlockWithItem(ModBlocks.TOADSTONE_BRICKS);
+        simpleBlockWithItem(ModBlocks.CHISELED_TOADSTONE_BRICKS);
         simpleBlockWithItem(ModBlocks.SMOOTH_TOADSTONE);
         simpleBlockWithItem(ModBlocks.HARDSTONE);
         simpleBlockWithItem(ModBlocks.CHISELED_HARDSTONE);
         simpleBlockWithItem(ModBlocks.HARDSTONE_BRICKS);
         simpleBlockWithItem(ModBlocks.CRACKED_HARDSTONE_BRICKS);
+        simpleBlockWithItem(ModBlocks.CHISELED_HARDSTONE_BRICKS);
         simpleBlockWithItem(ModBlocks.SMOOTH_HARDSTONE);
         simpleBlockWithItem(ModBlocks.PACKED_CLOUD);
         simpleBlockWithItem(ModBlocks.MOON_ROCK);
@@ -64,6 +66,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         axisBlock((RotatedPillarBlock) ModBlocks.AMANITA_WOOD.get(), blockTexture(ModBlocks.AMANITA_LOG.get()), blockTexture(ModBlocks.AMANITA_LOG.get()));
         logBlock((RotatedPillarBlock) ModBlocks.STRIPPED_AMANITA_LOG.get());
         axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_AMANITA_WOOD.get(), blockTexture(ModBlocks.STRIPPED_AMANITA_LOG.get()), blockTexture(ModBlocks.STRIPPED_AMANITA_LOG.get()));
+
+        axisBlock((RotatedPillarBlock) ModBlocks.HARDSTONE_PILLAR.get(), blockTexture(ModBlocks.HARDSTONE_PILLAR.get()));
 
         stairsBlock((StairBlock) ModBlocks.VANILLATE_STAIRS.get(), blockTexture(ModBlocks.VANILLATE.get()));
         stairsBlock((StairBlock) ModBlocks.VANILLATE_BRICK_STAIRS.get(), blockTexture(ModBlocks.VANILLATE_BRICKS.get()));

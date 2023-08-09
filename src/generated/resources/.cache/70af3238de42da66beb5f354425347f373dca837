@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-06T06:13:15.304089	Block Tags
+// 1.20.1	2023-08-07T17:14:04.4106293	Block Tags
 d5a725534da480dd5b557963a6c5ab8ffff6f933 data/forge/tags/blocks/blocks/bronze.json
 5c29b20160d3e68e3a3f953892d95355f26bc8f1 data/forge/tags/blocks/ores.json
 5c29b20160d3e68e3a3f953892d95355f26bc8f1 data/forge/tags/blocks/ores/bronze.json
@@ -10,7 +10,7 @@ aee889f579b7e285552cf2acea0771f076d0df88 data/minecraft/tags/blocks/flowers.json
 aee889f579b7e285552cf2acea0771f076d0df88 data/minecraft/tags/blocks/inside_step_sound_blocks.json
 707a11fc7fa33acbb091be2c8afbb5622c2ca9b2 data/minecraft/tags/blocks/leaves.json
 74b7c86c356d4341d88954b5248bf3b2f29416d2 data/minecraft/tags/blocks/logs_that_burn.json
-f5ebe57fc67d40757aaeb12ac9812f922e3e3bce data/minecraft/tags/blocks/mineable/pickaxe.json
+ca709c3f484c2afbea3acb8eabf77b6cf92cef71 data/minecraft/tags/blocks/mineable/pickaxe.json
 17adabfc25a135f67ec529477b2e0293f480c933 data/minecraft/tags/blocks/mineable/shovel.json
 11ca5c3e3cfdc1eef12778fc90833d4c0e3a970b data/minecraft/tags/blocks/mushroom_grow_block.json
 5c3a30613eb771d10777e64803a3a719cd68fb65 data/minecraft/tags/blocks/needs_iron_tool.json

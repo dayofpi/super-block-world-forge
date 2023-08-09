@@ -12,6 +12,7 @@ public class ModCreativeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, SuperBlockWorld.MOD_ID);
 
     public static final RegistryObject<CreativeModeTab> MAIN = CREATIVE_MODE_TABS.register("main", () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.POWER_STAR.get())).title(Component.translatable("itemGroup.super_block_world")).displayItems((itemDisplayParameters, output) -> {
+        output.accept(ModItems.PULL_BLOCK.get());
         output.accept(ModItems.TOADSTOOL_GRASS.get());
         output.accept(ModItems.TOADSTOOL_SOIL.get());
         output.accept(ModItems.COARSE_TOADSTOOL_SOIL.get());
@@ -40,6 +41,7 @@ public class ModCreativeTabs {
         output.accept(ModItems.TOADSTONE_SLAB.get());
         output.accept(ModItems.TOADSTONE_WALL.get());
         output.accept(ModItems.TOADSTONE_BRICKS.get());
+        output.accept(ModItems.CHISELED_TOADSTONE_BRICKS.get());
         output.accept(ModItems.TOADSTONE_BRICK_STAIRS.get());
         output.accept(ModItems.TOADSTONE_BRICK_SLAB.get());
         output.accept(ModItems.TOADSTONE_BRICK_WALL.get());
@@ -53,9 +55,11 @@ public class ModCreativeTabs {
         output.accept(ModItems.CHISELED_HARDSTONE.get());
         output.accept(ModItems.HARDSTONE_BRICKS.get());
         output.accept(ModItems.CRACKED_HARDSTONE_BRICKS.get());
+        output.accept(ModItems.CHISELED_HARDSTONE_BRICKS.get());
         output.accept(ModItems.HARDSTONE_BRICK_STAIRS.get());
         output.accept(ModItems.HARDSTONE_BRICK_SLAB.get());
         output.accept(ModItems.HARDSTONE_BRICK_WALL.get());
+        output.accept(ModItems.HARDSTONE_PILLAR.get());
         output.accept(ModItems.SMOOTH_HARDSTONE.get());
         output.accept(ModItems.SMOOTH_HARDSTONE_STAIRS.get());
         output.accept(ModItems.SMOOTH_HARDSTONE_SLAB.get());
@@ -156,6 +160,7 @@ public class ModCreativeTabs {
         output.accept(ModItems.FLAGPOLE.get());
         output.accept(ModItems.WARP_PAINTING.get());
         output.accept(ModItems.WARP_LINK.get());
+        output.accept(ModItems.LAUNCH_STAR.get());
         output.accept(ModItems.AMANITA_BOAT.get());
         output.accept(ModItems.AMANITA_CHEST_BOAT.get());
         output.accept(ModItems.SHY_GUY_MASK.get());
@@ -173,6 +178,8 @@ public class ModCreativeTabs {
         output.accept(ModItems.PURPLE_STAR_BIT.get());
         output.accept(ModItems.SUBCON_THREAD.get());
         output.accept(ModItems.SHY_GUY_SPAWN_EGG.get());
+        output.accept(ModItems.LUMA_SPAWN_EGG.get());
+        output.accept(ModItems.HUNGRY_LUMA_SPAWN_EGG.get());
         output.accept(ModItems.BOOM_BOOM_SPAWN_EGG.get());
     }).build());
 }

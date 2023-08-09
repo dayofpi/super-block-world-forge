@@ -6,7 +6,8 @@
     "AbstractArrowMixin",
     "BubbleColumnBlockMixin",
     "MushroomBlockMixin",
-    "PlayerMixin"
+    "PlayerMixin",
+    "ServerLevelMixin"
   ],
   "client": [
     "MinecraftMixin",

@@ -82,6 +82,12 @@
       "super_block_world:block/toadstone/step4"
     ]
   },
+  "block.pull_block.pull": {
+    "subtitle": "subtitles.super_block_world.block.pull_block.pull",
+    "sounds": [
+      "super_block_world:block/pull_block"
+    ]
+  },
   "block.warp_pipe.teleport": {
     "subtitle": "subtitles.super_block_world.block.warp_pipe.teleport",
     "sounds": [
@@ -175,6 +181,56 @@
       "super_block_world:entity/shy_guy/death2"
     ]
   },
+  "entity.luma.ambient": {
+    "subtitle": "subtitles.super_block_world.entity.luma.ambient",
+    "sounds": [
+      "super_block_world:entity/luma/ambient"
+    ]
+  },
+  "entity.luma.hurt": {
+    "subtitle": "subtitles.super_block_world.entity.luma.hurt",
+    "sounds": [
+      "super_block_world:entity/luma/hurt1",
+      "super_block_world:entity/luma/hurt2"
+    ]
+  },
+  "entity.luma.death": {
+    "subtitle": "subtitles.super_block_world.entity.luma.death",
+    "sounds": [
+      "super_block_world:entity/luma/death"
+    ]
+  },
+  "entity.hungry_luma.ambient": {
+    "subtitle": "subtitles.super_block_world.entity.hungry_luma.ambient",
+    "sounds": [
+      "super_block_world:entity/hungry_luma/ambient1",
+      "super_block_world:entity/hungry_luma/ambient2",
+      "super_block_world:entity/hungry_luma/ambient3"
+    ]
+  },
+  "entity.hungry_luma.hurt": {
+    "subtitle": "subtitles.super_block_world.entity.hungry_luma.hurt",
+    "sounds": [
+      "super_block_world:entity/hungry_luma/hurt1",
+      "super_block_world:entity/hungry_luma/hurt2",
+      "super_block_world:entity/hungry_luma/hurt3"
+    ]
+  },
+  "entity.hungry_luma.transform": {
+    "subtitle": "subtitles.super_block_world.entity.hungry_luma.transform",
+    "sounds": [
+      "super_block_world:entity/hungry_luma/transform"
+    ]
+  },
+  "entity.hungry_luma.death": {
+    "subtitle": "subtitles.super_block_world.entity.hungry_luma.death",
+    "sounds": [
+      {
+        "name": "super_block_world:entity/luma/death",
+        "pitch": 1.2
+      }
+    ]
+  },
   "entity.boom_boom.ambient": {
     "subtitle": "subtitles.super_block_world.entity.boom_boom.ambient",
     "sounds": [
@@ -226,6 +282,33 @@
   "entity.warp_painting.travel": {
     "sounds": [
       "super_block_world:entity/warp_painting/travel"
+    ]
+  },
+  "entity.launch_star.ambient": {
+    "subtitle": "subtitles.super_block_world.entity.launch_star.ambient",
+    "sounds": [
+      "super_block_world:entity/launch_star/ambient"
+    ]
+  },
+  "entity.launch_star.place": {
+    "subtitle": "subtitles.super_block_world.entity.launch_star.place",
+    "sounds": [
+      "super_block_world:entity/launch_star/place1",
+      "super_block_world:entity/launch_star/place2"
+    ]
+  },
+  "entity.launch_star.break": {
+    "subtitle": "subtitles.super_block_world.entity.launch_star.break",
+    "sounds": [
+      "super_block_world:entity/launch_star/place1",
+      "super_block_world:entity/launch_star/place2"
+    ]
+  },
+  "entity.launch_star.launch": {
+    "subtitle": "subtitles.super_block_world.entity.launch_star.launch",
+    "sounds": [
+      "super_block_world:entity/launch_star/launch1",
+      "super_block_world:entity/launch_star/launch2"
     ]
   }
 }

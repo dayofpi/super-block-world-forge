@@ -135,6 +135,7 @@ public class ModRecipeProvider  extends RecipeProvider implements IConditionBuil
         stonecutterResultFromBase(pWriter, RecipeCategory.DECORATIONS, ModItems.VANILLATE_TILE_WALL.get(), ModItems.VANILLATE_TILES.get());
 
         stonecutterResultFromBase(pWriter, RecipeCategory.BUILDING_BLOCKS, ModItems.TOADSTONE_BRICKS.get(), ModItems.TOADSTONE.get());
+        stonecutterResultFromBase(pWriter, RecipeCategory.BUILDING_BLOCKS, ModItems.CHISELED_TOADSTONE_BRICKS.get(), ModItems.TOADSTONE.get());
         stonecutterResultFromBase(pWriter, RecipeCategory.BUILDING_BLOCKS, ModItems.TOADSTONE_STAIRS.get(), ModItems.TOADSTONE.get());
         stonecutterResultFromBase(pWriter, RecipeCategory.BUILDING_BLOCKS, ModItems.TOADSTONE_SLAB.get(), ModItems.TOADSTONE.get(), 2);
         stonecutterResultFromBase(pWriter, RecipeCategory.BUILDING_BLOCKS, ModItems.TOADSTONE_WALL.get(), ModItems.TOADSTONE.get());
@@ -142,6 +143,7 @@ public class ModRecipeProvider  extends RecipeProvider implements IConditionBuil
         stonecutterResultFromBase(pWriter, RecipeCategory.BUILDING_BLOCKS, ModItems.TOADSTONE_BRICK_SLAB.get(), ModItems.TOADSTONE.get(), 2);
         stonecutterResultFromBase(pWriter, RecipeCategory.BUILDING_BLOCKS, ModItems.TOADSTONE_BRICK_WALL.get(), ModItems.TOADSTONE.get());
 
+        stonecutterResultFromBase(pWriter, RecipeCategory.BUILDING_BLOCKS, ModItems.CHISELED_TOADSTONE_BRICKS.get(), ModItems.TOADSTONE_BRICKS.get());
         stonecutterResultFromBase(pWriter, RecipeCategory.BUILDING_BLOCKS, ModItems.TOADSTONE_BRICK_STAIRS.get(), ModItems.TOADSTONE_BRICKS.get());
         stonecutterResultFromBase(pWriter, RecipeCategory.BUILDING_BLOCKS, ModItems.TOADSTONE_BRICK_SLAB.get(), ModItems.TOADSTONE_BRICKS.get(), 2);
         stonecutterResultFromBase(pWriter, RecipeCategory.BUILDING_BLOCKS, ModItems.TOADSTONE_BRICK_WALL.get(), ModItems.TOADSTONE_BRICKS.get());
@@ -150,7 +152,9 @@ public class ModRecipeProvider  extends RecipeProvider implements IConditionBuil
         stonecutterResultFromBase(pWriter, RecipeCategory.BUILDING_BLOCKS, ModItems.SMOOTH_TOADSTONE_SLAB.get(), ModItems.SMOOTH_TOADSTONE.get(), 2);
 
         stonecutterResultFromBase(pWriter, RecipeCategory.BUILDING_BLOCKS, ModItems.HARDSTONE_BRICKS.get(), ModItems.HARDSTONE.get());
+        stonecutterResultFromBase(pWriter, RecipeCategory.BUILDING_BLOCKS, ModItems.CHISELED_HARDSTONE_BRICKS.get(), ModItems.HARDSTONE.get());
         stonecutterResultFromBase(pWriter, RecipeCategory.BUILDING_BLOCKS, ModItems.CHISELED_HARDSTONE.get(), ModItems.HARDSTONE.get());
+        stonecutterResultFromBase(pWriter, RecipeCategory.BUILDING_BLOCKS, ModItems.HARDSTONE_PILLAR.get(), ModItems.HARDSTONE.get());
         stonecutterResultFromBase(pWriter, RecipeCategory.BUILDING_BLOCKS, ModItems.HARDSTONE_STAIRS.get(), ModItems.HARDSTONE.get());
         stonecutterResultFromBase(pWriter, RecipeCategory.BUILDING_BLOCKS, ModItems.HARDSTONE_SLAB.get(), ModItems.HARDSTONE.get(), 2);
         stonecutterResultFromBase(pWriter, RecipeCategory.BUILDING_BLOCKS, ModItems.HARDSTONE_WALL.get(), ModItems.HARDSTONE.get());
@@ -158,6 +162,7 @@ public class ModRecipeProvider  extends RecipeProvider implements IConditionBuil
         stonecutterResultFromBase(pWriter, RecipeCategory.BUILDING_BLOCKS, ModItems.HARDSTONE_BRICK_SLAB.get(), ModItems.HARDSTONE.get(), 2);
         stonecutterResultFromBase(pWriter, RecipeCategory.BUILDING_BLOCKS, ModItems.HARDSTONE_BRICK_WALL.get(), ModItems.HARDSTONE.get());
 
+        stonecutterResultFromBase(pWriter, RecipeCategory.BUILDING_BLOCKS, ModItems.CHISELED_HARDSTONE_BRICKS.get(), ModItems.HARDSTONE_BRICKS.get());
         stonecutterResultFromBase(pWriter, RecipeCategory.BUILDING_BLOCKS, ModItems.HARDSTONE_BRICK_STAIRS.get(), ModItems.HARDSTONE_BRICKS.get());
         stonecutterResultFromBase(pWriter, RecipeCategory.BUILDING_BLOCKS, ModItems.HARDSTONE_BRICK_SLAB.get(), ModItems.HARDSTONE_BRICKS.get(), 2);
         stonecutterResultFromBase(pWriter, RecipeCategory.BUILDING_BLOCKS, ModItems.HARDSTONE_BRICK_WALL.get(), ModItems.HARDSTONE_BRICKS.get());
@@ -168,6 +173,10 @@ public class ModRecipeProvider  extends RecipeProvider implements IConditionBuil
         stonecutterResultFromBase(pWriter, RecipeCategory.BUILDING_BLOCKS, ModItems.RAINBOW_TILE_STAIRS.get(), ModItems.RAINBOW_TILES.get());
         stonecutterResultFromBase(pWriter, RecipeCategory.BUILDING_BLOCKS, ModItems.RAINBOW_TILE_SLAB.get(), ModItems.RAINBOW_TILES.get(), 2);
         stonecutterResultFromBase(pWriter, RecipeCategory.DECORATIONS, ModItems.RAINBOW_TILE_WALL.get(), ModItems.RAINBOW_TILES.get());
+
+        chiseled(pWriter, RecipeCategory.BUILDING_BLOCKS, ModItems.CHISELED_HARDSTONE.get(), ModItems.HARDSTONE_SLAB.get());
+        chiseled(pWriter, RecipeCategory.BUILDING_BLOCKS, ModItems.CHISELED_TOADSTONE_BRICKS.get(), ModItems.TOADSTONE_BRICK_SLAB.get());
+        chiseled(pWriter, RecipeCategory.BUILDING_BLOCKS, ModItems.CHISELED_HARDSTONE_BRICKS.get(), ModItems.HARDSTONE_BRICK_SLAB.get());
 
         stairs(pWriter, ModItems.BRONZE_STAIRS.get(), ModItems.BRONZE_BLOCK.get());
         stairs(pWriter, ModItems.VANILLATE_STAIRS.get(), ModItems.VANILLATE.get());
@@ -226,14 +235,15 @@ public class ModRecipeProvider  extends RecipeProvider implements IConditionBuil
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.POWER_SHARD.get(), 5).requires(ModItems.POWER_STAR.get()).unlockedBy("has_power_star", has(ModItems.POWER_STAR.get())).save(pWriter);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModItems.PULL_BLOCK.get()).pattern("0X0").pattern("X0X").pattern("0X0").define('0', ModItems.BLUE_STAR_BIT.get()).define('X', Items.IRON_INGOT).unlockedBy("has_blue_star_bit", has(ModItems.BLUE_STAR_BIT.get())).save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.FLAGPOLE.get(), 2).pattern("#").pattern("#").pattern("#").define('#', ModItems.BRONZE_INGOT.get()).unlockedBy("has_bronze_ingot", has(ModItems.BRONZE_INGOT.get())).save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.COARSE_TOADSTOOL_SOIL.get(), 4).pattern("DG").pattern("GD").define('D', ModItems.TOADSTOOL_SOIL.get()).define('G', Items.GRAVEL).unlockedBy("has_material", has(ModItems.TOADSTOOL_SOIL.get())).save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.VANILLATE_BRICKS.get(), 4).pattern("##").pattern("##").define('#', ModItems.VANILLATE.get()).unlockedBy("has_material", has(ModItems.VANILLATE.get())).save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.VANILLATE_TILES.get(), 4).pattern("##").pattern("##").define('#', ModItems.VANILLATE_BRICKS.get()).unlockedBy("has_material", has(ModItems.VANILLATE_BRICKS.get())).save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.TOADSTONE_BRICKS.get(), 4).pattern("##").pattern("##").define('#', ModItems.TOADSTONE.get()).unlockedBy("has_material", has(ModItems.TOADSTONE.get())).save(pWriter);
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.CHISELED_HARDSTONE.get()).pattern("#").pattern("#").define('#', ModItems.HARDSTONE.get()).unlockedBy("has_material", has(ModItems.HARDSTONE_SLAB.get())).save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.HARDSTONE_BRICKS.get(), 4).pattern("##").pattern("##").define('#', ModItems.HARDSTONE.get()).unlockedBy("has_material", has(ModItems.HARDSTONE.get())).save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.RAINBOW_TILES.get()).pattern("RY").pattern("BP").define('R', ModItems.RED_STAR_BIT.get()).define('Y', ModItems.YELLOW_STAR_BIT.get()).define('B', ModItems.BLUE_STAR_BIT.get()).define('P', ModItems.PURPLE_STAR_BIT.get()).unlockedBy("has_star_bit", has(ModTags.Items.STAR_BITS)).save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.HARDSTONE_PILLAR.get(), 2).pattern("#").pattern("#").define('#', ModItems.HARDSTONE.get()).unlockedBy("has_material", has(ModItems.HARDSTONE.get())).save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.WARP_PAINTING.get()).pattern("###").pattern("#P#").pattern("###").define('#', ModItems.SUBCON_THREAD.get()).define('P', Items.PAINTING).unlockedBy("has_subcon_thread", has(ModItems.SUBCON_THREAD.get())).save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.WARP_LINK.get()).pattern("X#X").define('X', ModItems.YELLOW_STAR_BIT.get()).define('#', ModItems.SUBCON_THREAD.get()).unlockedBy("has_subcon_thread", has(ModItems.SUBCON_THREAD.get())).save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.HAMMER.get()).pattern("## ").pattern("#/#").pattern(" / ").define('#', ModItems.BRONZE_INGOT.get()).define('/', Items.STICK).unlockedBy("has_bronze_ingot", has(ModItems.BRONZE_INGOT.get())).save(pWriter);

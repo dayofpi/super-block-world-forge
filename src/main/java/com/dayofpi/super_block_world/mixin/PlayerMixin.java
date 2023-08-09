@@ -9,11 +9,9 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Unique;
 
 @Mixin(Player.class)
 public abstract class PlayerMixin extends LivingEntity {
-    @Unique
     private int pipeCooldown;
 
     protected PlayerMixin(EntityType<? extends LivingEntity> entityType, Level level) {
@@ -28,7 +26,6 @@ public abstract class PlayerMixin extends LivingEntity {
         super.setShiftKeyDown(bl);
     }
 
-    @Unique
     private void warpToPipe() {
         if (this.getPipeCooldown() != 0)
             return;
@@ -43,7 +40,6 @@ public abstract class PlayerMixin extends LivingEntity {
         }
     }
 
-    @Unique
     private void warpToPipe(BlockPos originPos) {
         BlockPos destinPos = null;
         BlockEntity blockEntity = level().getBlockEntity(originPos);
@@ -55,12 +51,10 @@ public abstract class PlayerMixin extends LivingEntity {
         this.setPipeCooldown(20);
     }
 
-    @Unique
     public int getPipeCooldown() {
         return pipeCooldown;
     }
 
-    @Unique
     public void setPipeCooldown(int cooldown) {
         this.pipeCooldown = cooldown;
     }

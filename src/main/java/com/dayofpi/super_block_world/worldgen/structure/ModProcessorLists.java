@@ -7,8 +7,6 @@ import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.levelgen.structure.templatesystem.BlockIgnoreProcessor;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockRotProcessor;
 import net.minecraft.world.level.levelgen.structure.templatesystem.ProtectedBlockProcessor;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorList;
@@ -17,7 +15,7 @@ public class ModProcessorLists {
     public static final ResourceKey<StructureProcessorList> MOON_MONOLITH_DECAY = register("moon_monolith_decay");
 
     public static void bootstrap(BootstapContext<StructureProcessorList> context) {
-        context.register(MOON_MONOLITH_DECAY, new StructureProcessorList(ImmutableList.of(new BlockIgnoreProcessor(ImmutableList.of(Blocks.AIR)), new BlockRotProcessor(0.9F), new ProtectedBlockProcessor(BlockTags.FEATURES_CANNOT_REPLACE))));
+        context.register(MOON_MONOLITH_DECAY, new StructureProcessorList(ImmutableList.of(new BlockRotProcessor(0.87F), new ProtectedBlockProcessor(BlockTags.FEATURES_CANNOT_REPLACE))));
     }
 
     private static ResourceKey<StructureProcessorList> register(String name) {

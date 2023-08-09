@@ -14,6 +14,7 @@ public class StarBitItem extends Item implements ThrowableItem {
         super(pProperties);
     }
 
+    @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand interactionHand) {
         ItemStack itemStack = player.getItemInHand(interactionHand);
         this.playSound(level, player.position(), ModSoundEvents.STAR_BIT_SHOOT.get(), (level.random.nextFloat() - level.random.nextFloat()) * 0.2F + 1.0F);

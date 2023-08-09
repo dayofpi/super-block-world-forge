@@ -11,6 +11,7 @@ import com.dayofpi.super_block_world.entity.custom.StarBitEntity;
 import com.dayofpi.super_block_world.item.ModCreativeTabs;
 import com.dayofpi.super_block_world.item.ModItems;
 import com.dayofpi.super_block_world.item.custom.WarpLinkItem;
+import com.dayofpi.super_block_world.networking.ModMessages;
 import com.dayofpi.super_block_world.sound.ModSoundEvents;
 import com.dayofpi.super_block_world.util.ModWoodTypes;
 import com.dayofpi.super_block_world.worldgen.biome.ModBiomes;
@@ -68,6 +69,7 @@ public class SuperBlockWorld {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
+            ModMessages.register();
             registerPottables();
             registerFlammables();
             registerCompostables();
@@ -136,6 +138,12 @@ public class SuperBlockWorld {
                 return Util.make(new StarBitEntity(pLevel, pPosition.x(), pPosition.y(), pPosition.z()), starBit -> starBit.setItem(pStack));
             }
         });
+        DispenserBlock.registerBehavior(ModItems.RAINBOW_STAR_BIT.get(), new AbstractProjectileDispenseBehavior() {
+            @Override
+            protected Projectile getProjectile(Level pLevel, Position pPosition, ItemStack pStack) {
+                return Util.make(new StarBitEntity(pLevel, pPosition.x(), pPosition.y(), pPosition.z()), starBit -> starBit.setItem(pStack));
+            }
+        });
     }
 
     @SubscribeEvent
@@ -149,10 +157,13 @@ public class SuperBlockWorld {
             event.enqueueWork(() -> {
                 Sheets.addWoodType(ModWoodTypes.AMANITA);
                 EntityRenderers.register(ModEntityTypes.SHY_GUY.get(), ShyGuyRenderer::new);
+                EntityRenderers.register(ModEntityTypes.LUMA.get(), LumaRenderer::new);
+                EntityRenderers.register(ModEntityTypes.HUNGRY_LUMA.get(), HungryLumaRenderer::new);
                 EntityRenderers.register(ModEntityTypes.BOOM_BOOM.get(), BoomBoomRenderer::new);
                 EntityRenderers.register(ModEntityTypes.HAMMER.get(), HammerRenderer::new);
                 EntityRenderers.register(ModEntityTypes.STAR_BIT.get(), ThrownItemRenderer::new);
                 EntityRenderers.register(ModEntityTypes.WARP_PAINTING.get(), WarpPaintingRenderer::new);
+                EntityRenderers.register(ModEntityTypes.LAUNCH_STAR.get(), LaunchStarRenderer::new);
                 EntityRenderers.register(ModEntityTypes.BOAT.get(), pContext -> new ModBoatRenderer(pContext, false));
                 EntityRenderers.register(ModEntityTypes.CHEST_BOAT.get(), pContext -> new ModBoatRenderer(pContext, true));
                 ItemProperties.register(ModItems.WARP_LINK.get(), new ResourceLocation("linked"), (pStack, pLevel, pEntity, pSeed) -> WarpLinkItem.isLinked(pStack) ? 1.0F : 0.0F);

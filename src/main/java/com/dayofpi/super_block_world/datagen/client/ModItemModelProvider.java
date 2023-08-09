@@ -96,6 +96,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         blockItem(ModBlocks.HARDSTONE_BRICK_STAIRS);
         blockItem(ModBlocks.HARDSTONE_BRICK_SLAB);
         wallItem(ModBlocks.HARDSTONE_BRICK_WALL, ModBlocks.HARDSTONE_BRICKS);
+        blockItem(ModBlocks.HARDSTONE_PILLAR);
         blockItem(ModBlocks.SMOOTH_HARDSTONE_STAIRS);
         blockItem(ModBlocks.SMOOTH_HARDSTONE_SLAB);
         blockItem(ModBlocks.CLOUD_STAIRS);
@@ -125,6 +126,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleBlockItem(ModItems.WHITE_FLOWERBED);
         simpleBlockItem(ModItems.YELLOW_FLOWERBED);
         simpleItem(ModItems.WARP_PAINTING);
+        simpleItem(ModItems.LAUNCH_STAR);
         simpleItem(ModItems.AMANITA_BOAT);
         simpleItem(ModItems.AMANITA_CHEST_BOAT);
         simpleItem(ModItems.YOSHI_FRUIT);
@@ -136,8 +138,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.RED_STAR_BIT);
         simpleItem(ModItems.BLUE_STAR_BIT);
         simpleItem(ModItems.PURPLE_STAR_BIT);
+        simpleItem(ModItems.RAINBOW_STAR_BIT);
         simpleItem(ModItems.SUBCON_THREAD);
         spawnEggItem(ModItems.SHY_GUY_SPAWN_EGG);
+        spawnEggItem(ModItems.LUMA_SPAWN_EGG);
+        spawnEggItem(ModItems.HUNGRY_LUMA_SPAWN_EGG);
         spawnEggItem(ModItems.BOOM_BOOM_SPAWN_EGG);
     }
 

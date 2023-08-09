@@ -30,7 +30,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         // Mod Tags
         copy(ModTags.Blocks.AMANITA_LOGS, ModTags.Items.AMANITA_LOGS);
 
-        tag(ModTags.Items.STAR_BITS).add(ModItems.YELLOW_STAR_BIT.get(), ModItems.RED_STAR_BIT.get(), ModItems.BLUE_STAR_BIT.get(), ModItems.PURPLE_STAR_BIT.get());
+        tag(ModTags.Items.STAR_BITS).add(ModItems.YELLOW_STAR_BIT.get(), ModItems.RED_STAR_BIT.get(), ModItems.BLUE_STAR_BIT.get(), ModItems.PURPLE_STAR_BIT.get(), ModItems.RAINBOW_STAR_BIT.get());
         tag(ModTags.Items.FORGE_INGOTS_BRONZE).add(ModItems.BRONZE_INGOT.get());
         tag(ModTags.Items.FORGE_BLOCKS_BRONZE).add(ModItems.BRONZE_BLOCK.get());
         tag(ModTags.Items.FORGE_ORES_BRONZE).add(ModItems.BRONZE_ORE.get());

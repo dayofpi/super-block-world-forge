@@ -18,6 +18,7 @@ public class ModSoundEvents {
     public static final RegistryObject<SoundEvent> TOADSTONE_PLACE = registerSoundEvent("block.toadstone.place");
     public static final RegistryObject<SoundEvent> TOADSTONE_HIT = registerSoundEvent("block.toadstone.hit");
     public static final RegistryObject<SoundEvent> TOADSTONE_FALL = registerSoundEvent("block.toadstone.fall");
+    public static final RegistryObject<SoundEvent> PULL_BLOCK_PULL = registerSoundEvent("block.pull_block.pull");
     public static final RegistryObject<SoundEvent> WARP_PIPE_TELEPORT = registerSoundEvent("block.warp_pipe.teleport");
     public static final RegistryObject<SoundEvent> POWER_STAR_SHINE = registerSoundEvent("block.power_star.shine");
     public static final RegistryObject<SoundEvent> WARP_LINK_BREAK = registerSoundEvent("item.warp_link.break");
@@ -32,6 +33,13 @@ public class ModSoundEvents {
     public static final RegistryObject<SoundEvent> SHY_GUY_AMBIENT = registerSoundEvent("entity.shy_guy.ambient");
     public static final RegistryObject<SoundEvent> SHY_GUY_HURT = registerSoundEvent("entity.shy_guy.hurt");
     public static final RegistryObject<SoundEvent> SHY_GUY_DEATH = registerSoundEvent("entity.shy_guy.death");
+    public static final RegistryObject<SoundEvent> LUMA_AMBIENT = registerSoundEvent("entity.luma.ambient");
+    public static final RegistryObject<SoundEvent> LUMA_HURT = registerSoundEvent("entity.luma.hurt");
+    public static final RegistryObject<SoundEvent> LUMA_DEATH = registerSoundEvent("entity.luma.death");
+    public static final RegistryObject<SoundEvent> HUNGRY_LUMA_AMBIENT = registerSoundEvent("entity.hungry_luma.ambient");
+    public static final RegistryObject<SoundEvent> HUNGRY_LUMA_HURT = registerSoundEvent("entity.hungry_luma.hurt");
+    public static final RegistryObject<SoundEvent> HUNGRY_LUMA_TRANSFORM = registerSoundEvent("entity.hungry_luma.transform");
+    public static final RegistryObject<SoundEvent> HUNGRY_LUMA_DEATH = registerSoundEvent("entity.hungry_luma.death");
     public static final RegistryObject<SoundEvent> BOOM_BOOM_AMBIENT = registerSoundEvent("entity.boom_boom.ambient");
     public static final RegistryObject<SoundEvent> BOOM_BOOM_SPIN = registerSoundEvent("entity.boom_boom.spin");
     public static final RegistryObject<SoundEvent> BOOM_BOOM_DIZZY = registerSoundEvent("entity.boom_boom.dizzy");
@@ -40,6 +48,10 @@ public class ModSoundEvents {
     public static final RegistryObject<SoundEvent> BOOM_BOOM_DEATH = registerSoundEvent("entity.boom_boom.death");
     public static final RegistryObject<SoundEvent> WARP_PAINTING_POWER = registerSoundEvent("entity.warp_painting.power");
     public static final RegistryObject<SoundEvent> WARP_PAINTING_TRAVEL = registerSoundEvent("entity.warp_painting.travel");
+    public static final RegistryObject<SoundEvent> LAUNCH_STAR_AMBIENT = registerSoundEvent("entity.launch_star.ambient");
+    public static final RegistryObject<SoundEvent> LAUNCH_STAR_PLACE = registerSoundEvent("entity.launch_star.place");
+    public static final RegistryObject<SoundEvent> LAUNCH_STAR_BREAK = registerSoundEvent("entity.launch_star.break");
+    public static final RegistryObject<SoundEvent> LAUNCH_STAR_LAUNCH = registerSoundEvent("entity.launch_star.launch");
 
     private static RegistryObject<SoundEvent> registerSoundEvent(String name) {
         ResourceLocation id = new ResourceLocation(SuperBlockWorld.MOD_ID, name);
