@@ -13,10 +13,8 @@ import com.dayofpi.super_block_world.item.ModItems;
 import com.dayofpi.super_block_world.item.custom.SuperPickaxeItem;
 import com.dayofpi.super_block_world.sound.ModSoundEvents;
 import com.dayofpi.super_block_world.util.ModTags;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.ChestBoatModel;
-import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
@@ -119,16 +117,15 @@ public class ModEvents {
         @SubscribeEvent
         public static void onItemPickup(PlayerEvent.ItemPickupEvent event) {
             Player entity = event.getEntity();
-            ClientLevel level = Minecraft.getInstance().level;
-            if (level == null || !level.isClientSide)
-                return;
-            /*if (event.getStack().is(ModBlocks.COIN.get().asItem())) {
+            if (entity.level().isClientSide()) {
+                /*if (event.getStack().is(ModBlocks.COIN.get().asItem())) {
                 level.playLocalSound(entity.getX(), entity.getY(), entity.getZ(), ModSounds.COIN_PICKUP.get(), SoundSource.PLAYERS, 0.2F, 1.0F, false);
             } else if (event.getStack().is(ModBlocks.STAR_COIN.get().asItem())) {
                 level.playLocalSound(entity.getX(), entity.getY(), entity.getZ(), ModSounds.STAR_COIN_PICKUP.get(), SoundSource.PLAYERS, 0.2F, 1.0F, false);
             } else */
-            if (event.getStack().is(ModTags.Items.STAR_BITS)) {
-                level.playLocalSound(entity.getX(), entity.getY(), entity.getZ(), ModSoundEvents.STAR_BIT_PICKUP.get(), SoundSource.PLAYERS, 0.2F, 1.0F, false);
+                if (event.getStack().is(ModTags.Items.STAR_BITS)) {
+                    entity.level().playLocalSound(entity.getX(), entity.getY(), entity.getZ(), ModSoundEvents.STAR_BIT_PICKUP.get(), SoundSource.PLAYERS, 0.2F, 1.0F, false);
+                }
             }
         }
     }
