@@ -11,7 +11,6 @@ import com.dayofpi.super_block_world.entity.custom.StarBitEntity;
 import com.dayofpi.super_block_world.item.ModCreativeTabs;
 import com.dayofpi.super_block_world.item.ModItems;
 import com.dayofpi.super_block_world.item.custom.WarpLinkItem;
-import com.dayofpi.super_block_world.networking.ModMessages;
 import com.dayofpi.super_block_world.sound.ModSoundEvents;
 import com.dayofpi.super_block_world.util.ModWoodTypes;
 import com.dayofpi.super_block_world.worldgen.biome.ModBiomes;
@@ -69,7 +68,6 @@ public class SuperBlockWorld {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
-            ModMessages.register();
             registerPottables();
             registerFlammables();
             registerCompostables();
