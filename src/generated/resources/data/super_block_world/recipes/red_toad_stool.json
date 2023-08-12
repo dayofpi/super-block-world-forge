@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "toad_stool",
+  "key": {
+    "#": {
+      "item": "minecraft:red_mushroom_block"
+    },
+    "/": {
+      "item": "minecraft:mushroom_stem"
+    }
+  },
+  "pattern": [
+    "#",
+    "/"
+  ],
+  "result": {
+    "item": "super_block_world:red_toad_stool"
+  },
+  "show_notification": true
+}

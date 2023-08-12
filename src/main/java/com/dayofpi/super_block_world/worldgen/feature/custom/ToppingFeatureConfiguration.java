@@ -11,25 +11,7 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvi
 import net.minecraft.world.level.levelgen.placement.CaveSurface;
 
 public class ToppingFeatureConfiguration implements FeatureConfiguration {
-    public static final Codec<ToppingFeatureConfiguration> CODEC = RecordCodecBuilder.create((instance) -> {
-        return instance.group(TagKey.hashedCodec(Registries.BLOCK).fieldOf("replaceable").forGetter((p_204869_) -> {
-            return p_204869_.replaceable;
-        }), BlockStateProvider.CODEC.fieldOf("ground_state").forGetter((p_161322_) -> {
-            return p_161322_.groundState;
-        }), CaveSurface.CODEC.fieldOf("surface").forGetter((p_161318_) -> {
-            return p_161318_.surface;
-        }), IntProvider.codec(1, 128).fieldOf("depth").forGetter((p_161316_) -> {
-            return p_161316_.depth;
-        }), Codec.floatRange(0.0F, 1.0F).fieldOf("extra_bottom_block_chance").forGetter((p_161314_) -> {
-            return p_161314_.extraBottomBlockChance;
-        }), Codec.intRange(1, 256).fieldOf("vertical_range").forGetter((p_161312_) -> {
-            return p_161312_.verticalRange;
-        }), IntProvider.CODEC.fieldOf("xz_radius").forGetter((p_161308_) -> {
-            return p_161308_.xzRadius;
-        }), Codec.floatRange(0.0F, 1.0F).fieldOf("extra_edge_column_chance").forGetter((p_161306_) -> {
-            return p_161306_.extraEdgeColumnChance;
-        })).apply(instance, ToppingFeatureConfiguration::new);
-    });
+    public static final Codec<ToppingFeatureConfiguration> CODEC = RecordCodecBuilder.create((instance) -> instance.group(TagKey.hashedCodec(Registries.BLOCK).fieldOf("replaceable").forGetter((configuration) -> configuration.replaceable), BlockStateProvider.CODEC.fieldOf("ground_state").forGetter((configuration) -> configuration.groundState), CaveSurface.CODEC.fieldOf("surface").forGetter((configuration) -> configuration.surface), IntProvider.codec(1, 128).fieldOf("depth").forGetter((configuration) -> configuration.depth), Codec.floatRange(0.0F, 1.0F).fieldOf("extra_bottom_block_chance").forGetter((configuration) -> configuration.extraBottomBlockChance), Codec.intRange(1, 256).fieldOf("vertical_range").forGetter((configuration) -> configuration.verticalRange), IntProvider.CODEC.fieldOf("xz_radius").forGetter((configuration) -> configuration.xzRadius), Codec.floatRange(0.0F, 1.0F).fieldOf("extra_edge_column_chance").forGetter((configuration) -> configuration.extraEdgeColumnChance)).apply(instance, ToppingFeatureConfiguration::new));
     public final TagKey<Block> replaceable;
     public final BlockStateProvider groundState;
     public final CaveSurface surface;

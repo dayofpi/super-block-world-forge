@@ -141,8 +141,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         blockItem(ModBlocks.MAYOI_LEAVES);
         blockItem(ModBlocks.FRUITING_MAYOI_LEAVES);
         simpleBlockItem(ModItems.MAYOI_SAPLING);
+        blockItem(ModBlocks.BROWN_TOAD_STOOL);
+        blockItem(ModBlocks.RED_TOAD_STOOL);
         simpleBlockItem(ModItems.RED_GRASS);
         simpleBlockItem(ModItems.SUBCON_PALM);
+        simpleBlockItem(ModItems.BEANSTALK);
         simpleBlockItem(ModItems.WHITE_FLOWERBED);
         simpleBlockItem(ModItems.YELLOW_FLOWERBED);
         simpleItem(ModItems.WARP_PAINTING);
@@ -152,6 +155,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.MAYOI_BOAT);
         simpleItem(ModItems.MAYOI_CHEST_BOAT);
         simpleItem(ModItems.TURNIP);
+        simpleItem(ModItems.BOMB);
         simpleItem(ModItems.YOSHI_FRUIT);
         simpleItem(ModItems.YOSHI_COOKIE);
         simpleItem(ModItems.RAW_BRONZE);

@@ -188,14 +188,17 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         add(ModBlocks.MAYOI_LEAVES.get(), block -> createLeavesDrops(block, ModBlocks.MAYOI_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(ModBlocks.FRUITING_MAYOI_LEAVES.get(), block -> createFruitingLeavesDrops(block, ModBlocks.MAYOI_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         dropSelf(ModBlocks.MAYOI_SAPLING.get());
+        dropSelf(ModBlocks.BROWN_TOAD_STOOL.get());
+        dropSelf(ModBlocks.RED_TOAD_STOOL.get());
         dropSelf(ModBlocks.SUBCON_PALM.get());
         dropOther(ModBlocks.SUBCON_PALM_STEM.get(), ModItems.SUBCON_PALM.get());
+        addNetherVinesDropTable(ModBlocks.BEANSTALK.get(), ModBlocks.BEANSTALK_STEM.get());
         add(ModBlocks.TOADSTOOL_GRASS.get(), createSingleItemTableWithSilkTouch(ModBlocks.TOADSTOOL_GRASS.get(), ModItems.TOADSTOOL_SOIL.get()));
         add(ModBlocks.BRONZE_ORE.get(), createOreDrop(ModBlocks.BRONZE_ORE.get(), ModItems.RAW_BRONZE.get()));
         add(ModBlocks.VANILLATE.get(), createSingleItemTableWithSilkTouch(ModBlocks.VANILLATE.get(), ModItems.VANILLATE_CRUMBLE.get()));
         add(ModBlocks.TOPPED_VANILLATE.get(), createSingleItemTableWithSilkTouch(ModBlocks.TOPPED_VANILLATE.get(), ModItems.VANILLATE_CRUMBLE.get()));
         add(ModBlocks.STAR_CLUSTER.get(), createSilkTouchOnlyTable(ModBlocks.STAR_CLUSTER.get()).withPool(applyExplosionCondition(ModItems.STAR_CLUSTER.get(), LootPool.lootPool().setRolls(ConstantValue.exactly(2.0F)).add(LootItem.lootTableItem(ModItems.YELLOW_STAR_BIT.get()).when(LootItemRandomChanceCondition.randomChance(0.3F))).add(LootItem.lootTableItem(ModItems.RED_STAR_BIT.get()).when(LootItemRandomChanceCondition.randomChance(0.3F))).add(LootItem.lootTableItem(ModItems.BLUE_STAR_BIT.get()).when(LootItemRandomChanceCondition.randomChance(0.3F))).add(LootItem.lootTableItem(ModItems.PURPLE_STAR_BIT.get()).when(LootItemRandomChanceCondition.randomChance(0.3F)))).when(HAS_NO_SILK_TOUCH)));
-        add(ModBlocks.RED_GRASS.get(), createShearsOnlyDrop(ModBlocks.RED_GRASS.get()).withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(ModItems.COIN.get()).setWeight(1)).add(LootItem.lootTableItem(ModItems.TURNIP.get()).setWeight(4)).when(HAS_SHEARS.invert())));
+        add(ModBlocks.RED_GRASS.get(), createShearsOnlyDrop(ModBlocks.RED_GRASS.get()).withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(ModItems.COIN.get()).setWeight(4)).add(LootItem.lootTableItem(ModItems.TURNIP.get()).setWeight(8)).add(LootItem.lootTableItem(ModItems.BOMB.get()).setWeight(1)).when(HAS_SHEARS.invert())));
         add(ModBlocks.WHITE_FLOWERBED.get(), BlockLootSubProvider::createShearsOnlyDrop);
         add(ModBlocks.YELLOW_FLOWERBED.get(), BlockLootSubProvider::createShearsOnlyDrop);
         add(ModBlocks.POTTED_AMANITA_SAPLING.get(), createPotFlowerItemTable(ModItems.AMANITA_SAPLING.get()));

@@ -63,6 +63,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         cross(ModBlocks.MAYOI_SAPLING);
         cross(ModBlocks.RED_GRASS);
         cross(ModBlocks.SUBCON_PALM);
+        cross(ModBlocks.BEANSTALK);
+        cross(ModBlocks.BEANSTALK_STEM);
         simpleBlock(ModBlocks.WHITE_FLOWERBED.get(), models().carpet("white_flowerbed", blockTexture(ModBlocks.WHITE_FLOWERBED.get())).renderType("cutout"));
         simpleBlock(ModBlocks.YELLOW_FLOWERBED.get(), models().carpet("yellow_flowerbed", blockTexture(ModBlocks.YELLOW_FLOWERBED.get())).renderType("cutout"));
 

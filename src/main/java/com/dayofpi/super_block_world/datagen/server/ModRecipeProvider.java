@@ -251,6 +251,9 @@ public class ModRecipeProvider  extends RecipeProvider implements IConditionBuil
         chestBoat(pWriter, ModItems.AMANITA_CHEST_BOAT.get(), ModItems.AMANITA_PLANKS.get());
         chestBoat(pWriter, ModItems.MAYOI_CHEST_BOAT.get(), ModItems.MAYOI_PLANKS.get());
 
+        toadStool(pWriter, ModItems.BROWN_TOAD_STOOL.get(), Items.BROWN_MUSHROOM_BLOCK);
+        toadStool(pWriter, ModItems.RED_TOAD_STOOL.get(), Items.RED_MUSHROOM_BLOCK);
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.POWER_SHARD.get(), 5).requires(ModItems.POWER_STAR.get()).unlockedBy("has_power_star", has(ModItems.POWER_STAR.get())).save(pWriter);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModItems.PULL_BLOCK.get()).pattern("0X0").pattern("X0X").pattern("0X0").define('0', ModItems.BLUE_STAR_BIT.get()).define('X', Items.IRON_INGOT).unlockedBy("has_blue_star_bit", has(ModItems.BLUE_STAR_BIT.get())).save(pWriter);
@@ -268,6 +271,10 @@ public class ModRecipeProvider  extends RecipeProvider implements IConditionBuil
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.HAMMER.get()).pattern("## ").pattern("#/#").pattern(" / ").define('#', ModItems.BRONZE_INGOT.get()).define('/', Items.STICK).unlockedBy("has_bronze_ingot", has(ModItems.BRONZE_INGOT.get())).save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.SUPER_PICKAXE.get()).pattern("###").pattern(" / ").pattern(" / ").define('#', ModItems.POWER_SHARD.get()).define('/', Items.STICK).unlockedBy("has_power_shard", has(ModItems.POWER_SHARD.get())).save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.YOSHI_COOKIE.get()).pattern("/#/").define('/', Items.WHEAT).define('#', ModItems.YOSHI_FRUIT.get()).unlockedBy("has_yoshi_fruit", has(ModItems.YOSHI_FRUIT.get())).save(pWriter);
+    }
+
+    private static void toadStool(Consumer<FinishedRecipe> finishedRecipeConsumer, ItemLike toadStool, ItemLike mushroomBlock) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, toadStool).pattern("#").pattern("/").define('#', mushroomBlock).define('/', Items.MUSHROOM_STEM).group("toad_stool").unlockedBy("has_mushroom_block", has(mushroomBlock)).save(finishedRecipeConsumer);
     }
 
     private static void paintedBronzeBlock(Consumer<FinishedRecipe> finishedRecipeConsumer, ItemLike bronzeBlock, ItemLike dye) {

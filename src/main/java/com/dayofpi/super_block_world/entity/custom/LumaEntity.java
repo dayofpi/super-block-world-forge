@@ -1,42 +1,34 @@
 package com.dayofpi.super_block_world.entity.custom;
 
-import com.dayofpi.super_block_world.entity.SpaceCreature;
 import com.dayofpi.super_block_world.sound.ModSoundEvents;
 import com.dayofpi.super_block_world.util.ModTags;
-import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.*;
-import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.control.FlyingMoveControl;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.ai.navigation.FlyingPathNavigation;
-import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.monster.RangedAttackMob;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.EnumSet;
 import java.util.List;
 
-public class LumaEntity extends PathfinderMob implements SpaceCreature, RangedAttackMob {
+public class LumaEntity extends AbstractLuma implements RangedAttackMob {
     private static final EntityDataAccessor<Integer> DATA_STAR_BITS = SynchedEntityData.defineId(LumaEntity.class, EntityDataSerializers.INT);
-    public final AnimationState idleAnimationState = new AnimationState();
 
-    public LumaEntity(EntityType<? extends PathfinderMob> pEntityType, Level pLevel) {
+    public LumaEntity(EntityType<? extends AbstractLuma> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
-        this.moveControl = new FlyingMoveControl(this, 10, true);
         this.setCanPickUpLoot(true);
     }
 
@@ -48,10 +40,6 @@ public class LumaEntity extends PathfinderMob implements SpaceCreature, RangedAt
         this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, Player.class, 8.0F));
         this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
         this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Mob.class, 10, true, false, (livingEntity) -> livingEntity instanceof Enemy));
-    }
-
-    public static AttributeSupplier.Builder createAttributes() {
-        return Mob.createMobAttributes().add(Attributes.MAX_HEALTH, 20.0D).add(Attributes.FLYING_SPEED, 0.2F).add(Attributes.MOVEMENT_SPEED, 0.2F);
     }
 
     @Override
@@ -66,20 +54,6 @@ public class LumaEntity extends PathfinderMob implements SpaceCreature, RangedAt
         }
     }
 
-    @Override
-    protected PathNavigation createNavigation(Level pLevel) {
-        FlyingPathNavigation flyingpathnavigation = new FlyingPathNavigation(this, pLevel);
-        flyingpathnavigation.setCanOpenDoors(false);
-        flyingpathnavigation.setCanFloat(true);
-        flyingpathnavigation.setCanPassDoors(true);
-        return flyingpathnavigation;
-    }
-
-    @Override
-    public int getMaxSpawnClusterSize() {
-        return 1;
-    }
-
     @Nullable
     @Override
     protected SoundEvent getAmbientSound() {
@@ -90,28 +64,6 @@ public class LumaEntity extends PathfinderMob implements SpaceCreature, RangedAt
     @Override
     protected SoundEvent getHurtSound(DamageSource pDamageSource) {
         return ModSoundEvents.LUMA_HURT.get();
-    }
-
-    @Nullable
-    @Override
-    protected SoundEvent getDeathSound() {
-        return ModSoundEvents.LUMA_DEATH.get();
-    }
-
-    @Override
-    protected void playStepSound(BlockPos pPos, BlockState pState) {
-    }
-
-    @Override
-    protected void checkFallDamage(double pY, boolean pOnGround, BlockState pState, BlockPos pPos) {
-    }
-
-    @Override
-    public void tick() {
-        if (this.level().isClientSide()) {
-            this.idleAnimationState.startIfStopped(this.tickCount);
-        }
-        super.tick();
     }
 
     @Override
@@ -169,7 +121,7 @@ public class LumaEntity extends PathfinderMob implements SpaceCreature, RangedAt
         public void tick() {
             List<ItemEntity> list = LumaEntity.this.level().getEntitiesOfClass(ItemEntity.class, LumaEntity.this.getBoundingBox().inflate(8.0D, 8.0D, 8.0D), itemEntity -> itemEntity.getItem().is(ModTags.Items.STAR_BITS));
             if (!list.isEmpty()) {
-                LumaEntity.this.getNavigation().moveTo(list.get(0), (double)1.2F);
+                LumaEntity.this.getNavigation().moveTo(list.get(0), 1.2F);
             }
         }
 
@@ -177,7 +129,7 @@ public class LumaEntity extends PathfinderMob implements SpaceCreature, RangedAt
         public void start() {
             List<ItemEntity> list = LumaEntity.this.level().getEntitiesOfClass(ItemEntity.class, LumaEntity.this.getBoundingBox().inflate(8.0D, 8.0D, 8.0D), itemEntity -> itemEntity.getItem().is(ModTags.Items.STAR_BITS));
             if (!list.isEmpty()) {
-                LumaEntity.this.getNavigation().moveTo(list.get(0), (double)1.2F);
+                LumaEntity.this.getNavigation().moveTo(list.get(0), 1.2F);
             }
         }
     }

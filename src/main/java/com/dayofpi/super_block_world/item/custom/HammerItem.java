@@ -2,6 +2,7 @@ package com.dayofpi.super_block_world.item.custom;
 
 import com.dayofpi.super_block_world.entity.custom.HammerEntity;
 import com.dayofpi.super_block_world.item.ModItems;
+import com.dayofpi.super_block_world.item.ThrowableItem;
 import com.dayofpi.super_block_world.sound.ModSoundEvents;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
@@ -53,18 +54,14 @@ public class HammerItem extends Item implements ThrowableItem {
 
     @Override
     public boolean hurtEnemy(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
-        pStack.hurtAndBreak(1, pAttacker, (p_43296_) -> {
-            p_43296_.broadcastBreakEvent(EquipmentSlot.MAINHAND);
-        });
+        pStack.hurtAndBreak(1, pAttacker, (livingEntity) -> livingEntity.broadcastBreakEvent(EquipmentSlot.MAINHAND));
         return true;
     }
 
     @Override
     public boolean mineBlock(ItemStack pStack, Level pLevel, BlockState pState, BlockPos pPos, LivingEntity pEntityLiving) {
         if (pState.getDestroySpeed(pLevel, pPos) != 0.0F) {
-            pStack.hurtAndBreak(2, pEntityLiving, (p_43276_) -> {
-                p_43276_.broadcastBreakEvent(EquipmentSlot.MAINHAND);
-            });
+            pStack.hurtAndBreak(2, pEntityLiving, (livingEntity) -> livingEntity.broadcastBreakEvent(EquipmentSlot.MAINHAND));
         }
 
         return true;

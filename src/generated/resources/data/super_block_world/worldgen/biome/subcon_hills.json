@@ -55,13 +55,14 @@
     [
       "super_block_world:red_grass",
       "super_block_world:stump",
+      "super_block_world:red_toad_stool",
       "super_block_world:red_grass_extra",
       "super_block_world:subcon_palm",
+      "super_block_world:beanstalk_common",
       "super_block_world:flowerbed_white",
       "super_block_world:flowerbed_yellow",
       "minecraft:patch_tall_grass_2",
       "minecraft:patch_grass_plain",
-      "minecraft:brown_mushroom_taiga",
       "minecraft:red_mushroom_swamp"
     ]
   ],

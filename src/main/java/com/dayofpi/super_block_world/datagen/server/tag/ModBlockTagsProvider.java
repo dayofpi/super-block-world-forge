@@ -35,7 +35,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         tag(ModTags.Blocks.FORGE_ORES_BRONZE).add(ModBlocks.BRONZE_ORE.get());
 
         // Vanilla Tags
-        tag(BlockTags.MINEABLE_WITH_AXE).add(ModBlocks.SUBCON_PALM_STEM.get());
+        tag(BlockTags.MINEABLE_WITH_AXE).add(ModBlocks.BROWN_TOAD_STOOL.get(), ModBlocks.RED_TOAD_STOOL.get(), ModBlocks.SUBCON_PALM_STEM.get());
         tag(BlockTags.MINEABLE_WITH_HOE).add(ModBlocks.TOADSTOOL_TURF.get());
         tag(BlockTags.MINEABLE_WITH_PICKAXE).addTag(ModTags.Blocks.FLAGS).addTag(ModTags.Blocks.WARP_PIPES).addTag(ModTags.Blocks.PIPE_BODIES).addTag(ModTags.Blocks.BRONZE_BLOCKS).add(ModBlocks.PULL_BLOCK.get(), ModBlocks.BRONZE_ORE.get(), ModBlocks.RAW_BRONZE_BLOCK.get(), ModBlocks.BRONZE_STAIRS.get(), ModBlocks.BRONZE_SLAB.get(), ModBlocks.VANILLATE.get(), ModBlocks.VANILLATE_STAIRS.get(), ModBlocks.VANILLATE_SLAB.get(), ModBlocks.TOPPED_VANILLATE.get(), ModBlocks.VANILLATE_CRUMBLE.get(), ModBlocks.VANILLATE_BRICKS.get(), ModBlocks.VANILLATE_BRICK_STAIRS.get(), ModBlocks.VANILLATE_BRICK_SLAB.get(), ModBlocks.VANILLATE_TILES.get(), ModBlocks.VANILLATE_TILE_STAIRS.get(), ModBlocks.VANILLATE_TILE_SLAB.get(), ModBlocks.TOADSTONE.get(), ModBlocks.TOADSTONE_STAIRS.get(), ModBlocks.TOADSTONE_SLAB.get(), ModBlocks.TOADSTONE_BRICKS.get(), ModBlocks.CHISELED_TOADSTONE_BRICKS.get(), ModBlocks.TOADSTONE_BRICK_STAIRS.get(), ModBlocks.TOADSTONE_BRICK_SLAB.get(), ModBlocks.SMOOTH_TOADSTONE.get(), ModBlocks.SMOOTH_TOADSTONE_STAIRS.get(), ModBlocks.SMOOTH_TOADSTONE_SLAB.get(), ModBlocks.HARDSTONE.get(), ModBlocks.HARDSTONE_STAIRS.get(), ModBlocks.HARDSTONE_SLAB.get(), ModBlocks.CHISELED_HARDSTONE.get(), ModBlocks.HARDSTONE_BRICKS.get(), ModBlocks.CRACKED_HARDSTONE_BRICKS.get(), ModBlocks.CHISELED_HARDSTONE_BRICKS.get(), ModBlocks.HARDSTONE_BRICK_STAIRS.get(), ModBlocks.HARDSTONE_BRICK_SLAB.get(), ModBlocks.HARDSTONE_PILLAR.get(), ModBlocks.SMOOTH_HARDSTONE.get(), ModBlocks.SMOOTH_HARDSTONE_STAIRS.get(), ModBlocks.SMOOTH_HARDSTONE_SLAB.get(), ModBlocks.MOON_ROCK.get(), ModBlocks.RAINBOW_TILES.get(), ModBlocks.RAINBOW_TILE_STAIRS.get(), ModBlocks.RAINBOW_TILE_SLAB.get(), ModBlocks.STAR_CLUSTER.get());
         tag(BlockTags.MINEABLE_WITH_SHOVEL).add(ModBlocks.TOADSTOOL_GRASS.get(), ModBlocks.TOADSTOOL_SOIL.get(), ModBlocks.COARSE_TOADSTOOL_SOIL.get(), ModBlocks.TOADSTOOL_PATH.get());
@@ -44,7 +44,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         tag(BlockTags.RABBITS_SPAWNABLE_ON).add(ModBlocks.TOADSTOOL_GRASS.get(), ModBlocks.TOADSTOOL_TURF.get());
         tag(BlockTags.MUSHROOM_GROW_BLOCK).add(ModBlocks.TOADSTOOL_GRASS.get(), ModBlocks.TOADSTOOL_TURF.get(), ModBlocks.TOADSTOOL_SOIL.get(), ModBlocks.COARSE_TOADSTOOL_SOIL.get());
         tag(BlockTags.SNIFFER_DIGGABLE_BLOCK).add(ModBlocks.TOADSTOOL_GRASS.get(), ModBlocks.TOADSTOOL_TURF.get(), ModBlocks.TOADSTOOL_SOIL.get(), ModBlocks.COARSE_TOADSTOOL_SOIL.get());
-        tag(BlockTags.CLIMBABLE).addTag(ModTags.Blocks.FLAGS).add(ModBlocks.FLAGPOLE.get());
+        tag(BlockTags.CLIMBABLE).addTag(ModTags.Blocks.FLAGS).add(ModBlocks.FLAGPOLE.get(), ModBlocks.BEANSTALK.get(), ModBlocks.BEANSTALK_STEM.get());
         tag(BlockTags.LOGS_THAT_BURN).addTag(ModTags.Blocks.AMANITA_LOGS).addTag(ModTags.Blocks.MAYOI_LOGS);
         tag(BlockTags.PLANKS).add(ModBlocks.AMANITA_PLANKS.get(), ModBlocks.MAYOI_PLANKS.get());
         tag(BlockTags.WOODEN_STAIRS).add(ModBlocks.AMANITA_STAIRS.get(), ModBlocks.MAYOI_STAIRS.get());

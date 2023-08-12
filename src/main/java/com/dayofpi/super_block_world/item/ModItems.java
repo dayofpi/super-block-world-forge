@@ -184,8 +184,11 @@ public class ModItems {
     public static final RegistryObject<Item> MAYOI_LEAVES = registerBlockItem("mayoi_leaves", ModBlocks.MAYOI_LEAVES);
     public static final RegistryObject<Item> FRUITING_MAYOI_LEAVES = registerBlockItem("fruiting_mayoi_leaves", ModBlocks.FRUITING_MAYOI_LEAVES);
     public static final RegistryObject<Item> MAYOI_SAPLING = registerBlockItem("mayoi_sapling", ModBlocks.MAYOI_SAPLING);
+    public static final RegistryObject<Item> BROWN_TOAD_STOOL = registerBlockItem("brown_toad_stool", ModBlocks.BROWN_TOAD_STOOL);
+    public static final RegistryObject<Item> RED_TOAD_STOOL = registerBlockItem("red_toad_stool", ModBlocks.RED_TOAD_STOOL);
     public static final RegistryObject<Item> RED_GRASS = registerBlockItem("red_grass", ModBlocks.RED_GRASS);
     public static final RegistryObject<Item> SUBCON_PALM = registerBlockItem("subcon_palm", ModBlocks.SUBCON_PALM);
+    public static final RegistryObject<Item> BEANSTALK = registerBlockItem("beanstalk", ModBlocks.BEANSTALK);
     public static final RegistryObject<Item> WHITE_FLOWERBED = registerBlockItem("white_flowerbed", ModBlocks.WHITE_FLOWERBED);
     public static final RegistryObject<Item> YELLOW_FLOWERBED = registerBlockItem("yellow_flowerbed", ModBlocks.YELLOW_FLOWERBED);
     public static final RegistryObject<Item> WARP_PAINTING = ITEMS.register("warp_painting", () -> new WarpPaintingItem(new Item.Properties()));
@@ -196,7 +199,8 @@ public class ModItems {
     public static final RegistryObject<Item> MAYOI_BOAT = ITEMS.register("mayoi_boat", () -> new ModBoatItem(false, ModBoatEntity.Type.MAYOI, new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> MAYOI_CHEST_BOAT = ITEMS.register("mayoi_chest_boat", () -> new ModBoatItem(true, ModBoatEntity.Type.MAYOI, new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> SHY_GUY_MASK = ITEMS.register("shy_guy_mask", () -> new ShyGuyMaskItem(new Item.Properties()));
-    public static final RegistryObject<Item> TURNIP = ITEMS.register("turnip", () -> new TurnipItem(new Item.Properties()));
+    public static final RegistryObject<Item> TURNIP = ITEMS.register("turnip", () -> new TurnipItem(new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> BOMB = ITEMS.register("bomb", () -> new BombItem(new Item.Properties().stacksTo(16)));
     public static final RegistryObject<Item> HAMMER = ITEMS.register("hammer", () -> new HammerItem(new Item.Properties().durability(131)));
     public static final RegistryObject<Item> SUPER_PICKAXE = ITEMS.register("super_pickaxe", () -> new SuperPickaxeItem(new Item.Properties().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> YOSHI_FRUIT = ITEMS.register("yoshi_fruit", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.3F).build())));

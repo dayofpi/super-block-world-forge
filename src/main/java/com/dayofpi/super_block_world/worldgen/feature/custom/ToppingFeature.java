@@ -24,9 +24,7 @@ public class ToppingFeature extends Feature<ToppingFeatureConfiguration> {
         ToppingFeatureConfiguration configuration = pContext.config();
         RandomSource randomsource = pContext.random();
         BlockPos blockpos = pContext.origin();
-        Predicate<BlockState> predicate = (p_204782_) -> {
-            return p_204782_.is(configuration.replaceable);
-        };
+        Predicate<BlockState> predicate = (blockState) -> blockState.is(configuration.replaceable);
         int i = configuration.xzRadius.sample(randomsource) + 1;
         int j = configuration.xzRadius.sample(randomsource) + 1;
         Set<BlockPos> set = this.placeGroundPatch(worldgenlevel, configuration, randomsource, blockpos, predicate, i, j);
@@ -55,9 +53,7 @@ public class ToppingFeature extends Feature<ToppingFeatureConfiguration> {
                         blockpos$mutableblockpos.move(direction);
                     }
 
-                    for(int i1 = 0; pLevel.isStateAtPosition(blockpos$mutableblockpos, (p_284926_) -> {
-                        return !p_284926_.isAir();
-                    }) && i1 < pConfig.verticalRange; ++i1) {
+                    for(int i1 = 0; pLevel.isStateAtPosition(blockpos$mutableblockpos, (blockState) -> !blockState.isAir()) && i1 < pConfig.verticalRange; ++i1) {
                         blockpos$mutableblockpos.move(direction1);
                     }
 

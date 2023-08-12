@@ -44,7 +44,7 @@ public class ModDimensions {
 
         NoiseBasedChunkGenerator chunkGenerator = new NoiseBasedChunkGenerator(MultiNoiseBiomeSource.createFromList(new Climate.ParameterList<>(List.of(
                 Pair.of(Climate.parameters(Climate.Parameter.point(0.0F), Climate.Parameter.point(0.0F), Climate.Parameter.point(0.0F), Climate.Parameter.point(0.0F), Climate.Parameter.point(0.0F), Climate.Parameter.point(0.0F), 0.0F), biomes.getOrThrow(ModBiomes.MUSHROOM_GRASSLANDS)),
-                Pair.of(Climate.parameters(Climate.Parameter.point(-0.1F), Climate.Parameter.point(0.1F), Climate.Parameter.point(-0.1F), Climate.Parameter.span(-0.3F, -0.1F), Climate.Parameter.point(0.0F), Climate.Parameter.point(0.0F), 0.0F), biomes.getOrThrow(ModBiomes.SUBCON_HILLS))
+                Pair.of(Climate.parameters(Climate.Parameter.point(-0.1F), Climate.Parameter.point(0.1F), Climate.Parameter.point(-0.1F), Climate.Parameter.span(-1.0F, -0.1F), Climate.Parameter.point(0.0F), Climate.Parameter.point(0.2F), 0.0F), biomes.getOrThrow(ModBiomes.SUBCON_HILLS))
         ))), noiseSettings.getOrThrow(MUSHROOM_KINGDOM_NOISE));
 
         context.register(MUSHROOM_KINGDOM_STEM, new LevelStem(dimensionTypes.getOrThrow(MUSHROOM_KINGDOM_TYPE), chunkGenerator));

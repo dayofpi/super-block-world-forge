@@ -6,6 +6,7 @@ import com.dayofpi.super_block_world.block.client.FlagRenderer;
 import com.dayofpi.super_block_world.block.client.PlacedItemRenderer;
 import com.dayofpi.super_block_world.entity.ModEntityTypes;
 import com.dayofpi.super_block_world.entity.client.*;
+import com.dayofpi.super_block_world.entity.custom.BombEntity;
 import com.dayofpi.super_block_world.entity.custom.HammerEntity;
 import com.dayofpi.super_block_world.entity.custom.StarBitEntity;
 import com.dayofpi.super_block_world.entity.custom.TurnipEntity;
@@ -36,7 +37,6 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -107,6 +107,8 @@ public class SuperBlockWorld {
         fireBlock.setFlammable(ModBlocks.FRUITING_MAYOI_LEAVES.get(), 30, 60);
         fireBlock.setFlammable(ModBlocks.SUBCON_PALM.get(), 30, 60);
         fireBlock.setFlammable(ModBlocks.SUBCON_PALM_STEM.get(), 5, 5);
+        fireBlock.setFlammable(ModBlocks.BEANSTALK.get(), 15, 100);
+        fireBlock.setFlammable(ModBlocks.BEANSTALK_STEM.get(), 15, 100);
         fireBlock.setFlammable(ModBlocks.WHITE_FLOWERBED.get(), 60, 100);
         fireBlock.setFlammable(ModBlocks.YELLOW_FLOWERBED.get(), 60, 100);
     }
@@ -120,6 +122,7 @@ public class SuperBlockWorld {
         ComposterBlock.COMPOSTABLES.put(ModItems.FRUITING_MAYOI_LEAVES.get(), 0.3F);
         ComposterBlock.COMPOSTABLES.put(ModItems.MAYOI_SAPLING.get(), 0.3F);
         ComposterBlock.COMPOSTABLES.put(ModItems.SUBCON_PALM.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ModItems.BEANSTALK.get(), 0.5F);
         ComposterBlock.COMPOSTABLES.put(ModItems.WHITE_FLOWERBED.get(), 0.3F);
         ComposterBlock.COMPOSTABLES.put(ModItems.YELLOW_FLOWERBED.get(), 0.3F);
         ComposterBlock.COMPOSTABLES.put(ModItems.YOSHI_FRUIT.get(), 0.3F);
@@ -130,6 +133,12 @@ public class SuperBlockWorld {
             @Override
             protected Projectile getProjectile(Level pLevel, Position pPosition, ItemStack pStack) {
                 return Util.make(new TurnipEntity(pLevel, pPosition.x(), pPosition.y(), pPosition.z()), turnip -> turnip.setItem(pStack));
+            }
+        });
+        DispenserBlock.registerBehavior(ModItems.BOMB.get(), new AbstractProjectileDispenseBehavior() {
+            @Override
+            protected Projectile getProjectile(Level pLevel, Position pPosition, ItemStack pStack) {
+                return Util.make(new BombEntity(pLevel, pPosition.x(), pPosition.y(), pPosition.z()), bomb -> bomb.setItem(pStack));
             }
         });
         DispenserBlock.registerBehavior(ModItems.HAMMER.get(), new AbstractProjectileDispenseBehavior() {
@@ -170,10 +179,6 @@ public class SuperBlockWorld {
         });
     }
 
-    @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event) {
-    }
-
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent
@@ -186,6 +191,7 @@ public class SuperBlockWorld {
                 EntityRenderers.register(ModEntityTypes.HUNGRY_LUMA.get(), HungryLumaRenderer::new);
                 EntityRenderers.register(ModEntityTypes.BOOM_BOOM.get(), BoomBoomRenderer::new);
                 EntityRenderers.register(ModEntityTypes.TURNIP.get(), ThrownItemRenderer::new);
+                EntityRenderers.register(ModEntityTypes.BOMB.get(), ThrownItemRenderer::new);
                 EntityRenderers.register(ModEntityTypes.HAMMER.get(), HammerRenderer::new);
                 EntityRenderers.register(ModEntityTypes.STAR_BIT.get(), ThrownItemRenderer::new);
                 EntityRenderers.register(ModEntityTypes.WARP_PAINTING.get(), WarpPaintingRenderer::new);

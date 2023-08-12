@@ -57,14 +57,14 @@ public class ToadstoolTurfBlock extends Block implements BonemealableBlock {
             }
 
             if (blockState3.isAir()) {
-                Holder holder;
+                Holder<PlacedFeature> holder;
                 if (pRandom.nextInt(8) == 0) {
                     List<ConfiguredFeature<?, ?>> list = pLevel.getBiome(blockPos3).value().getGenerationSettings().getFlowerFeatures();
                     if (list.isEmpty()) {
                         continue;
                     }
 
-                    holder = ((RandomPatchConfiguration)((ConfiguredFeature)list.get(0)).config()).feature();
+                    holder = ((RandomPatchConfiguration) list.get(0).config()).feature();
                 } else {
                     if (optional.isEmpty()) {
                         continue;

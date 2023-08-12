@@ -109,8 +109,11 @@ public class ModCreativeTabs {
         output.accept(ModItems.MAYOI_LEAVES.get());
         output.accept(ModItems.FRUITING_MAYOI_LEAVES.get());
         output.accept(ModItems.MAYOI_SAPLING.get());
+        output.accept(ModItems.BROWN_TOAD_STOOL.get());
+        output.accept(ModItems.RED_TOAD_STOOL.get());
         output.accept(ModItems.RED_GRASS.get());
         output.accept(ModItems.SUBCON_PALM.get());
+        output.accept(ModItems.BEANSTALK.get());
         output.accept(ModItems.WHITE_FLOWERBED.get());
         output.accept(ModItems.YELLOW_FLOWERBED.get());
         output.accept(ModItems.WHITE_BRONZE.get());
@@ -188,6 +191,7 @@ public class ModCreativeTabs {
         output.accept(ModItems.MAYOI_CHEST_BOAT.get());
         output.accept(ModItems.SHY_GUY_MASK.get());
         output.accept(ModItems.TURNIP.get());
+        output.accept(ModItems.BOMB.get());
         output.accept(ModItems.HAMMER.get());
         output.accept(ModItems.SUPER_PICKAXE.get());
         output.accept(ModItems.YOSHI_FRUIT.get());

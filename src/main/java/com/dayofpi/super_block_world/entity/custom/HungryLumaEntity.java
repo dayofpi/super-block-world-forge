@@ -1,9 +1,7 @@
 package com.dayofpi.super_block_world.entity.custom;
 
-import com.dayofpi.super_block_world.entity.SpaceCreature;
 import com.dayofpi.super_block_world.item.ModItems;
 import com.dayofpi.super_block_world.sound.ModSoundEvents;
-import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -13,29 +11,24 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.*;
-import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.control.FlyingMoveControl;
+import net.minecraft.world.entity.AnimationState;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.ai.goal.*;
-import net.minecraft.world.entity.ai.navigation.FlyingPathNavigation;
-import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
-import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 
-public class HungryLumaEntity extends PathfinderMob implements SpaceCreature {
+public class HungryLumaEntity extends AbstractLuma {
     private static final EntityDataAccessor<Integer> DATA_STAR_BITS_RECEIVED = SynchedEntityData.defineId(HungryLumaEntity.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Integer> DATA_STAR_BITS_WANTED = SynchedEntityData.defineId(HungryLumaEntity.class, EntityDataSerializers.INT);
-    public final AnimationState idleAnimationState = new AnimationState();
     public final AnimationState transformAnimationState = new AnimationState();
     private int transformTime = 30;
 
-    public HungryLumaEntity(EntityType<? extends PathfinderMob> pEntityType, Level pLevel) {
+    public HungryLumaEntity(EntityType<? extends AbstractLuma> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
-        this.moveControl = new FlyingMoveControl(this, 10, true);
     }
 
     @Override
@@ -45,24 +38,6 @@ public class HungryLumaEntity extends PathfinderMob implements SpaceCreature {
         this.goalSelector.addGoal(3, new WaterAvoidingRandomFlyingGoal(this, 1.0D));
         this.goalSelector.addGoal(4, new LookAtPlayerGoal(this, Player.class, 8.0F));
         this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
-    }
-
-    public static AttributeSupplier.Builder createAttributes() {
-        return Mob.createMobAttributes().add(Attributes.MAX_HEALTH, 20.0D).add(Attributes.FLYING_SPEED, 0.2F).add(Attributes.MOVEMENT_SPEED, 0.2F);
-    }
-
-    @Override
-    protected PathNavigation createNavigation(Level pLevel) {
-        FlyingPathNavigation flyingpathnavigation = new FlyingPathNavigation(this, pLevel);
-        flyingpathnavigation.setCanOpenDoors(false);
-        flyingpathnavigation.setCanFloat(true);
-        flyingpathnavigation.setCanPassDoors(true);
-        return flyingpathnavigation;
-    }
-
-    @Override
-    public int getMaxSpawnClusterSize() {
-        return 1;
     }
 
     @Nullable
@@ -75,28 +50,6 @@ public class HungryLumaEntity extends PathfinderMob implements SpaceCreature {
     @Override
     protected SoundEvent getHurtSound(DamageSource pDamageSource) {
         return ModSoundEvents.HUNGRY_LUMA_HURT.get();
-    }
-
-    @Nullable
-    @Override
-    protected SoundEvent getDeathSound() {
-        return ModSoundEvents.HUNGRY_LUMA_DEATH.get();
-    }
-
-    @Override
-    protected void playStepSound(BlockPos pPos, BlockState pState) {
-    }
-
-    @Override
-    protected void checkFallDamage(double pY, boolean pOnGround, BlockState pState, BlockPos pPos) {
-    }
-
-    @Override
-    public void tick() {
-        if (this.level().isClientSide()) {
-            this.idleAnimationState.startIfStopped(this.tickCount);
-        }
-        super.tick();
     }
 
     @Override

@@ -7,7 +7,7 @@ import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.level.LevelAccessor;
 
 public interface SpaceCreature {
-    public static boolean checkSpawnRules(EntityType<? extends SpaceCreature> pAnimal, LevelAccessor pLevel, MobSpawnType pSpawnType, BlockPos pPos, RandomSource pRandom) {
-        return pLevel.canSeeSky(pPos);
+    static boolean checkSpawnRules(EntityType<? extends SpaceCreature> entityType, LevelAccessor level, MobSpawnType spawnType, BlockPos blockPos, RandomSource randomSource) {
+        return level.canSeeSky(blockPos);
     }
 }

@@ -36,7 +36,7 @@ public class WarpPaintingRenderer extends EntityRenderer<WarpPaintingEntity> {
         Vec3 vec3 = this.getRenderOffset(pEntity, pPartialTick);
         pPoseStack.translate(-vec3.x(), -vec3.y(), -vec3.z());
         double d0 = 0.46875D;
-        pPoseStack.translate((double)direction.getStepX() * 0.46875D, (double)direction.getStepY() * 0.46875D, (double)direction.getStepZ() * 0.46875D);
+        pPoseStack.translate((double)direction.getStepX() * d0, (double)direction.getStepY() * d0, (double)direction.getStepZ() * d0);
         pPoseStack.mulPose(Axis.XP.rotationDegrees(pEntity.getXRot()));
         pPoseStack.mulPose(Axis.YP.rotationDegrees(180.0F - pEntity.getYRot()));
         boolean flag = pEntity.isInvisible();

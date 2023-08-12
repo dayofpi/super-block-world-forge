@@ -1,16 +1,16 @@
-// 1.20.1	2023-08-11T20:22:34.1521709	Block Tags
+// 1.20.1	2023-08-12T10:28:17.4342151	Block Tags
 d5a725534da480dd5b557963a6c5ab8ffff6f933 data/forge/tags/blocks/blocks/bronze.json
 5c29b20160d3e68e3a3f953892d95355f26bc8f1 data/forge/tags/blocks/ores.json
 5c29b20160d3e68e3a3f953892d95355f26bc8f1 data/forge/tags/blocks/ores/bronze.json
 65e6bd01ec8eab83501be50ad96e982c4899a4b7 data/minecraft/tags/blocks/ceiling_hanging_signs.json
-846ef871c03cdbf15e843211a0cc6fa114d2ad14 data/minecraft/tags/blocks/climbable.json
+dcc506300e4a5ea8b43a95ba83838b87806d8798 data/minecraft/tags/blocks/climbable.json
 6bd1f0e1acd9ab86b64924fa63c3bd0603923a18 data/minecraft/tags/blocks/dirt.json
 14833db2899a77bc71cf9b26445569a50b4f1154 data/minecraft/tags/blocks/fence_gates.json
 aee889f579b7e285552cf2acea0771f076d0df88 data/minecraft/tags/blocks/flowers.json
 aee889f579b7e285552cf2acea0771f076d0df88 data/minecraft/tags/blocks/inside_step_sound_blocks.json
 3739bf92ba2c6d7ba0efff2e9918d9fba536a273 data/minecraft/tags/blocks/leaves.json
 bcb57d65819402fb7a7dda82f6eb7fa4db25bec1 data/minecraft/tags/blocks/logs_that_burn.json
-286ff1046dd4409f9c531f9c03551dd97223b2cf data/minecraft/tags/blocks/mineable/axe.json
+c3c5e979be5aaa20257ca9699116d9247f1ce52c data/minecraft/tags/blocks/mineable/axe.json
 e52b8456780214daa14c6566fedbce020b1fa1d3 data/minecraft/tags/blocks/mineable/hoe.json
 ca709c3f484c2afbea3acb8eabf77b6cf92cef71 data/minecraft/tags/blocks/mineable/pickaxe.json
 17adabfc25a135f67ec529477b2e0293f480c933 data/minecraft/tags/blocks/mineable/shovel.json

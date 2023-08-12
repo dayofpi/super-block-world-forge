@@ -19,7 +19,7 @@ public class CustomRendererItem extends BlockItem {
     }
 
     static class ClientItemExtensions implements IClientItemExtensions {
-        public static ClientItemExtensions INSTANCE = new ClientItemExtensions();
+        private static final ClientItemExtensions INSTANCE = new ClientItemExtensions();
 
         @Override
         public BlockEntityWithoutLevelRenderer getCustomRenderer() {

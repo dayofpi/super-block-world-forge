@@ -54,8 +54,8 @@ public class ShyGuyEntity extends Monster implements VariantHolder<ShyGuyEntity.
         return Monster.createMonsterAttributes().add(Attributes.FOLLOW_RANGE, 7.0).add(Attributes.MAX_HEALTH, 18.0).add(Attributes.MOVEMENT_SPEED, 0.2).add(Attributes.ATTACK_DAMAGE, 3.0);
     }
 
-    public static boolean checkShyGuySpawnRules(EntityType<? extends ShyGuyEntity> pAnimal, LevelAccessor pLevel, MobSpawnType pSpawnType, BlockPos pPos, RandomSource pRandom) {
-        return pRandom.nextInt(5) == 0 && !(pLevel.getBrightness(LightLayer.BLOCK, pPos) > 0);
+    public static boolean checkShyGuySpawnRules(EntityType<? extends ShyGuyEntity> entityType, LevelAccessor level, MobSpawnType spawnType, BlockPos blockPos, RandomSource randomSource) {
+        return randomSource.nextInt(5) == 0 && !(level.getBrightness(LightLayer.BLOCK, blockPos) > 0);
     }
 
     @Override

@@ -33,6 +33,7 @@ import java.util.List;
 
 public class LaunchStarEntity extends HangingEntity {
     private static final EntityDataAccessor<Integer> COOLDOWN = SynchedEntityData.defineId(LaunchStarEntity.class, EntityDataSerializers.INT);
+    private static final int MIN_AMBIENT_SOUND_DELAY = 140;
     private static final int MAX_COOLDOWN = 30;
 
     public final AnimationState idleAnimationState = new AnimationState();
@@ -74,10 +75,6 @@ public class LaunchStarEntity extends HangingEntity {
     protected void defineSynchedData() {
         super.defineSynchedData();
         this.entityData.define(COOLDOWN, 0);
-    }
-
-    public int getMinAmbientSoundDelay() {
-        return 140;
     }
 
     public void playAmbientSound() {
@@ -137,7 +134,7 @@ public class LaunchStarEntity extends HangingEntity {
     }
 
     private void resetSoundDelay() {
-        this.ambientSoundChance = -this.getMinAmbientSoundDelay();
+        this.ambientSoundChance = -MIN_AMBIENT_SOUND_DELAY;
     }
 
     @Override
@@ -218,6 +215,7 @@ public class LaunchStarEntity extends HangingEntity {
 
     @Override
     protected void recalculateBoundingBox() {
+        //noinspection ConstantConditions
         if (direction != null) {
             double x = (double) this.pos.getX() + 0.5 - (double) this.direction.getStepX() * 0.46875;
             double y = (double) this.pos.getY() + 0.5 - (double) this.direction.getStepY() * 0.46875;

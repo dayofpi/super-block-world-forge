@@ -104,8 +104,7 @@ public class FlagRenderer implements BlockEntityRenderer<FlagBlockEntity> {
 
         float wave = 0.0f;
         if (world != null && world.getBlockState(blockPos).is(ModTags.Blocks.FLAGS)) {
-            int rotation = 0;
-            rotation = world.getBlockState(blockPos).getValue(FlagBlock.ROTATION);
+            int rotation = world.getBlockState(blockPos).getValue(FlagBlock.ROTATION);
             float angle = (rotation * 22.5F) % 360;
             wave = Mth.cos(world.getGameTime()) + angle;
         }

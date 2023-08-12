@@ -43,11 +43,13 @@ public class LinkedWarpPipeFeature extends Feature<NoneFeatureConfiguration> {
                 if (!level.getBlockState(caveWarpPipePos.above(i)).isAir())
                     canGrow = false;
             }
-            if (level.getBlockState(caveWarpPipePos.above(cavePipeHeight + 1)).isAir()) {
-                for (int i = 0; i < cavePipeHeight; ++i) {
-                    level.setBlock(caveWarpPipePos.above(i), pipeBodyState, 2);
+            if (canGrow) {
+                if (level.getBlockState(caveWarpPipePos.above(cavePipeHeight + 1)).isAir()) {
+                    for (int i = 0; i < cavePipeHeight; ++i) {
+                        level.setBlock(caveWarpPipePos.above(i), pipeBodyState, 2);
+                    }
+                    caveWarpPipePos = caveWarpPipePos.above(cavePipeHeight);
                 }
-                caveWarpPipePos = caveWarpPipePos.above(cavePipeHeight);
             }
 
             level.setBlock(caveWarpPipePos, warpPipeState, 2);
@@ -59,11 +61,13 @@ public class LinkedWarpPipeFeature extends Feature<NoneFeatureConfiguration> {
                 if (!level.getBlockState(surfaceWarpPipePos.above(i)).isAir())
                     canGrow = false;
             }
-            if (level.getBlockState(surfaceWarpPipePos.above(surfacePipeHeight + 1)).isAir()) {
-                for (int i = 0; i < surfacePipeHeight; ++i) {
-                    level.setBlock(surfaceWarpPipePos.above(i), pipeBodyState, 2);
+            if (canGrow) {
+                if (level.getBlockState(surfaceWarpPipePos.above(surfacePipeHeight + 1)).isAir()) {
+                    for (int i = 0; i < surfacePipeHeight; ++i) {
+                        level.setBlock(surfaceWarpPipePos.above(i), pipeBodyState, 2);
+                    }
+                    surfaceWarpPipePos = surfaceWarpPipePos.above(surfacePipeHeight);
                 }
-                surfaceWarpPipePos = surfaceWarpPipePos.above(surfacePipeHeight);
             }
             level.setBlock(surfaceWarpPipePos, warpPipeState, 2);
             if (level.getBlockEntity(caveWarpPipePos) instanceof WarpPipeBlockEntity caveWarpPipeBE && level.getBlockEntity(surfaceWarpPipePos) instanceof WarpPipeBlockEntity surfaceWarpPipeBE) {

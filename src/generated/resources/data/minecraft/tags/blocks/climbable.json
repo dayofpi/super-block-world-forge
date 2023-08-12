@@ -1,6 +1,8 @@
 {
   "values": [
     "#super_block_world:flags",
-    "super_block_world:flagpole"
+    "super_block_world:flagpole",
+    "super_block_world:beanstalk",
+    "super_block_world:beanstalk_stem"
   ]
 }

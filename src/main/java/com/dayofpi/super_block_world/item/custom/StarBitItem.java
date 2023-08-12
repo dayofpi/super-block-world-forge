@@ -1,6 +1,7 @@
 package com.dayofpi.super_block_world.item.custom;
 
 import com.dayofpi.super_block_world.entity.custom.StarBitEntity;
+import com.dayofpi.super_block_world.item.ThrowableItem;
 import com.dayofpi.super_block_world.sound.ModSoundEvents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;

@@ -1,4 +1,4 @@
-package com.dayofpi.super_block_world.item.custom;
+package com.dayofpi.super_block_world.item;
 
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;

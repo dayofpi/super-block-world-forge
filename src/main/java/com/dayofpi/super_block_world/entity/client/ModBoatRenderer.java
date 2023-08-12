@@ -42,15 +42,15 @@ public class ModBoatRenderer extends BoatRenderer {
     }
 
     public static ModelLayerLocation createBoatModelName(ModBoatEntity.Type pType) {
-        return createLocation("boat/" + pType.getName(), "main");
+        return createLocation("boat/" + pType.getName());
     }
 
     public static ModelLayerLocation createChestBoatModelName(ModBoatEntity.Type pType) {
-        return createLocation("chest_boat/" + pType.getName(), "main");
+        return createLocation("chest_boat/" + pType.getName());
     }
 
-    private static ModelLayerLocation createLocation(String pPath, String pModel) {
-        return new ModelLayerLocation(new ResourceLocation(SuperBlockWorld.MOD_ID, pPath), pModel);
+    private static ModelLayerLocation createLocation(String pPath) {
+        return new ModelLayerLocation(new ResourceLocation(SuperBlockWorld.MOD_ID, pPath), "main");
     }
 
     public Pair<ResourceLocation, ListModel<Boat>> getModelWithLocation(Boat boat) {
