@@ -19,6 +19,8 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, SuperBlockWorld.MOD_ID);
 
     public static final RegistryObject<Item> POWER_STAR = ITEMS.register("power_star", () -> new PowerStarItem(ModBlocks.POWER_STAR.get(), new Item.Properties().rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> COIN = registerBlockItem("coin", ModBlocks.COIN);
+    public static final RegistryObject<Item> STAR_COIN = registerBlockItem("star_coin", ModBlocks.STAR_COIN);
     public static final RegistryObject<Item> PULL_BLOCK = registerBlockItem("pull_block", ModBlocks.PULL_BLOCK);
     public static final RegistryObject<Item> WHITE_BRONZE = registerBlockItem("white_bronze", ModBlocks.WHITE_BRONZE);
     public static final RegistryObject<Item> LIGHT_GRAY_BRONZE = registerBlockItem("light_gray_bronze", ModBlocks.LIGHT_GRAY_BRONZE);
@@ -87,6 +89,7 @@ public class ModItems {
     public static final RegistryObject<Item> MAGENTA_PIPE_BODY = registerBlockItem("magenta_pipe_body", ModBlocks.MAGENTA_PIPE_BODY);
     public static final RegistryObject<Item> PINK_PIPE_BODY = registerBlockItem("pink_pipe_body", ModBlocks.PINK_PIPE_BODY);
     public static final RegistryObject<Item> TOADSTOOL_GRASS = registerBlockItem("toadstool_grass", ModBlocks.TOADSTOOL_GRASS);
+    public static final RegistryObject<Item> TOADSTOOL_TURF = registerBlockItem("toadstool_turf", ModBlocks.TOADSTOOL_TURF);
     public static final RegistryObject<Item> TOADSTOOL_SOIL = registerBlockItem("toadstool_soil", ModBlocks.TOADSTOOL_SOIL);
     public static final RegistryObject<Item> COARSE_TOADSTOOL_SOIL = registerBlockItem("coarse_toadstool_soil", ModBlocks.COARSE_TOADSTOOL_SOIL);
     public static final RegistryObject<Item> TOADSTOOL_PATH = registerBlockItem("toadstool_path", ModBlocks.TOADSTOOL_PATH);
@@ -163,6 +166,26 @@ public class ModItems {
     public static final RegistryObject<Item> AMANITA_LEAVES = registerBlockItem("amanita_leaves", ModBlocks.AMANITA_LEAVES);
     public static final RegistryObject<Item> FRUITING_AMANITA_LEAVES = registerBlockItem("fruiting_amanita_leaves", ModBlocks.FRUITING_AMANITA_LEAVES);
     public static final RegistryObject<Item> AMANITA_SAPLING = registerBlockItem("amanita_sapling", ModBlocks.AMANITA_SAPLING);
+    public static final RegistryObject<Item> MAYOI_LOG = registerBlockItem("mayoi_log", ModBlocks.MAYOI_LOG);
+    public static final RegistryObject<Item> MAYOI_WOOD = registerBlockItem("mayoi_wood", ModBlocks.MAYOI_WOOD);
+    public static final RegistryObject<Item> STRIPPED_MAYOI_LOG = registerBlockItem("stripped_mayoi_log", ModBlocks.STRIPPED_MAYOI_LOG);
+    public static final RegistryObject<Item> STRIPPED_MAYOI_WOOD = registerBlockItem("stripped_mayoi_wood", ModBlocks.STRIPPED_MAYOI_WOOD);
+    public static final RegistryObject<Item> MAYOI_PLANKS = registerBlockItem("mayoi_planks", ModBlocks.MAYOI_PLANKS);
+    public static final RegistryObject<Item> MAYOI_STAIRS = registerBlockItem("mayoi_stairs", ModBlocks.MAYOI_STAIRS);
+    public static final RegistryObject<Item> MAYOI_SLAB = registerBlockItem("mayoi_slab", ModBlocks.MAYOI_SLAB);
+    public static final RegistryObject<Item> MAYOI_FENCE = registerBlockItem("mayoi_fence", ModBlocks.MAYOI_FENCE);
+    public static final RegistryObject<Item> MAYOI_FENCE_GATE = registerBlockItem("mayoi_fence_gate", ModBlocks.MAYOI_FENCE_GATE);
+    public static final RegistryObject<Item> MAYOI_DOOR = registerBlockItem("mayoi_door", ModBlocks.MAYOI_DOOR);
+    public static final RegistryObject<Item> MAYOI_TRAPDOOR = registerBlockItem("mayoi_trapdoor", ModBlocks.MAYOI_TRAPDOOR);
+    public static final RegistryObject<Item> MAYOI_PRESSURE_PLATE = registerBlockItem("mayoi_pressure_plate", ModBlocks.MAYOI_PRESSURE_PLATE);
+    public static final RegistryObject<Item> MAYOI_BUTTON = registerBlockItem("mayoi_button", ModBlocks.MAYOI_BUTTON);
+    public static final RegistryObject<Item> MAYOI_SIGN = ITEMS.register("mayoi_sign", () -> new SignItem(new Item.Properties().stacksTo(16), ModBlocks.MAYOI_SIGN.get(), ModBlocks.MAYOI_WALL_SIGN.get()));
+    public static final RegistryObject<Item> MAYOI_HANGING_SIGN = ITEMS.register("mayoi_hanging_sign", () -> new HangingSignItem(ModBlocks.MAYOI_HANGING_SIGN.get(), ModBlocks.MAYOI_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> MAYOI_LEAVES = registerBlockItem("mayoi_leaves", ModBlocks.MAYOI_LEAVES);
+    public static final RegistryObject<Item> FRUITING_MAYOI_LEAVES = registerBlockItem("fruiting_mayoi_leaves", ModBlocks.FRUITING_MAYOI_LEAVES);
+    public static final RegistryObject<Item> MAYOI_SAPLING = registerBlockItem("mayoi_sapling", ModBlocks.MAYOI_SAPLING);
+    public static final RegistryObject<Item> RED_GRASS = registerBlockItem("red_grass", ModBlocks.RED_GRASS);
+    public static final RegistryObject<Item> SUBCON_PALM = registerBlockItem("subcon_palm", ModBlocks.SUBCON_PALM);
     public static final RegistryObject<Item> WHITE_FLOWERBED = registerBlockItem("white_flowerbed", ModBlocks.WHITE_FLOWERBED);
     public static final RegistryObject<Item> YELLOW_FLOWERBED = registerBlockItem("yellow_flowerbed", ModBlocks.YELLOW_FLOWERBED);
     public static final RegistryObject<Item> WARP_PAINTING = ITEMS.register("warp_painting", () -> new WarpPaintingItem(new Item.Properties()));
@@ -170,7 +193,10 @@ public class ModItems {
     public static final RegistryObject<Item> LAUNCH_STAR = ITEMS.register("launch_star", () -> new LaunchStarItem(new Item.Properties()));
     public static final RegistryObject<Item> AMANITA_BOAT = ITEMS.register("amanita_boat", () -> new ModBoatItem(false, ModBoatEntity.Type.AMANITA, new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> AMANITA_CHEST_BOAT = ITEMS.register("amanita_chest_boat", () -> new ModBoatItem(true, ModBoatEntity.Type.AMANITA, new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> MAYOI_BOAT = ITEMS.register("mayoi_boat", () -> new ModBoatItem(false, ModBoatEntity.Type.MAYOI, new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> MAYOI_CHEST_BOAT = ITEMS.register("mayoi_chest_boat", () -> new ModBoatItem(true, ModBoatEntity.Type.MAYOI, new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> SHY_GUY_MASK = ITEMS.register("shy_guy_mask", () -> new ShyGuyMaskItem(new Item.Properties()));
+    public static final RegistryObject<Item> TURNIP = ITEMS.register("turnip", () -> new TurnipItem(new Item.Properties()));
     public static final RegistryObject<Item> HAMMER = ITEMS.register("hammer", () -> new HammerItem(new Item.Properties().durability(131)));
     public static final RegistryObject<Item> SUPER_PICKAXE = ITEMS.register("super_pickaxe", () -> new SuperPickaxeItem(new Item.Properties().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> YOSHI_FRUIT = ITEMS.register("yoshi_fruit", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.3F).build())));

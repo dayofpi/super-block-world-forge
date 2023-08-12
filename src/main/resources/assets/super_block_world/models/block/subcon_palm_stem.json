@@ -1,0 +1,21 @@
+{
+	"textures": {
+		"stem": "super_block_world:block/subcon_palm_stem",
+		"particle": "super_block_world:block/subcon_palm_stem"
+	},
+	"elements": [
+		{
+			"name": "Center post",
+			"from": [6, 0, 6],
+			"to": [10, 16, 10],
+			"faces": {
+				"north": {"uv": [6, 0, 10, 16], "texture": "#stem"},
+				"east": {"uv": [6, 0, 10, 16], "texture": "#stem"},
+				"south": {"uv": [6, 0, 10, 16], "texture": "#stem"},
+				"west": {"uv": [6, 0, 10, 16], "texture": "#stem"},
+				"up": {"uv": [10, 0, 14, 4], "texture": "#stem", "cullface": "up"},
+				"down": {"uv": [10, 0, 14, 4], "texture": "#stem", "cullface": "down"}
+			}
+		}
+	]
+}

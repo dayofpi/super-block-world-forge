@@ -8,6 +8,7 @@ import com.dayofpi.super_block_world.entity.ModEntityTypes;
 import com.dayofpi.super_block_world.entity.client.*;
 import com.dayofpi.super_block_world.entity.custom.HammerEntity;
 import com.dayofpi.super_block_world.entity.custom.StarBitEntity;
+import com.dayofpi.super_block_world.entity.custom.TurnipEntity;
 import com.dayofpi.super_block_world.item.ModCreativeTabs;
 import com.dayofpi.super_block_world.item.ModItems;
 import com.dayofpi.super_block_world.item.custom.WarpLinkItem;
@@ -77,6 +78,7 @@ public class SuperBlockWorld {
 
     private static void registerPottables() {
         ((FlowerPotBlock)Blocks.FLOWER_POT).addPlant(ModBlocks.AMANITA_SAPLING.getId(), ModBlocks.POTTED_AMANITA_SAPLING);
+        ((FlowerPotBlock)Blocks.FLOWER_POT).addPlant(ModBlocks.MAYOI_SAPLING.getId(), ModBlocks.POTTED_MAYOI_SAPLING);
     }
 
     private static void registerFlammables() {
@@ -92,20 +94,44 @@ public class SuperBlockWorld {
         fireBlock.setFlammable(ModBlocks.AMANITA_FENCE_GATE.get(), 5, 20);
         fireBlock.setFlammable(ModBlocks.AMANITA_LEAVES.get(), 30, 60);
         fireBlock.setFlammable(ModBlocks.FRUITING_AMANITA_LEAVES.get(), 30, 60);
+        fireBlock.setFlammable(ModBlocks.MAYOI_LOG.get(), 5, 5);
+        fireBlock.setFlammable(ModBlocks.MAYOI_WOOD.get(), 5, 5);
+        fireBlock.setFlammable(ModBlocks.STRIPPED_MAYOI_LOG.get(), 5, 5);
+        fireBlock.setFlammable(ModBlocks.STRIPPED_MAYOI_WOOD.get(), 5, 5);
+        fireBlock.setFlammable(ModBlocks.MAYOI_PLANKS.get(), 5, 20);
+        fireBlock.setFlammable(ModBlocks.MAYOI_STAIRS.get(), 5, 20);
+        fireBlock.setFlammable(ModBlocks.MAYOI_SLAB.get(), 5, 20);
+        fireBlock.setFlammable(ModBlocks.MAYOI_FENCE.get(), 5, 20);
+        fireBlock.setFlammable(ModBlocks.MAYOI_FENCE_GATE.get(), 5, 20);
+        fireBlock.setFlammable(ModBlocks.MAYOI_LEAVES.get(), 30, 60);
+        fireBlock.setFlammable(ModBlocks.FRUITING_MAYOI_LEAVES.get(), 30, 60);
+        fireBlock.setFlammable(ModBlocks.SUBCON_PALM.get(), 30, 60);
+        fireBlock.setFlammable(ModBlocks.SUBCON_PALM_STEM.get(), 5, 5);
         fireBlock.setFlammable(ModBlocks.WHITE_FLOWERBED.get(), 60, 100);
         fireBlock.setFlammable(ModBlocks.YELLOW_FLOWERBED.get(), 60, 100);
     }
 
     private static void registerCompostables() {
+        ComposterBlock.COMPOSTABLES.put(ModItems.TOADSTOOL_TURF.get(), 0.3F);
         ComposterBlock.COMPOSTABLES.put(ModItems.AMANITA_LEAVES.get(), 0.3F);
         ComposterBlock.COMPOSTABLES.put(ModItems.FRUITING_AMANITA_LEAVES.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ModBlocks.AMANITA_SAPLING.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ModBlocks.WHITE_FLOWERBED.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ModBlocks.YELLOW_FLOWERBED.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ModItems.AMANITA_SAPLING.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ModItems.MAYOI_LEAVES.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ModItems.FRUITING_MAYOI_LEAVES.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ModItems.MAYOI_SAPLING.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ModItems.SUBCON_PALM.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ModItems.WHITE_FLOWERBED.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ModItems.YELLOW_FLOWERBED.get(), 0.3F);
         ComposterBlock.COMPOSTABLES.put(ModItems.YOSHI_FRUIT.get(), 0.3F);
     }
 
     private static void registerDispenserBehaviors() {
+        DispenserBlock.registerBehavior(ModItems.TURNIP.get(), new AbstractProjectileDispenseBehavior() {
+            @Override
+            protected Projectile getProjectile(Level pLevel, Position pPosition, ItemStack pStack) {
+                return Util.make(new TurnipEntity(pLevel, pPosition.x(), pPosition.y(), pPosition.z()), turnip -> turnip.setItem(pStack));
+            }
+        });
         DispenserBlock.registerBehavior(ModItems.HAMMER.get(), new AbstractProjectileDispenseBehavior() {
             @Override
             protected Projectile getProjectile(Level pLevel, Position pPosition, ItemStack pStack) {
@@ -154,10 +180,12 @@ public class SuperBlockWorld {
         public static void onClientSetup(FMLClientSetupEvent event) {
             event.enqueueWork(() -> {
                 Sheets.addWoodType(ModWoodTypes.AMANITA);
+                Sheets.addWoodType(ModWoodTypes.MAYOI);
                 EntityRenderers.register(ModEntityTypes.SHY_GUY.get(), ShyGuyRenderer::new);
                 EntityRenderers.register(ModEntityTypes.LUMA.get(), LumaRenderer::new);
                 EntityRenderers.register(ModEntityTypes.HUNGRY_LUMA.get(), HungryLumaRenderer::new);
                 EntityRenderers.register(ModEntityTypes.BOOM_BOOM.get(), BoomBoomRenderer::new);
+                EntityRenderers.register(ModEntityTypes.TURNIP.get(), ThrownItemRenderer::new);
                 EntityRenderers.register(ModEntityTypes.HAMMER.get(), HammerRenderer::new);
                 EntityRenderers.register(ModEntityTypes.STAR_BIT.get(), ThrownItemRenderer::new);
                 EntityRenderers.register(ModEntityTypes.WARP_PAINTING.get(), WarpPaintingRenderer::new);
@@ -170,14 +198,14 @@ public class SuperBlockWorld {
 
         @SubscribeEvent
         public static void registerItemColors(RegisterColorHandlersEvent.Item event) {
-            event.register((pStack, pTintIndex) -> ModBiomes.GRASSLANDS_GRASS_COLOR, ModItems.TOADSTOOL_GRASS.get());
-            event.register((pStack, pTintIndex) -> ModBiomes.GRASSLANDS_FOLIAGE_COLOR, ModItems.AMANITA_LEAVES.get(), ModItems.FRUITING_AMANITA_LEAVES.get());
+            event.register((pStack, pTintIndex) -> ModBiomes.GRASSLANDS_GRASS_COLOR, ModItems.TOADSTOOL_GRASS.get(), ModItems.TOADSTOOL_TURF.get());
+            event.register((pStack, pTintIndex) -> ModBiomes.GRASSLANDS_FOLIAGE_COLOR, ModItems.AMANITA_LEAVES.get(), ModItems.FRUITING_AMANITA_LEAVES.get(), ModItems.MAYOI_LEAVES.get(), ModItems.FRUITING_MAYOI_LEAVES.get());
         }
 
         @SubscribeEvent
         public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
-            event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageGrassColor(pLevel, pPos) : ModBiomes.GRASSLANDS_GRASS_COLOR, ModBlocks.TOADSTOOL_GRASS.get());
-            event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : ModBiomes.GRASSLANDS_FOLIAGE_COLOR, ModBlocks.AMANITA_LEAVES.get(), ModBlocks.FRUITING_AMANITA_LEAVES.get());
+            event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageGrassColor(pLevel, pPos) : ModBiomes.GRASSLANDS_GRASS_COLOR, ModBlocks.TOADSTOOL_GRASS.get(), ModBlocks.TOADSTOOL_TURF.get());
+            event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : ModBiomes.GRASSLANDS_FOLIAGE_COLOR, ModBlocks.AMANITA_LEAVES.get(), ModBlocks.FRUITING_AMANITA_LEAVES.get(), ModBlocks.MAYOI_LEAVES.get(), ModBlocks.FRUITING_MAYOI_LEAVES.get());
         }
 
         @SubscribeEvent

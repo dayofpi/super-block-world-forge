@@ -3,6 +3,10 @@
     {
       "id": "super_block_world:mushroom_grasslands",
       "required": false
+    },
+    {
+      "id": "super_block_world:subcon_hills",
+      "required": false
     }
   ]
 }

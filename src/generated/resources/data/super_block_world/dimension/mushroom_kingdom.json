@@ -3,8 +3,36 @@
   "generator": {
     "type": "minecraft:noise",
     "biome_source": {
-      "type": "minecraft:fixed",
-      "biome": "super_block_world:mushroom_grasslands"
+      "type": "minecraft:multi_noise",
+      "biomes": [
+        {
+          "biome": "super_block_world:mushroom_grasslands",
+          "parameters": {
+            "continentalness": 0.0,
+            "depth": 0.0,
+            "erosion": 0.0,
+            "humidity": 0.0,
+            "offset": 0.0,
+            "temperature": 0.0,
+            "weirdness": 0.0
+          }
+        },
+        {
+          "biome": "super_block_world:subcon_hills",
+          "parameters": {
+            "continentalness": -0.1,
+            "depth": 0.0,
+            "erosion": [
+              -0.3,
+              -0.1
+            ],
+            "humidity": 0.1,
+            "offset": 0.0,
+            "temperature": -0.1,
+            "weirdness": 0.0
+          }
+        }
+      ]
     },
     "settings": "super_block_world:mushroom_kingdom"
   }

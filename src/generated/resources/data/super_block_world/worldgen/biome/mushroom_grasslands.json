@@ -53,6 +53,8 @@
       "super_block_world:spring_water"
     ],
     [
+      "super_block_world:red_grass",
+      "super_block_world:stump",
       "super_block_world:flowerbed_white",
       "super_block_world:flowerbed_yellow",
       "super_block_world:trees_mushroom_grasslands",
@@ -78,16 +80,16 @@
     "misc": [],
     "monster": [
       {
-        "type": "minecraft:enderman",
-        "maxCount": 2,
-        "minCount": 1,
-        "weight": 1
-      },
-      {
         "type": "super_block_world:shy_guy",
         "maxCount": 4,
         "minCount": 4,
         "weight": 100
+      },
+      {
+        "type": "minecraft:enderman",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 1
       }
     ],
     "underground_water_creature": [],

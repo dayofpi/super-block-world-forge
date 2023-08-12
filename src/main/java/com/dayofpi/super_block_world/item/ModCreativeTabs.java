@@ -14,6 +14,7 @@ public class ModCreativeTabs {
     public static final RegistryObject<CreativeModeTab> MAIN = CREATIVE_MODE_TABS.register("main", () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.POWER_STAR.get())).title(Component.translatable("itemGroup.super_block_world")).displayItems((itemDisplayParameters, output) -> {
         output.accept(ModItems.PULL_BLOCK.get());
         output.accept(ModItems.TOADSTOOL_GRASS.get());
+        output.accept(ModItems.TOADSTOOL_TURF.get());
         output.accept(ModItems.TOADSTOOL_SOIL.get());
         output.accept(ModItems.COARSE_TOADSTOOL_SOIL.get());
         output.accept(ModItems.TOADSTOOL_PATH.get());
@@ -90,6 +91,26 @@ public class ModCreativeTabs {
         output.accept(ModItems.AMANITA_LEAVES.get());
         output.accept(ModItems.FRUITING_AMANITA_LEAVES.get());
         output.accept(ModItems.AMANITA_SAPLING.get());
+        output.accept(ModItems.MAYOI_LOG.get());
+        output.accept(ModItems.MAYOI_WOOD.get());
+        output.accept(ModItems.STRIPPED_MAYOI_LOG.get());
+        output.accept(ModItems.STRIPPED_MAYOI_WOOD.get());
+        output.accept(ModItems.MAYOI_PLANKS.get());
+        output.accept(ModItems.MAYOI_STAIRS.get());
+        output.accept(ModItems.MAYOI_SLAB.get());
+        output.accept(ModItems.MAYOI_FENCE.get());
+        output.accept(ModItems.MAYOI_FENCE_GATE.get());
+        output.accept(ModItems.MAYOI_DOOR.get());
+        output.accept(ModItems.MAYOI_TRAPDOOR.get());
+        output.accept(ModItems.MAYOI_PRESSURE_PLATE.get());
+        output.accept(ModItems.MAYOI_BUTTON.get());
+        output.accept(ModItems.MAYOI_SIGN.get());
+        output.accept(ModItems.MAYOI_HANGING_SIGN.get());
+        output.accept(ModItems.MAYOI_LEAVES.get());
+        output.accept(ModItems.FRUITING_MAYOI_LEAVES.get());
+        output.accept(ModItems.MAYOI_SAPLING.get());
+        output.accept(ModItems.RED_GRASS.get());
+        output.accept(ModItems.SUBCON_PALM.get());
         output.accept(ModItems.WHITE_FLOWERBED.get());
         output.accept(ModItems.YELLOW_FLOWERBED.get());
         output.accept(ModItems.WHITE_BRONZE.get());
@@ -163,7 +184,10 @@ public class ModCreativeTabs {
         output.accept(ModItems.LAUNCH_STAR.get());
         output.accept(ModItems.AMANITA_BOAT.get());
         output.accept(ModItems.AMANITA_CHEST_BOAT.get());
+        output.accept(ModItems.MAYOI_BOAT.get());
+        output.accept(ModItems.MAYOI_CHEST_BOAT.get());
         output.accept(ModItems.SHY_GUY_MASK.get());
+        output.accept(ModItems.TURNIP.get());
         output.accept(ModItems.HAMMER.get());
         output.accept(ModItems.SUPER_PICKAXE.get());
         output.accept(ModItems.YOSHI_FRUIT.get());
@@ -172,6 +196,8 @@ public class ModCreativeTabs {
         output.accept(ModItems.BRONZE_INGOT.get());
         output.accept(ModItems.POWER_STAR.get());
         output.accept(ModItems.POWER_SHARD.get());
+        output.accept(ModItems.COIN.get());
+        output.accept(ModItems.STAR_COIN.get());
         output.accept(ModItems.RED_STAR_BIT.get());
         output.accept(ModItems.YELLOW_STAR_BIT.get());
         output.accept(ModItems.BLUE_STAR_BIT.get());

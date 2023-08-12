@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "super_block_world:star_coin"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "super_block_world:coin"
+  }
+}

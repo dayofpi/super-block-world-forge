@@ -1,0 +1,40 @@
+{
+  "type": "minecraft:block_column",
+  "config": {
+    "allowed_placement": {
+      "type": "minecraft:matching_blocks",
+      "blocks": "minecraft:air"
+    },
+    "direction": "up",
+    "layers": [
+      {
+        "height": {
+          "type": "minecraft:uniform",
+          "value": {
+            "max_inclusive": 10,
+            "min_inclusive": 0
+          }
+        },
+        "provider": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "super_block_world:subcon_palm_stem"
+          }
+        }
+      },
+      {
+        "height": 1,
+        "provider": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "super_block_world:subcon_palm",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        }
+      }
+    ],
+    "prioritize_tip": true
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "carvers": {
+    "air": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ]
+  },
+  "downfall": 0.4,
+  "effects": {
+    "fog_color": 14005247,
+    "foliage_color": 6408218,
+    "grass_color": 6879535,
+    "mood_sound": {
+      "block_search_extent": 8,
+      "offset": 2.0,
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000
+    },
+    "music": {
+      "max_delay": 20000,
+      "min_delay": 9000,
+      "replace_current_music": false,
+      "sound": "super_block_world:music.grasslands"
+    },
+    "sky_color": 11134462,
+    "water_color": 4046591,
+    "water_fog_color": 4046591
+  },
+  "features": [
+    [],
+    [],
+    [
+      "super_block_world:vanillate_topping"
+    ],
+    [],
+    [],
+    [],
+    [
+      "super_block_world:disk_sand",
+      "super_block_world:ore_bronze",
+      "super_block_world:ore_crumble",
+      "super_block_world:ore_toadstone",
+      "super_block_world:ore_hardstone"
+    ],
+    [
+      "super_block_world:star_cluster",
+      "super_block_world:warp_pipe",
+      "super_block_world:linked_warp_pipe",
+      "super_block_world:underwater_pipe"
+    ],
+    [
+      "super_block_world:spring_water"
+    ],
+    [
+      "super_block_world:red_grass",
+      "super_block_world:stump",
+      "super_block_world:red_grass_extra",
+      "super_block_world:subcon_palm",
+      "super_block_world:flowerbed_white",
+      "super_block_world:flowerbed_yellow",
+      "minecraft:patch_tall_grass_2",
+      "minecraft:patch_grass_plain",
+      "minecraft:brown_mushroom_taiga",
+      "minecraft:red_mushroom_swamp"
+    ]
+  ],
+  "has_precipitation": true,
+  "spawn_costs": {},
+  "spawners": {
+    "ambient": [],
+    "axolotls": [],
+    "creature": [
+      {
+        "type": "minecraft:rabbit",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 10
+      }
+    ],
+    "misc": [],
+    "monster": [
+      {
+        "type": "super_block_world:shy_guy",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 100
+      }
+    ],
+    "underground_water_creature": [],
+    "water_ambient": [],
+    "water_creature": []
+  },
+  "temperature": 0.8
+}

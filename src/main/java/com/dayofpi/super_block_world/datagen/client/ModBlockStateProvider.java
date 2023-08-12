@@ -59,6 +59,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockWithItem(ModBlocks.RAINBOW_TILES);
         simpleBlockWithItem(ModBlocks.AMANITA_PLANKS);
         cross(ModBlocks.AMANITA_SAPLING);
+        simpleBlockWithItem(ModBlocks.MAYOI_PLANKS);
+        cross(ModBlocks.MAYOI_SAPLING);
+        cross(ModBlocks.RED_GRASS);
+        cross(ModBlocks.SUBCON_PALM);
         simpleBlock(ModBlocks.WHITE_FLOWERBED.get(), models().carpet("white_flowerbed", blockTexture(ModBlocks.WHITE_FLOWERBED.get())).renderType("cutout"));
         simpleBlock(ModBlocks.YELLOW_FLOWERBED.get(), models().carpet("yellow_flowerbed", blockTexture(ModBlocks.YELLOW_FLOWERBED.get())).renderType("cutout"));
 
@@ -66,6 +70,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
         axisBlock((RotatedPillarBlock) ModBlocks.AMANITA_WOOD.get(), blockTexture(ModBlocks.AMANITA_LOG.get()), blockTexture(ModBlocks.AMANITA_LOG.get()));
         logBlock((RotatedPillarBlock) ModBlocks.STRIPPED_AMANITA_LOG.get());
         axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_AMANITA_WOOD.get(), blockTexture(ModBlocks.STRIPPED_AMANITA_LOG.get()), blockTexture(ModBlocks.STRIPPED_AMANITA_LOG.get()));
+
+        logBlock((RotatedPillarBlock) ModBlocks.MAYOI_LOG.get());
+        axisBlock((RotatedPillarBlock) ModBlocks.MAYOI_WOOD.get(), blockTexture(ModBlocks.MAYOI_LOG.get()), blockTexture(ModBlocks.MAYOI_LOG.get()));
+        logBlock((RotatedPillarBlock) ModBlocks.STRIPPED_MAYOI_LOG.get());
+        axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_MAYOI_WOOD.get(), blockTexture(ModBlocks.STRIPPED_MAYOI_LOG.get()), blockTexture(ModBlocks.STRIPPED_MAYOI_LOG.get()));
 
         axisBlock((RotatedPillarBlock) ModBlocks.HARDSTONE_PILLAR.get(), blockTexture(ModBlocks.HARDSTONE_PILLAR.get()));
 
@@ -81,6 +90,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         stairsBlock((StairBlock) ModBlocks.CLOUD_STAIRS.get(), blockTexture(ModBlocks.PACKED_CLOUD.get()));
         stairsBlock((StairBlock) ModBlocks.RAINBOW_TILE_STAIRS.get(), blockTexture(ModBlocks.RAINBOW_TILES.get()));
         stairsBlock((StairBlock) ModBlocks.AMANITA_STAIRS.get(), blockTexture(ModBlocks.AMANITA_PLANKS.get()));
+        stairsBlock((StairBlock) ModBlocks.MAYOI_STAIRS.get(), blockTexture(ModBlocks.MAYOI_PLANKS.get()));
 
         slabBlock((SlabBlock) ModBlocks.VANILLATE_SLAB.get(), blockTexture(ModBlocks.VANILLATE.get()), blockTexture(ModBlocks.VANILLATE.get()));
         slabBlock((SlabBlock) ModBlocks.VANILLATE_BRICK_SLAB.get(), blockTexture(ModBlocks.VANILLATE_BRICKS.get()), blockTexture(ModBlocks.VANILLATE_BRICKS.get()));
@@ -94,6 +104,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         slabBlock((SlabBlock) ModBlocks.CLOUD_SLAB.get(), blockTexture(ModBlocks.PACKED_CLOUD.get()), blockTexture(ModBlocks.PACKED_CLOUD.get()));
         slabBlock((SlabBlock) ModBlocks.RAINBOW_TILE_SLAB.get(), blockTexture(ModBlocks.RAINBOW_TILES.get()), blockTexture(ModBlocks.RAINBOW_TILES.get()));
         slabBlock((SlabBlock) ModBlocks.AMANITA_SLAB.get(), blockTexture(ModBlocks.AMANITA_PLANKS.get()), blockTexture(ModBlocks.AMANITA_PLANKS.get()));
+        slabBlock((SlabBlock) ModBlocks.MAYOI_SLAB.get(), blockTexture(ModBlocks.MAYOI_PLANKS.get()), blockTexture(ModBlocks.MAYOI_PLANKS.get()));
 
         wallBlock((WallBlock) ModBlocks.VANILLATE_WALL.get(), blockTexture(ModBlocks.VANILLATE.get()));
         wallBlock((WallBlock) ModBlocks.VANILLATE_BRICK_WALL.get(), blockTexture(ModBlocks.VANILLATE_BRICKS.get()));
@@ -105,19 +116,28 @@ public class ModBlockStateProvider extends BlockStateProvider {
         wallBlock((WallBlock) ModBlocks.RAINBOW_TILE_WALL.get(), blockTexture(ModBlocks.RAINBOW_TILES.get()));
 
         fenceBlock((FenceBlock) ModBlocks.AMANITA_FENCE.get(), blockTexture(ModBlocks.AMANITA_PLANKS.get()));
+        fenceBlock((FenceBlock) ModBlocks.MAYOI_FENCE.get(), blockTexture(ModBlocks.MAYOI_PLANKS.get()));
 
         fenceGateBlock((FenceGateBlock) ModBlocks.AMANITA_FENCE_GATE.get(), blockTexture(ModBlocks.AMANITA_PLANKS.get()));
+        fenceGateBlock((FenceGateBlock) ModBlocks.MAYOI_FENCE_GATE.get(), blockTexture(ModBlocks.MAYOI_PLANKS.get()));
 
         doorBlockWithRenderType((DoorBlock) ModBlocks.AMANITA_DOOR.get(), modLoc("block/amanita_door_bottom"), modLoc("block/amanita_door_top"), "cutout");
+        doorBlockWithRenderType((DoorBlock) ModBlocks.MAYOI_DOOR.get(), modLoc("block/mayoi_door_bottom"), modLoc("block/mayoi_door_top"), "cutout");
 
         trapdoorBlockWithRenderType((TrapDoorBlock) ModBlocks.AMANITA_TRAPDOOR.get(), modLoc("block/amanita_trapdoor"), true, "cutout");
+        trapdoorBlockWithRenderType((TrapDoorBlock) ModBlocks.MAYOI_TRAPDOOR.get(), modLoc("block/mayoi_trapdoor"), true, "cutout");
 
         pressurePlateBlock((PressurePlateBlock) ModBlocks.AMANITA_PRESSURE_PLATE.get(), blockTexture(ModBlocks.AMANITA_PLANKS.get()));
+        pressurePlateBlock((PressurePlateBlock) ModBlocks.MAYOI_PRESSURE_PLATE.get(), blockTexture(ModBlocks.MAYOI_PLANKS.get()));
 
         buttonBlock((ButtonBlock) ModBlocks.AMANITA_BUTTON.get(), blockTexture(ModBlocks.AMANITA_PLANKS.get()));
+        buttonBlock((ButtonBlock) ModBlocks.MAYOI_BUTTON.get(), blockTexture(ModBlocks.MAYOI_PLANKS.get()));
 
         modSignBlock(ModBlocks.AMANITA_SIGN.get(), ModBlocks.AMANITA_WALL_SIGN.get(), blockTexture(ModBlocks.AMANITA_PLANKS.get()));
         modSignBlock(ModBlocks.AMANITA_HANGING_SIGN.get(), ModBlocks.AMANITA_WALL_HANGING_SIGN.get(), blockTexture(ModBlocks.STRIPPED_AMANITA_LOG.get()));
+
+        modSignBlock(ModBlocks.MAYOI_SIGN.get(), ModBlocks.MAYOI_WALL_SIGN.get(), blockTexture(ModBlocks.MAYOI_PLANKS.get()));
+        modSignBlock(ModBlocks.MAYOI_HANGING_SIGN.get(), ModBlocks.MAYOI_WALL_HANGING_SIGN.get(), blockTexture(ModBlocks.STRIPPED_MAYOI_LOG.get()));
     }
 
     public void modSignBlock(Block signBlock, Block wallSignBlock, ResourceLocation texture) {

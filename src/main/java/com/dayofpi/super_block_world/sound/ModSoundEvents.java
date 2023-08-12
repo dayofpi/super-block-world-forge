@@ -25,8 +25,11 @@ public class ModSoundEvents {
     public static final RegistryObject<SoundEvent> WARP_LINK_END = registerSoundEvent("item.warp_link.end");
     public static final RegistryObject<SoundEvent> WARP_LINK_RESET = registerSoundEvent("item.warp_link.reset");
     public static final RegistryObject<SoundEvent> WARP_LINK_START = registerSoundEvent("item.warp_link.start");
+    public static final RegistryObject<SoundEvent> TURNIP_THROW = registerSoundEvent("item.turnip.throw");
     public static final RegistryObject<SoundEvent> HAMMER_THROW = registerSoundEvent("item.hammer.throw");
     public static final RegistryObject<SoundEvent> HAMMER_BREAK = registerSoundEvent("item.hammer.break");
+    public static final RegistryObject<SoundEvent> COIN_PICKUP = registerSoundEvent("item.coin.pickup");
+    public static final RegistryObject<SoundEvent> STAR_COIN_PICKUP = registerSoundEvent("item.star_coin.pickup");
     public static final RegistryObject<SoundEvent> STAR_BIT_PICKUP = registerSoundEvent("item.star_bit.pickup");
     public static final RegistryObject<SoundEvent> STAR_BIT_SHOOT = registerSoundEvent("item.star_bit.shoot");
     public static final RegistryObject<SoundEvent> STAR_BIT_BREAK = registerSoundEvent("item.star_bit.break");

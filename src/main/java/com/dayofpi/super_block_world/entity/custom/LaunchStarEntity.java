@@ -58,14 +58,14 @@ public class LaunchStarEntity extends HangingEntity {
 
     @Override
     public void addAdditionalSaveData(CompoundTag compoundTag) {
-        compoundTag.putByte("facing", (byte)this.direction.get2DDataValue());
+        compoundTag.putByte("facing", (byte)this.direction.get3DDataValue());
         super.addAdditionalSaveData(compoundTag);
         compoundTag.putInt("LaunchCooldown", this.getCooldown());
     }
 
     @Override
     public void readAdditionalSaveData(CompoundTag compoundTag) {
-        this.direction = Direction.from2DDataValue(compoundTag.getByte("facing"));
+        this.direction = Direction.from3DDataValue(compoundTag.getByte("facing"));
         super.readAdditionalSaveData(compoundTag);
         this.setCooldown(compoundTag.getInt("LaunchCooldown"));
         this.setDirection(this.direction);

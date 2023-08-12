@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    {
+      "item": "super_block_world:mayoi_planks"
+    }
+  ],
+  "result": {
+    "item": "super_block_world:mayoi_button"
+  }
+}

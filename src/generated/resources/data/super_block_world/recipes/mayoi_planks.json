@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "super_block_world:mayoi_logs"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "super_block_world:mayoi_planks"
+  }
+}

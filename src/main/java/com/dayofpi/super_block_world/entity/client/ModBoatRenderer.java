@@ -21,6 +21,8 @@ import java.util.stream.Stream;
 public class ModBoatRenderer extends BoatRenderer {
     public static final ModelLayerLocation AMANITA_BOAT = new ModelLayerLocation(new ResourceLocation(SuperBlockWorld.MOD_ID, "boat/amanita"), "main");
     public static final ModelLayerLocation AMANITA_CHEST_BOAT = new ModelLayerLocation(new ResourceLocation(SuperBlockWorld.MOD_ID, "chest_boat/amanita"), "main");
+    public static final ModelLayerLocation MAYOI_BOAT = new ModelLayerLocation(new ResourceLocation(SuperBlockWorld.MOD_ID, "boat/mayoi"), "main");
+    public static final ModelLayerLocation MAYOI_CHEST_BOAT = new ModelLayerLocation(new ResourceLocation(SuperBlockWorld.MOD_ID, "chest_boat/mayoi"), "main");
 
     private final Map<ModBoatEntity.Type, Pair<ResourceLocation, ListModel<Boat>>> boatResources;
 

@@ -1,6 +1,8 @@
 {
   "values": [
     "super_block_world:amanita_leaves",
-    "super_block_world:fruiting_amanita_leaves"
+    "super_block_world:fruiting_amanita_leaves",
+    "super_block_world:mayoi_leaves",
+    "super_block_world:fruiting_mayoi_leaves"
   ]
 }

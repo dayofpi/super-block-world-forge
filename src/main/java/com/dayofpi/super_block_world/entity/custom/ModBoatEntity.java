@@ -38,6 +38,9 @@ public class ModBoatEntity extends Boat {
             case AMANITA -> {
                 return ModItems.AMANITA_BOAT.get();
             }
+            case MAYOI -> {
+                return ModItems.MAYOI_BOAT.get();
+            }
         }
         return super.getDropItem();
     }
@@ -66,7 +69,8 @@ public class ModBoatEntity extends Boat {
     }
 
     public static enum Type implements StringRepresentable {
-        AMANITA(ModBlocks.AMANITA_PLANKS.get(), "amanita");
+        AMANITA(ModBlocks.AMANITA_PLANKS.get(), "amanita"),
+        MAYOI(ModBlocks.MAYOI_PLANKS.get(), "mayoi");
 
         private final String name;
         private final Block planks;

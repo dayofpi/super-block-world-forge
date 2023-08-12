@@ -3,6 +3,7 @@ package com.dayofpi.super_block_world.worldgen.dimension;
 import com.dayofpi.super_block_world.SuperBlockWorld;
 import com.dayofpi.super_block_world.block.ModBlocks;
 import com.dayofpi.super_block_world.worldgen.biome.ModBiomes;
+import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
@@ -12,7 +13,8 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.biome.FixedBiomeSource;
+import net.minecraft.world.level.biome.Climate;
+import net.minecraft.world.level.biome.MultiNoiseBiomeSource;
 import net.minecraft.world.level.biome.OverworldBiomeBuilder;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.dimension.BuiltinDimensionTypes;
@@ -22,6 +24,7 @@ import net.minecraft.world.level.levelgen.NoiseBasedChunkGenerator;
 import net.minecraft.world.level.levelgen.NoiseGeneratorSettings;
 import net.minecraft.world.level.levelgen.NoiseSettings;
 
+import java.util.List;
 import java.util.OptionalLong;
 
 public class ModDimensions {
@@ -39,7 +42,10 @@ public class ModDimensions {
         HolderGetter<DimensionType> dimensionTypes = context.lookup(Registries.DIMENSION_TYPE);
         HolderGetter<NoiseGeneratorSettings> noiseSettings = context.lookup(Registries.NOISE_SETTINGS);
 
-        NoiseBasedChunkGenerator chunkGenerator = new NoiseBasedChunkGenerator(new FixedBiomeSource(biomes.getOrThrow(ModBiomes.MUSHROOM_GRASSLANDS)), noiseSettings.getOrThrow(MUSHROOM_KINGDOM_NOISE));
+        NoiseBasedChunkGenerator chunkGenerator = new NoiseBasedChunkGenerator(MultiNoiseBiomeSource.createFromList(new Climate.ParameterList<>(List.of(
+                Pair.of(Climate.parameters(Climate.Parameter.point(0.0F), Climate.Parameter.point(0.0F), Climate.Parameter.point(0.0F), Climate.Parameter.point(0.0F), Climate.Parameter.point(0.0F), Climate.Parameter.point(0.0F), 0.0F), biomes.getOrThrow(ModBiomes.MUSHROOM_GRASSLANDS)),
+                Pair.of(Climate.parameters(Climate.Parameter.point(-0.1F), Climate.Parameter.point(0.1F), Climate.Parameter.point(-0.1F), Climate.Parameter.span(-0.3F, -0.1F), Climate.Parameter.point(0.0F), Climate.Parameter.point(0.0F), 0.0F), biomes.getOrThrow(ModBiomes.SUBCON_HILLS))
+        ))), noiseSettings.getOrThrow(MUSHROOM_KINGDOM_NOISE));
 
         context.register(MUSHROOM_KINGDOM_STEM, new LevelStem(dimensionTypes.getOrThrow(MUSHROOM_KINGDOM_TYPE), chunkGenerator));
     }

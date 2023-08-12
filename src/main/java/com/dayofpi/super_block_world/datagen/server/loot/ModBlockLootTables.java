@@ -28,6 +28,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     @Override
     protected void generate() {
         dropSelf(ModBlocks.POWER_STAR.get());
+        dropSelf(ModBlocks.COIN.get());
+        dropSelf(ModBlocks.STAR_COIN.get());
         dropSelf(ModBlocks.PULL_BLOCK.get());
         dropSelf(ModBlocks.WHITE_BRONZE.get());
         dropSelf(ModBlocks.LIGHT_GRAY_BRONZE.get());
@@ -95,6 +97,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.PURPLE_PIPE_BODY.get());
         dropSelf(ModBlocks.MAGENTA_PIPE_BODY.get());
         dropSelf(ModBlocks.PINK_PIPE_BODY.get());
+        dropSelf(ModBlocks.TOADSTOOL_TURF.get());
         dropSelf(ModBlocks.TOADSTOOL_SOIL.get());
         dropSelf(ModBlocks.COARSE_TOADSTOOL_SOIL.get());
         dropOther(ModBlocks.TOADSTOOL_PATH.get(), ModItems.TOADSTOOL_SOIL.get());
@@ -167,14 +170,36 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         add(ModBlocks.AMANITA_LEAVES.get(), block -> createLeavesDrops(block, ModBlocks.AMANITA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(ModBlocks.FRUITING_AMANITA_LEAVES.get(), block -> createFruitingLeavesDrops(block, ModBlocks.AMANITA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         dropSelf(ModBlocks.AMANITA_SAPLING.get());
+        dropSelf(ModBlocks.MAYOI_LOG.get());
+        dropSelf(ModBlocks.MAYOI_WOOD.get());
+        dropSelf(ModBlocks.STRIPPED_MAYOI_LOG.get());
+        dropSelf(ModBlocks.STRIPPED_MAYOI_WOOD.get());
+        dropSelf(ModBlocks.MAYOI_PLANKS.get());
+        dropSelf(ModBlocks.MAYOI_STAIRS.get());
+        slab(ModBlocks.MAYOI_SLAB);
+        dropSelf(ModBlocks.MAYOI_FENCE.get());
+        dropSelf(ModBlocks.MAYOI_FENCE_GATE.get());
+        add(ModBlocks.MAYOI_DOOR.get(), this::createDoorTable);
+        dropSelf(ModBlocks.MAYOI_TRAPDOOR.get());
+        dropSelf(ModBlocks.MAYOI_PRESSURE_PLATE.get());
+        dropSelf(ModBlocks.MAYOI_BUTTON.get());
+        dropSelf(ModBlocks.MAYOI_SIGN.get());
+        dropSelf(ModBlocks.MAYOI_HANGING_SIGN.get());
+        add(ModBlocks.MAYOI_LEAVES.get(), block -> createLeavesDrops(block, ModBlocks.MAYOI_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        add(ModBlocks.FRUITING_MAYOI_LEAVES.get(), block -> createFruitingLeavesDrops(block, ModBlocks.MAYOI_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        dropSelf(ModBlocks.MAYOI_SAPLING.get());
+        dropSelf(ModBlocks.SUBCON_PALM.get());
+        dropOther(ModBlocks.SUBCON_PALM_STEM.get(), ModItems.SUBCON_PALM.get());
         add(ModBlocks.TOADSTOOL_GRASS.get(), createSingleItemTableWithSilkTouch(ModBlocks.TOADSTOOL_GRASS.get(), ModItems.TOADSTOOL_SOIL.get()));
         add(ModBlocks.BRONZE_ORE.get(), createOreDrop(ModBlocks.BRONZE_ORE.get(), ModItems.RAW_BRONZE.get()));
         add(ModBlocks.VANILLATE.get(), createSingleItemTableWithSilkTouch(ModBlocks.VANILLATE.get(), ModItems.VANILLATE_CRUMBLE.get()));
         add(ModBlocks.TOPPED_VANILLATE.get(), createSingleItemTableWithSilkTouch(ModBlocks.TOPPED_VANILLATE.get(), ModItems.VANILLATE_CRUMBLE.get()));
         add(ModBlocks.STAR_CLUSTER.get(), createSilkTouchOnlyTable(ModBlocks.STAR_CLUSTER.get()).withPool(applyExplosionCondition(ModItems.STAR_CLUSTER.get(), LootPool.lootPool().setRolls(ConstantValue.exactly(2.0F)).add(LootItem.lootTableItem(ModItems.YELLOW_STAR_BIT.get()).when(LootItemRandomChanceCondition.randomChance(0.3F))).add(LootItem.lootTableItem(ModItems.RED_STAR_BIT.get()).when(LootItemRandomChanceCondition.randomChance(0.3F))).add(LootItem.lootTableItem(ModItems.BLUE_STAR_BIT.get()).when(LootItemRandomChanceCondition.randomChance(0.3F))).add(LootItem.lootTableItem(ModItems.PURPLE_STAR_BIT.get()).when(LootItemRandomChanceCondition.randomChance(0.3F)))).when(HAS_NO_SILK_TOUCH)));
+        add(ModBlocks.RED_GRASS.get(), createShearsOnlyDrop(ModBlocks.RED_GRASS.get()).withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(ModItems.COIN.get()).setWeight(1)).add(LootItem.lootTableItem(ModItems.TURNIP.get()).setWeight(4)).when(HAS_SHEARS.invert())));
         add(ModBlocks.WHITE_FLOWERBED.get(), BlockLootSubProvider::createShearsOnlyDrop);
         add(ModBlocks.YELLOW_FLOWERBED.get(), BlockLootSubProvider::createShearsOnlyDrop);
         add(ModBlocks.POTTED_AMANITA_SAPLING.get(), createPotFlowerItemTable(ModItems.AMANITA_SAPLING.get()));
+        add(ModBlocks.POTTED_MAYOI_SAPLING.get(), createPotFlowerItemTable(ModItems.MAYOI_SAPLING.get()));
     }
 
     protected LootTable.Builder createFruitingLeavesDrops(Block leavesBlock, Block saplingBlock, float... chances) {

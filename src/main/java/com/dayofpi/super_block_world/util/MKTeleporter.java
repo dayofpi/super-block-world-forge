@@ -4,6 +4,7 @@ import com.dayofpi.super_block_world.sound.ModSoundEvents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
@@ -52,7 +53,7 @@ public class MKTeleporter implements ITeleporter {
 
     @Override
     public boolean playTeleportSound(ServerPlayer player, ServerLevel sourceWorld, ServerLevel destWorld) {
-        player.playSound(ModSoundEvents.WARP_PAINTING_TRAVEL.get());
+        destWorld.playSound(null, player.getX(), player.getY(), player.getZ(), ModSoundEvents.WARP_PAINTING_TRAVEL.get(), SoundSource.AMBIENT, 1.0F, 1.0F);
         return false;
     }
 }

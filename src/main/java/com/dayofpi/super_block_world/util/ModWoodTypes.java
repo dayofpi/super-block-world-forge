@@ -6,4 +6,5 @@ import net.minecraft.world.level.block.state.properties.WoodType;
 
 public interface ModWoodTypes {
     WoodType AMANITA = WoodType.register(new WoodType(SuperBlockWorld.MOD_ID + ":amanita", BlockSetType.OAK));
+    WoodType MAYOI = WoodType.register(new WoodType(SuperBlockWorld.MOD_ID + ":mayoi", BlockSetType.DARK_OAK));
 }

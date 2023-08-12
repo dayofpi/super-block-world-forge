@@ -125,6 +125,12 @@
       "super_block_world:item/warp_link/start"
     ]
   },
+  "item.turnip.throw": {
+    "subtitle": "subtitles.super_block_world.item.turnip.throw",
+    "sounds": [
+      "super_block_world:item/turnip"
+    ]
+  },
   "item.hammer.throw": {
     "subtitle": "subtitles.super_block_world.item.hammer.throw",
     "sounds": [
@@ -135,6 +141,18 @@
     "subtitle": "subtitles.super_block_world.item.hammer.break",
     "sounds": [
       "super_block_world:item/hammer/break"
+    ]
+  },
+  "item.coin.pickup": {
+    "subtitle": "subtitles.super_block_world.item.coin.pickup",
+    "sounds": [
+      "super_block_world:item/coin"
+    ]
+  },
+  "item.star_coin.pickup": {
+    "subtitle": "subtitles.super_block_world.item.star_coin.pickup",
+    "sounds": [
+      "super_block_world:item/star_coin"
     ]
   },
   "item.star_bit.pickup": {

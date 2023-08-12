@@ -21,6 +21,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
@@ -49,6 +50,8 @@ public class ModEvents {
             event.registerLayerDefinition(LaunchStarModel.LAYER_LOCATION, LaunchStarModel::createBodyLayer);
             event.registerLayerDefinition(ModBoatRenderer.AMANITA_BOAT, BoatModel::createBodyModel);
             event.registerLayerDefinition(ModBoatRenderer.AMANITA_CHEST_BOAT, ChestBoatModel::createBodyModel);
+            event.registerLayerDefinition(ModBoatRenderer.MAYOI_BOAT, BoatModel::createBodyModel);
+            event.registerLayerDefinition(ModBoatRenderer.MAYOI_CHEST_BOAT, ChestBoatModel::createBodyModel);
         }
 
         @SubscribeEvent
@@ -104,28 +107,67 @@ public class ModEvents {
                     case "super_block_world:polished_hardstone_stairs" -> blockMapping.remap(ModBlocks.SMOOTH_HARDSTONE_STAIRS.get());
                     case "super_block_world:polished_hardstone_slab" -> blockMapping.remap(ModBlocks.SMOOTH_HARDSTONE_SLAB.get());
                     case "super_block_world:polished_hardstone_wall" -> blockMapping.remap(ModBlocks.HARDSTONE_WALL.get());
+                    case "super_block_world:dark_amanita_log" -> blockMapping.remap(ModBlocks.MAYOI_LOG.get());
+                    case "super_block_world:dark_amanita_wood" -> blockMapping.remap(ModBlocks.MAYOI_WOOD.get());
+                    case "super_block_world:stripped_dark_amanita_log" -> blockMapping.remap(ModBlocks.STRIPPED_MAYOI_LOG.get());
+                    case "super_block_world:stripped_dark_amanita_wood" -> blockMapping.remap(ModBlocks.STRIPPED_MAYOI_WOOD.get());
+                    case "super_block_world:dark_amanita_planks" -> blockMapping.remap(ModBlocks.MAYOI_PLANKS.get());
+                    case "super_block_world:dark_amanita_stairs" -> blockMapping.remap(ModBlocks.MAYOI_STAIRS.get());
+                    case "super_block_world:dark_amanita_slab" -> blockMapping.remap(ModBlocks.MAYOI_SLAB.get());
+                    case "super_block_world:dark_amanita_fence" -> blockMapping.remap(ModBlocks.MAYOI_FENCE.get());
+                    case "super_block_world:dark_amanita_fence_gate" -> blockMapping.remap(ModBlocks.MAYOI_FENCE_GATE.get());
+                    case "super_block_world:dark_amanita_door" -> blockMapping.remap(ModBlocks.MAYOI_DOOR.get());
+                    case "super_block_world:dark_amanita_trapdoor" -> blockMapping.remap(ModBlocks.MAYOI_TRAPDOOR.get());
+                    case "super_block_world:dark_amanita_pressure_plate" -> blockMapping.remap(ModBlocks.MAYOI_PRESSURE_PLATE.get());
+                    case "super_block_world:dark_amanita_button" -> blockMapping.remap(ModBlocks.MAYOI_BUTTON.get());
+                    case "super_block_world:dark_amanita_sign" -> blockMapping.remap(ModBlocks.MAYOI_SIGN.get());
+                    case "super_block_world:dark_amanita_wall_sign" -> blockMapping.remap(ModBlocks.MAYOI_WALL_SIGN.get());
+                    case "super_block_world:dark_amanita_leaves" -> blockMapping.remap(ModBlocks.MAYOI_LEAVES.get());
+                    case "super_block_world:fruiting_dark_amanita_leaves" -> blockMapping.remap(ModBlocks.FRUITING_MAYOI_LEAVES.get());
+                    case "super_block_world:dark_amanita_sapling" -> blockMapping.remap(ModBlocks.MAYOI_SAPLING.get());
                 }
             });
-            event.getAllMappings(ForgeRegistries.Keys.ITEMS).forEach(blockMapping -> {
-                switch (blockMapping.getKey().toString()) {
-                    case "super_block_world:super_pickax" -> blockMapping.remap(ModItems.SUPER_PICKAXE.get());
-                    case "super_block_world:green_star_bit" -> blockMapping.remap(ModItems.YELLOW_STAR_BIT.get());
+            event.getAllMappings(ForgeRegistries.Keys.ITEMS).forEach(itemMapping -> {
+                switch (itemMapping.getKey().toString()) {
+                    case "super_block_world:polished_hardstone" -> itemMapping.remap(ModItems.SMOOTH_HARDSTONE.get());
+                    case "super_block_world:polished_hardstone_stairs" -> itemMapping.remap(ModItems.SMOOTH_HARDSTONE_STAIRS.get());
+                    case "super_block_world:polished_hardstone_slab" -> itemMapping.remap(ModItems.SMOOTH_HARDSTONE_SLAB.get());
+                    case "super_block_world:polished_hardstone_wall" -> itemMapping.remap(ModItems.HARDSTONE_WALL.get());
+                    case "super_block_world:dark_amanita_log" -> itemMapping.remap(ModItems.MAYOI_LOG.get());
+                    case "super_block_world:dark_amanita_wood" -> itemMapping.remap(ModItems.MAYOI_WOOD.get());
+                    case "super_block_world:stripped_dark_amanita_log" -> itemMapping.remap(ModItems.STRIPPED_MAYOI_LOG.get());
+                    case "super_block_world:stripped_dark_amanita_wood" -> itemMapping.remap(ModItems.STRIPPED_MAYOI_WOOD.get());
+                    case "super_block_world:dark_amanita_planks" -> itemMapping.remap(ModItems.MAYOI_PLANKS.get());
+                    case "super_block_world:dark_amanita_stairs" -> itemMapping.remap(ModItems.MAYOI_STAIRS.get());
+                    case "super_block_world:dark_amanita_slab" -> itemMapping.remap(ModItems.MAYOI_SLAB.get());
+                    case "super_block_world:dark_amanita_fence" -> itemMapping.remap(ModItems.MAYOI_FENCE.get());
+                    case "super_block_world:dark_amanita_fence_gate" -> itemMapping.remap(ModItems.MAYOI_FENCE_GATE.get());
+                    case "super_block_world:dark_amanita_door" -> itemMapping.remap(ModItems.MAYOI_DOOR.get());
+                    case "super_block_world:dark_amanita_trapdoor" -> itemMapping.remap(ModItems.MAYOI_TRAPDOOR.get());
+                    case "super_block_world:dark_amanita_pressure_plate" -> itemMapping.remap(ModItems.MAYOI_PRESSURE_PLATE.get());
+                    case "super_block_world:dark_amanita_button" -> itemMapping.remap(ModItems.MAYOI_BUTTON.get());
+                    case "super_block_world:dark_amanita_sign" -> itemMapping.remap(ModItems.MAYOI_SIGN.get());
+                    case "super_block_world:dark_amanita_leaves" -> itemMapping.remap(ModItems.MAYOI_LEAVES.get());
+                    case "super_block_world:fruiting_dark_amanita_leaves" -> itemMapping.remap(ModItems.FRUITING_MAYOI_LEAVES.get());
+                    case "super_block_world:dark_amanita_sapling" -> itemMapping.remap(ModItems.MAYOI_SAPLING.get());
+                    case "super_block_world:dark_amanita_boat" -> itemMapping.remap(ModItems.MAYOI_BOAT.get());
+                    case "super_block_world:dark_amanita_chest_boat" -> itemMapping.remap(ModItems.MAYOI_CHEST_BOAT.get());
+                    case "super_block_world:super_pickax" -> itemMapping.remap(ModItems.SUPER_PICKAXE.get());
+                    case "super_block_world:green_star_bit" -> itemMapping.remap(ModItems.YELLOW_STAR_BIT.get());
                 }
             });
         }
 
         @SubscribeEvent
         public static void onItemPickup(PlayerEvent.ItemPickupEvent event) {
-            Player entity = event.getEntity();
-            if (entity.level().isClientSide()) {
-                /*if (event.getStack().is(ModBlocks.COIN.get().asItem())) {
-                level.playLocalSound(entity.getX(), entity.getY(), entity.getZ(), ModSounds.COIN_PICKUP.get(), SoundSource.PLAYERS, 0.2F, 1.0F, false);
-            } else if (event.getStack().is(ModBlocks.STAR_COIN.get().asItem())) {
-                level.playLocalSound(entity.getX(), entity.getY(), entity.getZ(), ModSounds.STAR_COIN_PICKUP.get(), SoundSource.PLAYERS, 0.2F, 1.0F, false);
-            } else */
-                if (event.getStack().is(ModTags.Items.STAR_BITS)) {
-                    entity.level().playLocalSound(entity.getX(), entity.getY(), entity.getZ(), ModSoundEvents.STAR_BIT_PICKUP.get(), SoundSource.PLAYERS, 0.2F, 1.0F, false);
-                }
+            Player player = event.getEntity();
+            Level level = player.level();
+            if (event.getStack().is(ModItems.COIN.get())) {
+                level.playSound(null, player.getX(), player.getY(), player.getZ(), ModSoundEvents.COIN_PICKUP.get(), SoundSource.PLAYERS, 0.2F, 1.0F);
+            } else if (event.getStack().is(ModItems.STAR_COIN.get())) {
+                level.playSound(null, player.getX(), player.getY(), player.getZ(), ModSoundEvents.STAR_COIN_PICKUP.get(), SoundSource.PLAYERS, 0.2F, 1.0F);
+            } else if (event.getStack().is(ModTags.Items.STAR_BITS)) {
+                level.playSound(null, player.getX(), player.getY(), player.getZ(), ModSoundEvents.STAR_BIT_PICKUP.get(), SoundSource.PLAYERS, 0.2F, 1.0F);
             }
         }
     }

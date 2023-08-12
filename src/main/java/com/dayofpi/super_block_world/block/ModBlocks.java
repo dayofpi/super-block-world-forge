@@ -2,9 +2,11 @@ package com.dayofpi.super_block_world.block;
 
 import com.dayofpi.super_block_world.SuperBlockWorld;
 import com.dayofpi.super_block_world.block.custom.*;
+import com.dayofpi.super_block_world.sound.ModSoundEvents;
 import com.dayofpi.super_block_world.sound.ModSoundTypes;
 import com.dayofpi.super_block_world.util.ModWoodTypes;
 import com.dayofpi.super_block_world.worldgen.tree.AmanitaTreeGrower;
+import com.dayofpi.super_block_world.worldgen.tree.MayoiTreeGrower;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.*;
@@ -26,8 +28,12 @@ public class ModBlocks {
     public static final MapColor VANILLATE_COLOR = MapColor.COLOR_LIGHT_GRAY;
     public static final MapColor AMANITA_PLANKS_COLOR = MapColor.TERRACOTTA_YELLOW;
     public static final MapColor AMANITA_WOOD_COLOR = MapColor.PODZOL;
+    public static final MapColor MAYOI_PLANKS_COLOR = MapColor.PODZOL;
+    public static final MapColor MAYOI_WOOD_COLOR = MapColor.COLOR_BROWN;
 
     public static final RegistryObject<Block> POWER_STAR = BLOCKS.register("power_star", () -> new PowerStarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.GOLD).sound(SoundType.SMALL_AMETHYST_BUD).lightLevel(value -> 5).instabreak().noCollission().noOcclusion()));
+    public static final RegistryObject<Block> COIN = BLOCKS.register("coin", () -> new CoinBlock(ModSoundEvents.COIN_PICKUP.get(), BlockBehaviour.Properties.of().mapColor(MapColor.GOLD).sound(SoundType.METAL).instabreak().noCollission().noOcclusion()));
+    public static final RegistryObject<Block> STAR_COIN = BLOCKS.register("star_coin", () -> new CoinBlock(ModSoundEvents.STAR_COIN_PICKUP.get(), BlockBehaviour.Properties.of().mapColor(MapColor.GOLD).sound(SoundType.METAL).instabreak().noCollission().noOcclusion()));
     public static final RegistryObject<Block> PULL_BLOCK = BLOCKS.register("pull_block", () -> new PullBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).mapColor(MapColor.COLOR_LIGHT_BLUE).strength(5.0F, 6.0F).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> WHITE_BRONZE = BLOCKS.register("white_bronze", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).mapColor(MapColor.SNOW)));
     public static final RegistryObject<Block> LIGHT_GRAY_BRONZE = BLOCKS.register("light_gray_bronze", () -> new Block(BlockBehaviour.Properties.copy(WHITE_BRONZE.get()).mapColor(MapColor.COLOR_LIGHT_GRAY)));
@@ -96,6 +102,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> MAGENTA_PIPE_BODY = BLOCKS.register("magenta_pipe_body", () -> new PipeBodyBlock(BlockBehaviour.Properties.copy(WHITE_PIPE_BODY.get()).mapColor(MapColor.COLOR_MAGENTA)));
     public static final RegistryObject<Block> PINK_PIPE_BODY = BLOCKS.register("pink_pipe_body", () -> new PipeBodyBlock(BlockBehaviour.Properties.copy(WHITE_PIPE_BODY.get()).mapColor(MapColor.COLOR_PINK)));
     public static final RegistryObject<Block> TOADSTOOL_GRASS = BLOCKS.register("toadstool_grass", () -> new ToadstoolGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK)));
+    public static final RegistryObject<Block> TOADSTOOL_TURF = BLOCKS.register("toadstool_turf", () -> new ToadstoolTurfBlock(BlockBehaviour.Properties.of().mapColor(MapColor.GRASS).strength(0.6F).sound(SoundType.GRASS)));
     public static final RegistryObject<Block> TOADSTOOL_SOIL = BLOCKS.register("toadstool_soil", () -> new ToadstoolSoilBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).mapColor(MapColor.TERRACOTTA_YELLOW)));
     public static final RegistryObject<Block> COARSE_TOADSTOOL_SOIL = BLOCKS.register("coarse_toadstool_soil", () -> new ToadstoolSoilBlock(BlockBehaviour.Properties.copy(TOADSTOOL_SOIL.get())));
     public static final RegistryObject<Block> TOADSTOOL_PATH = BLOCKS.register("toadstool_path", () -> new ToadstoolPathBlock(BlockBehaviour.Properties.copy(Blocks.DIRT_PATH)));
@@ -174,9 +181,33 @@ public class ModBlocks {
     public static final RegistryObject<Block> AMANITA_LEAVES = BLOCKS.register("amanita_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
     public static final RegistryObject<Block> FRUITING_AMANITA_LEAVES = BLOCKS.register("fruiting_amanita_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
     public static final RegistryObject<Block> AMANITA_SAPLING = BLOCKS.register("amanita_sapling", () -> new SaplingBlock(new AmanitaTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+    public static final RegistryObject<Block> MAYOI_LOG = BLOCKS.register("mayoi_log", () -> log(MAYOI_PLANKS_COLOR, MAYOI_WOOD_COLOR));
+    public static final RegistryObject<Block> MAYOI_WOOD = BLOCKS.register("mayoi_wood", () -> log(MAYOI_WOOD_COLOR, MAYOI_WOOD_COLOR));
+    public static final RegistryObject<Block> STRIPPED_MAYOI_LOG = BLOCKS.register("stripped_mayoi_log", () -> log(MAYOI_PLANKS_COLOR, MAYOI_PLANKS_COLOR));
+    public static final RegistryObject<Block> STRIPPED_MAYOI_WOOD = BLOCKS.register("stripped_mayoi_wood", () -> log(MAYOI_PLANKS_COLOR, MAYOI_PLANKS_COLOR));
+    public static final RegistryObject<Block> MAYOI_PLANKS = BLOCKS.register("mayoi_planks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).mapColor(MAYOI_PLANKS_COLOR)));
+    public static final RegistryObject<Block> MAYOI_STAIRS = BLOCKS.register("mayoi_stairs", () -> new ModStairBlock(MAYOI_PLANKS));
+    public static final RegistryObject<Block> MAYOI_SLAB = BLOCKS.register("mayoi_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(MAYOI_PLANKS.get())));
+    public static final RegistryObject<Block> MAYOI_FENCE = BLOCKS.register("mayoi_fence", () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE).mapColor(MAYOI_PLANKS_COLOR)));
+    public static final RegistryObject<Block> MAYOI_FENCE_GATE = BLOCKS.register("mayoi_fence_gate", () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE).mapColor(MAYOI_PLANKS_COLOR), WoodType.OAK));
+    public static final RegistryObject<Block> MAYOI_DOOR = BLOCKS.register("mayoi_door", () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR).mapColor(MAYOI_PLANKS_COLOR), BlockSetType.OAK));
+    public static final RegistryObject<Block> MAYOI_TRAPDOOR = BLOCKS.register("mayoi_trapdoor", () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR).mapColor(MAYOI_PLANKS_COLOR), BlockSetType.OAK));
+    public static final RegistryObject<Block> MAYOI_PRESSURE_PLATE = BLOCKS.register("mayoi_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE).mapColor(MAYOI_PLANKS_COLOR), BlockSetType.OAK));
+    public static final RegistryObject<Block> MAYOI_BUTTON = BLOCKS.register("mayoi_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON), BlockSetType.OAK, 30, true));
+    public static final RegistryObject<Block> MAYOI_SIGN = BLOCKS.register("mayoi_sign", () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN).mapColor(MAYOI_PLANKS_COLOR), ModWoodTypes.MAYOI));
+    public static final RegistryObject<Block> MAYOI_WALL_SIGN = BLOCKS.register("mayoi_wall_sign", () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN).mapColor(MAYOI_PLANKS_COLOR).lootFrom(MAYOI_SIGN), ModWoodTypes.MAYOI));
+    public static final RegistryObject<Block> MAYOI_HANGING_SIGN = BLOCKS.register("mayoi_hanging_sign", () -> new ModHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN).mapColor(MAYOI_PLANKS_COLOR), ModWoodTypes.MAYOI));
+    public static final RegistryObject<Block> MAYOI_WALL_HANGING_SIGN = BLOCKS.register("mayoi_wall_hanging_sign", () -> new ModWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN).mapColor(MAYOI_PLANKS_COLOR).lootFrom(MAYOI_HANGING_SIGN), ModWoodTypes.MAYOI));
+    public static final RegistryObject<Block> MAYOI_LEAVES = BLOCKS.register("mayoi_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
+    public static final RegistryObject<Block> FRUITING_MAYOI_LEAVES = BLOCKS.register("fruiting_mayoi_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
+    public static final RegistryObject<Block> MAYOI_SAPLING = BLOCKS.register("mayoi_sapling", () -> new SaplingBlock(new MayoiTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+    public static final RegistryObject<Block> RED_GRASS = BLOCKS.register("red_grass", () -> new RedGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS).mapColor(MapColor.TERRACOTTA_RED)));
+    public static final RegistryObject<Block> SUBCON_PALM = BLOCKS.register("subcon_palm", () -> new SubconPalmBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).randomTicks().ignitedByLava().pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> SUBCON_PALM_STEM = BLOCKS.register("subcon_palm_stem", () -> new SubconPalmStemBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).forceSolidOn().instabreak().strength(1.0F).sound(SoundType.BAMBOO).noOcclusion().ignitedByLava().pushReaction(PushReaction.DESTROY).isRedstoneConductor((pState, pLevel, pPos) -> false)));
     public static final RegistryObject<Block> WHITE_FLOWERBED = BLOCKS.register("white_flowerbed", () -> new FlowerbedBlock(BlockBehaviour.Properties.of().mapColor(MapColor.SNOW).noCollission().sound(SoundType.PINK_PETALS).pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> YELLOW_FLOWERBED = BLOCKS.register("yellow_flowerbed", () -> new FlowerbedBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).noCollission().sound(SoundType.PINK_PETALS).pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> POTTED_AMANITA_SAPLING = registerFlowerPot("potted_amanita_sapling", AMANITA_SAPLING);
+    public static final RegistryObject<Block> POTTED_MAYOI_SAPLING = registerFlowerPot("potted_mayoi_sapling", MAYOI_SAPLING);
 
     private static RotatedPillarBlock log(MapColor planksColor, MapColor woodColor) {
         return new LogBlock(BlockBehaviour.Properties.of().mapColor((blockState) -> {

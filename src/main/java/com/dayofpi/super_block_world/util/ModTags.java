@@ -12,6 +12,7 @@ public class ModTags {
     public static class Items {
         public static final TagKey<Item> STAR_BITS = tag("star_bits");
         public static final TagKey<Item> AMANITA_LOGS = tag("amanita_logs");
+        public static final TagKey<Item> MAYOI_LOGS = tag("mayoi_logs");
         public static final TagKey<Item> FORGE_INGOTS_BRONZE = forgeTag("ingots/bronze");
         public static final TagKey<Item> FORGE_BLOCKS_BRONZE = forgeTag("blocks/bronze");
         public static final TagKey<Item> FORGE_ORES_BRONZE = forgeTag("ores/bronze");
@@ -31,6 +32,7 @@ public class ModTags {
         public static final TagKey<Block> PIPE_BODIES = tag("pipe_bodies");
         public static final TagKey<Block> BRONZE_BLOCKS = tag("bronze_blocks");
         public static final TagKey<Block> AMANITA_LOGS = tag("amanita_logs");
+        public static final TagKey<Block> MAYOI_LOGS = tag("mayoi_logs");
         public static final TagKey<Block> VANILLATE_TOPPING_REPLACEABLE = tag("vanillate_topping_replaceable");
         public static final TagKey<Block> FORGE_BLOCKS_BRONZE = forgeTag("blocks/bronze");
         public static final TagKey<Block> FORGE_ORES_BRONZE = forgeTag("ores/bronze");

@@ -30,13 +30,17 @@ public class ModRecipeProvider  extends RecipeProvider implements IConditionBuil
         oreSmelting(pWriter, ImmutableList.of(ModItems.RAW_BRONZE.get()), RecipeCategory.MISC, ModItems.BRONZE_INGOT.get(), 0.7f, 200, "bronze_ingot");
         oreBlasting(pWriter, ImmutableList.of(ModItems.RAW_BRONZE.get()), RecipeCategory.MISC, ModItems.BRONZE_INGOT.get(), 0.7f, 100, "bronze_ingot");
 
+        nineBlockStorageRecipes(pWriter, RecipeCategory.MISC, ModItems.COIN.get(), RecipeCategory.MISC, ModItems.STAR_COIN.get());
         nineBlockStorageRecipes(pWriter, RecipeCategory.MISC, ModItems.RAW_BRONZE.get(), RecipeCategory.BUILDING_BLOCKS, ModItems.RAW_BRONZE_BLOCK.get());
         nineBlockStorageRecipesRecipesWithCustomUnpacking(pWriter, RecipeCategory.MISC, ModItems.BRONZE_INGOT.get(), RecipeCategory.BUILDING_BLOCKS, ModItems.BRONZE_BLOCK.get(), "bronze_ingot_from_bronze_block", "bronze_ingot");
 
         woodFromLogs(pWriter, ModItems.AMANITA_WOOD.get(), ModItems.AMANITA_LOG.get());
         woodFromLogs(pWriter, ModItems.STRIPPED_AMANITA_WOOD.get(), ModItems.STRIPPED_AMANITA_LOG.get());
+        woodFromLogs(pWriter, ModItems.MAYOI_WOOD.get(), ModItems.MAYOI_LOG.get());
+        woodFromLogs(pWriter, ModItems.STRIPPED_MAYOI_WOOD.get(), ModItems.STRIPPED_MAYOI_LOG.get());
 
         planksFromLogs(pWriter, ModItems.AMANITA_PLANKS.get(), ModTags.Items.AMANITA_LOGS, 4);
+        planksFromLogs(pWriter, ModItems.MAYOI_PLANKS.get(), ModTags.Items.MAYOI_LOGS, 4);
 
         oneToOneConversionRecipe(pWriter, Items.WHITE_DYE, ModItems.WHITE_FLOWERBED.get(), "white_dye");
         oneToOneConversionRecipe(pWriter, Items.YELLOW_DYE, ModItems.YELLOW_FLOWERBED.get(), "yellow_dye");
@@ -191,6 +195,7 @@ public class ModRecipeProvider  extends RecipeProvider implements IConditionBuil
         stairs(pWriter, ModItems.CLOUD_STAIRS.get(), ModItems.PACKED_CLOUD.get());
         stairs(pWriter, ModItems.RAINBOW_TILE_STAIRS.get(), ModItems.RAINBOW_TILES.get());
         stairs(pWriter, ModItems.AMANITA_STAIRS.get(), ModItems.AMANITA_PLANKS.get());
+        stairs(pWriter, ModItems.MAYOI_STAIRS.get(), ModItems.MAYOI_PLANKS.get());
 
         slab(pWriter, ModItems.BRONZE_SLAB.get(), ModItems.BRONZE_BLOCK.get());
         slab(pWriter, ModItems.VANILLATE_SLAB.get(), ModItems.VANILLATE.get());
@@ -205,6 +210,7 @@ public class ModRecipeProvider  extends RecipeProvider implements IConditionBuil
         slab(pWriter, ModItems.CLOUD_SLAB.get(), ModItems.PACKED_CLOUD.get());
         slab(pWriter, ModItems.RAINBOW_TILE_SLAB.get(), ModItems.RAINBOW_TILES.get());
         slab(pWriter, ModItems.AMANITA_SLAB.get(), ModItems.AMANITA_PLANKS.get());
+        slab(pWriter, ModItems.MAYOI_SLAB.get(), ModItems.MAYOI_PLANKS.get());
 
         wall(pWriter, ModItems.VANILLATE_WALL.get(), ModItems.VANILLATE.get());
         wall(pWriter, ModItems.VANILLATE_BRICK_WALL.get(), ModItems.VANILLATE_BRICKS.get());
@@ -216,27 +222,40 @@ public class ModRecipeProvider  extends RecipeProvider implements IConditionBuil
         wall(pWriter, ModItems.RAINBOW_TILE_WALL.get(), ModItems.RAINBOW_TILES.get());
 
         fenceBuilder(ModItems.AMANITA_FENCE.get(), Ingredient.of(ModItems.AMANITA_PLANKS.get())).unlockedBy("has_amanita_planks", has(ModItems.AMANITA_PLANKS.get())).save(pWriter);
+        fenceBuilder(ModItems.MAYOI_FENCE.get(), Ingredient.of(ModItems.MAYOI_PLANKS.get())).unlockedBy("has_mayoi_planks", has(ModItems.MAYOI_PLANKS.get())).save(pWriter);
 
         fenceGateBuilder(ModItems.AMANITA_FENCE_GATE.get(), Ingredient.of(ModItems.AMANITA_PLANKS.get())).unlockedBy("has_amanita_planks", has(ModItems.AMANITA_PLANKS.get())).save(pWriter);
+        fenceGateBuilder(ModItems.MAYOI_FENCE_GATE.get(), Ingredient.of(ModItems.MAYOI_PLANKS.get())).unlockedBy("has_mayoi_planks", has(ModItems.MAYOI_PLANKS.get())).save(pWriter);
 
         doorBuilder(ModItems.AMANITA_DOOR.get(), Ingredient.of(ModItems.AMANITA_PLANKS.get())).unlockedBy("has_amanita_planks", has(ModItems.AMANITA_PLANKS.get())).save(pWriter);
+        doorBuilder(ModItems.MAYOI_DOOR.get(), Ingredient.of(ModItems.MAYOI_PLANKS.get())).unlockedBy("has_mayoi_planks", has(ModItems.MAYOI_PLANKS.get())).save(pWriter);
 
         trapdoorBuilder(ModItems.AMANITA_TRAPDOOR.get(), Ingredient.of(ModItems.AMANITA_PLANKS.get())).unlockedBy("has_amanita_planks", has(ModItems.AMANITA_PLANKS.get())).save(pWriter);
+        trapdoorBuilder(ModItems.MAYOI_TRAPDOOR.get(), Ingredient.of(ModItems.MAYOI_PLANKS.get())).unlockedBy("has_mayoi_planks", has(ModItems.MAYOI_PLANKS.get())).save(pWriter);
 
         pressurePlate(pWriter, ModItems.AMANITA_PRESSURE_PLATE.get(), ModItems.AMANITA_PLANKS.get());
+        pressurePlate(pWriter, ModItems.MAYOI_PRESSURE_PLATE.get(), ModItems.MAYOI_PLANKS.get());
 
         buttonBuilder(ModItems.AMANITA_BUTTON.get(), Ingredient.of(ModItems.AMANITA_PLANKS.get())).unlockedBy("has_amanita_planks", has(ModItems.AMANITA_PLANKS.get())).save(pWriter);
+        buttonBuilder(ModItems.MAYOI_BUTTON.get(), Ingredient.of(ModItems.MAYOI_PLANKS.get())).unlockedBy("has_mayoi_planks", has(ModItems.MAYOI_PLANKS.get())).save(pWriter);
 
         signBuilder(ModItems.AMANITA_SIGN.get(), Ingredient.of(ModItems.AMANITA_PLANKS.get())).unlockedBy("has_amanita_planks", has(ModItems.AMANITA_PLANKS.get())).save(pWriter);
+        signBuilder(ModItems.MAYOI_SIGN.get(), Ingredient.of(ModItems.MAYOI_PLANKS.get())).unlockedBy("has_mayoi_planks", has(ModItems.MAYOI_PLANKS.get())).save(pWriter);
+
         hangingSign(pWriter, ModItems.AMANITA_HANGING_SIGN.get(), ModItems.STRIPPED_AMANITA_LOG.get());
+        hangingSign(pWriter, ModItems.MAYOI_HANGING_SIGN.get(), ModItems.STRIPPED_MAYOI_LOG.get());
 
         woodenBoat(pWriter, ModItems.AMANITA_BOAT.get(), ModItems.AMANITA_PLANKS.get());
+        woodenBoat(pWriter, ModItems.MAYOI_BOAT.get(), ModItems.MAYOI_PLANKS.get());
+
         chestBoat(pWriter, ModItems.AMANITA_CHEST_BOAT.get(), ModItems.AMANITA_PLANKS.get());
+        chestBoat(pWriter, ModItems.MAYOI_CHEST_BOAT.get(), ModItems.MAYOI_PLANKS.get());
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.POWER_SHARD.get(), 5).requires(ModItems.POWER_STAR.get()).unlockedBy("has_power_star", has(ModItems.POWER_STAR.get())).save(pWriter);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModItems.PULL_BLOCK.get()).pattern("0X0").pattern("X0X").pattern("0X0").define('0', ModItems.BLUE_STAR_BIT.get()).define('X', Items.IRON_INGOT).unlockedBy("has_blue_star_bit", has(ModItems.BLUE_STAR_BIT.get())).save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.FLAGPOLE.get(), 2).pattern("#").pattern("#").pattern("#").define('#', ModItems.BRONZE_INGOT.get()).unlockedBy("has_bronze_ingot", has(ModItems.BRONZE_INGOT.get())).save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.TOADSTOOL_TURF.get(), 3).pattern("##").pattern("##").define('#', ModItems.TOADSTOOL_GRASS.get()).unlockedBy("has_toadstool_grass", has(ModItems.TOADSTOOL_GRASS.get())).save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.COARSE_TOADSTOOL_SOIL.get(), 4).pattern("DG").pattern("GD").define('D', ModItems.TOADSTOOL_SOIL.get()).define('G', Items.GRAVEL).unlockedBy("has_material", has(ModItems.TOADSTOOL_SOIL.get())).save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.VANILLATE_BRICKS.get(), 4).pattern("##").pattern("##").define('#', ModItems.VANILLATE.get()).unlockedBy("has_material", has(ModItems.VANILLATE.get())).save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.VANILLATE_TILES.get(), 4).pattern("##").pattern("##").define('#', ModItems.VANILLATE_BRICKS.get()).unlockedBy("has_material", has(ModItems.VANILLATE_BRICKS.get())).save(pWriter);

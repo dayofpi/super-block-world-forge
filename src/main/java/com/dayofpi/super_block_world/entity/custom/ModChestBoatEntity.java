@@ -32,6 +32,9 @@ public class ModChestBoatEntity extends ChestBoat {
             case AMANITA -> {
                 return ModItems.AMANITA_CHEST_BOAT.get();
             }
+            case MAYOI -> {
+                return ModItems.MAYOI_CHEST_BOAT.get();
+            }
         }
         return super.getDropItem();
     }
