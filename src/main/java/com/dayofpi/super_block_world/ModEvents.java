@@ -5,10 +5,7 @@ import com.dayofpi.super_block_world.block.client.FlagRenderer;
 import com.dayofpi.super_block_world.entity.ModEntityTypes;
 import com.dayofpi.super_block_world.entity.SpaceCreature;
 import com.dayofpi.super_block_world.entity.client.*;
-import com.dayofpi.super_block_world.entity.custom.BoomBoomEntity;
-import com.dayofpi.super_block_world.entity.custom.HungryLumaEntity;
-import com.dayofpi.super_block_world.entity.custom.LumaEntity;
-import com.dayofpi.super_block_world.entity.custom.ShyGuyEntity;
+import com.dayofpi.super_block_world.entity.custom.*;
 import com.dayofpi.super_block_world.item.ModItems;
 import com.dayofpi.super_block_world.item.custom.SuperPickaxeItem;
 import com.dayofpi.super_block_world.sound.ModSoundEvents;
@@ -19,6 +16,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -45,6 +43,7 @@ public class ModEvents {
             event.registerLayerDefinition(ShyGuyModel.LAYER_LOCATION, ShyGuyModel::createBodyLayer);
             event.registerLayerDefinition(LumaModel.LAYER_LOCATION, LumaModel::createBodyLayer);
             event.registerLayerDefinition(HungryLumaModel.LAYER_LOCATION, HungryLumaModel::createBodyLayer);
+            event.registerLayerDefinition(UnagiModel.LAYER_LOCATION, UnagiModel::createBodyLayer);
             event.registerLayerDefinition(BoomBoomModel.LAYER_LOCATION, BoomBoomModel::createBodyLayer);
             event.registerLayerDefinition(WarpPaintingModel.LAYER_LOCATION, WarpPaintingModel::createBodyLayer);
             event.registerLayerDefinition(LaunchStarModel.LAYER_LOCATION, LaunchStarModel::createBodyLayer);
@@ -59,6 +58,7 @@ public class ModEvents {
             event.put(ModEntityTypes.SHY_GUY.get(), ShyGuyEntity.createAttributes().build());
             event.put(ModEntityTypes.LUMA.get(), LumaEntity.createAttributes().build());
             event.put(ModEntityTypes.HUNGRY_LUMA.get(), HungryLumaEntity.createAttributes().build());
+            event.put(ModEntityTypes.UNAGI.get(), Monster.createMonsterAttributes().build());
             event.put(ModEntityTypes.BOOM_BOOM.get(), BoomBoomEntity.createAttributes().build());
         }
 
@@ -67,6 +67,7 @@ public class ModEvents {
             event.register(ModEntityTypes.SHY_GUY.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ShyGuyEntity::checkShyGuySpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
             event.register(ModEntityTypes.LUMA.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SpaceCreature::checkSpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
             event.register(ModEntityTypes.HUNGRY_LUMA.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SpaceCreature::checkSpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
+            event.register(ModEntityTypes.UNAGI.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, UnagiEntity::checkUnagiSpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
         }
     }
 

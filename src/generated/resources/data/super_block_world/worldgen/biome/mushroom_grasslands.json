@@ -87,6 +87,12 @@
         "weight": 100
       },
       {
+        "type": "super_block_world:unagi",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 23
+      },
+      {
         "type": "minecraft:enderman",
         "maxCount": 2,
         "minCount": 1,

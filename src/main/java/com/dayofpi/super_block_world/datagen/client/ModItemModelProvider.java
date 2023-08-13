@@ -172,6 +172,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         spawnEggItem(ModItems.SHY_GUY_SPAWN_EGG);
         spawnEggItem(ModItems.LUMA_SPAWN_EGG);
         spawnEggItem(ModItems.HUNGRY_LUMA_SPAWN_EGG);
+        spawnEggItem(ModItems.UNAGI_SPAWN_EGG);
         spawnEggItem(ModItems.BOOM_BOOM_SPAWN_EGG);
     }
 

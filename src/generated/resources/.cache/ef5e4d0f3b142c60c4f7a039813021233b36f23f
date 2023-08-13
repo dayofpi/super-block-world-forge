@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-12T10:28:17.4222143	Item Models: super_block_world
+// 1.20.1	2023-08-12T17:30:38.7709925	Item Models: super_block_world
 951ff713e9d356e2a576a4195e0a93515a78324a assets/super_block_world/models/item/amanita_boat.json
 89afde42fed3f7666a6dd0a05024406515ca15f1 assets/super_block_world/models/item/amanita_button.json
 56ae6bddf746f5829283cec82e727e9f5a4aa929 assets/super_block_world/models/item/amanita_chest_boat.json
@@ -132,6 +132,7 @@ f13914edace9146a0030aceae6e76f6a4bfeea1e assets/super_block_world/models/item/to
 eb36c68331fc21ccdc965afdaa01c28cb9e8aeff assets/super_block_world/models/item/toadstool_path.json
 e1d43d3c1dad59bbcc6a2d10147e0351a93f94d7 assets/super_block_world/models/item/toadstool_turf.json
 01b0dc1ec3e9e2afb94dba64e13ebc1110607199 assets/super_block_world/models/item/turnip.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/super_block_world/models/item/unagi_spawn_egg.json
 60a71ea7a72827659e594c2ccf0e6a72e7c3bb09 assets/super_block_world/models/item/vanillate_brick_slab.json
 c4c5e7dfe2e0a98ce684911d7613a44766b5b8bb assets/super_block_world/models/item/vanillate_brick_stairs.json
 205011558aaa7277981c3173f5b9a508b340d952 assets/super_block_world/models/item/vanillate_brick_wall.json

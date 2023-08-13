@@ -1,9 +1,7 @@
 package com.dayofpi.super_block_world.entity.custom;
 
 import com.dayofpi.super_block_world.entity.SpaceCreature;
-import com.dayofpi.super_block_world.sound.ModSoundEvents;
 import net.minecraft.core.BlockPos;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.AnimationState;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
@@ -15,7 +13,6 @@ import net.minecraft.world.entity.ai.navigation.FlyingPathNavigation;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import org.jetbrains.annotations.Nullable;
 
 public abstract class AbstractLuma extends PathfinderMob implements SpaceCreature {
     public final AnimationState idleAnimationState = new AnimationState();
@@ -41,12 +38,6 @@ public abstract class AbstractLuma extends PathfinderMob implements SpaceCreatur
     @Override
     public int getMaxSpawnClusterSize() {
         return 1;
-    }
-
-    @Nullable
-    @Override
-    protected SoundEvent getDeathSound() {
-        return ModSoundEvents.LUMA_DEATH.get();
     }
 
     @Override

@@ -58,6 +58,7 @@ public class ModBiomeFeatures {
 
     public static void addCaveMobs(MobSpawnSettings.Builder builder) {
         builder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntityTypes.SHY_GUY.get(), 100, 4, 4));
+        builder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntityTypes.UNAGI.get(), 2, 1, 1));
     }
 
     public static Music createBiomeMusic(RegistryObject<SoundEvent> event) {

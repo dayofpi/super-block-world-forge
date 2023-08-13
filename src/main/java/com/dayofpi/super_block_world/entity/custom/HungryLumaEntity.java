@@ -52,6 +52,12 @@ public class HungryLumaEntity extends AbstractLuma {
         return ModSoundEvents.HUNGRY_LUMA_HURT.get();
     }
 
+    @Nullable
+    @Override
+    protected SoundEvent getDeathSound() {
+        return ModSoundEvents.HUNGRY_LUMA_DEATH.get();
+    }
+
     @Override
     public void aiStep() {
         if (this.isFull()) {

@@ -210,6 +210,7 @@ public class ModCreativeTabs {
         output.accept(ModItems.SHY_GUY_SPAWN_EGG.get());
         output.accept(ModItems.LUMA_SPAWN_EGG.get());
         output.accept(ModItems.HUNGRY_LUMA_SPAWN_EGG.get());
+        output.accept(ModItems.UNAGI_SPAWN_EGG.get());
         output.accept(ModItems.BOOM_BOOM_SPAWN_EGG.get());
     }).build());
 }

@@ -217,6 +217,7 @@ public class ModItems {
     public static final RegistryObject<Item> SHY_GUY_SPAWN_EGG = ITEMS.register("shy_guy_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.SHY_GUY, 0xed4125, 0x3785db, new Item.Properties()));
     public static final RegistryObject<Item> LUMA_SPAWN_EGG = ITEMS.register("luma_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.LUMA, 0xffe243, 0xffe243, new Item.Properties()));
     public static final RegistryObject<Item> HUNGRY_LUMA_SPAWN_EGG = ITEMS.register("hungry_luma_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.HUNGRY_LUMA, 0xffdea3, 0xff696c, new Item.Properties()));
+    public static final RegistryObject<Item> UNAGI_SPAWN_EGG = ITEMS.register("unagi_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.UNAGI, 0x941531, 0x510e2b, new Item.Properties()));
     public static final RegistryObject<Item> BOOM_BOOM_SPAWN_EGG = ITEMS.register("boom_boom_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.BOOM_BOOM, 0xcc7402, 0xffd22c, new Item.Properties()));
 
     private static RegistryObject<Item> registerBlockItem(String name, Supplier<Block> blockSupplier) {

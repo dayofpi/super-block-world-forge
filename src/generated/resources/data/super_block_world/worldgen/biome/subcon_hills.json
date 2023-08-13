@@ -86,6 +86,12 @@
         "maxCount": 4,
         "minCount": 4,
         "weight": 100
+      },
+      {
+        "type": "super_block_world:unagi",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 23
       }
     ],
     "underground_water_creature": [],

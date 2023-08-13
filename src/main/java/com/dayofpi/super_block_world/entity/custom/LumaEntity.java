@@ -66,6 +66,12 @@ public class LumaEntity extends AbstractLuma implements RangedAttackMob {
         return ModSoundEvents.LUMA_HURT.get();
     }
 
+    @Nullable
+    @Override
+    protected SoundEvent getDeathSound() {
+        return ModSoundEvents.LUMA_DEATH.get();
+    }
+
     @Override
     public void performRangedAttack(LivingEntity pTarget, float pVelocity) {
         StarBitEntity starBit = new StarBitEntity(this.level(), this);

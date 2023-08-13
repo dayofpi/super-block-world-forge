@@ -264,6 +264,54 @@
       }
     ]
   },
+  "entity.unagi.death": {
+    "subtitle": "subtitles.super_block_world.entity.unagi.death",
+    "sounds": [
+      "super_block_world:entity/unagi/death"
+    ]
+  },
+  "entity.unagi.hurt": {
+    "subtitle": "subtitles.super_block_world.entity.unagi.hurt",
+    "sounds": [
+      {
+        "name": "entity/fish/hurt1",
+        "pitch": 0.6
+      },
+      {
+        "name": "entity/fish/hurt2",
+        "pitch": 0.6
+      },
+      {
+        "name": "entity/fish/hurt3",
+        "pitch": 0.6
+      },
+      {
+        "name": "entity/fish/hurt4",
+        "pitch": 0.6
+      }
+    ]
+  },
+  "entity.unagi.flop": {
+    "subtitle": "subtitles.super_block_world.entity.unagi.flop",
+    "sounds": [
+      {
+        "name": "entity/fish/flop1",
+        "pitch": 0.6
+      },
+      {
+        "name": "entity/fish/flop2",
+        "pitch": 0.6
+      },
+      {
+        "name": "entity/fish/flop3",
+        "pitch": 0.6
+      },
+      {
+        "name": "entity/fish/flop4",
+        "pitch": 0.6
+      }
+    ]
+  },
   "entity.boom_boom.ambient": {
     "subtitle": "subtitles.super_block_world.entity.boom_boom.ambient",
     "sounds": [

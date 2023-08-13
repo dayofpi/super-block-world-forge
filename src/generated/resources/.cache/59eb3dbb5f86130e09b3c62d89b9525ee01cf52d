@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-12T10:28:17.4362234	Loot Tables
+// 1.20.1	2023-08-12T17:30:38.7866165	Loot Tables
 5d1f93b453c24e13702ccb3268b191dd56971fdf data/super_block_world/loot_tables/blocks/amanita_button.json
 73b7b2317810e869c9cfc80a1a76ab0c43f37f94 data/super_block_world/loot_tables/blocks/amanita_door.json
 2135acf3507d2c98b6fc8da109d6d5f23f118525 data/super_block_world/loot_tables/blocks/amanita_fence.json
@@ -180,3 +180,4 @@ f36caf6778a486e22a034730988e775879c7b71f data/super_block_world/loot_tables/enti
 da66a9f9dd94442dfa39b9b26ad8ea9c07268286 data/super_block_world/loot_tables/entities/hungry_luma.json
 7627624a7a3c4532ddd61946011e8a1cc8e252ab data/super_block_world/loot_tables/entities/luma.json
 b1030ecef919f234c2780b8cede8174541a0329b data/super_block_world/loot_tables/entities/shy_guy.json
+0e101ba9862c7549150cac487a5d7ac9cb13c365 data/super_block_world/loot_tables/entities/unagi.json

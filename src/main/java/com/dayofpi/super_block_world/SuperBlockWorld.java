@@ -189,6 +189,7 @@ public class SuperBlockWorld {
                 EntityRenderers.register(ModEntityTypes.SHY_GUY.get(), ShyGuyRenderer::new);
                 EntityRenderers.register(ModEntityTypes.LUMA.get(), LumaRenderer::new);
                 EntityRenderers.register(ModEntityTypes.HUNGRY_LUMA.get(), HungryLumaRenderer::new);
+                EntityRenderers.register(ModEntityTypes.UNAGI.get(), UnagiRenderer::new);
                 EntityRenderers.register(ModEntityTypes.BOOM_BOOM.get(), BoomBoomRenderer::new);
                 EntityRenderers.register(ModEntityTypes.TURNIP.get(), ThrownItemRenderer::new);
                 EntityRenderers.register(ModEntityTypes.BOMB.get(), ThrownItemRenderer::new);

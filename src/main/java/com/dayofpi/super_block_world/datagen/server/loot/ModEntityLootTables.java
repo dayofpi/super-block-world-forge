@@ -28,6 +28,7 @@ public class ModEntityLootTables extends EntityLootSubProvider {
         add(ModEntityTypes.SHY_GUY.get(), LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(ModItems.SUBCON_THREAD.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F))).apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F)))).when(LootItemKilledByPlayerCondition.killedByPlayer())).withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(ModItems.SHY_GUY_MASK.get())).when(LootItemKilledByPlayerCondition.killedByPlayer()).when(LootItemRandomChanceWithLootingCondition.randomChanceAndLootingBoost(0.2F, 0.02F))));
         add(ModEntityTypes.LUMA.get(), LootTable.lootTable());
         add(ModEntityTypes.HUNGRY_LUMA.get(), LootTable.lootTable());
+        add(ModEntityTypes.UNAGI.get(), LootTable.lootTable());
         add(ModEntityTypes.BOOM_BOOM.get(), LootTable.lootTable());
     }
 

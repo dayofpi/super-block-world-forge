@@ -45,6 +45,9 @@ public class ModSoundEvents {
     public static final RegistryObject<SoundEvent> HUNGRY_LUMA_POOF = registerSoundEvent("entity.hungry_luma.poof");
     public static final RegistryObject<SoundEvent> HUNGRY_LUMA_HURT = registerSoundEvent("entity.hungry_luma.hurt");
     public static final RegistryObject<SoundEvent> HUNGRY_LUMA_DEATH = registerSoundEvent("entity.hungry_luma.death");
+    public static final RegistryObject<SoundEvent> UNAGI_HURT = registerSoundEvent("entity.unagi.hurt");
+    public static final RegistryObject<SoundEvent> UNAGI_DEATH = registerSoundEvent("entity.unagi.death");
+    public static final RegistryObject<SoundEvent> UNAGI_FLOP = registerSoundEvent("entity.unagi.flop");
     public static final RegistryObject<SoundEvent> BOOM_BOOM_AMBIENT = registerSoundEvent("entity.boom_boom.ambient");
     public static final RegistryObject<SoundEvent> BOOM_BOOM_SPIN = registerSoundEvent("entity.boom_boom.spin");
     public static final RegistryObject<SoundEvent> BOOM_BOOM_DIZZY = registerSoundEvent("entity.boom_boom.dizzy");
