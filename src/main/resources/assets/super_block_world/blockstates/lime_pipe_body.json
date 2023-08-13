@@ -72,7 +72,7 @@
       },
       "apply": {
         "model": "super_block_world:block/lime_pipe_link",
-        "x": 90,
+        "x": -90,
         "y": 180
       }
     },
