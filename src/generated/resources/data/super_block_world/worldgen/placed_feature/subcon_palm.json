@@ -29,7 +29,12 @@
           },
           {
             "type": "minecraft:matching_blocks",
-            "blocks": "super_block_world:toadstool_turf",
+            "blocks": [
+              "super_block_world:toadstool_grass",
+              "super_block_world:toadstool_turf",
+              "super_block_world:gritzy_sand",
+              "minecraft:sand"
+            ],
             "offset": [
               0,
               -1,

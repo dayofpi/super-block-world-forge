@@ -7,6 +7,14 @@
     {
       "id": "super_block_world:subcon_hills",
       "required": false
+    },
+    {
+      "id": "super_block_world:gritzy_desert",
+      "required": false
+    },
+    {
+      "id": "super_block_world:desert_oasis",
+      "required": false
     }
   ]
 }

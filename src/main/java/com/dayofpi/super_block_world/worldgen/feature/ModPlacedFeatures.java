@@ -17,6 +17,7 @@ import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.util.valueproviders.WeightedListInt;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -48,6 +49,7 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> ORE_CRUMBLE = registerKey("ore_crumble");
     public static final ResourceKey<PlacedFeature> ORE_TOADSTONE = registerKey("ore_toadstone");
     public static final ResourceKey<PlacedFeature> ORE_HARDSTONE = registerKey("ore_hardstone");
+    public static final ResourceKey<PlacedFeature> ROYALITE_GEODE = registerKey("royalite_geode");
     public static final ResourceKey<PlacedFeature> STAR_CLUSTER = registerKey("star_cluster");
     public static final ResourceKey<PlacedFeature> WARP_PIPE = registerKey("warp_pipe");
     public static final ResourceKey<PlacedFeature> LINKED_WARP_PIPE = registerKey("linked_warp_pipe");
@@ -65,7 +67,7 @@ public class ModPlacedFeatures {
         register(context, RED_TOAD_STOOL, configuredFeatures.getOrThrow(ModConfiguredFeatures.PATCH_RED_TOAD_STOOL), ImmutableList.of(RarityFilter.onAverageOnceEvery(3), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
         register(context, RED_GRASS, configuredFeatures.getOrThrow(ModConfiguredFeatures.PATCH_RED_GRASS), ImmutableList.of(CountPlacement.of(4), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(-24), VerticalAnchor.absolute(200)), BiomeFilter.biome()));
         register(context, RED_GRASS_EXTRA, configuredFeatures.getOrThrow(ModConfiguredFeatures.PATCH_RED_GRASS), ImmutableList.of(RarityFilter.onAverageOnceEvery(18), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
-        register(context, SUBCON_PALM, configuredFeatures.getOrThrow(ModConfiguredFeatures.SUBCON_PALM), ImmutableList.of(CountPlacement.of(UniformInt.of(0, 3)), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BlockPredicateFilter.forPredicate(BlockPredicate.allOf(BlockPredicate.ONLY_IN_AIR_PREDICATE, BlockPredicate.matchesBlocks(new Vec3i(0, -1, 0), ModBlocks.TOADSTOOL_TURF.get()))), BiomeFilter.biome()));
+        register(context, SUBCON_PALM, configuredFeatures.getOrThrow(ModConfiguredFeatures.SUBCON_PALM), ImmutableList.of(CountPlacement.of(UniformInt.of(0, 3)), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BlockPredicateFilter.forPredicate(BlockPredicate.allOf(BlockPredicate.ONLY_IN_AIR_PREDICATE, BlockPredicate.matchesBlocks(new Vec3i(0, -1, 0), ModBlocks.TOADSTOOL_GRASS.get(), ModBlocks.TOADSTOOL_TURF.get(), ModBlocks.GRITZY_SAND.get(), Blocks.SAND))), BiomeFilter.biome()));
         register(context, BEANSTALK, configuredFeatures.getOrThrow(ModConfiguredFeatures.BEANSTALK), ImmutableList.of(RarityFilter.onAverageOnceEvery(8), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BlockPredicateFilter.forPredicate(BlockPredicate.allOf(BlockPredicate.ONLY_IN_AIR_PREDICATE, BlockPredicate.matchesBlocks(new Vec3i(0, -1, 0), ModBlocks.TOADSTOOL_GRASS.get(), ModBlocks.TOADSTOOL_SOIL.get(), ModBlocks.TOADSTOOL_TURF.get()))), BiomeFilter.biome()));
         register(context, BEANSTALK_COMMON, configuredFeatures.getOrThrow(ModConfiguredFeatures.BEANSTALK), ImmutableList.of(RarityFilter.onAverageOnceEvery(3), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BlockPredicateFilter.forPredicate(BlockPredicate.allOf(BlockPredicate.ONLY_IN_AIR_PREDICATE, BlockPredicate.matchesBlocks(new Vec3i(0, -1, 0), ModBlocks.TOADSTOOL_GRASS.get(), ModBlocks.TOADSTOOL_SOIL.get(), ModBlocks.TOADSTOOL_TURF.get()))), BiomeFilter.biome()));
         register(context, FLOWERBED_WHITE, configuredFeatures.getOrThrow(ModConfiguredFeatures.FLOWERBED_WHITE), ImmutableList.of(RarityFilter.onAverageOnceEvery(18), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
@@ -78,6 +80,7 @@ public class ModPlacedFeatures {
         register(context, ORE_CRUMBLE, configuredFeatures.getOrThrow(ModConfiguredFeatures.ORE_CRUMBLE), ImmutableList.of(CountPlacement.of(32), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.BOTTOM, VerticalAnchor.absolute(100)), BiomeFilter.biome()));
         register(context, ORE_TOADSTONE, configuredFeatures.getOrThrow(ModConfiguredFeatures.ORE_TOADSTONE), ImmutableList.of(CountPlacement.of(3), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(16), VerticalAnchor.absolute(190)), BiomeFilter.biome()));
         register(context, ORE_HARDSTONE, configuredFeatures.getOrThrow(ModConfiguredFeatures.ORE_HARDSTONE), ImmutableList.of(CountPlacement.of(2), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(-32), VerticalAnchor.absolute(190)), BiomeFilter.biome()));
+        register(context, ROYALITE_GEODE, configuredFeatures.getOrThrow(ModConfiguredFeatures.ROYALITE_GEODE), ImmutableList.of(RarityFilter.onAverageOnceEvery(24), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(6), VerticalAnchor.absolute(30)), BiomeFilter.biome()));
         register(context, STAR_CLUSTER, configuredFeatures.getOrThrow(ModConfiguredFeatures.STAR_CLUSTER), ImmutableList.of(RarityFilter.onAverageOnceEvery(2), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(-16), VerticalAnchor.absolute(63)), BiomeFilter.biome()));
         register(context, WARP_PIPE, configuredFeatures.getOrThrow(ModConfiguredFeatures.WARP_PIPE), ImmutableList.of(CountPlacement.of(14), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(-24), VerticalAnchor.absolute(128)), BiomeFilter.biome()));
         register(context, LINKED_WARP_PIPE, configuredFeatures.getOrThrow(ModConfiguredFeatures.LINKED_WARP_PIPE), ImmutableList.of(CountPlacement.of(3), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(-16), VerticalAnchor.absolute(42)), BiomeFilter.biome()));

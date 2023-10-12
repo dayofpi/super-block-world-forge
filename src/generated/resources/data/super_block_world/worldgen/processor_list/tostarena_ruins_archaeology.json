@@ -1,0 +1,50 @@
+{
+  "processors": [
+    {
+      "blocks": [
+        {
+          "Name": "minecraft:air"
+        }
+      ],
+      "processor_type": "minecraft:block_ignore"
+    },
+    {
+      "processor_type": "minecraft:rule",
+      "rules": [
+        {
+          "input_predicate": {
+            "block": "super_block_world:cut_gritzy_sandstone",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.2
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "super_block_world:gritzy_sand"
+          }
+        },
+        {
+          "block_entity_modifier": {
+            "type": "minecraft:append_loot",
+            "loot_table": "super_block_world:archaeology/tostarena_ruins"
+          },
+          "input_predicate": {
+            "block": "super_block_world:cut_gritzy_sandstone",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.02
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "super_block_world:suspicious_gritzy_sand",
+            "Properties": {
+              "dusted": "0"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

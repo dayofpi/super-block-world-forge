@@ -1,0 +1,8 @@
+{
+  "render_type": "cutout",
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "super_block_world:block/trampoline_top",
+    "side": "super_block_world:block/trampoline"
+  }
+}

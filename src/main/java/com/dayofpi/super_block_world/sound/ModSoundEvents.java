@@ -18,7 +18,13 @@ public class ModSoundEvents {
     public static final RegistryObject<SoundEvent> TOADSTONE_PLACE = registerSoundEvent("block.toadstone.place");
     public static final RegistryObject<SoundEvent> TOADSTONE_HIT = registerSoundEvent("block.toadstone.hit");
     public static final RegistryObject<SoundEvent> TOADSTONE_FALL = registerSoundEvent("block.toadstone.fall");
+    public static final RegistryObject<SoundEvent> ROYALITE_BREAK = registerSoundEvent("block.royalite.break");
+    public static final RegistryObject<SoundEvent> ROYALITE_STEP = registerSoundEvent("block.royalite.step");
+    public static final RegistryObject<SoundEvent> ROYALITE_PLACE = registerSoundEvent("block.royalite.place");
+    public static final RegistryObject<SoundEvent> ROYALITE_HIT = registerSoundEvent("block.royalite.hit");
+    public static final RegistryObject<SoundEvent> ROYALITE_FALL = registerSoundEvent("block.royalite.fall");
     public static final RegistryObject<SoundEvent> PULL_BLOCK_PULL = registerSoundEvent("block.pull_block.pull");
+    public static final RegistryObject<SoundEvent> TRAMPOLINE_RELEASE = registerSoundEvent("block.trampoline.release");
     public static final RegistryObject<SoundEvent> WARP_PIPE_TELEPORT = registerSoundEvent("block.warp_pipe.teleport");
     public static final RegistryObject<SoundEvent> POWER_STAR_SHINE = registerSoundEvent("block.power_star.shine");
     public static final RegistryObject<SoundEvent> WARP_LINK_BREAK = registerSoundEvent("item.warp_link.break");
@@ -45,6 +51,11 @@ public class ModSoundEvents {
     public static final RegistryObject<SoundEvent> HUNGRY_LUMA_POOF = registerSoundEvent("entity.hungry_luma.poof");
     public static final RegistryObject<SoundEvent> HUNGRY_LUMA_HURT = registerSoundEvent("entity.hungry_luma.hurt");
     public static final RegistryObject<SoundEvent> HUNGRY_LUMA_DEATH = registerSoundEvent("entity.hungry_luma.death");
+    public static final RegistryObject<SoundEvent> OCTOOMBA_AMBIENT = registerSoundEvent("entity.octoomba.ambient");
+    public static final RegistryObject<SoundEvent> OCTOOMBA_HURT = registerSoundEvent("entity.octoomba.hurt");
+    public static final RegistryObject<SoundEvent> OCTOOMBA_DEATH = registerSoundEvent("entity.octoomba.death");
+    public static final RegistryObject<SoundEvent> OCTOOMBA_STEP = registerSoundEvent("entity.octoomba.step");
+    public static final RegistryObject<SoundEvent> OCTOOMBA_SHOOT = registerSoundEvent("entity.octoomba.shoot");
     public static final RegistryObject<SoundEvent> UNAGI_HURT = registerSoundEvent("entity.unagi.hurt");
     public static final RegistryObject<SoundEvent> UNAGI_DEATH = registerSoundEvent("entity.unagi.death");
     public static final RegistryObject<SoundEvent> UNAGI_FLOP = registerSoundEvent("entity.unagi.flop");

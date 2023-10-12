@@ -13,15 +13,25 @@ import net.minecraft.world.level.biome.*;
 public class ModBiomes {
     public static final ResourceKey<Biome> MUSHROOM_GRASSLANDS = register("mushroom_grasslands");
     public static final ResourceKey<Biome> SUBCON_HILLS = register("subcon_hills");
+    public static final ResourceKey<Biome> GRITZY_DESERT = register("gritzy_desert");
+    public static final ResourceKey<Biome> DESERT_OASIS = register("desert_oasis");
+    public static final ResourceKey<Biome> FOSSIL_FALLS = register("fossil_falls");
+
     private static final int GRASSLANDS_WATER_COLOR = 4046591;
     private static final int GRASSLANDS_SKY_COLOR = 11134462;
     private static final int GRASSLANDS_FOG_COLOR = 14005247;
     public static final int GRASSLANDS_GRASS_COLOR = 6879535;
     public static final int GRASSLANDS_FOLIAGE_COLOR = 6408218;
+    private static final int DESERT_WATER_COLOR = 4190462;
+    public static final int DESERT_GRASS_COLOR = 12050954;
+    public static final int DESERT_FOLIAGE_COLOR = 9030922;
 
     public static void bootstrap(BootstapContext<Biome> context) {
         context.register(MUSHROOM_GRASSLANDS, mushroomGrasslands(context));
         context.register(SUBCON_HILLS, subconHills(context));
+        context.register(GRITZY_DESERT, gritzyDesert(context));
+        context.register(DESERT_OASIS, desertOasis(context));
+        context.register(FOSSIL_FALLS, fossilFalls(context));
     }
 
     public static Biome mushroomGrasslands(BootstapContext<Biome> context) {
@@ -49,6 +59,39 @@ public class ModBiomes {
         ModBiomeFeatures.addSubconHillsVegetation(generationBuilder);
 
         return new Biome.BiomeBuilder().hasPrecipitation(true).downfall(0.4f).temperature(0.8f).generationSettings(generationBuilder.build()).mobSpawnSettings(spawnBuilder.build()).specialEffects(new BiomeSpecialEffects.Builder().waterColor(GRASSLANDS_WATER_COLOR).waterFogColor(GRASSLANDS_WATER_COLOR).skyColor(GRASSLANDS_SKY_COLOR).fogColor(GRASSLANDS_FOG_COLOR).grassColorOverride(GRASSLANDS_GRASS_COLOR).foliageColorOverride(GRASSLANDS_FOLIAGE_COLOR).ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS).backgroundMusic(ModBiomeFeatures.createBiomeMusic(ModSoundEvents.MUSIC_GRASSLANDS)).build()).build();
+    }
+
+    public static Biome gritzyDesert(BootstapContext<Biome> context) {
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+        ModBiomeFeatures.addCaveMobs(spawnBuilder);
+
+        BiomeGenerationSettings.Builder generationBuilder = new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+        ModBiomeFeatures.globalMushroomKingdomGeneration(generationBuilder);
+        ModBiomeFeatures.addGritzyDesertVegetation(generationBuilder);
+
+        return new Biome.BiomeBuilder().hasPrecipitation(false).downfall(0.0f).temperature(1.0f).generationSettings(generationBuilder.build()).mobSpawnSettings(spawnBuilder.build()).specialEffects(new BiomeSpecialEffects.Builder().waterColor(DESERT_WATER_COLOR).waterFogColor(DESERT_WATER_COLOR).skyColor(GRASSLANDS_SKY_COLOR).fogColor(GRASSLANDS_FOG_COLOR).grassColorOverride(DESERT_GRASS_COLOR).foliageColorOverride(DESERT_FOLIAGE_COLOR).ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS).backgroundMusic(ModBiomeFeatures.createBiomeMusic(ModSoundEvents.MUSIC_GRASSLANDS)).build()).build();
+    }
+
+    public static Biome desertOasis(BootstapContext<Biome> context) {
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+        ModBiomeFeatures.addCaveMobs(spawnBuilder);
+
+        BiomeGenerationSettings.Builder generationBuilder = new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+        ModBiomeFeatures.globalMushroomKingdomGeneration(generationBuilder);
+        ModBiomeFeatures.addDesertOasisVegetation(generationBuilder);
+
+        return new Biome.BiomeBuilder().hasPrecipitation(false).downfall(0.0f).temperature(1.0f).generationSettings(generationBuilder.build()).mobSpawnSettings(spawnBuilder.build()).specialEffects(new BiomeSpecialEffects.Builder().waterColor(DESERT_WATER_COLOR).waterFogColor(DESERT_WATER_COLOR).skyColor(GRASSLANDS_SKY_COLOR).fogColor(GRASSLANDS_FOG_COLOR).grassColorOverride(DESERT_GRASS_COLOR).foliageColorOverride(DESERT_FOLIAGE_COLOR).ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS).backgroundMusic(ModBiomeFeatures.createBiomeMusic(ModSoundEvents.MUSIC_GRASSLANDS)).build()).build();
+    }
+
+    public static Biome fossilFalls(BootstapContext<Biome> context) {
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+        ModBiomeFeatures.addCaveMobs(spawnBuilder);
+
+        BiomeGenerationSettings.Builder generationBuilder = new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+        ModBiomeFeatures.globalMushroomKingdomGeneration(generationBuilder);
+        ModBiomeFeatures.addFossilFallsVegetation(generationBuilder);
+
+        return new Biome.BiomeBuilder().hasPrecipitation(false).downfall(0.0f).temperature(1.0f).generationSettings(generationBuilder.build()).mobSpawnSettings(spawnBuilder.build()).specialEffects(new BiomeSpecialEffects.Builder().waterColor(DESERT_WATER_COLOR).waterFogColor(DESERT_WATER_COLOR).skyColor(GRASSLANDS_SKY_COLOR).fogColor(GRASSLANDS_FOG_COLOR).grassColorOverride(DESERT_GRASS_COLOR).foliageColorOverride(DESERT_FOLIAGE_COLOR).ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS).backgroundMusic(ModBiomeFeatures.createBiomeMusic(ModSoundEvents.MUSIC_GRASSLANDS)).build()).build();
     }
 
     private static ResourceKey<Biome> register(String name) {

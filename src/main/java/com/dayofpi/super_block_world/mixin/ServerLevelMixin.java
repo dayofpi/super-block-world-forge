@@ -12,6 +12,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.NaturalSpawner;
@@ -28,13 +29,13 @@ import java.util.List;
 
 @Mixin(ServerLevel.class)
 public abstract class ServerLevelMixin {
-    private static final ImmutableList<RegistryObject<? extends EntityType<? extends Mob>>> SPAWN_LIST = ImmutableList.of(ModEntityTypes.LUMA, ModEntityTypes.HUNGRY_LUMA);
+    private static final ImmutableList<RegistryObject<? extends EntityType<? extends Mob>>> SPAWN_LIST = ImmutableList.of(ModEntityTypes.LUMA, ModEntityTypes.HUNGRY_LUMA, ModEntityTypes.OCTOOMBA);
     @Shadow public abstract ServerLevel getLevel();
 
     @Inject(at=@At("TAIL"), method = "tickCustomSpawners")
     private void tickCustomSpawners(boolean pSpawnEnemies, boolean pSpawnFriendlies, CallbackInfo ci) {
         ServerLevel level = this.getLevel();
-        if (pSpawnFriendlies && level.dimension() == ModDimensions.MUSHROOM_KINGDOM_LEVEL && level.getGameRules().getBoolean(GameRules.RULE_DOMOBSPAWNING) && level.getDayTime() > 17000 && level.getDayTime() < 19000)  {
+        if (level.dimension() == ModDimensions.MUSHROOM_KINGDOM_LEVEL && level.getGameRules().getBoolean(GameRules.RULE_DOMOBSPAWNING) && level.getDayTime() > 17000 && level.getDayTime() < 19000)  {
             Player player = level.getRandomPlayer();
             if (player != null) {
                 RandomSource randomsource = level.random;
@@ -43,6 +44,12 @@ public abstract class ServerLevelMixin {
                 BlockPos blockPos = player.blockPosition().offset(i, 0, j);
                 if (level.hasChunksAt(blockPos.getX() - 10, blockPos.getZ() - 10, blockPos.getX() + 10, blockPos.getZ() + 10)) {
                     EntityType<? extends Mob> entityType = SPAWN_LIST.get(randomsource.nextInt(SPAWN_LIST.size())).get();
+                    boolean canSpawn = pSpawnFriendlies;
+                    if (entityType.create(level) instanceof Enemy) {
+                        canSpawn = pSpawnEnemies;
+                    }
+                    if (!canSpawn)
+                        return;
                     if (NaturalSpawner.isSpawnPositionOk(SpawnPlacements.Type.ON_GROUND, level, blockPos, entityType)) {
                         boolean shouldSpawn = false;
                         for (BlockPos blockPos1 : BlockPos.withinManhattan(blockPos, 10, 10, 10)) {

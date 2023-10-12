@@ -13,6 +13,7 @@ public class ModTags {
         public static final TagKey<Item> STAR_BITS = tag("star_bits");
         public static final TagKey<Item> AMANITA_LOGS = tag("amanita_logs");
         public static final TagKey<Item> MAYOI_LOGS = tag("mayoi_logs");
+        public static final TagKey<Item> MUSHROOM_CAPS = tag("mushroom_caps");
         public static final TagKey<Item> FORGE_INGOTS_BRONZE = forgeTag("ingots/bronze");
         public static final TagKey<Item> FORGE_BLOCKS_BRONZE = forgeTag("blocks/bronze");
         public static final TagKey<Item> FORGE_ORES_BRONZE = forgeTag("ores/bronze");
@@ -34,6 +35,7 @@ public class ModTags {
         public static final TagKey<Block> AMANITA_LOGS = tag("amanita_logs");
         public static final TagKey<Block> MAYOI_LOGS = tag("mayoi_logs");
         public static final TagKey<Block> VANILLATE_TOPPING_REPLACEABLE = tag("vanillate_topping_replaceable");
+        public static final TagKey<Block> NEEDS_SUPER_PICKAX = tag("needs_super_pickax");
         public static final TagKey<Block> FORGE_BLOCKS_BRONZE = forgeTag("blocks/bronze");
         public static final TagKey<Block> FORGE_ORES_BRONZE = forgeTag("ores/bronze");
 
@@ -48,6 +50,7 @@ public class ModTags {
 
     public static class Biomes {
         public static final TagKey<Biome> IS_MUSHROOM_KINGDOM = tag("is_mushroom_kingdom");
+        public static final TagKey<Biome> HAS_TOSTARENA_RUINS = tag("has_tostarena_ruins");
 
         private static TagKey<Biome> tag(String name) {
             return TagKey.create(Registries.BIOME, new ResourceLocation(SuperBlockWorld.MOD_ID, name));

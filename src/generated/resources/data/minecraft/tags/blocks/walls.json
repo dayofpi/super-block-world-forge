@@ -1,12 +1,18 @@
 {
   "values": [
+    "super_block_world:gritzy_sandstone_wall",
+    "super_block_world:gritzy_sandstone_brick_wall",
     "super_block_world:vanillate_wall",
     "super_block_world:vanillate_brick_wall",
     "super_block_world:vanillate_tile_wall",
     "super_block_world:toadstone_wall",
     "super_block_world:toadstone_brick_wall",
+    "super_block_world:golden_brick_wall",
+    "super_block_world:crystal_brick_wall",
     "super_block_world:hardstone_wall",
     "super_block_world:hardstone_brick_wall",
+    "super_block_world:royalite_wall",
+    "super_block_world:royalite_brick_wall",
     "super_block_world:rainbow_tile_wall"
   ]
 }

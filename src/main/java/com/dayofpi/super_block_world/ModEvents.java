@@ -43,6 +43,7 @@ public class ModEvents {
             event.registerLayerDefinition(ShyGuyModel.LAYER_LOCATION, ShyGuyModel::createBodyLayer);
             event.registerLayerDefinition(LumaModel.LAYER_LOCATION, LumaModel::createBodyLayer);
             event.registerLayerDefinition(HungryLumaModel.LAYER_LOCATION, HungryLumaModel::createBodyLayer);
+            event.registerLayerDefinition(OctoombaModel.LAYER_LOCATION, OctoombaModel::createBodyLayer);
             event.registerLayerDefinition(UnagiModel.LAYER_LOCATION, UnagiModel::createBodyLayer);
             event.registerLayerDefinition(BoomBoomModel.LAYER_LOCATION, BoomBoomModel::createBodyLayer);
             event.registerLayerDefinition(WarpPaintingModel.LAYER_LOCATION, WarpPaintingModel::createBodyLayer);
@@ -58,6 +59,7 @@ public class ModEvents {
             event.put(ModEntityTypes.SHY_GUY.get(), ShyGuyEntity.createAttributes().build());
             event.put(ModEntityTypes.LUMA.get(), LumaEntity.createAttributes().build());
             event.put(ModEntityTypes.HUNGRY_LUMA.get(), HungryLumaEntity.createAttributes().build());
+            event.put(ModEntityTypes.OCTOOMBA.get(), OctoombaEntity.createAttributes().build());
             event.put(ModEntityTypes.UNAGI.get(), Monster.createMonsterAttributes().build());
             event.put(ModEntityTypes.BOOM_BOOM.get(), BoomBoomEntity.createAttributes().build());
         }
@@ -67,6 +69,7 @@ public class ModEvents {
             event.register(ModEntityTypes.SHY_GUY.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ShyGuyEntity::checkShyGuySpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
             event.register(ModEntityTypes.LUMA.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SpaceCreature::checkSpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
             event.register(ModEntityTypes.HUNGRY_LUMA.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SpaceCreature::checkSpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
+            event.register(ModEntityTypes.OCTOOMBA.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SpaceCreature::checkSpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
             event.register(ModEntityTypes.UNAGI.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, UnagiEntity::checkUnagiSpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
         }
     }
@@ -108,6 +111,7 @@ public class ModEvents {
                     case "super_block_world:polished_hardstone_stairs" -> blockMapping.remap(ModBlocks.SMOOTH_HARDSTONE_STAIRS.get());
                     case "super_block_world:polished_hardstone_slab" -> blockMapping.remap(ModBlocks.SMOOTH_HARDSTONE_SLAB.get());
                     case "super_block_world:polished_hardstone_wall" -> blockMapping.remap(ModBlocks.HARDSTONE_WALL.get());
+                    case "super_block_world:royalite" -> blockMapping.remap(ModBlocks.ROYALITE_BLOCK.get());
                     case "super_block_world:dark_amanita_log" -> blockMapping.remap(ModBlocks.MAYOI_LOG.get());
                     case "super_block_world:dark_amanita_wood" -> blockMapping.remap(ModBlocks.MAYOI_WOOD.get());
                     case "super_block_world:stripped_dark_amanita_log" -> blockMapping.remap(ModBlocks.STRIPPED_MAYOI_LOG.get());
@@ -134,6 +138,7 @@ public class ModEvents {
                     case "super_block_world:polished_hardstone_stairs" -> itemMapping.remap(ModItems.SMOOTH_HARDSTONE_STAIRS.get());
                     case "super_block_world:polished_hardstone_slab" -> itemMapping.remap(ModItems.SMOOTH_HARDSTONE_SLAB.get());
                     case "super_block_world:polished_hardstone_wall" -> itemMapping.remap(ModItems.HARDSTONE_WALL.get());
+                    case "super_block_world:royalite" -> itemMapping.remap(ModItems.ROYALITE_BLOCK.get());
                     case "super_block_world:dark_amanita_log" -> itemMapping.remap(ModItems.MAYOI_LOG.get());
                     case "super_block_world:dark_amanita_wood" -> itemMapping.remap(ModItems.MAYOI_WOOD.get());
                     case "super_block_world:stripped_dark_amanita_log" -> itemMapping.remap(ModItems.STRIPPED_MAYOI_LOG.get());

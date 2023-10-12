@@ -3,6 +3,8 @@
     "super_block_world:toadstool_grass",
     "super_block_world:toadstool_soil",
     "super_block_world:coarse_toadstool_soil",
-    "super_block_world:toadstool_path"
+    "super_block_world:toadstool_path",
+    "super_block_world:gritzy_sand",
+    "super_block_world:suspicious_gritzy_sand"
   ]
 }

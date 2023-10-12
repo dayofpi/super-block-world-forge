@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "super_block_world:gritzy_desert",
+      "required": false
+    },
+    {
+      "id": "super_block_world:desert_oasis",
+      "required": false
+    }
+  ]
+}

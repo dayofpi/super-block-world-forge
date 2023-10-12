@@ -31,7 +31,8 @@
     [],
     [],
     [
-      "super_block_world:vanillate_topping"
+      "super_block_world:vanillate_topping",
+      "super_block_world:royalite_geode"
     ],
     [],
     [],
@@ -90,7 +91,7 @@
         "type": "super_block_world:unagi",
         "maxCount": 1,
         "minCount": 1,
-        "weight": 23
+        "weight": 2
       },
       {
         "type": "minecraft:enderman",

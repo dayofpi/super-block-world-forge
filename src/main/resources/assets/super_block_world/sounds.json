@@ -82,10 +82,66 @@
       "super_block_world:block/toadstone/step4"
     ]
   },
+  "block.royalite.break": {
+    "sounds": [
+      "super_block_world:block/royalite/break1",
+      "super_block_world:block/royalite/break2",
+      "super_block_world:block/royalite/break3",
+      "super_block_world:block/royalite/break4"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.royalite.step": {
+    "sounds": [
+      "super_block_world:block/royalite/step1",
+      "super_block_world:block/royalite/step2",
+      "super_block_world:block/royalite/step3",
+      "super_block_world:block/royalite/step4",
+      "super_block_world:block/royalite/step5",
+      "super_block_world:block/royalite/step6"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.royalite.place": {
+    "sounds": [
+      "super_block_world:block/royalite/place1",
+      "super_block_world:block/royalite/place2",
+      "super_block_world:block/royalite/place3",
+      "super_block_world:block/royalite/place4"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.royalite.hit": {
+    "sounds": [
+      "super_block_world:block/royalite/step1",
+      "super_block_world:block/royalite/step2",
+      "super_block_world:block/royalite/step3",
+      "super_block_world:block/royalite/step4",
+      "super_block_world:block/royalite/step5",
+      "super_block_world:block/royalite/step6"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.royalite.fall": {
+    "sounds": [
+      "super_block_world:block/royalite/step1",
+      "super_block_world:block/royalite/step2",
+      "super_block_world:block/royalite/step3",
+      "super_block_world:block/royalite/step4",
+      "super_block_world:block/royalite/step5",
+      "super_block_world:block/royalite/step6"
+    ]
+  },
   "block.pull_block.pull": {
     "subtitle": "subtitles.super_block_world.block.pull_block.pull",
     "sounds": [
       "super_block_world:block/pull_block"
+    ]
+  },
+  "block.trampoline.release": {
+    "subtitle": "subtitles.super_block_world.block.trampoline.release",
+    "sounds": [
+      "super_block_world:block/trampoline"
     ]
   },
   "block.warp_pipe.teleport": {
@@ -262,6 +318,53 @@
         "name": "super_block_world:entity/luma/death",
         "pitch": 1.2
       }
+    ]
+  },
+  "entity.octoomba.ambient": {
+    "subtitle": "subtitles.super_block_world.entity.octoomba.ambient",
+    "sounds": [
+      "super_block_world:entity/octoomba/say1",
+      "super_block_world:entity/octoomba/say2"
+    ]
+  },
+  "entity.octoomba.hurt": {
+    "subtitle": "subtitles.super_block_world.entity.octoomba.hurt",
+    "sounds": [
+      "super_block_world:entity/octoomba/hurt1",
+      "super_block_world:entity/octoomba/hurt2",
+      "super_block_world:entity/octoomba/hurt3"
+    ]
+  },
+  "entity.octoomba.death": {
+    "subtitle": "subtitles.super_block_world.entity.octoomba.death",
+    "sounds": [
+      "super_block_world:entity/octoomba/death1",
+      "super_block_world:entity/octoomba/death2",
+      "super_block_world:entity/octoomba/death3"
+    ]
+  },
+  "entity.octoomba.step": {
+    "subtitle": "subtitles.super_block_world.entity.octoomba.step",
+    "sounds": [
+      {
+        "name": "super_block_world:entity/goomba/step1",
+        "pitch": 0.8
+      },
+      {
+        "name": "super_block_world:entity/goomba/step2",
+        "pitch": 0.8
+      },
+      {
+        "name": "super_block_world:entity/goomba/step3",
+        "pitch": 0.8
+      }
+    ]
+  },
+  "entity.octoomba.shoot": {
+    "subtitle": "subtitles.super_block_world.entity.octoomba.shoot",
+    "sounds": [
+      "mob/llama/spit1",
+      "mob/llama/spit2"
     ]
   },
   "entity.unagi.death": {

@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-09T20:36:07.3097825	Item Tags
+// 1.20.1	2023-10-11T12:08:54.3008516	Item Tags
 d5a725534da480dd5b557963a6c5ab8ffff6f933 data/forge/tags/items/blocks/bronze.json
 5ec15c7013ed5bac18d70b6f212050ce96d357e7 data/forge/tags/items/ingots.json
 5ec15c7013ed5bac18d70b6f212050ce96d357e7 data/forge/tags/items/ingots/bronze.json
@@ -27,4 +27,5 @@ a4fa680247042cedf8cdfe4416da5d0bed04df88 data/minecraft/tags/items/wooden_doors.
 d51db4778c08be1199264b4e8cae9f7440a45197 data/minecraft/tags/items/wooden_trapdoors.json
 9ba0f51636a4bdbf0e6879a8e094c553251ba409 data/super_block_world/tags/items/amanita_logs.json
 9f89c669782d534577b994c6c2321b02378ea0b7 data/super_block_world/tags/items/mayoi_logs.json
+19e6de889d7c8dcda4e8b2225f99a91ed115168e data/super_block_world/tags/items/mushroom_caps.json
 9b310ffe018732185794277eda33672dcc385bdb data/super_block_world/tags/items/star_bits.json

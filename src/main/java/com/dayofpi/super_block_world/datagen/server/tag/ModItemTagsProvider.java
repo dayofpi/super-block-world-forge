@@ -8,6 +8,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -32,6 +33,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         copy(ModTags.Blocks.MAYOI_LOGS, ModTags.Items.MAYOI_LOGS);
 
         tag(ModTags.Items.STAR_BITS).add(ModItems.YELLOW_STAR_BIT.get(), ModItems.RED_STAR_BIT.get(), ModItems.BLUE_STAR_BIT.get(), ModItems.PURPLE_STAR_BIT.get(), ModItems.RAINBOW_STAR_BIT.get());
+        tag(ModTags.Items.MUSHROOM_CAPS).add(Items.BROWN_MUSHROOM_BLOCK, Items.RED_MUSHROOM_BLOCK);
         tag(ModTags.Items.FORGE_INGOTS_BRONZE).add(ModItems.BRONZE_INGOT.get());
         tag(ModTags.Items.FORGE_BLOCKS_BRONZE).add(ModItems.BRONZE_BLOCK.get());
         tag(ModTags.Items.FORGE_ORES_BRONZE).add(ModItems.BRONZE_ORE.get());

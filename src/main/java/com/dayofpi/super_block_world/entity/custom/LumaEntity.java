@@ -35,7 +35,7 @@ public class LumaEntity extends AbstractLuma implements RangedAttackMob {
     protected void registerGoals() {
         this.goalSelector.addGoal(1, new FloatGoal(this));
         this.goalSelector.addGoal(2, new SeekStarBitsGoal());
-        this.goalSelector.addGoal(3, new LumaAttackGoal(this, 1.25D, 30, 10.0F));
+        this.goalSelector.addGoal(3, new LumaAttackGoal(this, 1.25D, 25, 10.0F));
         this.goalSelector.addGoal(4, new WaterAvoidingRandomFlyingGoal(this, 1.0D));
         this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, Player.class, 8.0F));
         this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));

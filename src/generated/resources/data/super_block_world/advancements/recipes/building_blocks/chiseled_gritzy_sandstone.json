@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_gritzy_sandstone_slab": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "super_block_world:gritzy_sandstone_slab"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "super_block_world:chiseled_gritzy_sandstone"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_gritzy_sandstone_slab",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "super_block_world:chiseled_gritzy_sandstone"
+    ]
+  },
+  "sends_telemetry_event": false
+}

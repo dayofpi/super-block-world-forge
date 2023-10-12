@@ -27,6 +27,7 @@ public class ModStructures {
     public static final ResourceKey<Structure> MOON_MONOLITH = register("moon_monolith");
     public static final ResourceKey<Structure> BRICK_FORTRESS_OVERWORLD = register("brick_fortress_overworld");
     public static final ResourceKey<Structure> BRICK_FORTRESS_MUSHROOM_KINGDOM = register("brick_fortress_mushroom_kingdom");
+    public static final ResourceKey<Structure> TOSTARENA_RUINS = register("tostarena_ruins");
 
     public static void bootstrap(BootstapContext<Structure> context) {
         HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
@@ -34,6 +35,7 @@ public class ModStructures {
         context.register(MOON_MONOLITH, new JigsawStructure(new Structure.StructureSettings(biomes.getOrThrow(ModTags.Biomes.IS_MUSHROOM_KINGDOM), Map.of(), GenerationStep.Decoration.SURFACE_STRUCTURES, TerrainAdjustment.BEARD_THIN), templatePools.getOrThrow(ModTemplatePools.MOON_MONOLITH), 7, ConstantHeight.of(VerticalAnchor.absolute(0)), false, Heightmap.Types.WORLD_SURFACE_WG));
         context.register(BRICK_FORTRESS_OVERWORLD, new JigsawStructure(new Structure.StructureSettings(biomes.getOrThrow(BiomeTags.HAS_MINESHAFT), Map.of(MobCategory.MONSTER, new StructureSpawnOverride(StructureSpawnOverride.BoundingBoxType.STRUCTURE, MobSpawnSettings.EMPTY_MOB_LIST)), GenerationStep.Decoration.SURFACE_STRUCTURES, TerrainAdjustment.BEARD_BOX), templatePools.getOrThrow(ModTemplatePools.BRICK_FORTRESS), 7, ConstantHeight.of(VerticalAnchor.absolute(0)), false, Heightmap.Types.WORLD_SURFACE_WG));
         context.register(BRICK_FORTRESS_MUSHROOM_KINGDOM, new JigsawStructure(new Structure.StructureSettings(biomes.getOrThrow(ModTags.Biomes.IS_MUSHROOM_KINGDOM), Map.of(MobCategory.MONSTER, new StructureSpawnOverride(StructureSpawnOverride.BoundingBoxType.STRUCTURE, MobSpawnSettings.EMPTY_MOB_LIST)), GenerationStep.Decoration.SURFACE_STRUCTURES, TerrainAdjustment.BEARD_BOX), templatePools.getOrThrow(ModTemplatePools.BRICK_FORTRESS), 7, ConstantHeight.of(VerticalAnchor.absolute(0)), false, Heightmap.Types.WORLD_SURFACE_WG));
+        context.register(TOSTARENA_RUINS, new JigsawStructure(new Structure.StructureSettings(biomes.getOrThrow(ModTags.Biomes.HAS_TOSTARENA_RUINS), Map.of(), GenerationStep.Decoration.SURFACE_STRUCTURES, TerrainAdjustment.BEARD_THIN), templatePools.getOrThrow(ModTemplatePools.TOSTARENA_RUINS), 7, ConstantHeight.of(VerticalAnchor.absolute(0)), false, Heightmap.Types.WORLD_SURFACE_WG));
     }
 
     private static ResourceKey<Structure> register(String name) {

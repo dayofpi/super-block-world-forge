@@ -21,6 +21,7 @@ import com.mojang.logging.LogUtils;
 import net.minecraft.Util;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.Sheets;
+import net.minecraft.client.renderer.blockentity.BrushableBlockRenderer;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -189,12 +190,14 @@ public class SuperBlockWorld {
                 EntityRenderers.register(ModEntityTypes.SHY_GUY.get(), ShyGuyRenderer::new);
                 EntityRenderers.register(ModEntityTypes.LUMA.get(), LumaRenderer::new);
                 EntityRenderers.register(ModEntityTypes.HUNGRY_LUMA.get(), HungryLumaRenderer::new);
+                EntityRenderers.register(ModEntityTypes.OCTOOMBA.get(), OctoombaRenderer::new);
                 EntityRenderers.register(ModEntityTypes.UNAGI.get(), UnagiRenderer::new);
                 EntityRenderers.register(ModEntityTypes.BOOM_BOOM.get(), BoomBoomRenderer::new);
                 EntityRenderers.register(ModEntityTypes.TURNIP.get(), ThrownItemRenderer::new);
                 EntityRenderers.register(ModEntityTypes.BOMB.get(), ThrownItemRenderer::new);
                 EntityRenderers.register(ModEntityTypes.HAMMER.get(), HammerRenderer::new);
                 EntityRenderers.register(ModEntityTypes.STAR_BIT.get(), ThrownItemRenderer::new);
+                EntityRenderers.register(ModEntityTypes.ROCK.get(), ThrownItemRenderer::new);
                 EntityRenderers.register(ModEntityTypes.WARP_PAINTING.get(), WarpPaintingRenderer::new);
                 EntityRenderers.register(ModEntityTypes.LAUNCH_STAR.get(), LaunchStarRenderer::new);
                 EntityRenderers.register(ModEntityTypes.BOAT.get(), pContext -> new ModBoatRenderer(pContext, false));
@@ -221,6 +224,7 @@ public class SuperBlockWorld {
             event.registerBlockEntityRenderer(ModBlockEntityTypes.FLAG.get(), FlagRenderer::new);
             event.registerBlockEntityRenderer(ModBlockEntityTypes.SIGN.get(), SignRenderer::new);
             event.registerBlockEntityRenderer(ModBlockEntityTypes.HANGING_SIGN.get(), HangingSignRenderer::new);
+            event.registerBlockEntityRenderer(ModBlockEntityTypes.BRUSHABLE_BLOCK.get(), BrushableBlockRenderer::new);
         }
     }
 }

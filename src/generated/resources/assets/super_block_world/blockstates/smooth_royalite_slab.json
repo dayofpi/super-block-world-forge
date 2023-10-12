@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "super_block_world:block/smooth_royalite_slab"
+    },
+    "type=double": {
+      "model": "super_block_world:block/smooth_royalite"
+    },
+    "type=top": {
+      "model": "super_block_world:block/smooth_royalite_slab_top"
+    }
+  }
+}

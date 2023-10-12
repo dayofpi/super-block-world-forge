@@ -1,0 +1,7 @@
+{
+  "parent": "block/flower_pot_cross",
+  "render_type": "cutout",
+  "textures": {
+    "plant": "super_block_world:block/mayoi_sapling"
+  }
+}

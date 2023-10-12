@@ -19,6 +19,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        blockItem(ModBlocks.TRAMPOLINE);
         blockItem(ModBlocks.FLAGPOLE);
         flagItem(ModItems.WHITE_FLAG);
         flagItem(ModItems.LIGHT_GRAY_FLAG);
@@ -72,6 +73,16 @@ public class ModItemModelProvider extends ItemModelProvider {
         blockItem(ModBlocks.TOADSTOOL_GRASS);
         blockItem(ModBlocks.TOADSTOOL_TURF);
         blockItem(ModBlocks.TOADSTOOL_PATH);
+        blockItem(ModBlocks.GRITZY_SANDSTONE_STAIRS);
+        blockItem(ModBlocks.GRITZY_SANDSTONE_SLAB);
+        wallItem(ModBlocks.GRITZY_SANDSTONE_WALL, ModBlocks.GRITZY_SANDSTONE);
+        blockItem(ModBlocks.GRITZY_SANDSTONE_BRICK_STAIRS);
+        blockItem(ModBlocks.GRITZY_SANDSTONE_BRICK_SLAB);
+        wallItem(ModBlocks.GRITZY_SANDSTONE_BRICK_WALL, ModBlocks.GRITZY_SANDSTONE_BRICKS);
+        blockItem(ModBlocks.GRITZY_SANDSTONE_PILLAR);
+        blockItem(ModBlocks.SMOOTH_GRITZY_SANDSTONE_STAIRS);
+        blockItem(ModBlocks.SMOOTH_GRITZY_SANDSTONE_SLAB);
+        blockItem(ModBlocks.CUT_GRITZY_SANDSTONE_SLAB);
         blockItem(ModBlocks.BRONZE_STAIRS);
         blockItem(ModBlocks.BRONZE_SLAB);
         blockItem(ModBlocks.VANILLATE_STAIRS);
@@ -91,6 +102,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         wallItem(ModBlocks.TOADSTONE_BRICK_WALL, ModBlocks.TOADSTONE_BRICKS);
         blockItem(ModBlocks.SMOOTH_TOADSTONE_STAIRS);
         blockItem(ModBlocks.SMOOTH_TOADSTONE_SLAB);
+        blockItem(ModBlocks.GOLDEN_BRICK_STAIRS);
+        blockItem(ModBlocks.GOLDEN_BRICK_SLAB);
+        wallItem(ModBlocks.GOLDEN_BRICK_WALL, ModBlocks.GOLDEN_BRICKS);
+        blockItem(ModBlocks.CRYSTAL_BRICK_STAIRS);
+        blockItem(ModBlocks.CRYSTAL_BRICK_SLAB);
+        wallItem(ModBlocks.CRYSTAL_BRICK_WALL, ModBlocks.CRYSTAL_BRICKS);
         blockItem(ModBlocks.HARDSTONE_STAIRS);
         blockItem(ModBlocks.HARDSTONE_SLAB);
         wallItem(ModBlocks.HARDSTONE_WALL, ModBlocks.HARDSTONE);
@@ -100,12 +117,24 @@ public class ModItemModelProvider extends ItemModelProvider {
         blockItem(ModBlocks.HARDSTONE_PILLAR);
         blockItem(ModBlocks.SMOOTH_HARDSTONE_STAIRS);
         blockItem(ModBlocks.SMOOTH_HARDSTONE_SLAB);
+        blockItem(ModBlocks.ROYALITE_STAIRS);
+        blockItem(ModBlocks.ROYALITE_SLAB);
+        wallItem(ModBlocks.ROYALITE_WALL, ModBlocks.ROYALITE_BLOCK);
+        blockItem(ModBlocks.ROYALITE_BRICK_STAIRS);
+        blockItem(ModBlocks.ROYALITE_BRICK_SLAB);
+        wallItem(ModBlocks.ROYALITE_BRICK_WALL, ModBlocks.ROYALITE_BRICKS);
+        blockItem(ModBlocks.SMOOTH_ROYALITE_STAIRS);
+        blockItem(ModBlocks.SMOOTH_ROYALITE_SLAB);
         blockItem(ModBlocks.CLOUD_STAIRS);
         blockItem(ModBlocks.CLOUD_SLAB);
         blockItem(ModBlocks.RAINBOW_TILE_STAIRS);
         blockItem(ModBlocks.RAINBOW_TILE_SLAB);
         wallItem(ModBlocks.RAINBOW_TILE_WALL, ModBlocks.RAINBOW_TILES);
         simpleItem(ModItems.POWER_STAR);
+        simpleBlockItem(ModItems.SMALL_ROYALITE_BUD);
+        simpleBlockItem(ModItems.MEDIUM_ROYALITE_BUD);
+        simpleBlockItem(ModItems.LARGE_ROYALITE_BUD);
+        simpleBlockItem(ModItems.ROYALITE_CLUSTER);
         simpleBlockItem(ModItems.STAR_CLUSTER);
         blockItem(ModBlocks.AMANITA_LOG);
         blockItem(ModBlocks.AMANITA_WOOD);
@@ -160,6 +189,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.YOSHI_COOKIE);
         simpleItem(ModItems.RAW_BRONZE);
         simpleItem(ModItems.BRONZE_INGOT);
+        simpleItem(ModItems.ROYALITE_SHARD);
         simpleItem(ModItems.POWER_SHARD);
         simpleItem(ModItems.COIN);
         simpleItem(ModItems.STAR_COIN);
@@ -172,6 +202,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         spawnEggItem(ModItems.SHY_GUY_SPAWN_EGG);
         spawnEggItem(ModItems.LUMA_SPAWN_EGG);
         spawnEggItem(ModItems.HUNGRY_LUMA_SPAWN_EGG);
+        spawnEggItem(ModItems.OCTOOMBA_SPAWN_EGG);
         spawnEggItem(ModItems.UNAGI_SPAWN_EGG);
         spawnEggItem(ModItems.BOOM_BOOM_SPAWN_EGG);
     }

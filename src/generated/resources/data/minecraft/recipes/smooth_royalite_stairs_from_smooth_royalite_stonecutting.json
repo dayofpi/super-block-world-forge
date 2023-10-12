@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "super_block_world:smooth_royalite"
+  },
+  "result": "super_block_world:smooth_royalite_stairs"
+}
