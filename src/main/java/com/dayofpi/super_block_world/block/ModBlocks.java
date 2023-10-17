@@ -37,6 +37,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> STAR_COIN = BLOCKS.register("star_coin", () -> new CoinBlock(ModSoundEvents.STAR_COIN_PICKUP.get(), BlockBehaviour.Properties.of().mapColor(MapColor.GOLD).sound(SoundType.METAL).instabreak().noCollission().noOcclusion()));
     public static final RegistryObject<Block> PULL_BLOCK = BLOCKS.register("pull_block", () -> new PullBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).mapColor(MapColor.COLOR_LIGHT_BLUE).strength(5.0F, 6.0F).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> TRAMPOLINE = BLOCKS.register("trampoline", () -> new TrampolineBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOD).mapColor(MapColor.COLOR_LIGHT_GREEN).instabreak().noOcclusion()));
+    public static final RegistryObject<Block> BILL_BLASTER = BLOCKS.register("bill_blaster", () -> new BillBlasterBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).mapColor(MapColor.DEEPSLATE)));
     public static final RegistryObject<Block> WHITE_BRONZE = BLOCKS.register("white_bronze", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).mapColor(MapColor.SNOW)));
     public static final RegistryObject<Block> LIGHT_GRAY_BRONZE = BLOCKS.register("light_gray_bronze", () -> new Block(BlockBehaviour.Properties.copy(WHITE_BRONZE.get()).mapColor(MapColor.COLOR_LIGHT_GRAY)));
     public static final RegistryObject<Block> GRAY_BRONZE = BLOCKS.register("gray_bronze", () -> new Block(BlockBehaviour.Properties.copy(WHITE_BRONZE.get()).mapColor(MapColor.COLOR_GRAY)));
@@ -145,7 +146,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> VANILLATE_TILE_SLAB = BLOCKS.register("vanillate_tile_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(VANILLATE_TILES.get())));
     public static final RegistryObject<Block> VANILLATE_TILE_WALL = BLOCKS.register("vanillate_tile_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(VANILLATE_TILES.get())));
     public static final RegistryObject<Block> TOADSTONE = BLOCKS.register("toadstone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(ModSoundTypes.TOADSTONE).mapColor(MapColor.TERRACOTTA_BROWN)));
-    public static final RegistryObject<Block> GRASSY_TOADSTONE = BLOCKS.register("grassy_toadstone", () -> new ModSpreadingBlock(TOADSTONE, BlockBehaviour.Properties.copy(TOADSTONE.get()).mapColor(MapColor.GRASS).randomTicks()));
+    public static final RegistryObject<Block> GRASSY_TOADSTONE = BLOCKS.register("grassy_toadstone", () -> new ModSpreadingBlock(TOADSTONE, BlockBehaviour.Properties.copy(TOADSTONE.get()).mapColor(MapColor.GRASS).randomTicks().sound(ModSoundTypes.GRASSY_TOADSTONE)));
     public static final RegistryObject<Block> TOADSTONE_STAIRS = BLOCKS.register("toadstone_stairs", () -> new ModStairBlock(TOADSTONE));
     public static final RegistryObject<Block> TOADSTONE_SLAB = BLOCKS.register("toadstone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(TOADSTONE.get())));
     public static final RegistryObject<Block> TOADSTONE_WALL = BLOCKS.register("toadstone_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(TOADSTONE.get())));
@@ -251,6 +252,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> MAYOI_SAPLING = BLOCKS.register("mayoi_sapling", () -> new SaplingBlock(new MayoiTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
     public static final RegistryObject<Block> BROWN_TOAD_STOOL = BLOCKS.register("brown_toad_stool", () -> new ToadStoolBlock(BlockBehaviour.Properties.of().mapColor(MapColor.DIRT).strength(2.0F).sound(SoundType.WOOD).noOcclusion()));
     public static final RegistryObject<Block> RED_TOAD_STOOL = BLOCKS.register("red_toad_stool", () -> new ToadStoolBlock(BlockBehaviour.Properties.copy(BROWN_TOAD_STOOL.get()).mapColor(MapColor.COLOR_RED)));
+    public static final RegistryObject<Block> TOADSTOOL_SPROUTS = BLOCKS.register("toadstool_sprouts", () -> new ToadstoolSproutsBlock(BlockBehaviour.Properties.copy(Blocks.GRASS).sound(SoundType.MOSS_CARPET)));
     public static final RegistryObject<Block> RED_GRASS = BLOCKS.register("red_grass", () -> new RedGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS).mapColor(MapColor.TERRACOTTA_RED)));
     public static final RegistryObject<Block> SUBCON_PALM = BLOCKS.register("subcon_palm", () -> new SubconPalmBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).ignitedByLava().pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> SUBCON_PALM_STEM = BLOCKS.register("subcon_palm_stem", () -> new SubconPalmStemBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).forceSolidOn().instabreak().strength(1.0F).sound(SoundType.BAMBOO).noOcclusion().ignitedByLava().pushReaction(PushReaction.DESTROY).isRedstoneConductor((pState, pLevel, pPos) -> false)));

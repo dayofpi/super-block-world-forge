@@ -16,7 +16,9 @@ public class ModEntityTypes {
     public static final RegistryObject<EntityType<ShyGuyEntity>> SHY_GUY = registerEntity("shy_guy", EntityType.Builder.of(ShyGuyEntity::new, MobCategory.MONSTER).sized(0.8F, 0.9F));
     public static final RegistryObject<EntityType<LumaEntity>> LUMA = registerEntity("luma", EntityType.Builder.of(LumaEntity::new, MobCategory.CREATURE).sized(0.65F, 0.75F));
     public static final RegistryObject<EntityType<HungryLumaEntity>> HUNGRY_LUMA = registerEntity("hungry_luma", EntityType.Builder.of(HungryLumaEntity::new, MobCategory.CREATURE).sized(0.85F, 1.15F));
+    public static final RegistryObject<EntityType<SmeechEntity>> SMEECH = registerEntity("smeech", EntityType.Builder.of(SmeechEntity::new, MobCategory.CREATURE).sized(0.8F, 0.7F));
     public static final RegistryObject<EntityType<OctoombaEntity>> OCTOOMBA = registerEntity("octoomba", EntityType.Builder.of(OctoombaEntity::new, MobCategory.MONSTER).sized(0.8F, 0.8F));
+    public static final RegistryObject<EntityType<ChainChompEntity>> CHAIN_CHOMP = registerEntity("chain_chomp", EntityType.Builder.of(ChainChompEntity::new, MobCategory.MONSTER).sized(1.2F, 1.2F));
     public static final RegistryObject<EntityType<UnagiEntity>> UNAGI = registerEntity("unagi", EntityType.Builder.of(UnagiEntity::new, MobCategory.MONSTER).sized(1.2F, 0.8F));
     public static final RegistryObject<EntityType<BoomBoomEntity>> BOOM_BOOM = registerEntity("boom_boom", EntityType.Builder.of(BoomBoomEntity::new, MobCategory.MONSTER).sized(1.2F, 1.45F));
     public static final RegistryObject<EntityType<TurnipEntity>> TURNIP = registerEntity("turnip", EntityType.Builder.<TurnipEntity>of(TurnipEntity::new, MobCategory.MISC).sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(10));

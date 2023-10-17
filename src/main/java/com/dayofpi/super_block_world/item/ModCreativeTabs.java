@@ -14,6 +14,7 @@ public class ModCreativeTabs {
     public static final RegistryObject<CreativeModeTab> MAIN = CREATIVE_MODE_TABS.register("main", () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.POWER_STAR.get())).title(Component.translatable("itemGroup.super_block_world")).displayItems((itemDisplayParameters, output) -> {
         output.accept(ModItems.PULL_BLOCK.get());
         output.accept(ModItems.TRAMPOLINE.get());
+        output.accept(ModItems.BILL_BLASTER.get());
         output.accept(ModItems.TOADSTOOL_GRASS.get());
         output.accept(ModItems.TOADSTOOL_TURF.get());
         output.accept(ModItems.TOADSTOOL_SOIL.get());
@@ -55,6 +56,7 @@ public class ModCreativeTabs {
         output.accept(ModItems.VANILLATE_TILE_STAIRS.get());
         output.accept(ModItems.VANILLATE_TILE_SLAB.get());
         output.accept(ModItems.VANILLATE_TILE_WALL.get());
+        output.accept(ModItems.GRASSY_TOADSTONE.get());
         output.accept(ModItems.TOADSTONE.get());
         output.accept(ModItems.TOADSTONE_STAIRS.get());
         output.accept(ModItems.TOADSTONE_SLAB.get());
@@ -157,6 +159,7 @@ public class ModCreativeTabs {
         output.accept(ModItems.MAYOI_SAPLING.get());
         output.accept(ModItems.BROWN_TOAD_STOOL.get());
         output.accept(ModItems.RED_TOAD_STOOL.get());
+        output.accept(ModItems.TOADSTOOL_SPROUTS.get());
         output.accept(ModItems.RED_GRASS.get());
         output.accept(ModItems.SUBCON_PALM.get());
         output.accept(ModItems.BEANSTALK.get());
@@ -257,7 +260,9 @@ public class ModCreativeTabs {
         output.accept(ModItems.SHY_GUY_SPAWN_EGG.get());
         output.accept(ModItems.LUMA_SPAWN_EGG.get());
         output.accept(ModItems.HUNGRY_LUMA_SPAWN_EGG.get());
+        output.accept(ModItems.SMEECH_SPAWN_EGG.get());
         output.accept(ModItems.OCTOOMBA_SPAWN_EGG.get());
+        output.accept(ModItems.CHAIN_CHOMP_SPAWN_EGG.get());
         output.accept(ModItems.UNAGI_SPAWN_EGG.get());
         output.accept(ModItems.BOOM_BOOM_SPAWN_EGG.get());
     }).build());

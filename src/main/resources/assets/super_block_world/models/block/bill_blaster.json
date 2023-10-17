@@ -1,0 +1,15 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "face": "super_block_world:block/bill_blaster",
+    "side": "super_block_world:block/bill_blaster_side",
+    "top": "super_block_world:block/bill_blaster_top",
+    "particle": "#top",
+    "down": "#top",
+    "up": "#top",
+    "north": "#face",
+    "east": "#side",
+    "south": "#face",
+    "west": "#side"
+  }
+}

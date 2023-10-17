@@ -1,3 +1,5 @@
-// 1.20.1	2023-10-12T02:34:54.4213641	Biome Tags
-9ee5e0d10579a0eef25e8b43f4df00c38b7fdcfa data/super_block_world/tags/worldgen/biome/has_tostarena_ruins.json
+// 1.20.1	2023-10-12T18:11:54.7533216	Biome Tags
+65d843f48326483f2aa3dc5867c0fd536ed5394a data/super_block_world/tags/worldgen/biome/has_structure/prehistoric_site.json
+9ee5e0d10579a0eef25e8b43f4df00c38b7fdcfa data/super_block_world/tags/worldgen/biome/has_structure/tostarena_ruins.json
 9696cdd4f8875d1c45f93ff832338f3ddf072bd8 data/super_block_world/tags/worldgen/biome/is_mushroom_kingdom.json
+0ca5facb85bdb00bc4dc718478fbc35c30484899 data/super_block_world/tags/worldgen/biome/spawns_surface_shy_guys.json

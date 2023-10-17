@@ -16,6 +16,8 @@ public class ModStructureSets {
     public static final ResourceKey<StructureSet> OVERWORLD_BRICK_FORTRESSES = register("overworld_brick_fortresses");
     public static final ResourceKey<StructureSet> MUSHROOM_KINGDOM_BRICK_FORTRESSES = register("mushroom_kingdom_brick_fortresses");
     public static final ResourceKey<StructureSet> TOSTARENA_RUINS = register("tostarena_ruins");
+    public static final ResourceKey<StructureSet> PREHISTORIC_SITE = register("prehistoric_site");
+    public static final ResourceKey<StructureSet> FOSSILS = register("fossils");
 
     public static void bootstrap(BootstapContext<StructureSet> context) {
         HolderGetter<Structure> structures = context.lookup(Registries.STRUCTURE);
@@ -23,6 +25,8 @@ public class ModStructureSets {
         context.register(OVERWORLD_BRICK_FORTRESSES, new StructureSet(structures.getOrThrow(ModStructures.BRICK_FORTRESS_OVERWORLD), new RandomSpreadStructurePlacement(34, 8, RandomSpreadType.LINEAR, 1110473394)));
         context.register(MUSHROOM_KINGDOM_BRICK_FORTRESSES, new StructureSet(structures.getOrThrow(ModStructures.BRICK_FORTRESS_MUSHROOM_KINGDOM), new RandomSpreadStructurePlacement(34, 8, RandomSpreadType.LINEAR, 1186354726)));
         context.register(TOSTARENA_RUINS, new StructureSet(structures.getOrThrow(ModStructures.TOSTARENA_RUINS), new RandomSpreadStructurePlacement(30, 15, RandomSpreadType.LINEAR, 865670577)));
+        context.register(PREHISTORIC_SITE, new StructureSet(structures.getOrThrow(ModStructures.PREHISTORIC_SITE), new RandomSpreadStructurePlacement(30, 8, RandomSpreadType.LINEAR, 1702241750)));
+        context.register(FOSSILS, new StructureSet(structures.getOrThrow(ModStructures.FOSSIL), new RandomSpreadStructurePlacement(2, 1, RandomSpreadType.LINEAR, 808001993)));
     }
 
     private static ResourceKey<StructureSet> register(String name) {

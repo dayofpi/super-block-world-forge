@@ -3,6 +3,7 @@ package com.dayofpi.super_block_world.entity.custom;
 import com.dayofpi.super_block_world.block.ModBlocks;
 import com.dayofpi.super_block_world.item.ModItems;
 import com.dayofpi.super_block_world.sound.ModSoundEvents;
+import com.dayofpi.super_block_world.util.ModTags;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
@@ -54,7 +55,10 @@ public class ShyGuyEntity extends Monster implements VariantHolder<ShyGuyEntity.
         return Monster.createMonsterAttributes().add(Attributes.FOLLOW_RANGE, 7.0).add(Attributes.MAX_HEALTH, 18.0).add(Attributes.MOVEMENT_SPEED, 0.2).add(Attributes.ATTACK_DAMAGE, 3.0);
     }
 
-    public static boolean checkShyGuySpawnRules(EntityType<? extends ShyGuyEntity> entityType, LevelAccessor level, MobSpawnType spawnType, BlockPos blockPos, RandomSource randomSource) {
+    public static boolean checkShyGuySpawnRules(EntityType<? extends ShyGuyEntity> entityType, ServerLevelAccessor level, MobSpawnType spawnType, BlockPos blockPos, RandomSource randomSource) {
+        if (!level.getBiome(blockPos).is(ModTags.Biomes.SPAWNS_SURFACE_SHY_GUYS) && (level.canSeeSky(blockPos) || !Monster.isDarkEnoughToSpawn(level, blockPos, randomSource))) {
+            return false;
+        }
         return randomSource.nextInt(5) == 0 && !(level.getBrightness(LightLayer.BLOCK, blockPos) > 0);
     }
 

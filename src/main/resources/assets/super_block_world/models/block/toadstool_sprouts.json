@@ -1,0 +1,7 @@
+{
+  "render_type": "cutout",
+  "parent": "minecraft:block/tinted_cross",
+  "textures": {
+    "cross": "super_block_world:block/toadstool_sprouts"
+  }
+}

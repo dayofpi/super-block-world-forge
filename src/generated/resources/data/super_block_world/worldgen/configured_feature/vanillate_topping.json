@@ -10,7 +10,7 @@
         "Name": "super_block_world:topped_vanillate"
       }
     },
-    "replaceable": "#super_block_world:vanillate_topping_replaceable",
+    "replaceable": "#super_block_world:vanillate_topping_replaceables",
     "surface": "floor",
     "vertical_range": 1,
     "xz_radius": 7

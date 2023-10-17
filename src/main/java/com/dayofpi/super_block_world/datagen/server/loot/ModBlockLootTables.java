@@ -39,6 +39,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.STAR_COIN.get());
         dropSelf(ModBlocks.PULL_BLOCK.get());
         dropSelf(ModBlocks.TRAMPOLINE.get());
+        dropWhenSilkTouch(ModBlocks.BILL_BLASTER.get());
         dropSelf(ModBlocks.WHITE_BRONZE.get());
         dropSelf(ModBlocks.LIGHT_GRAY_BRONZE.get());
         dropSelf(ModBlocks.GRAY_BRONZE.get());
@@ -239,10 +240,12 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.MAYOI_SAPLING.get());
         dropSelf(ModBlocks.BROWN_TOAD_STOOL.get());
         dropSelf(ModBlocks.RED_TOAD_STOOL.get());
+        dropWhenSilkTouch(ModBlocks.TOADSTOOL_SPROUTS.get());
         dropSelf(ModBlocks.SUBCON_PALM.get());
         dropOther(ModBlocks.SUBCON_PALM_STEM.get(), ModItems.SUBCON_PALM.get());
         addNetherVinesDropTable(ModBlocks.BEANSTALK.get(), ModBlocks.BEANSTALK_STEM.get());
         add(ModBlocks.TOADSTOOL_GRASS.get(), createSingleItemTableWithSilkTouch(ModBlocks.TOADSTOOL_GRASS.get(), ModItems.TOADSTOOL_SOIL.get()));
+        add(ModBlocks.GRASSY_TOADSTONE.get(), createSingleItemTableWithSilkTouch(ModBlocks.GRASSY_TOADSTONE.get(), ModItems.TOADSTONE.get()));
         add(ModBlocks.BRONZE_ORE.get(), createOreDrop(ModBlocks.BRONZE_ORE.get(), ModItems.RAW_BRONZE.get()));
         add(ModBlocks.VANILLATE.get(), createSingleItemTableWithSilkTouch(ModBlocks.VANILLATE.get(), ModItems.VANILLATE_CRUMBLE.get()));
         add(ModBlocks.TOPPED_VANILLATE.get(), createSingleItemTableWithSilkTouch(ModBlocks.TOPPED_VANILLATE.get(), ModItems.VANILLATE_CRUMBLE.get()));

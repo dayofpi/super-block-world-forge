@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:nether_fossil",
+  "biomes": "#super_block_world:has_structure/prehistoric_site",
+  "height": {
+    "type": "minecraft:uniform",
+    "max_inclusive": {
+      "absolute": 180
+    },
+    "min_inclusive": {
+      "absolute": 50
+    }
+  },
+  "spawn_overrides": {},
+  "step": "surface_structures",
+  "terrain_adaptation": "beard_thin"
+}

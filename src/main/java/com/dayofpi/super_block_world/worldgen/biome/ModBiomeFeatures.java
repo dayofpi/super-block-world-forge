@@ -34,6 +34,7 @@ public class ModBiomeFeatures {
 
     public static void addMushroomGrasslandsVegetation(BiomeGenerationSettings.Builder builder) {
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.STUMP);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.TOADSTOOL_SPROUTS);
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.BEANSTALK);
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.FLOWERBED_WHITE);
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.FLOWERBED_YELLOW);
@@ -47,6 +48,7 @@ public class ModBiomeFeatures {
     public static void addSubconHillsVegetation(BiomeGenerationSettings.Builder builder) {
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.STUMP);
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.RED_TOAD_STOOL);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.TOADSTOOL_SPROUTS);
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.RED_GRASS_EXTRA);
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.SUBCON_PALM);
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.BEANSTALK_COMMON);
@@ -63,13 +65,19 @@ public class ModBiomeFeatures {
     }
 
     public static void addDesertOasisVegetation(BiomeGenerationSettings.Builder builder) {
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.TOADSTOOL_SPROUTS);
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.SUBCON_PALM);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.VINES);
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_PLAIN);
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_CACTUS_DESERT);
     }
 
     public static void addFossilFallsVegetation(BiomeGenerationSettings.Builder builder) {
-
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.TOADSTOOL_SPROUTS_COMMON);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.GRASS_FOSSIL_FALLS);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.VINES);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_TALL_GRASS);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_LARGE_FERN);
     }
 
     public static void addCaveMobs(MobSpawnSettings.Builder builder) {

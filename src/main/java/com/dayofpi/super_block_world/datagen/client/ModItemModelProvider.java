@@ -20,6 +20,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         blockItem(ModBlocks.TRAMPOLINE);
+        blockItem(ModBlocks.BILL_BLASTER);
         blockItem(ModBlocks.FLAGPOLE);
         flagItem(ModItems.WHITE_FLAG);
         flagItem(ModItems.LIGHT_GRAY_FLAG);
@@ -94,6 +95,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         blockItem(ModBlocks.VANILLATE_TILE_STAIRS);
         blockItem(ModBlocks.VANILLATE_TILE_SLAB);
         wallItem(ModBlocks.VANILLATE_TILE_WALL, ModBlocks.VANILLATE_TILES);
+        blockItem(ModBlocks.GRASSY_TOADSTONE);
         blockItem(ModBlocks.TOADSTONE_STAIRS);
         blockItem(ModBlocks.TOADSTONE_SLAB);
         wallItem(ModBlocks.TOADSTONE_WALL, ModBlocks.TOADSTONE);
@@ -172,6 +174,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleBlockItem(ModItems.MAYOI_SAPLING);
         blockItem(ModBlocks.BROWN_TOAD_STOOL);
         blockItem(ModBlocks.RED_TOAD_STOOL);
+        simpleBlockItem(ModItems.TOADSTOOL_SPROUTS);
         simpleBlockItem(ModItems.RED_GRASS);
         simpleBlockItem(ModItems.SUBCON_PALM);
         simpleBlockItem(ModItems.BEANSTALK);
@@ -202,7 +205,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         spawnEggItem(ModItems.SHY_GUY_SPAWN_EGG);
         spawnEggItem(ModItems.LUMA_SPAWN_EGG);
         spawnEggItem(ModItems.HUNGRY_LUMA_SPAWN_EGG);
+        spawnEggItem(ModItems.SMEECH_SPAWN_EGG);
         spawnEggItem(ModItems.OCTOOMBA_SPAWN_EGG);
+        spawnEggItem(ModItems.CHAIN_CHOMP_SPAWN_EGG);
         spawnEggItem(ModItems.UNAGI_SPAWN_EGG);
         spawnEggItem(ModItems.BOOM_BOOM_SPAWN_EGG);
     }

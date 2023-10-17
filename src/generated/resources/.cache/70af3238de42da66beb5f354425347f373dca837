@@ -1,11 +1,11 @@
-// 1.20.1	2023-10-12T03:24:27.7006907	Block Tags
+// 1.20.1	2023-10-13T21:57:02.9449236	Block Tags
 d5a725534da480dd5b557963a6c5ab8ffff6f933 data/forge/tags/blocks/blocks/bronze.json
 5c29b20160d3e68e3a3f953892d95355f26bc8f1 data/forge/tags/blocks/ores.json
 5c29b20160d3e68e3a3f953892d95355f26bc8f1 data/forge/tags/blocks/ores/bronze.json
 65e6bd01ec8eab83501be50ad96e982c4899a4b7 data/minecraft/tags/blocks/ceiling_hanging_signs.json
 dcc506300e4a5ea8b43a95ba83838b87806d8798 data/minecraft/tags/blocks/climbable.json
 7e50df3e0924df4503236ea2e2aaf2151eb34dfe data/minecraft/tags/blocks/crystal_sound_blocks.json
-6bd1f0e1acd9ab86b64924fa63c3bd0603923a18 data/minecraft/tags/blocks/dirt.json
+d6c870acd2a72eaca652273629147a87caf004f2 data/minecraft/tags/blocks/dirt.json
 14833db2899a77bc71cf9b26445569a50b4f1154 data/minecraft/tags/blocks/fence_gates.json
 aee889f579b7e285552cf2acea0771f076d0df88 data/minecraft/tags/blocks/flowers.json
 aee889f579b7e285552cf2acea0771f076d0df88 data/minecraft/tags/blocks/inside_step_sound_blocks.json
@@ -13,16 +13,16 @@ aee889f579b7e285552cf2acea0771f076d0df88 data/minecraft/tags/blocks/inside_step_
 bcb57d65819402fb7a7dda82f6eb7fa4db25bec1 data/minecraft/tags/blocks/logs_that_burn.json
 c3c5e979be5aaa20257ca9699116d9247f1ce52c data/minecraft/tags/blocks/mineable/axe.json
 e52b8456780214daa14c6566fedbce020b1fa1d3 data/minecraft/tags/blocks/mineable/hoe.json
-5d85983e380df5e25b5724a2491257c32259a102 data/minecraft/tags/blocks/mineable/pickaxe.json
+accf0cd5fb46bd8a0e0d2b9ee894e097adf5ac5a data/minecraft/tags/blocks/mineable/pickaxe.json
 85c7030c30733fe1cc2b62178bba2e4eb7d2732f data/minecraft/tags/blocks/mineable/shovel.json
 6bd1f0e1acd9ab86b64924fa63c3bd0603923a18 data/minecraft/tags/blocks/mushroom_grow_block.json
 5c3a30613eb771d10777e64803a3a719cd68fb65 data/minecraft/tags/blocks/needs_iron_tool.json
 3dc9b1a04172fceac2476774039d55ebd9aac165 data/minecraft/tags/blocks/needs_stone_tool.json
-ced3d9a3f5165abbd8eb83468792f12366abe541 data/minecraft/tags/blocks/overworld_carver_replaceables.json
+209b0a88cc33cda333d6bb0bca41a6fe85fd7be5 data/minecraft/tags/blocks/overworld_carver_replaceables.json
 3a7f726e74a0bceafd121dad97299baf051e49f3 data/minecraft/tags/blocks/planks.json
 51a1b2153eb581f7176c882a4da32f9693bc478e data/minecraft/tags/blocks/rabbits_spawnable_on.json
 7a4240bbbf07850115a07d1701ce5de4d03e6416 data/minecraft/tags/blocks/sand.json
-6bd1f0e1acd9ab86b64924fa63c3bd0603923a18 data/minecraft/tags/blocks/sniffer_diggable_block.json
+d6c870acd2a72eaca652273629147a87caf004f2 data/minecraft/tags/blocks/sniffer_diggable_block.json
 73812449321dcb9c10a6494c929cfdb2d96502df data/minecraft/tags/blocks/standing_signs.json
 fcc6f8ed43adbbb0a90c9d1e87eaa50764a5825c data/minecraft/tags/blocks/walls.json
 ce96099a7d11e781b1a198a92fdad845ab29064d data/minecraft/tags/blocks/wall_hanging_signs.json
@@ -37,8 +37,9 @@ d51db4778c08be1199264b4e8cae9f7440a45197 data/minecraft/tags/blocks/wooden_trapd
 9ba0f51636a4bdbf0e6879a8e094c553251ba409 data/super_block_world/tags/blocks/amanita_logs.json
 69d5568bae0d628a22128f91e650d0be8123c22f data/super_block_world/tags/blocks/bronze_blocks.json
 85ad8a3d7d0760c96d621217c6bdb4f576a145ba data/super_block_world/tags/blocks/flags.json
+581e7a3fbc39acc703dc7c06b1fbe24251535f9e data/super_block_world/tags/blocks/fossil_stone_replaceables.json
 9f89c669782d534577b994c6c2321b02378ea0b7 data/super_block_world/tags/blocks/mayoi_logs.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/super_block_world/tags/blocks/needs_super_pickax.json
 a3cef7099a432feaf00f93e01212ad1ef2b170ea data/super_block_world/tags/blocks/pipe_bodies.json
-128f2fe8c20dabab6b587d25d1cd7324a211889f data/super_block_world/tags/blocks/vanillate_topping_replaceable.json
+128f2fe8c20dabab6b587d25d1cd7324a211889f data/super_block_world/tags/blocks/vanillate_topping_replaceables.json
 9f18e3817d2878826751bb980b3364d828f06809 data/super_block_world/tags/blocks/warp_pipes.json

@@ -1,9 +1,9 @@
 package com.dayofpi.super_block_world.block.custom;
 
+import com.dayofpi.super_block_world.worldgen.feature.ModPlacedFeatures;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.Level;
@@ -38,7 +38,7 @@ public class ToadstoolTurfBlock extends Block implements BonemealableBlock {
     public void performBonemeal(ServerLevel pLevel, RandomSource pRandom, BlockPos pPos, BlockState pState) {
         BlockPos blockPos2 = pPos.above();
         BlockState blockState2 = Blocks.GRASS.defaultBlockState();
-        Optional<Holder.Reference<PlacedFeature>> optional = pLevel.registryAccess().registryOrThrow(Registries.PLACED_FEATURE).getHolder(VegetationPlacements.GRASS_BONEMEAL);
+        Optional<Holder.Reference<PlacedFeature>> optional = pLevel.registryAccess().registryOrThrow(Registries.PLACED_FEATURE).getHolder(ModPlacedFeatures.BONE_MEAL_VEGETATION);
 
         label49:
         for(int i = 0; i < 128; ++i) {
@@ -73,7 +73,7 @@ public class ToadstoolTurfBlock extends Block implements BonemealableBlock {
                     holder = optional.get();
                 }
 
-                ((PlacedFeature)holder.value()).place(pLevel, pLevel.getChunkSource().getGenerator(), pRandom, blockPos3);
+                holder.value().place(pLevel, pLevel.getChunkSource().getGenerator(), pRandom, blockPos3);
             }
         }
     }

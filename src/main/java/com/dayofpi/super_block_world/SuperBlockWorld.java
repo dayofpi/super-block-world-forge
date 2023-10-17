@@ -190,7 +190,9 @@ public class SuperBlockWorld {
                 EntityRenderers.register(ModEntityTypes.SHY_GUY.get(), ShyGuyRenderer::new);
                 EntityRenderers.register(ModEntityTypes.LUMA.get(), LumaRenderer::new);
                 EntityRenderers.register(ModEntityTypes.HUNGRY_LUMA.get(), HungryLumaRenderer::new);
+                EntityRenderers.register(ModEntityTypes.SMEECH.get(), SmeechRenderer::new);
                 EntityRenderers.register(ModEntityTypes.OCTOOMBA.get(), OctoombaRenderer::new);
+                EntityRenderers.register(ModEntityTypes.CHAIN_CHOMP.get(), ChainChompRenderer::new);
                 EntityRenderers.register(ModEntityTypes.UNAGI.get(), UnagiRenderer::new);
                 EntityRenderers.register(ModEntityTypes.BOOM_BOOM.get(), BoomBoomRenderer::new);
                 EntityRenderers.register(ModEntityTypes.TURNIP.get(), ThrownItemRenderer::new);
@@ -208,13 +210,13 @@ public class SuperBlockWorld {
 
         @SubscribeEvent
         public static void registerItemColors(RegisterColorHandlersEvent.Item event) {
-            event.register((pStack, pTintIndex) -> ModBiomes.GRASSLANDS_GRASS_COLOR, ModItems.TOADSTOOL_GRASS.get(), ModItems.TOADSTOOL_TURF.get());
+            event.register((pStack, pTintIndex) -> ModBiomes.GRASSLANDS_GRASS_COLOR, ModItems.TOADSTOOL_GRASS.get(), ModItems.TOADSTOOL_TURF.get(), ModItems.GRASSY_TOADSTONE.get(), ModItems.TOADSTOOL_SPROUTS.get());
             event.register((pStack, pTintIndex) -> ModBiomes.GRASSLANDS_FOLIAGE_COLOR, ModItems.AMANITA_LEAVES.get(), ModItems.FRUITING_AMANITA_LEAVES.get(), ModItems.MAYOI_LEAVES.get(), ModItems.FRUITING_MAYOI_LEAVES.get());
         }
 
         @SubscribeEvent
         public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
-            event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageGrassColor(pLevel, pPos) : ModBiomes.GRASSLANDS_GRASS_COLOR, ModBlocks.TOADSTOOL_GRASS.get(), ModBlocks.TOADSTOOL_TURF.get());
+            event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageGrassColor(pLevel, pPos) : ModBiomes.GRASSLANDS_GRASS_COLOR, ModBlocks.TOADSTOOL_GRASS.get(), ModBlocks.TOADSTOOL_TURF.get(), ModBlocks.GRASSY_TOADSTONE.get(), ModBlocks.TOADSTOOL_SPROUTS.get());
             event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : ModBiomes.GRASSLANDS_FOLIAGE_COLOR, ModBlocks.AMANITA_LEAVES.get(), ModBlocks.FRUITING_AMANITA_LEAVES.get(), ModBlocks.MAYOI_LEAVES.get(), ModBlocks.FRUITING_MAYOI_LEAVES.get());
         }
 

@@ -82,6 +82,58 @@
       "super_block_world:block/toadstone/step4"
     ]
   },
+  "block.grassy_toadstone.break": {
+    "sounds": [
+      "super_block_world:block/grassy_toadstone/dig1",
+      "super_block_world:block/grassy_toadstone/dig2",
+      "super_block_world:block/grassy_toadstone/dig3",
+      "super_block_world:block/grassy_toadstone/dig4",
+      "super_block_world:block/grassy_toadstone/dig5"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.grassy_toadstone.step": {
+    "sounds": [
+      "super_block_world:block/grassy_toadstone/step1",
+      "super_block_world:block/grassy_toadstone/step2",
+      "super_block_world:block/grassy_toadstone/step3",
+      "super_block_world:block/grassy_toadstone/step4",
+      "super_block_world:block/grassy_toadstone/step5",
+      "super_block_world:block/grassy_toadstone/step6"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.grassy_toadstone.place": {
+    "sounds": [
+      "super_block_world:block/grassy_toadstone/dig1",
+      "super_block_world:block/grassy_toadstone/dig2",
+      "super_block_world:block/grassy_toadstone/dig3",
+      "super_block_world:block/grassy_toadstone/dig4",
+      "super_block_world:block/grassy_toadstone/dig5"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.grassy_toadstone.hit": {
+    "sounds": [
+      "super_block_world:block/grassy_toadstone/step1",
+      "super_block_world:block/grassy_toadstone/step2",
+      "super_block_world:block/grassy_toadstone/step3",
+      "super_block_world:block/grassy_toadstone/step4",
+      "super_block_world:block/grassy_toadstone/step5",
+      "super_block_world:block/grassy_toadstone/step6"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.grassy_toadstone.fall": {
+    "sounds": [
+      "super_block_world:block/grassy_toadstone/step1",
+      "super_block_world:block/grassy_toadstone/step2",
+      "super_block_world:block/grassy_toadstone/step3",
+      "super_block_world:block/grassy_toadstone/step4",
+      "super_block_world:block/grassy_toadstone/step5",
+      "super_block_world:block/grassy_toadstone/step6"
+    ]
+  },
   "block.royalite.break": {
     "sounds": [
       "super_block_world:block/royalite/break1",
@@ -365,6 +417,71 @@
     "sounds": [
       "mob/llama/spit1",
       "mob/llama/spit2"
+    ]
+  },
+  "entity.chain_chomp.ambient": {
+    "subtitle": "subtitles.super_block_world.entity.chain_chomp.ambient",
+    "sounds": [
+      "super_block_world:entity/chain_chomp/woofwoof"
+    ]
+  },
+  "entity.chain_chomp.hurt": {
+    "subtitle": "subtitles.super_block_world.entity.chain_chomp.hurt",
+    "sounds": [
+      "mob/wolf/hurt1",
+      "mob/wolf/hurt2",
+      "mob/wolf/hurt3"
+    ]
+  },
+  "entity.chain_chomp.death": {
+    "subtitle": "subtitles.super_block_world.entity.chain_chomp.death",
+    "sounds": [
+      "mob/wolf/death"
+    ]
+  },
+  "entity.chain_chomp.repair": {
+    "subtitle": "subtitles.super_block_world.entity.chain_chomp.repair",
+    "sounds": [
+      "mob/irongolem/repair"
+    ]
+  },
+  "entity.chain_chomp.attack": {
+    "subtitle": "subtitles.super_block_world.entity.chain_chomp.attack",
+    "sounds": [
+      "super_block_world:entity/chain_chomp/attack"
+    ]
+  },
+  "entity.chain_chomp.eat": {
+    "subtitle": "subtitles.super_block_world.entity.chain_chomp.eat",
+    "sounds": [
+      "super_block_world:entity/chain_chomp/eat"
+    ]
+  },
+  "entity.chain_chomp.hop": {
+    "subtitle": "subtitles.super_block_world.entity.chain_chomp.hop",
+    "sounds": [
+      "super_block_world:entity/chain_chomp/hop"
+    ]
+  },
+  "entity.chain_chomp.chain": {
+    "subtitle": "subtitles.super_block_world.entity.chain_chomp.chain",
+    "sounds": [
+      {
+        "name": "block/chain/break1",
+        "volume": 0.5
+      },
+      {
+        "name": "block/chain/break2",
+        "volume": 0.5
+      },
+      {
+        "name": "block/chain/break3",
+        "volume": 0.5
+      },
+      {
+        "name": "block/chain/break4",
+        "volume": 0.5
+      }
     ]
   },
   "entity.unagi.death": {

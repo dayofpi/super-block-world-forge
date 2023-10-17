@@ -15,22 +15,27 @@ public class ModSurfaceRules {
     private static final SurfaceRules.RuleSource TOADSTOOL_SOIL = makeStateRule(ModBlocks.TOADSTOOL_SOIL.get());
     private static final SurfaceRules.RuleSource GRITZY_SAND = makeStateRule(ModBlocks.GRITZY_SAND.get());
     private static final SurfaceRules.RuleSource GRITZY_SANDSTONE = makeStateRule(ModBlocks.GRITZY_SANDSTONE.get());
+    private static final SurfaceRules.RuleSource GRASSY_TOADSTONE = makeStateRule(ModBlocks.GRASSY_TOADSTONE.get());
+    private static final SurfaceRules.RuleSource TOADSTONE = makeStateRule(ModBlocks.TOADSTONE.get());
 
     public static SurfaceRules.RuleSource mushroomKingdom() {
         SurfaceRules.ConditionSource waterCheckConditionSource = SurfaceRules.waterBlockCheck(0, 0);
         SurfaceRules.RuleSource grassAndSoilRuleSource = SurfaceRules.sequence(SurfaceRules.ifTrue(waterCheckConditionSource, TOADSTOOL_GRASS), TOADSTOOL_SOIL);
+        SurfaceRules.RuleSource grassAndToadstoneRuleSource = SurfaceRules.sequence(SurfaceRules.ifTrue(waterCheckConditionSource, GRASSY_TOADSTONE), TOADSTONE);
 
         SurfaceRules.RuleSource ruleSource = SurfaceRules.sequence(
                 SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(), SurfaceRules.sequence(
                         SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.sequence(
                                 SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.MUSHROOM_GRASSLANDS, ModBiomes.DESERT_OASIS), grassAndSoilRuleSource),
                                 SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.SUBCON_HILLS), TOADSTOOL_TURF),
-                                SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.GRITZY_DESERT), GRITZY_SAND)
+                                SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.GRITZY_DESERT), GRITZY_SAND),
+                                SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.FOSSIL_FALLS), grassAndToadstoneRuleSource)
                         )),
                         SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, SurfaceRules.sequence(
                                 SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.MUSHROOM_GRASSLANDS, ModBiomes.DESERT_OASIS), TOADSTOOL_SOIL),
                                 SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.SUBCON_HILLS), TOADSTOOL_TURF),
-                                SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.GRITZY_DESERT), GRITZY_SANDSTONE)
+                                SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.GRITZY_DESERT), GRITZY_SANDSTONE),
+                                SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.FOSSIL_FALLS), TOADSTONE)
                         ))
                 )));
 

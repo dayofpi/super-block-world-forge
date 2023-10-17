@@ -19,6 +19,9 @@ public class ModTemplatePools {
     public static final ResourceKey<StructureTemplatePool> FORTRESS_BOSSES = register("fortress_bosses");
     public static final ResourceKey<StructureTemplatePool> TOSTARENA_RUINS = register("tostarena_ruins");
     public static final ResourceKey<StructureTemplatePool> TOSTARENA_RUINS_DECOR = register("tostarena_ruins_decor");
+    public static final ResourceKey<StructureTemplatePool> TOSTARENA_RUINS_CENTER = register("tostarena_ruins_center");
+    public static final ResourceKey<StructureTemplatePool> PREHISTORIC_SITE = register("prehistoric_site");
+    public static final ResourceKey<StructureTemplatePool> PREHISTORIC_SITE_DECOR = register("prehistoric_site_decor");
 
     public static void bootstrap(BootstapContext<StructureTemplatePool> context) {
         HolderGetter<StructureTemplatePool> templatePools = context.lookup(Registries.TEMPLATE_POOL);
@@ -33,6 +36,14 @@ public class ModTemplatePools {
                 Pair.of(StructurePoolElement.legacy("super_block_world:tostarena_ruins/decor2"), 1),
                 Pair.of(StructurePoolElement.legacy("super_block_world:tostarena_ruins/decor3"), 1),
                 Pair.of(StructurePoolElement.legacy("super_block_world:tostarena_ruins/decor4"), 1)
+        ), StructureTemplatePool.Projection.RIGID));
+        context.register(TOSTARENA_RUINS_CENTER, new StructureTemplatePool(templatePools.getOrThrow(Pools.EMPTY), ImmutableList.of(
+                Pair.of(StructurePoolElement.legacy("super_block_world:tostarena_ruins/center1", processorLists.getOrThrow(ModProcessorLists.TOSTARENA_RUINS_DECAY)), 1)
+        ), StructureTemplatePool.Projection.RIGID));
+        context.register(PREHISTORIC_SITE, new StructureTemplatePool(templatePools.getOrThrow(Pools.EMPTY), ImmutableList.of(Pair.of(StructurePoolElement.legacy("super_block_world:prehistoric_site/base", processorLists.getOrThrow(ModProcessorLists.PREHISTORIC_SITE_ARCHAEOLOGY)), 1)), StructureTemplatePool.Projection.RIGID));
+        context.register(PREHISTORIC_SITE_DECOR, new StructureTemplatePool(templatePools.getOrThrow(Pools.EMPTY), ImmutableList.of(
+                Pair.of(StructurePoolElement.legacy("super_block_world:prehistoric_site/decor1"), 1),
+                Pair.of(StructurePoolElement.legacy("super_block_world:prehistoric_site/decor2"), 1)
         ), StructureTemplatePool.Projection.RIGID));
     }
 

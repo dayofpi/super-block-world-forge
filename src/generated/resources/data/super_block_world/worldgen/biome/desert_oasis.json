@@ -55,7 +55,9 @@
     ],
     [
       "super_block_world:red_grass",
+      "super_block_world:toadstool_sprouts",
       "super_block_world:subcon_palm",
+      "minecraft:vines",
       "minecraft:patch_grass_plain",
       "minecraft:patch_cactus_desert"
     ]

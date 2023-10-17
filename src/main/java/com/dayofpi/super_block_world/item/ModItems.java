@@ -23,6 +23,7 @@ public class ModItems {
     public static final RegistryObject<Item> STAR_COIN = registerBlockItem("star_coin", ModBlocks.STAR_COIN);
     public static final RegistryObject<Item> PULL_BLOCK = registerBlockItem("pull_block", ModBlocks.PULL_BLOCK);
     public static final RegistryObject<Item> TRAMPOLINE = registerBlockItem("trampoline", ModBlocks.TRAMPOLINE);
+    public static final RegistryObject<Item> BILL_BLASTER = registerBlockItem("bill_blaster", ModBlocks.BILL_BLASTER);
     public static final RegistryObject<Item> WHITE_BRONZE = registerBlockItem("white_bronze", ModBlocks.WHITE_BRONZE);
     public static final RegistryObject<Item> LIGHT_GRAY_BRONZE = registerBlockItem("light_gray_bronze", ModBlocks.LIGHT_GRAY_BRONZE);
     public static final RegistryObject<Item> GRAY_BRONZE = registerBlockItem("gray_bronze", ModBlocks.GRAY_BRONZE);
@@ -130,6 +131,7 @@ public class ModItems {
     public static final RegistryObject<Item> VANILLATE_TILE_STAIRS = registerBlockItem("vanillate_tile_stairs", ModBlocks.VANILLATE_TILE_STAIRS);
     public static final RegistryObject<Item> VANILLATE_TILE_SLAB = registerBlockItem("vanillate_tile_slab", ModBlocks.VANILLATE_TILE_SLAB);
     public static final RegistryObject<Item> VANILLATE_TILE_WALL = registerBlockItem("vanillate_tile_wall", ModBlocks.VANILLATE_TILE_WALL);
+    public static final RegistryObject<Item> GRASSY_TOADSTONE = registerBlockItem("grassy_toadstone", ModBlocks.GRASSY_TOADSTONE);
     public static final RegistryObject<Item> TOADSTONE = registerBlockItem("toadstone", ModBlocks.TOADSTONE);
     public static final RegistryObject<Item> TOADSTONE_STAIRS = registerBlockItem("toadstone_stairs", ModBlocks.TOADSTONE_STAIRS);
     public static final RegistryObject<Item> TOADSTONE_SLAB = registerBlockItem("toadstone_slab", ModBlocks.TOADSTONE_SLAB);
@@ -232,6 +234,7 @@ public class ModItems {
     public static final RegistryObject<Item> MAYOI_SAPLING = registerBlockItem("mayoi_sapling", ModBlocks.MAYOI_SAPLING);
     public static final RegistryObject<Item> BROWN_TOAD_STOOL = registerBlockItem("brown_toad_stool", ModBlocks.BROWN_TOAD_STOOL);
     public static final RegistryObject<Item> RED_TOAD_STOOL = registerBlockItem("red_toad_stool", ModBlocks.RED_TOAD_STOOL);
+    public static final RegistryObject<Item> TOADSTOOL_SPROUTS = registerBlockItem("toadstool_sprouts", ModBlocks.TOADSTOOL_SPROUTS);
     public static final RegistryObject<Item> RED_GRASS = registerBlockItem("red_grass", ModBlocks.RED_GRASS);
     public static final RegistryObject<Item> SUBCON_PALM = registerBlockItem("subcon_palm", ModBlocks.SUBCON_PALM);
     public static final RegistryObject<Item> BEANSTALK = registerBlockItem("beanstalk", ModBlocks.BEANSTALK);
@@ -264,7 +267,9 @@ public class ModItems {
     public static final RegistryObject<Item> SHY_GUY_SPAWN_EGG = ITEMS.register("shy_guy_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.SHY_GUY, 0xed4125, 0x3785db, new Item.Properties()));
     public static final RegistryObject<Item> LUMA_SPAWN_EGG = ITEMS.register("luma_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.LUMA, 0xffe243, 0xffe243, new Item.Properties()));
     public static final RegistryObject<Item> HUNGRY_LUMA_SPAWN_EGG = ITEMS.register("hungry_luma_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.HUNGRY_LUMA, 0xffdea3, 0xff696c, new Item.Properties()));
+    public static final RegistryObject<Item> SMEECH_SPAWN_EGG = ITEMS.register("smeech_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.SMEECH, 0xffe1d9, 0xf09fd4, new Item.Properties()));
     public static final RegistryObject<Item> OCTOOMBA_SPAWN_EGG = ITEMS.register("octoomba_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.OCTOOMBA, 0x467bce, 0xffdc4a, new Item.Properties()));
+    public static final RegistryObject<Item> CHAIN_CHOMP_SPAWN_EGG = ITEMS.register("chain_chomp_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.CHAIN_CHOMP, 0x000000, 0xcbdad5, new Item.Properties()));
     public static final RegistryObject<Item> UNAGI_SPAWN_EGG = ITEMS.register("unagi_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.UNAGI, 0x941531, 0x510e2b, new Item.Properties()));
     public static final RegistryObject<Item> BOOM_BOOM_SPAWN_EGG = ITEMS.register("boom_boom_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.BOOM_BOOM, 0xcc7402, 0xffd22c, new Item.Properties()));
 

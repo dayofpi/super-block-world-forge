@@ -51,9 +51,21 @@
             "depth": 0.0,
             "erosion": 0.5,
             "humidity": -0.1,
-            "offset": 0.6,
+            "offset": 0.7,
             "temperature": 0.2,
             "weirdness": 0.0
+          }
+        },
+        {
+          "biome": "super_block_world:fossil_falls",
+          "parameters": {
+            "continentalness": 0.0,
+            "depth": 0.0,
+            "erosion": -0.2,
+            "humidity": 0.2,
+            "offset": 0.2,
+            "temperature": 0.2,
+            "weirdness": 0.2
           }
         }
       ]

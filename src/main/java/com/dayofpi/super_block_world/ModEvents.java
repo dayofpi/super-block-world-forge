@@ -16,6 +16,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -44,6 +45,7 @@ public class ModEvents {
             event.registerLayerDefinition(LumaModel.LAYER_LOCATION, LumaModel::createBodyLayer);
             event.registerLayerDefinition(HungryLumaModel.LAYER_LOCATION, HungryLumaModel::createBodyLayer);
             event.registerLayerDefinition(OctoombaModel.LAYER_LOCATION, OctoombaModel::createBodyLayer);
+            event.registerLayerDefinition(ChainChompModel.LAYER_LOCATION, ChainChompModel::createBodyLayer);
             event.registerLayerDefinition(UnagiModel.LAYER_LOCATION, UnagiModel::createBodyLayer);
             event.registerLayerDefinition(BoomBoomModel.LAYER_LOCATION, BoomBoomModel::createBodyLayer);
             event.registerLayerDefinition(WarpPaintingModel.LAYER_LOCATION, WarpPaintingModel::createBodyLayer);
@@ -57,9 +59,11 @@ public class ModEvents {
         @SubscribeEvent
         public static void registerAttributes(EntityAttributeCreationEvent event) {
             event.put(ModEntityTypes.SHY_GUY.get(), ShyGuyEntity.createAttributes().build());
-            event.put(ModEntityTypes.LUMA.get(), LumaEntity.createAttributes().build());
-            event.put(ModEntityTypes.HUNGRY_LUMA.get(), HungryLumaEntity.createAttributes().build());
+            event.put(ModEntityTypes.LUMA.get(), AbstractLuma.createAttributes().build());
+            event.put(ModEntityTypes.HUNGRY_LUMA.get(), AbstractLuma.createAttributes().build());
+            event.put(ModEntityTypes.SMEECH.get(), SmeechEntity.createAttributes().build());
             event.put(ModEntityTypes.OCTOOMBA.get(), OctoombaEntity.createAttributes().build());
+            event.put(ModEntityTypes.CHAIN_CHOMP.get(), ChainChompEntity.createAttributes().build());
             event.put(ModEntityTypes.UNAGI.get(), Monster.createMonsterAttributes().build());
             event.put(ModEntityTypes.BOOM_BOOM.get(), BoomBoomEntity.createAttributes().build());
         }
@@ -69,6 +73,7 @@ public class ModEvents {
             event.register(ModEntityTypes.SHY_GUY.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ShyGuyEntity::checkShyGuySpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
             event.register(ModEntityTypes.LUMA.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SpaceCreature::checkSpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
             event.register(ModEntityTypes.HUNGRY_LUMA.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SpaceCreature::checkSpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
+            event.register(ModEntityTypes.SMEECH.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
             event.register(ModEntityTypes.OCTOOMBA.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SpaceCreature::checkSpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
             event.register(ModEntityTypes.UNAGI.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, UnagiEntity::checkUnagiSpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
         }

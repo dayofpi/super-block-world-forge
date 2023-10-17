@@ -19,7 +19,9 @@ public class ModBiomeTagsProvider extends BiomeTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
         tag(ModTags.Biomes.IS_MUSHROOM_KINGDOM).addOptional(ModBiomes.MUSHROOM_GRASSLANDS.location()).addOptional(ModBiomes.SUBCON_HILLS.location()).addOptional(ModBiomes.GRITZY_DESERT.location()).addOptional(ModBiomes.DESERT_OASIS.location());
+        tag(ModTags.Biomes.SPAWNS_SURFACE_SHY_GUYS).addOptional(ModBiomes.MUSHROOM_GRASSLANDS.location()).addOptional(ModBiomes.SUBCON_HILLS.location()).addOptional(ModBiomes.GRITZY_DESERT.location());
         tag(ModTags.Biomes.HAS_TOSTARENA_RUINS).addOptional(ModBiomes.GRITZY_DESERT.location()).addOptional(ModBiomes.DESERT_OASIS.location());
+        tag(ModTags.Biomes.HAS_PREHISTORIC_SITE).addOptional(ModBiomes.FOSSIL_FALLS.location());
     }
 
     @Override

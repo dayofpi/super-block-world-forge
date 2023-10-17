@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 1702241750,
+    "separation": 8,
+    "spacing": 30
+  },
+  "structures": [
+    {
+      "structure": "super_block_world:prehistoric_site",
+      "weight": 1
+    }
+  ]
+}
